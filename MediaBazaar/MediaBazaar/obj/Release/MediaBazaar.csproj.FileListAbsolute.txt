@@ -1,0 +1,9 @@
+C:\Users\brand\Desktop\pp\semester_2-project\MediaBazaar\MediaBazaar\bin\Release\MediaBazaar.exe.config
+C:\Users\brand\Desktop\pp\semester_2-project\MediaBazaar\MediaBazaar\bin\Release\MediaBazaar.exe
+C:\Users\brand\Desktop\pp\semester_2-project\MediaBazaar\MediaBazaar\bin\Release\MediaBazaar.pdb
+C:\Users\brand\Desktop\pp\semester_2-project\MediaBazaar\MediaBazaar\obj\Release\MediaBazaar.Form1.resources
+C:\Users\brand\Desktop\pp\semester_2-project\MediaBazaar\MediaBazaar\obj\Release\MediaBazaar.Properties.Resources.resources
+C:\Users\brand\Desktop\pp\semester_2-project\MediaBazaar\MediaBazaar\obj\Release\MediaBazaar.csproj.GenerateResource.cache
+C:\Users\brand\Desktop\pp\semester_2-project\MediaBazaar\MediaBazaar\obj\Release\MediaBazaar.csproj.CoreCompileInputs.cache
+C:\Users\brand\Desktop\pp\semester_2-project\MediaBazaar\MediaBazaar\obj\Release\MediaBazaar.exe
+C:\Users\brand\Desktop\pp\semester_2-project\MediaBazaar\MediaBazaar\obj\Release\MediaBazaar.pdb
