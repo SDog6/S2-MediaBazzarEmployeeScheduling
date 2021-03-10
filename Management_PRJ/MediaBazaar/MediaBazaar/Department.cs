@@ -9,7 +9,6 @@ namespace MediaBazaar
     public class Department
     {
         private string name;
-        private string type;
 
         List<Employee> Employees;
 
