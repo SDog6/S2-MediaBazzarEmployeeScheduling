@@ -6,28 +6,19 @@ using System.Threading.Tasks;
 
 namespace MediaBazaar
 {
-    public class Employee
-    {
-        private Person employeeInfo;
+    public class Employee : Person
+    {        
         private Person contactPerson;
-
         private DateTime dateOfBirth;
         private string BSN;
-
         private Contract contract;
 
-        public Employee(Person employeeInfo, Person contactPerson, DateTime dateOfBirth, string BSN, Contract contract)
+        public Employee(string firstName, string lastName, string phoneNumber, Address address, string email, Person contactPerson, DateTime dateOfBirth, string BSN, Contract contract) : base(firstName, lastName, phoneNumber, address, email)
         {
-            this.employeeInfo = employeeInfo;
             this.contactPerson = contactPerson;
             this.dateOfBirth = dateOfBirth;
             this.BSN = BSN;
             this.contract = contract;
-        }
-
-        public string getEmployeeInfo()
-        {
-            return $"{employeeInfo}";
         }
 
         public string getContactInfo()
