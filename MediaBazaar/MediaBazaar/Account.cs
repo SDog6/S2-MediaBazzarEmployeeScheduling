@@ -29,13 +29,13 @@ namespace MediaBazaar
             return this.password;
         }
 
-        public bool login(string password)
+        public Employee login(string password)
         {
             if(this.password == password)
             {
-                return true;
+                return employee;
             }
-            return false;
+            return null;
         }
 
         private string generatePassword()
