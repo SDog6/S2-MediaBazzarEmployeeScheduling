@@ -17,3 +17,13 @@ C:\Users\Kaloyan\Desktop\Assignments\PRJ\MediaBazaar\Management_PRJ\MediaBazaar\
 C:\Users\Kaloyan\Desktop\Assignments\PRJ\MediaBazaar\Management_PRJ\MediaBazaar\obj\Debug\MediaBazaar.csproj.CoreCompileInputs.cache
 C:\Users\Kaloyan\Desktop\Assignments\PRJ\MediaBazaar\Management_PRJ\MediaBazaar\obj\Debug\MediaBazaar.exe
 C:\Users\Kaloyan\Desktop\Assignments\PRJ\MediaBazaar\Management_PRJ\MediaBazaar\obj\Debug\MediaBazaar.pdb
+C:\Users\Kaloyan\semester_2-project\Management_PRJ\MediaBazaar\MediaBazaar\bin\Debug\MediaBazaar.exe.config
+C:\Users\Kaloyan\semester_2-project\Management_PRJ\MediaBazaar\MediaBazaar\bin\Debug\MediaBazaar.exe
+C:\Users\Kaloyan\semester_2-project\Management_PRJ\MediaBazaar\MediaBazaar\bin\Debug\MediaBazaar.pdb
+C:\Users\Kaloyan\semester_2-project\Management_PRJ\MediaBazaar\MediaBazaar\obj\Debug\MediaBazaar.csprojAssemblyReference.cache
+C:\Users\Kaloyan\semester_2-project\Management_PRJ\MediaBazaar\MediaBazaar\obj\Debug\MediaBazaar.Form1.resources
+C:\Users\Kaloyan\semester_2-project\Management_PRJ\MediaBazaar\MediaBazaar\obj\Debug\MediaBazaar.Properties.Resources.resources
+C:\Users\Kaloyan\semester_2-project\Management_PRJ\MediaBazaar\MediaBazaar\obj\Debug\MediaBazaar.csproj.GenerateResource.cache
+C:\Users\Kaloyan\semester_2-project\Management_PRJ\MediaBazaar\MediaBazaar\obj\Debug\MediaBazaar.csproj.CoreCompileInputs.cache
+C:\Users\Kaloyan\semester_2-project\Management_PRJ\MediaBazaar\MediaBazaar\obj\Debug\MediaBazaar.exe
+C:\Users\Kaloyan\semester_2-project\Management_PRJ\MediaBazaar\MediaBazaar\obj\Debug\MediaBazaar.pdb

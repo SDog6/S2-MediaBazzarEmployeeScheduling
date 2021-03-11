@@ -22,6 +22,11 @@ namespace MediaBazaar
             this.BSN = BSN;
             this.contract = contract;
         }
+        public Employee(string firstName, string lastName, string phoneNumber, Address address, string email) : base(firstName, lastName, phoneNumber, address, email)
+        {
+
+        }
+
 
         public string getContactInfo()
         {
@@ -37,5 +42,12 @@ namespace MediaBazaar
         {
             return contract.isTerminated();
         }
+
+        public string GetInfo()
+        {
+            string inf = base.ToString();
+            return inf;
+        }
+        
     }
 }
