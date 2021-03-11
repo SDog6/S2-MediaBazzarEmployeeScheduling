@@ -48,9 +48,9 @@ namespace MediaBazaar
             }
             return null;
         }
-        public Employee[] GetEmployees()
+        public List<Employee> GetEmployees()
         {
-            return this.Employees.ToArray();
+            return this.Employees;
         }
     }
 }

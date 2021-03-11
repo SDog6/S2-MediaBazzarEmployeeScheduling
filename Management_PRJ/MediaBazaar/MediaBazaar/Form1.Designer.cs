@@ -49,21 +49,27 @@ namespace MediaBazaar
             this.tbxSname = new System.Windows.Forms.TextBox();
             this.tbxFname = new System.Windows.Forms.TextBox();
             this.cbxDepartment = new System.Windows.Forms.ComboBox();
+            this.btnAddDep = new System.Windows.Forms.Button();
+            this.panelAddDep = new System.Windows.Forms.Panel();
+            this.btnPAddDep = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel_AddEmpl.SuspendLayout();
+            this.panelAddDep.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBox1
             // 
+            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
+            this.listBox1.ItemHeight = 18;
             this.listBox1.Location = new System.Drawing.Point(22, 75);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(340, 164);
+            this.listBox1.Size = new System.Drawing.Size(340, 148);
             this.listBox1.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(38, 245);
+            this.button1.Location = new System.Drawing.Point(38, 242);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 46);
             this.button1.TabIndex = 2;
@@ -73,9 +79,9 @@ namespace MediaBazaar
             // 
             // btnAddEmpl
             // 
-            this.btnAddEmpl.Location = new System.Drawing.Point(205, 245);
+            this.btnAddEmpl.Location = new System.Drawing.Point(243, 242);
             this.btnAddEmpl.Name = "btnAddEmpl";
-            this.btnAddEmpl.Size = new System.Drawing.Size(75, 46);
+            this.btnAddEmpl.Size = new System.Drawing.Size(95, 46);
             this.btnAddEmpl.TabIndex = 3;
             this.btnAddEmpl.Text = "Add Employee";
             this.btnAddEmpl.UseVisualStyleBackColor = true;
@@ -230,17 +236,58 @@ namespace MediaBazaar
             // 
             // cbxDepartment
             // 
+            this.cbxDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxDepartment.FormattingEnabled = true;
             this.cbxDepartment.Location = new System.Drawing.Point(111, 28);
             this.cbxDepartment.Name = "cbxDepartment";
-            this.cbxDepartment.Size = new System.Drawing.Size(110, 24);
+            this.cbxDepartment.Size = new System.Drawing.Size(170, 28);
             this.cbxDepartment.TabIndex = 5;
+            // 
+            // btnAddDep
+            // 
+            this.btnAddDep.Location = new System.Drawing.Point(139, 294);
+            this.btnAddDep.Name = "btnAddDep";
+            this.btnAddDep.Size = new System.Drawing.Size(112, 46);
+            this.btnAddDep.TabIndex = 6;
+            this.btnAddDep.Text = "New Department";
+            this.btnAddDep.UseVisualStyleBackColor = true;
+            this.btnAddDep.Click += new System.EventHandler(this.btnAddDep_Click);
+            // 
+            // panelAddDep
+            // 
+            this.panelAddDep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelAddDep.Controls.Add(this.btnPAddDep);
+            this.panelAddDep.Controls.Add(this.textBox1);
+            this.panelAddDep.Location = new System.Drawing.Point(368, 12);
+            this.panelAddDep.Name = "panelAddDep";
+            this.panelAddDep.Size = new System.Drawing.Size(267, 84);
+            this.panelAddDep.TabIndex = 7;
+            this.panelAddDep.Visible = false;
+            // 
+            // btnPAddDep
+            // 
+            this.btnPAddDep.Location = new System.Drawing.Point(92, 48);
+            this.btnPAddDep.Name = "btnPAddDep";
+            this.btnPAddDep.Size = new System.Drawing.Size(78, 22);
+            this.btnPAddDep.TabIndex = 14;
+            this.btnPAddDep.Text = "Add";
+            this.btnPAddDep.UseVisualStyleBackColor = true;
+            this.btnPAddDep.Click += new System.EventHandler(this.btnPAddDep_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(6, 20);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(254, 22);
+            this.textBox1.TabIndex = 6;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(811, 406);
+            this.Controls.Add(this.panelAddDep);
+            this.Controls.Add(this.btnAddDep);
             this.Controls.Add(this.cbxDepartment);
             this.Controls.Add(this.panel_AddEmpl);
             this.Controls.Add(this.btnAddEmpl);
@@ -250,6 +297,8 @@ namespace MediaBazaar
             this.Text = "Form1";
             this.panel_AddEmpl.ResumeLayout(false);
             this.panel_AddEmpl.PerformLayout();
+            this.panelAddDep.ResumeLayout(false);
+            this.panelAddDep.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -276,6 +325,10 @@ namespace MediaBazaar
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnPAddEmpl;
         private System.Windows.Forms.ComboBox cbxDepartment;
+        private System.Windows.Forms.Button btnAddDep;
+        private System.Windows.Forms.Panel panelAddDep;
+        private System.Windows.Forms.Button btnPAddDep;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

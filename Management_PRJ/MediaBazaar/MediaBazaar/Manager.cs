@@ -47,9 +47,11 @@ namespace MediaBazaar
             }
             return null;
         }
-        public Department[] GetDepartments()
+        public List <Department> GetDepartments()
         {
-            return this.departments.ToArray();
+            return this.departments;
         }
+
+
     }
 }

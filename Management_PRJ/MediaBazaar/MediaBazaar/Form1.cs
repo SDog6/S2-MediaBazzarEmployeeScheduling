@@ -12,21 +12,23 @@ namespace MediaBazaar
 {
     public partial class Form1 : Form
     {
-        private Manager Floor_manager;
-        private List <Department> departments;
+        private Manager manager;
+        //private List <Department> departments;
         public Form1()
         {
             InitializeComponent();
-            this.Floor_manager = new Manager("Boby");
-            this.departments = new List<Department>();
-            cbxDepartment.Items.AddRange(this.Floor_manager.GetDepartments());
+            this.manager = new Manager("Boby");
+            foreach (Department d in this.manager.GetDepartments())
+            {
+                cbxDepartment.Items.Add(d.Name);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
-            Employee[] employees;
-            employees = this.Floor_manager.GetDepartment("Phone").GetEmployees();
+            List<Employee> employees;
+            employees = this.manager.GetDepartment(cbxDepartment.Text).GetEmployees();
             foreach(Employee a in employees)
             {
                 listBox1.Items.Add(a.GetInfo());
@@ -51,7 +53,7 @@ namespace MediaBazaar
 
         private void btnPAddEmpl_Click(object sender, EventArgs e)
         {
-            Floor_manager.GetDepartment("Phone").AddEmployee(tbxFname.Text, tbxSname.Text, tbxPhone.Text, tbxStreet.Text,tbxCity.Text,tbxState.Text,tbxEmail.Text);
+            manager.GetDepartment(cbxDepartment.Text).AddEmployee(tbxFname.Text, tbxSname.Text, tbxPhone.Text, tbxStreet.Text,tbxCity.Text,tbxState.Text,tbxEmail.Text);
             tbxFname.Clear();
             tbxSname.Clear(); 
             tbxPhone.Clear();
@@ -60,6 +62,23 @@ namespace MediaBazaar
             tbxState.Clear(); 
             tbxEmail.Clear();
             panel_AddEmpl.Visible = false;
+        }
+
+        private void btnAddDep_Click(object sender, EventArgs e)
+        {
+            panelAddDep.Visible = true;
+        }
+
+        private void btnPAddDep_Click(object sender, EventArgs e)
+        {
+            this.manager.AddDepartment(textBox1.Text);
+            textBox1.Clear();
+            panelAddDep.Visible = false;
+            cbxDepartment.Items.Clear();
+            foreach (Department d in this.manager.GetDepartments())
+            {
+                cbxDepartment.Items.Add(d.Name);
+            }
         }
     }
 }
