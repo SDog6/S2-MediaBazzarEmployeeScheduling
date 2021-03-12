@@ -35,5 +35,7 @@ namespace MediaBazaar
         {
             return contract.isTerminated();
         }
+
+       
     }
 }

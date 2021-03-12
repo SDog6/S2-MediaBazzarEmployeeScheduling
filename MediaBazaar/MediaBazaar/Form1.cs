@@ -26,7 +26,6 @@ namespace MediaBazaar
                 Address contactAddress = new Address(tbCstate.Text, tbECity.Text, tbCstreetname.Text, tbCstreetnr.Text);
                 Person Contactperson = new Person(tbCName.Text, tbCLastname.Text, tbCPhoneNumber.Text, contactAddress, tbCEmail.Text);
                 Contract contract = new Contract(DateTime.Now);
-              
                 Employee employee = new Employee(tbEname.Text, tbELastname.Text, tbEPhoneNumber.Text, address, tbEEmail.Text, Contactperson, tbYear.Text,tbEBSN.Text, contract);
                 ad.AddEmployee(employee);
                 Account account = new Account(tbUsername.Text, employee);
@@ -44,6 +43,7 @@ namespace MediaBazaar
             {
                 lbScreen.Items.Add(item);
             }
+            
             
         }
     }

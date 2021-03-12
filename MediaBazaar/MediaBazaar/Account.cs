@@ -60,5 +60,11 @@ namespace MediaBazaar
             }
             return false;
         }
+
+        public override string ToString()
+        {
+            return $"{employee} with the username {username}";
+        }
     }
+
 }
