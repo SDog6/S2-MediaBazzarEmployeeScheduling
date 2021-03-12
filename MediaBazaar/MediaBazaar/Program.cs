@@ -14,9 +14,15 @@ namespace MediaBazaar
         [STAThread]
         static void Main()
         {
+<<<<<<< HEAD
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+=======
+            /*Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());*/
+>>>>>>> Svetoslav
             /*Account acc = new Account("acc", new Employee());
             Console.WriteLine(acc.getPassword());
 

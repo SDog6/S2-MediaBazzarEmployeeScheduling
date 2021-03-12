@@ -12,11 +12,15 @@ namespace MediaBazaar
 {
     public partial class Form1 : Form
     {
+<<<<<<< HEAD
         Administration ad = new Administration();
+=======
+>>>>>>> Svetoslav
         public Form1()
         {
             InitializeComponent();
         }
+<<<<<<< HEAD
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -46,5 +50,7 @@ namespace MediaBazaar
             
             
         }
+=======
+>>>>>>> Svetoslav
     }
 }

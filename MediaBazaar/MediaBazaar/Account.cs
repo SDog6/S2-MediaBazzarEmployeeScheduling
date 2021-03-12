@@ -60,6 +60,7 @@ namespace MediaBazaar
             }
             return false;
         }
+<<<<<<< HEAD
 
         public override string ToString()
         {
@@ -67,4 +68,7 @@ namespace MediaBazaar
         }
     }
 
+=======
+    }
+>>>>>>> Svetoslav
 }

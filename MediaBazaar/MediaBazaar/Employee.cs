@@ -9,11 +9,19 @@ namespace MediaBazaar
     public class Employee : Person
     {        
         private Person contactPerson;
+<<<<<<< HEAD
         private string dateOfBirth;
         private string BSN;
         private Contract contract;
 
         public Employee(string firstName, string lastName, string phoneNumber, Address address, string email, Person contactPerson, string dateOfBirth, string BSN, Contract contract) : base(firstName, lastName, phoneNumber, address, email)
+=======
+        private DateTime dateOfBirth;
+        private string BSN;
+        private Contract contract;
+
+        public Employee(string firstName, string lastName, string phoneNumber, Address address, string email, Person contactPerson, DateTime dateOfBirth, string BSN, Contract contract) : base(firstName, lastName, phoneNumber, address, email)
+>>>>>>> Svetoslav
         {
             this.contactPerson = contactPerson;
             this.dateOfBirth = dateOfBirth;
@@ -35,7 +43,10 @@ namespace MediaBazaar
         {
             return contract.isTerminated();
         }
+<<<<<<< HEAD
 
        
+=======
+>>>>>>> Svetoslav
     }
 }
