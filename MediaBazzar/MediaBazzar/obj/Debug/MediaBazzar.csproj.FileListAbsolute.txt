@@ -9,3 +9,15 @@ C:\Users\Hristo\source\repos\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.exe
 C:\Users\Hristo\source\repos\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.pdb
 C:\Users\Hristo\source\repos\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.AdministrationForm.resources
 C:\Users\Hristo\source\repos\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.ManagerForm.resources
+C:\Users\Kaloyan\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.exe.config
+C:\Users\Kaloyan\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.exe
+C:\Users\Kaloyan\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.pdb
+C:\Users\Kaloyan\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csprojAssemblyReference.cache
+C:\Users\Kaloyan\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.AdministrationForm.resources
+C:\Users\Kaloyan\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.ManagerForm.resources
+C:\Users\Kaloyan\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.Properties.Resources.resources
+C:\Users\Kaloyan\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.WarehouseManagement.resources
+C:\Users\Kaloyan\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csproj.GenerateResource.cache
+C:\Users\Kaloyan\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csproj.CoreCompileInputs.cache
+C:\Users\Kaloyan\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.exe
+C:\Users\Kaloyan\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.pdb

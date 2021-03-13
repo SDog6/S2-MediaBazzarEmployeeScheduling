@@ -39,6 +39,11 @@ namespace MediaBazzar
         {
             return contract.isTerminated();
         }
+        public string GetInfo()
+        {
+            string inf = base.ToString();
+            return inf;
+        }
 
     }
 }

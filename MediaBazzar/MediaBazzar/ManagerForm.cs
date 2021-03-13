@@ -34,7 +34,7 @@ namespace MediaBazzar
             employees = this.manager.GetDepartment(cbxDepartment.Text).GetEmployees();
             foreach (Employee a in employees)
             {
-                /*listBox1.Items.Add(a.GetInfo());*/
+                listBox1.Items.Add(a.GetInfo());
             }
         }
 
@@ -45,7 +45,6 @@ namespace MediaBazzar
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            //department.AddEmployee("name", "name", "phone", "street","city","state","email");
             panel_AddEmpl.Visible = true;
         }
 
