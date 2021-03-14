@@ -45,5 +45,10 @@ namespace MediaBazzar
                 lbScreen.Items.Add(item);
             }
         }
+
+        private void btnSubmit_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
