@@ -1,9 +1,0 @@
-C:\Users\Svetoslav\Desktop\Semester 2 works\Project\MediaBazaar\MediaBazaar\bin\Debug\MediaBazaar.exe.config
-C:\Users\Svetoslav\Desktop\Semester 2 works\Project\MediaBazaar\MediaBazaar\bin\Debug\MediaBazaar.exe
-C:\Users\Svetoslav\Desktop\Semester 2 works\Project\MediaBazaar\MediaBazaar\bin\Debug\MediaBazaar.pdb
-C:\Users\Svetoslav\Desktop\Semester 2 works\Project\MediaBazaar\MediaBazaar\obj\Debug\MediaBazaar.csprojAssemblyReference.cache
-C:\Users\Svetoslav\Desktop\Semester 2 works\Project\MediaBazaar\MediaBazaar\obj\Debug\MediaBazaar.Properties.Resources.resources
-C:\Users\Svetoslav\Desktop\Semester 2 works\Project\MediaBazaar\MediaBazaar\obj\Debug\MediaBazaar.csproj.GenerateResource.cache
-C:\Users\Svetoslav\Desktop\Semester 2 works\Project\MediaBazaar\MediaBazaar\obj\Debug\MediaBazaar.csproj.CoreCompileInputs.cache
-C:\Users\Svetoslav\Desktop\Semester 2 works\Project\MediaBazaar\MediaBazaar\obj\Debug\MediaBazaar.exe
-C:\Users\Svetoslav\Desktop\Semester 2 works\Project\MediaBazaar\MediaBazaar\obj\Debug\MediaBazaar.pdb
