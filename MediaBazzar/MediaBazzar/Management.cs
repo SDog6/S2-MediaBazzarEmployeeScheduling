@@ -21,5 +21,10 @@ namespace MediaBazzar
         {
 
         }
+
+        private void btnManagementEPFilter_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

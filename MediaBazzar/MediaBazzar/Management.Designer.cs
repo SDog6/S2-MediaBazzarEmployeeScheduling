@@ -38,14 +38,14 @@ namespace MediaBazzar
             this.btnManagemntPersonCreation = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.Stock = new System.Windows.Forms.TabPage();
+            this.rbManagementStockAmountFilter = new System.Windows.Forms.RadioButton();
+            this.rbManagementStockBrandFilter = new System.Windows.Forms.RadioButton();
+            this.rbManagementStockIDFilter = new System.Windows.Forms.RadioButton();
             this.btnManagementRestockRequest = new System.Windows.Forms.Button();
             this.btnManagementStockFilter = new System.Windows.Forms.Button();
             this.tbManagementStockFilter = new System.Windows.Forms.TextBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.rbManagementStockIDFilter = new System.Windows.Forms.RadioButton();
-            this.rbManagementStockBrandFilter = new System.Windows.Forms.RadioButton();
-            this.rbManagementStockAmountFilter = new System.Windows.Forms.RadioButton();
             this.tabControl1.SuspendLayout();
             this.People.SuspendLayout();
             this.Stock.SuspendLayout();
@@ -95,6 +95,7 @@ namespace MediaBazzar
             this.btnManagementEPFilter.TabIndex = 4;
             this.btnManagementEPFilter.Text = "Filter";
             this.btnManagementEPFilter.UseVisualStyleBackColor = true;
+            this.btnManagementEPFilter.Click += new System.EventHandler(this.btnManagementEPFilter_Click);
             // 
             // tbManagementEPFilter
             // 
@@ -146,6 +147,39 @@ namespace MediaBazzar
             this.Stock.Text = "Stock";
             this.Stock.UseVisualStyleBackColor = true;
             // 
+            // rbManagementStockAmountFilter
+            // 
+            this.rbManagementStockAmountFilter.AutoSize = true;
+            this.rbManagementStockAmountFilter.Location = new System.Drawing.Point(231, 86);
+            this.rbManagementStockAmountFilter.Name = "rbManagementStockAmountFilter";
+            this.rbManagementStockAmountFilter.Size = new System.Drawing.Size(61, 17);
+            this.rbManagementStockAmountFilter.TabIndex = 7;
+            this.rbManagementStockAmountFilter.TabStop = true;
+            this.rbManagementStockAmountFilter.Text = "Amount";
+            this.rbManagementStockAmountFilter.UseVisualStyleBackColor = true;
+            // 
+            // rbManagementStockBrandFilter
+            // 
+            this.rbManagementStockBrandFilter.AutoSize = true;
+            this.rbManagementStockBrandFilter.Location = new System.Drawing.Point(136, 86);
+            this.rbManagementStockBrandFilter.Name = "rbManagementStockBrandFilter";
+            this.rbManagementStockBrandFilter.Size = new System.Drawing.Size(53, 17);
+            this.rbManagementStockBrandFilter.TabIndex = 6;
+            this.rbManagementStockBrandFilter.TabStop = true;
+            this.rbManagementStockBrandFilter.Text = "Brand";
+            this.rbManagementStockBrandFilter.UseVisualStyleBackColor = true;
+            // 
+            // rbManagementStockIDFilter
+            // 
+            this.rbManagementStockIDFilter.AutoSize = true;
+            this.rbManagementStockIDFilter.Location = new System.Drawing.Point(45, 86);
+            this.rbManagementStockIDFilter.Name = "rbManagementStockIDFilter";
+            this.rbManagementStockIDFilter.Size = new System.Drawing.Size(36, 17);
+            this.rbManagementStockIDFilter.TabIndex = 5;
+            this.rbManagementStockIDFilter.TabStop = true;
+            this.rbManagementStockIDFilter.Text = "ID";
+            this.rbManagementStockIDFilter.UseVisualStyleBackColor = true;
+            // 
             // btnManagementRestockRequest
             // 
             this.btnManagementRestockRequest.Location = new System.Drawing.Point(69, 217);
@@ -188,39 +222,6 @@ namespace MediaBazzar
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Shifts";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // rbManagementStockIDFilter
-            // 
-            this.rbManagementStockIDFilter.AutoSize = true;
-            this.rbManagementStockIDFilter.Location = new System.Drawing.Point(45, 86);
-            this.rbManagementStockIDFilter.Name = "rbManagementStockIDFilter";
-            this.rbManagementStockIDFilter.Size = new System.Drawing.Size(36, 17);
-            this.rbManagementStockIDFilter.TabIndex = 5;
-            this.rbManagementStockIDFilter.TabStop = true;
-            this.rbManagementStockIDFilter.Text = "ID";
-            this.rbManagementStockIDFilter.UseVisualStyleBackColor = true;
-            // 
-            // rbManagementStockBrandFilter
-            // 
-            this.rbManagementStockBrandFilter.AutoSize = true;
-            this.rbManagementStockBrandFilter.Location = new System.Drawing.Point(136, 86);
-            this.rbManagementStockBrandFilter.Name = "rbManagementStockBrandFilter";
-            this.rbManagementStockBrandFilter.Size = new System.Drawing.Size(53, 17);
-            this.rbManagementStockBrandFilter.TabIndex = 6;
-            this.rbManagementStockBrandFilter.TabStop = true;
-            this.rbManagementStockBrandFilter.Text = "Brand";
-            this.rbManagementStockBrandFilter.UseVisualStyleBackColor = true;
-            // 
-            // rbManagementStockAmountFilter
-            // 
-            this.rbManagementStockAmountFilter.AutoSize = true;
-            this.rbManagementStockAmountFilter.Location = new System.Drawing.Point(231, 86);
-            this.rbManagementStockAmountFilter.Name = "rbManagementStockAmountFilter";
-            this.rbManagementStockAmountFilter.Size = new System.Drawing.Size(61, 17);
-            this.rbManagementStockAmountFilter.TabIndex = 7;
-            this.rbManagementStockAmountFilter.TabStop = true;
-            this.rbManagementStockAmountFilter.Text = "Amount";
-            this.rbManagementStockAmountFilter.UseVisualStyleBackColor = true;
             // 
             // Management
             // 

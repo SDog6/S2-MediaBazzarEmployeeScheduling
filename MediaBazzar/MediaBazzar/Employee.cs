@@ -13,6 +13,7 @@ namespace MediaBazzar
         private string dateOfBirth;
         private string BSN;
         private Contract contract;
+        private Account account;
 
         public string BSNp { get { return this.BSN; } }
 
@@ -23,11 +24,17 @@ namespace MediaBazzar
             this.dateOfBirth = dateOfBirth;
             this.BSN = BSN;
             this.contract = contract;
+            this.account = null;
         }
 
         public string getContactInfo()
         {
             return $"{contactPerson}";
+        }
+
+        public void SetAccount(Account a)
+        {
+            this.account = a;
         }
 
         public void fireEmployee(DateTime dateFired, string reason)
