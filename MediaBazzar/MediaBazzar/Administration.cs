@@ -9,8 +9,8 @@ namespace MediaBazzar
     class Administration
     {
 
-        List<Account> accounts = new List<Account>();
-        List<Employee> employees = new List<Employee>();
+      public static  List<Account> accounts = new List<Account>();
+         public static List<Employee> employees = new List<Employee>();
 
 
         public void AddAccount(Account a)
@@ -46,7 +46,7 @@ namespace MediaBazzar
             }
             return null;
         }
-        public List<Employee> GetEmployees()
+        public static List<Employee> GetEmployees()
         {
             return employees;
         }
