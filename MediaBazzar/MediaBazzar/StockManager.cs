@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MediaBazzar
 {
-    class StockManager : IManager
+    public class StockManager : IManager
     {
 
         private List<Stock> Stocks;
@@ -19,13 +19,21 @@ namespace MediaBazzar
         {
             if (obj is Stock)
             {
-                Stocks.Add((Stock)obj);
-                return true;
+                Stock b = (Stock)obj;
+                foreach (Stock s in Stocks)
+                {
+                    if (s.ID == b.ID)
+                    {
+                        return false;
+                    }
+                }
+                    Stocks.Add((Stock)obj);
+                    return true;
             }
             return false;
         }
 
-        public List<object> GetAllPerType(Type type)
+        public List<object> GetAllPerType()
         {
             List<object> temp = new List<object>();
 

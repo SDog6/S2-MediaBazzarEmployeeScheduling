@@ -11,6 +11,6 @@ namespace MediaBazzar
         bool Add(object obj);
         bool Remove(object obj);
 
-        List<object> GetAllPerType(Type type);
+        List<object> GetAllPerType();
     }
 }
