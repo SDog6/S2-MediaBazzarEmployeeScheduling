@@ -24,9 +24,10 @@ namespace MediaBazzar
             {
                 if (tbUsername.Text != "")
                 {
-                    object employee = lbEmployees.SelectedItem;
-                    Account account = new Account(tbUsername.Text, (Employee)lbEmployees.SelectedItem);
+                    Employee employee = (Employee)lbEmployees.SelectedItem;
+                    Account account = new Account(tbUsername.Text, employee);
                     ad.AddAccount(account);
+                    employee.SetAccount(account);
 
 
                     if (employee != null)

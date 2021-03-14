@@ -422,19 +422,6 @@ namespace MediaBazzar
             this.btnSubmit.Text = "Submit ";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click_1);
-<<<<<<< HEAD
-            // 
-            // btnOpenCreateForm
-            // 
-            this.btnOpenCreateForm.Location = new System.Drawing.Point(768, 429);
-            this.btnOpenCreateForm.Name = "btnOpenCreateForm";
-            this.btnOpenCreateForm.Size = new System.Drawing.Size(105, 45);
-            this.btnOpenCreateForm.TabIndex = 19;
-            this.btnOpenCreateForm.Text = "Make Employee Account";
-            this.btnOpenCreateForm.UseVisualStyleBackColor = true;
-            this.btnOpenCreateForm.Click += new System.EventHandler(this.btnOpenCreateForm_Click);
-=======
->>>>>>> 285f86237dc1fb4d91ff231cbf25f86fb8b308f1
             // 
             // AdministrationForm
             // 
