@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace MediaBazzar
 {
-    public partial class AdministrationForm : Form
+    public partial class EmployeeCreation : Form
     {
         Administration ad = new Administration();
-        public AdministrationForm()
+        public EmployeeCreation()
         {
             InitializeComponent();
         }

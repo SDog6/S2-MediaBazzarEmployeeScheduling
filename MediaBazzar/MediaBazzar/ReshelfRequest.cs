@@ -19,7 +19,7 @@ namespace MediaBazzar
 
         public override string ToString()
         {
-            return $"{lowstock}";
+            return $"{lowstock} is running low";
         }
     }
 }

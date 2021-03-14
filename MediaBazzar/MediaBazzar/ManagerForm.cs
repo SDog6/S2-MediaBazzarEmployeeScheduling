@@ -82,5 +82,10 @@ namespace MediaBazzar
                 cbxDepartment.Items.Add(d.Name);
             }
         }
+
+        private void btnAddDep_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

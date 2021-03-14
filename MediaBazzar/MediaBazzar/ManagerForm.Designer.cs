@@ -96,6 +96,7 @@ namespace MediaBazzar
             this.btnAddDep.TabIndex = 13;
             this.btnAddDep.Text = "New Department";
             this.btnAddDep.UseVisualStyleBackColor = true;
+            this.btnAddDep.Click += new System.EventHandler(this.btnAddDep_Click_1);
             // 
             // cbxDepartment
             // 
@@ -137,7 +138,7 @@ namespace MediaBazzar
             this.btnPAddEmpl.Location = new System.Drawing.Point(121, 207);
             this.btnPAddEmpl.Margin = new System.Windows.Forms.Padding(2);
             this.btnPAddEmpl.Name = "btnPAddEmpl";
-            this.btnPAddEmpl.Size = new System.Drawing.Size(58, 18);
+            this.btnPAddEmpl.Size = new System.Drawing.Size(58, 24);
             this.btnPAddEmpl.TabIndex = 5;
             this.btnPAddEmpl.Text = "Add";
             this.btnPAddEmpl.UseVisualStyleBackColor = true;

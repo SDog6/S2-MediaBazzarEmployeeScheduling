@@ -1,7 +1,7 @@
 ﻿
 namespace MediaBazzar
 {
-    partial class AdministrationForm
+    partial class EmployeeCreation
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,6 @@ namespace MediaBazzar
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.tbUsername = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -69,39 +66,10 @@ namespace MediaBazzar
             this.tbEStreetNr = new System.Windows.Forms.TextBox();
             this.tbEState = new System.Windows.Forms.TextBox();
             this.tbECity = new System.Windows.Forms.TextBox();
-            this.lbScreen = new System.Windows.Forms.ListBox();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.EmployeeInfo.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.tbUsername);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(576, 421);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(282, 148);
-            this.groupBox2.TabIndex = 19;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Account Username";
-            // 
-            // tbUsername
-            // 
-            this.tbUsername.Location = new System.Drawing.Point(82, 44);
-            this.tbUsername.Name = "tbUsername";
-            this.tbUsername.Size = new System.Drawing.Size(100, 20);
-            this.tbUsername.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Username:";
             // 
             // groupBox1
             // 
@@ -435,19 +403,11 @@ namespace MediaBazzar
             this.tbECity.Size = new System.Drawing.Size(114, 20);
             this.tbECity.TabIndex = 8;
             // 
-            // lbScreen
-            // 
-            this.lbScreen.FormattingEnabled = true;
-            this.lbScreen.Location = new System.Drawing.Point(547, 16);
-            this.lbScreen.Name = "lbScreen";
-            this.lbScreen.Size = new System.Drawing.Size(678, 355);
-            this.lbScreen.TabIndex = 16;
-            // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(658, 610);
+            this.btnSubmit.Location = new System.Drawing.Point(431, 707);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(105, 45);
+            this.btnSubmit.Size = new System.Drawing.Size(95, 30);
             this.btnSubmit.TabIndex = 15;
             this.btnSubmit.Text = "Submit ";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -457,16 +417,12 @@ namespace MediaBazzar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1238, 713);
-            this.Controls.Add(this.groupBox2);
+            this.ClientSize = new System.Drawing.Size(539, 746);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.EmployeeInfo);
-            this.Controls.Add(this.lbScreen);
             this.Controls.Add(this.btnSubmit);
             this.Name = "AdministrationForm";
             this.Text = "Form1";
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.EmployeeInfo.ResumeLayout(false);
@@ -476,10 +432,6 @@ namespace MediaBazzar
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox tbUsername;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -517,7 +469,6 @@ namespace MediaBazzar
         private System.Windows.Forms.TextBox tbEStreetNr;
         private System.Windows.Forms.TextBox tbEState;
         private System.Windows.Forms.TextBox tbECity;
-        private System.Windows.Forms.ListBox lbScreen;
         private System.Windows.Forms.Button btnSubmit;
     }
 }

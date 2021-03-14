@@ -52,13 +52,19 @@
     <Compile Include="Contract.cs" />
     <Compile Include="Department.cs" />
     <Compile Include="Employee.cs" />
-    <Compile Include="AdministrationForm.cs">
+    <Compile Include="EmployeeCreation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdministrationForm.Designer.cs">
-      <DependentUpon>AdministrationForm.cs</DependentUpon>
+    <Compile Include="EmployeeCreation.Designer.cs">
+      <DependentUpon>EmployeeCreation.cs</DependentUpon>
     </Compile>
     <Compile Include="IManager.cs" />
+    <Compile Include="Management.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Management.Designer.cs">
+      <DependentUpon>Management.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager.cs" />
     <Compile Include="ManagerForm.cs">
       <SubType>Form</SubType>
@@ -84,8 +90,11 @@
     <Compile Include="WarehouseManagement.Designer.cs">
       <DependentUpon>WarehouseManagement.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AdministrationForm.resx">
-      <DependentUpon>AdministrationForm.cs</DependentUpon>
+    <EmbeddedResource Include="EmployeeCreation.resx">
+      <DependentUpon>EmployeeCreation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management.resx">
+      <DependentUpon>Management.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerForm.resx">
       <DependentUpon>ManagerForm.cs</DependentUpon>
