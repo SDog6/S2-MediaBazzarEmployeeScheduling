@@ -44,6 +44,11 @@ namespace MediaBazzar
             this.brand = brand;
         }
 
+        public void Resupply(int number)
+        {
+            this.Amount += number;
+        }
+
         public override string ToString()
         {
             return $"{this.name} of brand:'{this.brand}'. In stock currently:{amount}. Price: {price}$ - [{this.id}] ID";

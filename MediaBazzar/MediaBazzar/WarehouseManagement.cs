@@ -65,5 +65,14 @@ namespace MediaBazzar
                 }
             }
         }
+
+        private void btnWarehouseResupply_Click(object sender, EventArgs e)
+        {
+            if(lbWarehouseStock.SelectedIndex > -1)
+            {
+                Stock selected = (Stock)lbWarehouseStock.SelectedItem;
+                selected.Resupply(Convert.ToInt32(tbWarehouseResupply.Text));
+            }
+        }
     }
 }

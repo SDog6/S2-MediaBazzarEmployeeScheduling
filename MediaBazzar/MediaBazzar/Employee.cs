@@ -38,6 +38,10 @@ namespace MediaBazzar
         {
             this.account = a;
         }
+        public Account GetAccount()
+        {
+            return this.account;
+        }
 
         public void fireEmployee(DateTime dateFired, string reason)
         {
@@ -59,5 +63,9 @@ namespace MediaBazzar
             return $"{this.getName()} with BSN {this.BSNp}";
         }
 
+        public string GetAccountRelationInfo()
+        {
+            return $"[{this.BSNp}] - {this.getName()} with account {account}";
+        }
     }
 }

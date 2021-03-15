@@ -13,11 +13,12 @@ namespace MediaBazzar
     public partial class AccountCreateForm : Form
     {
         Administration ad = new Administration();
+        DateTime time = DateTime.Now;
         
         public AccountCreateForm()
         {
             InitializeComponent();
-          
+          ad.AddEmployee(new Employee("Lee", "Johnson", "09808920203", new Address("Kenya", "Obama", "Sangerlaan", "28"), "Lee@gmail.com", new Person("John", "Lee", "03039393", new Address("Alabama", "Kanzas", "28 beach", "25"), "J@gmail.com"), "01.02.1998", "323242423", new Contract(time)));
         }
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
@@ -27,18 +28,23 @@ namespace MediaBazzar
                 if (tbUsername.Text != "")
                 {
                     Employee employee = (Employee)lbEmployees.SelectedItem;
-                    Account account = new Account(tbUsername.Text, employee);
-                    ad.AddAccount(account);
-                    employee.SetAccount(account);
-
-
-                    if (employee != null)
+                    if (employee.GetAccount() != null)
                     {
-                        lblInfo.Text = account.getUsername();
+                        employee.GetAccount().SetUsername(tbUsername.Text);
                     }
                     else
                     {
-                        MessageBox.Show("You did not select a employee yet!");
+                        Account account = new Account(tbUsername.Text, employee);
+                        ad.AddAccount(account);
+                        employee.SetAccount(account);
+                        if (employee != null)
+                        {
+                            lblInfo.Text = account.getUsername();
+                        }
+                        else
+                        {
+                            MessageBox.Show("You did not select a employee yet!");
+                        }
                     }
 
                 }
@@ -77,6 +83,23 @@ namespace MediaBazzar
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                lbEmployees.Items.Clear();
+                foreach (Employee item in Administration.employees)
+                {
+                    if(item.GetAccount() == null)
+                    {
+                        lbEmployees.Items.Add(item);
+                    }
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("There seems to be an error Showing the employees!");
+
+            }
 
         }
 

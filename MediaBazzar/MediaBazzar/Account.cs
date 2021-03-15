@@ -71,7 +71,7 @@ namespace MediaBazzar
 
         public override string ToString()
         {
-            return $"{employee} with the username {username} Password {password}";
+            return $"Username {username} Password {password}";
         }
     }
 }
