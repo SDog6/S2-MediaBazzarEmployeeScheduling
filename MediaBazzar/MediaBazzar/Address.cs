@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MediaBazzar
 {
-    class Address
+    public class Address
     {
 
         private string state;

@@ -12,8 +12,8 @@ namespace MediaBazzar
 {
     public partial class NewStock : Form
     {
-        StockManager passedManager;
-        public NewStock(StockManager passedManager)
+        WarehouseStock passedManager;
+        public NewStock(WarehouseStock passedManager)
         {
             InitializeComponent();
             this.passedManager = passedManager;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MediaBazzar
 {
-    class Employee : Person
+    public class Employee : Person
     {
 
         private Person contactPerson;
@@ -15,7 +15,9 @@ namespace MediaBazzar
         private Contract contract;
         private Account account;
 
-        public string BSNp { get { return this.BSN; } }
+        public string BSNp { get { return this.BSN; } set { this.BSN = value; } }
+
+       
 
 
         public Employee(string firstName, string lastName, string phoneNumber, Address address, string email, Person contactPerson, string dateOfBirth, string BSN, Contract contract) : base(firstName, lastName, phoneNumber, address, email)
@@ -50,6 +52,11 @@ namespace MediaBazzar
         {
             string inf = base.ToString();
             return inf;
+        }
+
+        public override string ToString()
+        {
+            return $"{this.getName()} with BSN {this.BSNp}";
         }
 
     }

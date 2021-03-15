@@ -6,28 +6,28 @@ using System.Threading.Tasks;
 
 namespace MediaBazzar
 {
-    public class StockManager : IManager
+    public class WarehouseStock : IManager
     {
 
-        private List<Stock> Stocks;
+        private List<Stock> WarehouseStocks;
 
-        public StockManager()
+        public WarehouseStock()
         {
-            Stocks = new List<Stock>();
+            WarehouseStocks = new List<Stock>();
         }
         public bool Add(object obj)
         {
             if (obj is Stock)
             {
                 Stock b = (Stock)obj;
-                foreach (Stock s in Stocks)
+                foreach (Stock s in WarehouseStocks)
                 {
                     if (s.ID == b.ID)
                     {
                         return false;
                     }
                 }
-                    Stocks.Add((Stock)obj);
+                    WarehouseStocks.Add((Stock)obj);
                     return true;
             }
             return false;
@@ -37,7 +37,7 @@ namespace MediaBazzar
         {
             List<object> temp = new List<object>();
 
-            foreach (Stock item in Stocks)
+            foreach (Stock item in WarehouseStocks)
             {
                 temp.Add(item);
             }

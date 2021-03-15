@@ -34,6 +34,11 @@ namespace MediaBazzar
             return null;
         }
 
+        public List<Employee> GetAll()
+        {
+            return employees;
+        }
+
         public Account GetAccount(string username)
         {
             foreach (Account item in accounts)
@@ -46,10 +51,7 @@ namespace MediaBazzar
             }
             return null;
         }
-        public static List<Employee> GetEmployees()
-        {
-            return employees;
-        }
+      
 
         public List<Account> GetAccounts()
         {

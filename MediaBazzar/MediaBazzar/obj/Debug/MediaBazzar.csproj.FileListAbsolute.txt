@@ -68,3 +68,6 @@ C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\D
 C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.Management.resources
 C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.AccountCreateForm.resources
 C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.LogInForm.resources
+C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.ManagementReshelf.resources
+C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.EmployeeInfoUpdate.resources
+C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.ManagementNewInventory.resources

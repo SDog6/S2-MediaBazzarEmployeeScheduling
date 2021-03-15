@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MediaBazzar
 {
-    class Contract
+   public class Contract
     {
 
         private DateTime employmentStart;

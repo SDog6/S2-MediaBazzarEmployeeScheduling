@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MediaBazzar
 {
-    class Stock
+    public class Stock
     {
 
         private string name;
@@ -23,6 +23,16 @@ namespace MediaBazzar
         public string Brand
         {
             get { return this.brand; }
+        }
+
+        public int Amount
+        {
+            get { return this.amount; }
+            set { this.amount = value; }
+        }
+        public string Name
+        {
+            get { return this.name; }
         }
 
         public Stock(string name, int amount, int id, double price, string brand)

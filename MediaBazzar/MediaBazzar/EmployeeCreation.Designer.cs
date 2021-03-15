@@ -413,7 +413,7 @@ namespace MediaBazzar
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click_1);
             // 
-            // AdministrationForm
+            // EmployeeCreation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -421,8 +421,9 @@ namespace MediaBazzar
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.EmployeeInfo);
             this.Controls.Add(this.btnSubmit);
-            this.Name = "AdministrationForm";
+            this.Name = "EmployeeCreation";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.EmployeeCreation_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.EmployeeInfo.ResumeLayout(false);

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MediaBazzar
 {
-    class Person
+    public class Person
     {
 
         private string firstName;

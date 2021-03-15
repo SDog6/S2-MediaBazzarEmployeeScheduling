@@ -12,12 +12,12 @@ namespace MediaBazzar
 {
     public partial class WarehouseManagement : Form
     {
-        StockManager WarehouseStock;
+        WarehouseStock WarehouseStock;
 
         public WarehouseManagement()
         {
             InitializeComponent();
-            WarehouseStock = new StockManager();
+            WarehouseStock = new WarehouseStock();
             WarehouseStock.Add(new Stock("Nike", 30, 45, 60.40, "Nike"));
             WarehouseStock.Add(new Stock("Nike", 30, 55, 60.40, "Suka"));
         }

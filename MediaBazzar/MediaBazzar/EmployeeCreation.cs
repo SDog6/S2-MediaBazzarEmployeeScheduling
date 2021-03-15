@@ -57,6 +57,11 @@ namespace MediaBazzar
                     MessageBox.Show("There was an Error");
                 }
             }
+
+        private void EmployeeCreation_Load(object sender, EventArgs e)
+        {
+
         }
+    }
     }
 
