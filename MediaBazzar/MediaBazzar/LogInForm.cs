@@ -117,5 +117,10 @@ namespace MediaBazzar
         {
             loginSequence(tbLogInUsername.Text, tbLogInPassword.Text);
         }
+
+        private void LogInForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
