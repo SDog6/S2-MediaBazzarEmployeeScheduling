@@ -41,6 +41,12 @@ namespace MediaBazzar
 
         }
 
+        private void btnManagemntPersonCreation_Click(object sender, EventArgs e)
+        {
+            EmployeeCreation creation = new EmployeeCreation();
+            creation.Show();
+        }
+
         private void btnManagemntPersonUpdate_Click(object sender, EventArgs e)
         {
             if(lbManagemendEmployees.SelectedIndex > -1)
@@ -49,14 +55,6 @@ namespace MediaBazzar
             }
         }
 
-        private void btnManagementUpdate_Click(object sender, EventArgs e)
-        {
-            lbManagementStock.Items.Clear();
-            foreach (Stock item in stock.GetAllPerType())
-            {
-                lbManagementStock.Items.Add(item);
-            }
-        }
 
         private void btnManagemendUpdate_Click(object sender, EventArgs e)
         {
@@ -64,6 +62,16 @@ namespace MediaBazzar
             foreach (Employee item in Employees.GetAll())
             {
                 lbManagemendEmployees.Items.Add(item);
+            }
+
+        }
+
+        private void btnManagementUpdate_Click(object sender, EventArgs e)
+        {
+            lbManagementStock.Items.Clear();
+            foreach (Stock item in stock.GetAllPerType())
+            {
+                lbManagementStock.Items.Add(item);
             }
         }
     }

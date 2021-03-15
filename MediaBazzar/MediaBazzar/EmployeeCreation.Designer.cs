@@ -89,7 +89,7 @@ namespace MediaBazzar
             this.groupBox1.Controls.Add(this.tbCPhoneNumber);
             this.groupBox1.Controls.Add(this.tbCName);
             this.groupBox1.Controls.Add(this.tbCLastname);
-            this.groupBox1.Location = new System.Drawing.Point(23, 403);
+            this.groupBox1.Location = new System.Drawing.Point(543, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(503, 298);
             this.groupBox1.TabIndex = 18;
@@ -405,9 +405,9 @@ namespace MediaBazzar
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(431, 707);
+            this.btnSubmit.Location = new System.Drawing.Point(546, 337);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(95, 30);
+            this.btnSubmit.Size = new System.Drawing.Size(102, 49);
             this.btnSubmit.TabIndex = 15;
             this.btnSubmit.Text = "Submit ";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -417,7 +417,7 @@ namespace MediaBazzar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(539, 746);
+            this.ClientSize = new System.Drawing.Size(1058, 405);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.EmployeeInfo);
             this.Controls.Add(this.btnSubmit);

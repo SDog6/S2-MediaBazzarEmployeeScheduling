@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\Hristo\source\repos\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.exe.config
 C:\Users\Hristo\source\repos\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.exe
 C:\Users\Hristo\source\repos\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.pdb
@@ -21,7 +22,6 @@ C:\Users\Kaloyan\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazza
 C:\Users\Kaloyan\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csproj.CoreCompileInputs.cache
 C:\Users\Kaloyan\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.exe
 C:\Users\Kaloyan\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.pdb
-<<<<<<< HEAD
 C:\Users\brand\Desktop\Project 3.0\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csprojAssemblyReference.cache
 C:\Users\brand\Desktop\Project 3.0\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.AdministrationForm.resources
 C:\Users\brand\Desktop\Project 3.0\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.AccountCreateForm.resources
@@ -71,3 +71,22 @@ C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\D
 C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.ManagementReshelf.resources
 C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.EmployeeInfoUpdate.resources
 C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.ManagementNewInventory.resources
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.exe.config
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.exe
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.pdb
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.editAccount.resources
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.EmployeeCreation.resources
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.LogInForm.resources
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.Management.resources
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.AccountCreateForm.resources
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.ManagerForm.resources
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.NewStock.resources
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.Properties.Resources.resources
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.WarehouseManagement.resources
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csproj.GenerateResource.cache
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csproj.CoreCompileInputs.cache
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.exe
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.pdb
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csprojAssemblyReference.cache
+>>>>>>> 63331de8972fa61e73614c6af2eb0b7f67b64727
+C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.editAccount.resources

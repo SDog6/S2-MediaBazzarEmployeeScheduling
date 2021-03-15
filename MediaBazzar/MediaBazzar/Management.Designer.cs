@@ -31,12 +31,18 @@ namespace MediaBazzar
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.People = new System.Windows.Forms.TabPage();
-            this.btnManagementEPFilter = new System.Windows.Forms.Button();
-            this.tbManagementEPFilter = new System.Windows.Forms.TextBox();
+            this.btnManagemendUpdate = new System.Windows.Forms.Button();
             this.btnManagemntPersonUpdate = new System.Windows.Forms.Button();
             this.btnManagemntPersonCreation = new System.Windows.Forms.Button();
             this.lbManagemendEmployees = new System.Windows.Forms.ListBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnManagementEPFilter = new System.Windows.Forms.Button();
+            this.rbManagementID = new System.Windows.Forms.RadioButton();
+            this.rbManagementRole = new System.Windows.Forms.RadioButton();
+            this.rbManagementName = new System.Windows.Forms.RadioButton();
+            this.tbManagementEPFilter = new System.Windows.Forms.TextBox();
             this.Stock = new System.Windows.Forms.TabPage();
+            this.btnManagementUpdate = new System.Windows.Forms.Button();
             this.btnManagementNewStock = new System.Windows.Forms.Button();
             this.rbManagementStockAmountFilter = new System.Windows.Forms.RadioButton();
             this.rbManagementStockBrandFilter = new System.Windows.Forms.RadioButton();
@@ -50,17 +56,11 @@ namespace MediaBazzar
             this.lbManagementShiftEmployeesAssigned = new System.Windows.Forms.ListBox();
             this.lbManagementShiftEmployeesToAssign = new System.Windows.Forms.ListBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.btnManagementUpdate = new System.Windows.Forms.Button();
-            this.rbManagementID = new System.Windows.Forms.RadioButton();
-            this.rbManagementRole = new System.Windows.Forms.RadioButton();
-            this.rbManagementName = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnManagemendUpdate = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.People.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.Stock.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -89,6 +89,57 @@ namespace MediaBazzar
             this.People.Text = "Employees";
             this.People.UseVisualStyleBackColor = true;
             // 
+            // btnManagemendUpdate
+            // 
+            this.btnManagemendUpdate.Location = new System.Drawing.Point(265, 249);
+            this.btnManagemendUpdate.Name = "btnManagemendUpdate";
+            this.btnManagemendUpdate.Size = new System.Drawing.Size(93, 38);
+            this.btnManagemendUpdate.TabIndex = 9;
+            this.btnManagemendUpdate.Text = "Check for updates";
+            this.btnManagemendUpdate.UseVisualStyleBackColor = true;
+            this.btnManagemendUpdate.Click += new System.EventHandler(this.btnManagemendUpdate_Click);
+            // 
+            // btnManagemntPersonUpdate
+            // 
+            this.btnManagemntPersonUpdate.Location = new System.Drawing.Point(137, 249);
+            this.btnManagemntPersonUpdate.Name = "btnManagemntPersonUpdate";
+            this.btnManagemntPersonUpdate.Size = new System.Drawing.Size(93, 38);
+            this.btnManagemntPersonUpdate.TabIndex = 2;
+            this.btnManagemntPersonUpdate.Text = "Update employee information";
+            this.btnManagemntPersonUpdate.UseVisualStyleBackColor = true;
+            // 
+            // btnManagemntPersonCreation
+            // 
+            this.btnManagemntPersonCreation.Location = new System.Drawing.Point(8, 249);
+            this.btnManagemntPersonCreation.Name = "btnManagemntPersonCreation";
+            this.btnManagemntPersonCreation.Size = new System.Drawing.Size(93, 38);
+            this.btnManagemntPersonCreation.TabIndex = 1;
+            this.btnManagemntPersonCreation.Text = "Add a new employee";
+            this.btnManagemntPersonCreation.UseVisualStyleBackColor = true;
+            this.btnManagemntPersonCreation.Click += new System.EventHandler(this.btnManagemntPersonCreation_Click);
+            // 
+            // lbManagemendEmployees
+            // 
+            this.lbManagemendEmployees.FormattingEnabled = true;
+            this.lbManagemendEmployees.Location = new System.Drawing.Point(364, 20);
+            this.lbManagemendEmployees.Name = "lbManagemendEmployees";
+            this.lbManagemendEmployees.Size = new System.Drawing.Size(311, 329);
+            this.lbManagemendEmployees.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnManagementEPFilter);
+            this.groupBox1.Controls.Add(this.rbManagementID);
+            this.groupBox1.Controls.Add(this.rbManagementRole);
+            this.groupBox1.Controls.Add(this.rbManagementName);
+            this.groupBox1.Controls.Add(this.tbManagementEPFilter);
+            this.groupBox1.Location = new System.Drawing.Point(68, 32);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(251, 172);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filtering";
+            // 
             // btnManagementEPFilter
             // 
             this.btnManagementEPFilter.Location = new System.Drawing.Point(69, 128);
@@ -99,39 +150,45 @@ namespace MediaBazzar
             this.btnManagementEPFilter.UseVisualStyleBackColor = true;
             this.btnManagementEPFilter.Click += new System.EventHandler(this.btnManagementEPFilter_Click);
             // 
+            // rbManagementID
+            // 
+            this.rbManagementID.AutoSize = true;
+            this.rbManagementID.Location = new System.Drawing.Point(25, 28);
+            this.rbManagementID.Name = "rbManagementID";
+            this.rbManagementID.Size = new System.Drawing.Size(36, 17);
+            this.rbManagementID.TabIndex = 5;
+            this.rbManagementID.TabStop = true;
+            this.rbManagementID.Text = "ID";
+            this.rbManagementID.UseVisualStyleBackColor = true;
+            // 
+            // rbManagementRole
+            // 
+            this.rbManagementRole.AutoSize = true;
+            this.rbManagementRole.Location = new System.Drawing.Point(100, 28);
+            this.rbManagementRole.Name = "rbManagementRole";
+            this.rbManagementRole.Size = new System.Drawing.Size(47, 17);
+            this.rbManagementRole.TabIndex = 6;
+            this.rbManagementRole.TabStop = true;
+            this.rbManagementRole.Text = "Role";
+            this.rbManagementRole.UseVisualStyleBackColor = true;
+            // 
+            // rbManagementName
+            // 
+            this.rbManagementName.AutoSize = true;
+            this.rbManagementName.Location = new System.Drawing.Point(181, 28);
+            this.rbManagementName.Name = "rbManagementName";
+            this.rbManagementName.Size = new System.Drawing.Size(53, 17);
+            this.rbManagementName.TabIndex = 7;
+            this.rbManagementName.TabStop = true;
+            this.rbManagementName.Text = "Name";
+            this.rbManagementName.UseVisualStyleBackColor = true;
+            // 
             // tbManagementEPFilter
             // 
             this.tbManagementEPFilter.Location = new System.Drawing.Point(69, 75);
             this.tbManagementEPFilter.Name = "tbManagementEPFilter";
             this.tbManagementEPFilter.Size = new System.Drawing.Size(93, 20);
             this.tbManagementEPFilter.TabIndex = 3;
-            // 
-            // btnManagemntPersonUpdate
-            // 
-            this.btnManagemntPersonUpdate.Location = new System.Drawing.Point(137, 249);
-            this.btnManagemntPersonUpdate.Name = "btnManagemntPersonUpdate";
-            this.btnManagemntPersonUpdate.Size = new System.Drawing.Size(93, 38);
-            this.btnManagemntPersonUpdate.TabIndex = 2;
-            this.btnManagemntPersonUpdate.Text = "Update employee information";
-            this.btnManagemntPersonUpdate.UseVisualStyleBackColor = true;
-            this.btnManagemntPersonUpdate.Click += new System.EventHandler(this.btnManagemntPersonUpdate_Click);
-            // 
-            // btnManagemntPersonCreation
-            // 
-            this.btnManagemntPersonCreation.Location = new System.Drawing.Point(8, 249);
-            this.btnManagemntPersonCreation.Name = "btnManagemntPersonCreation";
-            this.btnManagemntPersonCreation.Size = new System.Drawing.Size(93, 38);
-            this.btnManagemntPersonCreation.TabIndex = 1;
-            this.btnManagemntPersonCreation.Text = "Add a new employee";
-            this.btnManagemntPersonCreation.UseVisualStyleBackColor = true;
-            // 
-            // lbManagemendEmployees
-            // 
-            this.lbManagemendEmployees.FormattingEnabled = true;
-            this.lbManagemendEmployees.Location = new System.Drawing.Point(364, 20);
-            this.lbManagemendEmployees.Name = "lbManagemendEmployees";
-            this.lbManagemendEmployees.Size = new System.Drawing.Size(311, 329);
-            this.lbManagemendEmployees.TabIndex = 0;
             // 
             // Stock
             // 
@@ -151,6 +208,16 @@ namespace MediaBazzar
             this.Stock.TabIndex = 1;
             this.Stock.Text = "Stock";
             this.Stock.UseVisualStyleBackColor = true;
+            // 
+            // btnManagementUpdate
+            // 
+            this.btnManagementUpdate.Location = new System.Drawing.Point(116, 201);
+            this.btnManagementUpdate.Name = "btnManagementUpdate";
+            this.btnManagementUpdate.Size = new System.Drawing.Size(134, 32);
+            this.btnManagementUpdate.TabIndex = 9;
+            this.btnManagementUpdate.Text = "Check for update";
+            this.btnManagementUpdate.UseVisualStyleBackColor = true;
+            this.btnManagementUpdate.Click += new System.EventHandler(this.btnManagementUpdate_Click);
             // 
             // btnManagementNewStock
             // 
@@ -272,73 +339,6 @@ namespace MediaBazzar
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 0;
             // 
-            // btnManagementUpdate
-            // 
-            this.btnManagementUpdate.Location = new System.Drawing.Point(116, 201);
-            this.btnManagementUpdate.Name = "btnManagementUpdate";
-            this.btnManagementUpdate.Size = new System.Drawing.Size(134, 32);
-            this.btnManagementUpdate.TabIndex = 9;
-            this.btnManagementUpdate.Text = "Check for update";
-            this.btnManagementUpdate.UseVisualStyleBackColor = true;
-            this.btnManagementUpdate.Click += new System.EventHandler(this.btnManagementUpdate_Click);
-            // 
-            // rbManagementID
-            // 
-            this.rbManagementID.AutoSize = true;
-            this.rbManagementID.Location = new System.Drawing.Point(25, 28);
-            this.rbManagementID.Name = "rbManagementID";
-            this.rbManagementID.Size = new System.Drawing.Size(36, 17);
-            this.rbManagementID.TabIndex = 5;
-            this.rbManagementID.TabStop = true;
-            this.rbManagementID.Text = "ID";
-            this.rbManagementID.UseVisualStyleBackColor = true;
-            // 
-            // rbManagementRole
-            // 
-            this.rbManagementRole.AutoSize = true;
-            this.rbManagementRole.Location = new System.Drawing.Point(100, 28);
-            this.rbManagementRole.Name = "rbManagementRole";
-            this.rbManagementRole.Size = new System.Drawing.Size(47, 17);
-            this.rbManagementRole.TabIndex = 6;
-            this.rbManagementRole.TabStop = true;
-            this.rbManagementRole.Text = "Role";
-            this.rbManagementRole.UseVisualStyleBackColor = true;
-            // 
-            // rbManagementName
-            // 
-            this.rbManagementName.AutoSize = true;
-            this.rbManagementName.Location = new System.Drawing.Point(181, 28);
-            this.rbManagementName.Name = "rbManagementName";
-            this.rbManagementName.Size = new System.Drawing.Size(53, 17);
-            this.rbManagementName.TabIndex = 7;
-            this.rbManagementName.TabStop = true;
-            this.rbManagementName.Text = "Name";
-            this.rbManagementName.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnManagementEPFilter);
-            this.groupBox1.Controls.Add(this.rbManagementID);
-            this.groupBox1.Controls.Add(this.rbManagementRole);
-            this.groupBox1.Controls.Add(this.rbManagementName);
-            this.groupBox1.Controls.Add(this.tbManagementEPFilter);
-            this.groupBox1.Location = new System.Drawing.Point(68, 32);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(251, 172);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtering";
-            // 
-            // btnManagemendUpdate
-            // 
-            this.btnManagemendUpdate.Location = new System.Drawing.Point(265, 249);
-            this.btnManagemendUpdate.Name = "btnManagemendUpdate";
-            this.btnManagemendUpdate.Size = new System.Drawing.Size(93, 38);
-            this.btnManagemendUpdate.TabIndex = 9;
-            this.btnManagemendUpdate.Text = "Check for updates";
-            this.btnManagemendUpdate.UseVisualStyleBackColor = true;
-            this.btnManagemendUpdate.Click += new System.EventHandler(this.btnManagemendUpdate_Click);
-            // 
             // Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -349,11 +349,11 @@ namespace MediaBazzar
             this.Text = "Management";
             this.tabControl1.ResumeLayout(false);
             this.People.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.Stock.ResumeLayout(false);
             this.Stock.PerformLayout();
             this.tabPage1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }

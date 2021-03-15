@@ -57,6 +57,12 @@
       <DependentUpon>CreateAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="Department.cs" />
+    <Compile Include="editAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editAccount.Designer.cs">
+      <DependentUpon>editAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Employee.cs" />
     <Compile Include="EmployeeCreation.cs">
       <SubType>Form</SubType>
@@ -122,6 +128,9 @@
     <Compile Include="WarehouseManagement.Designer.cs">
       <DependentUpon>WarehouseManagement.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="editAccount.resx">
+      <DependentUpon>editAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmployeeCreation.resx">
       <DependentUpon>EmployeeCreation.cs</DependentUpon>
     </EmbeddedResource>
