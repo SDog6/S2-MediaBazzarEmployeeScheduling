@@ -21,7 +21,14 @@ namespace MediaBazzar
         {
             employees.Add(e);
         }
-
+        public void RemoveEmployee(Employee e)
+        {
+            employees.Remove(e);
+        }
+        public void RemoveAccount(Account a)
+        {
+            accounts.Remove(a);
+        }
         public Employee GetEmployee(string email)
         {
             foreach (Employee item in employees)
@@ -32,6 +39,17 @@ namespace MediaBazzar
                 }
             }
             return null;
+        }
+
+        public void setAccount(Account a, string username)
+        {
+            foreach (Account item in accounts)
+            {
+                if(item == a)
+                {
+                    item.SetUsername(username);
+                }
+            }
         }
 
         public Account GetAccount(string username)

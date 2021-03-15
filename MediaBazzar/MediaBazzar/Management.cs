@@ -26,5 +26,11 @@ namespace MediaBazzar
         {
 
         }
+
+        private void btnManagemntPersonCreation_Click(object sender, EventArgs e)
+        {
+            EmployeeCreation creation = new EmployeeCreation();
+            creation.Show();
+        }
     }
 }

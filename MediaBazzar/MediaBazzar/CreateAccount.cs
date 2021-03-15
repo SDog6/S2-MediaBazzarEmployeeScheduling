@@ -13,9 +13,11 @@ namespace MediaBazzar
     public partial class AccountCreateForm : Form
     {
         Administration ad = new Administration();
+        
         public AccountCreateForm()
         {
             InitializeComponent();
+          
         }
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
@@ -32,7 +34,7 @@ namespace MediaBazzar
 
                     if (employee != null)
                     {
-                        lblShowinfp.Text = account.ToString();
+                        lblInfo.Text = account.getUsername();
                     }
                     else
                     {
@@ -76,6 +78,12 @@ namespace MediaBazzar
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnOpenEditor_Click(object sender, EventArgs e)
+        {
+            editAccount editForm = new editAccount();
+            editForm.Show();
         }
     }
  }

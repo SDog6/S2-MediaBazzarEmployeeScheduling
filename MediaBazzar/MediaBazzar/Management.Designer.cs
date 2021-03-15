@@ -121,6 +121,7 @@ namespace MediaBazzar
             this.btnManagemntPersonCreation.TabIndex = 1;
             this.btnManagemntPersonCreation.Text = "Add a new employee";
             this.btnManagemntPersonCreation.UseVisualStyleBackColor = true;
+            this.btnManagemntPersonCreation.Click += new System.EventHandler(this.btnManagemntPersonCreation_Click);
             // 
             // listBox1
             // 
