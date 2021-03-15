@@ -26,5 +26,10 @@ namespace MediaBazzar
         {
 
         }
+
+        private void btnManagemntPersonUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
