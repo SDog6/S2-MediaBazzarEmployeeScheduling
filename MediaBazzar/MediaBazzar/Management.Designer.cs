@@ -46,9 +46,14 @@ namespace MediaBazzar
             this.tbManagementStockFilter = new System.Windows.Forms.TextBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.lbManagementShiftEmployeesToAssign = new System.Windows.Forms.ListBox();
+            this.lbManagementShiftEmployeesAssigned = new System.Windows.Forms.ListBox();
+            this.btnManagementShiftAssignEmployee = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.People.SuspendLayout();
             this.Stock.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -59,7 +64,7 @@ namespace MediaBazzar
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(742, 433);
+            this.tabControl1.Size = new System.Drawing.Size(787, 408);
             this.tabControl1.TabIndex = 0;
             // 
             // People
@@ -112,6 +117,7 @@ namespace MediaBazzar
             this.btnManagemntPersonUpdate.TabIndex = 2;
             this.btnManagemntPersonUpdate.Text = "Update employee information";
             this.btnManagemntPersonUpdate.UseVisualStyleBackColor = true;
+            this.btnManagemntPersonUpdate.Click += new System.EventHandler(this.btnManagemntPersonUpdate_Click);
             // 
             // btnManagemntPersonCreation
             // 
@@ -217,18 +223,53 @@ namespace MediaBazzar
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnManagementShiftAssignEmployee);
+            this.tabPage1.Controls.Add(this.lbManagementShiftEmployeesAssigned);
+            this.tabPage1.Controls.Add(this.lbManagementShiftEmployeesToAssign);
+            this.tabPage1.Controls.Add(this.monthCalendar1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(734, 407);
+            this.tabPage1.Size = new System.Drawing.Size(779, 382);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Shifts";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(14, 9);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 0;
+            // 
+            // lbManagementShiftEmployeesToAssign
+            // 
+            this.lbManagementShiftEmployeesToAssign.FormattingEnabled = true;
+            this.lbManagementShiftEmployeesToAssign.Location = new System.Drawing.Point(262, 9);
+            this.lbManagementShiftEmployeesToAssign.Name = "lbManagementShiftEmployeesToAssign";
+            this.lbManagementShiftEmployeesToAssign.Size = new System.Drawing.Size(241, 290);
+            this.lbManagementShiftEmployeesToAssign.TabIndex = 1;
+            // 
+            // lbManagementShiftEmployeesAssigned
+            // 
+            this.lbManagementShiftEmployeesAssigned.FormattingEnabled = true;
+            this.lbManagementShiftEmployeesAssigned.Location = new System.Drawing.Point(525, 9);
+            this.lbManagementShiftEmployeesAssigned.Name = "lbManagementShiftEmployeesAssigned";
+            this.lbManagementShiftEmployeesAssigned.Size = new System.Drawing.Size(241, 290);
+            this.lbManagementShiftEmployeesAssigned.TabIndex = 2;
+            // 
+            // btnManagementShiftAssignEmployee
+            // 
+            this.btnManagementShiftAssignEmployee.Location = new System.Drawing.Point(653, 305);
+            this.btnManagementShiftAssignEmployee.Name = "btnManagementShiftAssignEmployee";
+            this.btnManagementShiftAssignEmployee.Size = new System.Drawing.Size(109, 36);
+            this.btnManagementShiftAssignEmployee.TabIndex = 1;
+            this.btnManagementShiftAssignEmployee.Text = "AssignEmployeeToShift";
+            this.btnManagementShiftAssignEmployee.UseVisualStyleBackColor = true;
             // 
             // Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(737, 428);
+            this.ClientSize = new System.Drawing.Size(778, 401);
             this.Controls.Add(this.tabControl1);
             this.Name = "Management";
             this.Text = "Management";
@@ -237,6 +278,7 @@ namespace MediaBazzar
             this.People.PerformLayout();
             this.Stock.ResumeLayout(false);
             this.Stock.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -260,5 +302,9 @@ namespace MediaBazzar
         private System.Windows.Forms.RadioButton rbManagementStockAmountFilter;
         private System.Windows.Forms.RadioButton rbManagementStockBrandFilter;
         private System.Windows.Forms.RadioButton rbManagementStockIDFilter;
+        private System.Windows.Forms.Button btnManagementShiftAssignEmployee;
+        private System.Windows.Forms.ListBox lbManagementShiftEmployeesAssigned;
+        private System.Windows.Forms.ListBox lbManagementShiftEmployeesToAssign;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }
