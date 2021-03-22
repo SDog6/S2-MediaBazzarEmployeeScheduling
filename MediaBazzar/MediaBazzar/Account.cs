@@ -12,12 +12,7 @@ namespace MediaBazzar
         private string username;
         private string password;
         private Employee employee;
-        public Account(string username, string password, Employee employee)
-        {
-            this.username = username;
-            this.employee = employee;
-            this.password = password;
-        }
+
         public Account(string username, Employee employee)
         {
             this.username = username;
@@ -25,9 +20,16 @@ namespace MediaBazzar
             this.password = generatePassword();
         }
 
+        
         public string getUsername()
         {
             return this.username;
+        }
+
+        public void SetUsername(string username)
+        {
+            this.username = username;
+
         }
 
         public string getPassword()
@@ -69,7 +71,7 @@ namespace MediaBazzar
 
         public override string ToString()
         {
-            return $"{employee} with the username {username} Password {password}";
+            return $"Username {username} Password {password}";
         }
     }
 }

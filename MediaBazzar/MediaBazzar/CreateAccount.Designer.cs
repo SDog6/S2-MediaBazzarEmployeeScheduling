@@ -39,6 +39,8 @@ namespace MediaBazzar
             this.label1 = new System.Windows.Forms.Label();
             this.lbEmployees = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnOpenEditor = new System.Windows.Forms.Button();
+            this.lblInfo = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -133,11 +135,31 @@ namespace MediaBazzar
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnOpenEditor
+            // 
+            this.btnOpenEditor.Location = new System.Drawing.Point(829, 302);
+            this.btnOpenEditor.Name = "btnOpenEditor";
+            this.btnOpenEditor.Size = new System.Drawing.Size(85, 45);
+            this.btnOpenEditor.TabIndex = 34;
+            this.btnOpenEditor.Text = "Edit Account";
+            this.btnOpenEditor.UseVisualStyleBackColor = true;
+            this.btnOpenEditor.Click += new System.EventHandler(this.btnOpenEditor_Click);
+            // 
+            // lblInfo
+            // 
+            this.lblInfo.AutoSize = true;
+            this.lblInfo.Location = new System.Drawing.Point(454, 333);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(0, 13);
+            this.lblInfo.TabIndex = 35;
+            // 
             // AccountCreateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 396);
+            this.Controls.Add(this.lblInfo);
+            this.Controls.Add(this.btnOpenEditor);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblShowinfp);
             this.Controls.Add(this.btnShowAllEmployees);
@@ -167,5 +189,7 @@ namespace MediaBazzar
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox lbEmployees;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnOpenEditor;
+        private System.Windows.Forms.Label lblInfo;
     }
 }

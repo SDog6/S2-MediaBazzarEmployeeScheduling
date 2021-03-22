@@ -35,12 +35,13 @@ namespace MediaBazzar
                 {
                     if (tbEState.Text != "" && tbCCity.Text != "" && tbEStreetName.Text != "" && tbEStreetNr.Text != "" && tbCstate.Text != "" && tbCCity.Text != "" && tbCstreetname.Text != "" && tbCstreetnr.Text != "" && tbEname.Text != "" && tbELastname.Text != "" && tbEPhoneNumber.Text != "" && tbEEmail.Text != "" && tbYear.Text != "" && tbEBSN.Text != "")
                     {
+                        
                         Address address = new Address(tbEState.Text, tbECity.Text, tbEStreetName.Text, tbEStreetNr.Text);
                         Address contactAddress = new Address(tbCstate.Text, tbCCity.Text, tbCstreetname.Text, tbCstreetnr.Text);
                         Person Contactperson = new Person(tbCName.Text, tbCLastname.Text, tbCPhoneNumber.Text, contactAddress, tbCEmail.Text);
                         Contract contract = new Contract(DateTime.Now);
-                        Employee employee = new Employee(tbEname.Text, tbELastname.Text, tbEPhoneNumber.Text, address, tbEEmail.Text, Contactperson, tbYear.Text, tbEBSN.Text, contract);
-                        //ad.AddEmployee(employee);
+                        Employee employee = new Employee(Convert.ToInt32(textBox1.Text),tbEname.Text, tbELastname.Text, tbEPhoneNumber.Text, address, tbEEmail.Text, Contactperson, tbYear.Text, tbEBSN.Text, contract);
+                        ad.AddEmployee(employee);
                         MessageBox.Show("The Employees Has succesfully been added!");
                         // Account account = new Account(tbUsername.Text, employee);
                         //ad.AddAccount(account);
@@ -57,6 +58,11 @@ namespace MediaBazzar
                     MessageBox.Show("There was an Error");
                 }
             }
+
+        private void EmployeeCreation_Load(object sender, EventArgs e)
+        {
+
         }
+    }
     }
 

@@ -67,6 +67,8 @@ namespace MediaBazzar
             this.tbEState = new System.Windows.Forms.TextBox();
             this.tbECity = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.EmployeeInfo.SuspendLayout();
             this.SuspendLayout();
@@ -89,7 +91,7 @@ namespace MediaBazzar
             this.groupBox1.Controls.Add(this.tbCPhoneNumber);
             this.groupBox1.Controls.Add(this.tbCName);
             this.groupBox1.Controls.Add(this.tbCLastname);
-            this.groupBox1.Location = new System.Drawing.Point(23, 403);
+            this.groupBox1.Location = new System.Drawing.Point(543, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(503, 298);
             this.groupBox1.TabIndex = 18;
@@ -226,6 +228,8 @@ namespace MediaBazzar
             // 
             // EmployeeInfo
             // 
+            this.EmployeeInfo.Controls.Add(this.label1);
+            this.EmployeeInfo.Controls.Add(this.textBox1);
             this.EmployeeInfo.Controls.Add(this.tbYear);
             this.EmployeeInfo.Controls.Add(this.label18);
             this.EmployeeInfo.Controls.Add(this.label17);
@@ -405,24 +409,41 @@ namespace MediaBazzar
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(431, 707);
+            this.btnSubmit.Location = new System.Drawing.Point(546, 337);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(95, 30);
+            this.btnSubmit.Size = new System.Drawing.Size(102, 49);
             this.btnSubmit.TabIndex = 15;
             this.btnSubmit.Text = "Submit ";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click_1);
             // 
-            // AdministrationForm
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(369, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(21, 13);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "ID:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(396, 24);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(82, 20);
+            this.textBox1.TabIndex = 31;
+            // 
+            // EmployeeCreation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(539, 746);
+            this.ClientSize = new System.Drawing.Size(1058, 405);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.EmployeeInfo);
             this.Controls.Add(this.btnSubmit);
-            this.Name = "AdministrationForm";
+            this.Name = "EmployeeCreation";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.EmployeeCreation_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.EmployeeInfo.ResumeLayout(false);
@@ -470,6 +491,8 @@ namespace MediaBazzar
         private System.Windows.Forms.TextBox tbEState;
         private System.Windows.Forms.TextBox tbECity;
         private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

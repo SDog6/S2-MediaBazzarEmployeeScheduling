@@ -12,11 +12,11 @@ namespace MediaBazzar
 {
     public partial class NewStock : Form
     {
-        StockManager passedManager;
-        public NewStock(StockManager passedManager)
+        ShopStock stock;
+        public NewStock(ShopStock stock)
         {
             InitializeComponent();
-            this.passedManager = passedManager;
+            this.stock = stock;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -25,14 +25,14 @@ namespace MediaBazzar
             string brand = tbNewStockBrand.Text;
             int ID = Convert.ToInt32(tbNewStockID.Text);
             int Amount = Convert.ToInt32(tbNewStockAmount.Text);
-            double price = Convert.ToDouble(tbNewStockPrice.Text);
-            if(passedManager.Add(new Stock(name, Amount, ID, price, brand)))
+            int price = Convert.ToInt32(tbNewStockPrice.Text);
+            try
             {
-                MessageBox.Show("Sucessfully added stock");
+                stock.Add(new Stock(name, Amount, ID, price, brand));
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Something went wrong");
+                MessageBox.Show(ex.Message);
             }
         }
     }

@@ -31,27 +31,34 @@ namespace MediaBazzar
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.People = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnManagementEPFilter = new System.Windows.Forms.Button();
-            this.tbManagementEPFilter = new System.Windows.Forms.TextBox();
+            this.btnManagemendUpdate = new System.Windows.Forms.Button();
             this.btnManagemntPersonUpdate = new System.Windows.Forms.Button();
             this.btnManagemntPersonCreation = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lbManagemendEmployees = new System.Windows.Forms.ListBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnManagementEPFilter = new System.Windows.Forms.Button();
+            this.rbManagementID = new System.Windows.Forms.RadioButton();
+            this.rbManagementRole = new System.Windows.Forms.RadioButton();
+            this.rbManagementName = new System.Windows.Forms.RadioButton();
+            this.tbManagementEPFilter = new System.Windows.Forms.TextBox();
             this.Stock = new System.Windows.Forms.TabPage();
+            this.btnManagementUpdate = new System.Windows.Forms.Button();
+            this.btnManagementNewStock = new System.Windows.Forms.Button();
             this.rbManagementStockAmountFilter = new System.Windows.Forms.RadioButton();
             this.rbManagementStockBrandFilter = new System.Windows.Forms.RadioButton();
             this.rbManagementStockIDFilter = new System.Windows.Forms.RadioButton();
             this.btnManagementRestockRequest = new System.Windows.Forms.Button();
             this.btnManagementStockFilter = new System.Windows.Forms.Button();
             this.tbManagementStockFilter = new System.Windows.Forms.TextBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.lbManagementStock = new System.Windows.Forms.ListBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.lbManagementShiftEmployeesToAssign = new System.Windows.Forms.ListBox();
-            this.lbManagementShiftEmployeesAssigned = new System.Windows.Forms.ListBox();
             this.btnManagementShiftAssignEmployee = new System.Windows.Forms.Button();
+            this.lbManagementShiftEmployeesAssigned = new System.Windows.Forms.ListBox();
+            this.lbManagementShiftEmployeesToAssign = new System.Windows.Forms.ListBox();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.tabControl1.SuspendLayout();
             this.People.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.Stock.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -69,32 +76,74 @@ namespace MediaBazzar
             // 
             // People
             // 
-            this.People.Controls.Add(this.label1);
-            this.People.Controls.Add(this.btnManagementEPFilter);
-            this.People.Controls.Add(this.tbManagementEPFilter);
+            this.People.Controls.Add(this.btnManagemendUpdate);
             this.People.Controls.Add(this.btnManagemntPersonUpdate);
             this.People.Controls.Add(this.btnManagemntPersonCreation);
-            this.People.Controls.Add(this.listBox1);
+            this.People.Controls.Add(this.lbManagemendEmployees);
+            this.People.Controls.Add(this.groupBox1);
             this.People.Location = new System.Drawing.Point(4, 22);
             this.People.Name = "People";
             this.People.Padding = new System.Windows.Forms.Padding(3);
-            this.People.Size = new System.Drawing.Size(734, 407);
+            this.People.Size = new System.Drawing.Size(779, 382);
             this.People.TabIndex = 0;
             this.People.Text = "Employees";
             this.People.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // btnManagemendUpdate
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 69);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "BSN:";
+            this.btnManagemendUpdate.Location = new System.Drawing.Point(265, 249);
+            this.btnManagemendUpdate.Name = "btnManagemendUpdate";
+            this.btnManagemendUpdate.Size = new System.Drawing.Size(93, 38);
+            this.btnManagemendUpdate.TabIndex = 9;
+            this.btnManagemendUpdate.Text = "Check for updates";
+            this.btnManagemendUpdate.UseVisualStyleBackColor = true;
+            this.btnManagemendUpdate.Click += new System.EventHandler(this.btnManagemendUpdate_Click);
+            // 
+            // btnManagemntPersonUpdate
+            // 
+            this.btnManagemntPersonUpdate.Location = new System.Drawing.Point(137, 249);
+            this.btnManagemntPersonUpdate.Name = "btnManagemntPersonUpdate";
+            this.btnManagemntPersonUpdate.Size = new System.Drawing.Size(93, 38);
+            this.btnManagemntPersonUpdate.TabIndex = 2;
+            this.btnManagemntPersonUpdate.Text = "Update employee information";
+            this.btnManagemntPersonUpdate.UseVisualStyleBackColor = true;
+            this.btnManagemntPersonUpdate.Click += new System.EventHandler(this.btnManagemntPersonUpdate_Click_1);
+            // 
+            // btnManagemntPersonCreation
+            // 
+            this.btnManagemntPersonCreation.Location = new System.Drawing.Point(8, 249);
+            this.btnManagemntPersonCreation.Name = "btnManagemntPersonCreation";
+            this.btnManagemntPersonCreation.Size = new System.Drawing.Size(93, 38);
+            this.btnManagemntPersonCreation.TabIndex = 1;
+            this.btnManagemntPersonCreation.Text = "Add a new employee";
+            this.btnManagemntPersonCreation.UseVisualStyleBackColor = true;
+            this.btnManagemntPersonCreation.Click += new System.EventHandler(this.btnManagemntPersonCreation_Click);
+            // 
+            // lbManagemendEmployees
+            // 
+            this.lbManagemendEmployees.FormattingEnabled = true;
+            this.lbManagemendEmployees.Location = new System.Drawing.Point(364, 20);
+            this.lbManagemendEmployees.Name = "lbManagemendEmployees";
+            this.lbManagemendEmployees.Size = new System.Drawing.Size(311, 329);
+            this.lbManagemendEmployees.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnManagementEPFilter);
+            this.groupBox1.Controls.Add(this.rbManagementID);
+            this.groupBox1.Controls.Add(this.rbManagementRole);
+            this.groupBox1.Controls.Add(this.rbManagementName);
+            this.groupBox1.Controls.Add(this.tbManagementEPFilter);
+            this.groupBox1.Location = new System.Drawing.Point(68, 32);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(251, 172);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filtering";
             // 
             // btnManagementEPFilter
             // 
-            this.btnManagementEPFilter.Location = new System.Drawing.Point(107, 101);
+            this.btnManagementEPFilter.Location = new System.Drawing.Point(69, 128);
             this.btnManagementEPFilter.Name = "btnManagementEPFilter";
             this.btnManagementEPFilter.Size = new System.Drawing.Size(93, 38);
             this.btnManagementEPFilter.TabIndex = 4;
@@ -102,56 +151,84 @@ namespace MediaBazzar
             this.btnManagementEPFilter.UseVisualStyleBackColor = true;
             this.btnManagementEPFilter.Click += new System.EventHandler(this.btnManagementEPFilter_Click);
             // 
+            // rbManagementID
+            // 
+            this.rbManagementID.AutoSize = true;
+            this.rbManagementID.Location = new System.Drawing.Point(25, 28);
+            this.rbManagementID.Name = "rbManagementID";
+            this.rbManagementID.Size = new System.Drawing.Size(36, 17);
+            this.rbManagementID.TabIndex = 5;
+            this.rbManagementID.TabStop = true;
+            this.rbManagementID.Text = "ID";
+            this.rbManagementID.UseVisualStyleBackColor = true;
+            // 
+            // rbManagementRole
+            // 
+            this.rbManagementRole.AutoSize = true;
+            this.rbManagementRole.Location = new System.Drawing.Point(100, 28);
+            this.rbManagementRole.Name = "rbManagementRole";
+            this.rbManagementRole.Size = new System.Drawing.Size(47, 17);
+            this.rbManagementRole.TabIndex = 6;
+            this.rbManagementRole.TabStop = true;
+            this.rbManagementRole.Text = "Role";
+            this.rbManagementRole.UseVisualStyleBackColor = true;
+            // 
+            // rbManagementName
+            // 
+            this.rbManagementName.AutoSize = true;
+            this.rbManagementName.Location = new System.Drawing.Point(181, 28);
+            this.rbManagementName.Name = "rbManagementName";
+            this.rbManagementName.Size = new System.Drawing.Size(53, 17);
+            this.rbManagementName.TabIndex = 7;
+            this.rbManagementName.TabStop = true;
+            this.rbManagementName.Text = "Name";
+            this.rbManagementName.UseVisualStyleBackColor = true;
+            // 
             // tbManagementEPFilter
             // 
-            this.tbManagementEPFilter.Location = new System.Drawing.Point(100, 66);
+            this.tbManagementEPFilter.Location = new System.Drawing.Point(69, 75);
             this.tbManagementEPFilter.Name = "tbManagementEPFilter";
-            this.tbManagementEPFilter.Size = new System.Drawing.Size(100, 20);
+            this.tbManagementEPFilter.Size = new System.Drawing.Size(93, 20);
             this.tbManagementEPFilter.TabIndex = 3;
-            // 
-            // btnManagemntPersonUpdate
-            // 
-            this.btnManagemntPersonUpdate.Location = new System.Drawing.Point(31, 224);
-            this.btnManagemntPersonUpdate.Name = "btnManagemntPersonUpdate";
-            this.btnManagemntPersonUpdate.Size = new System.Drawing.Size(93, 38);
-            this.btnManagemntPersonUpdate.TabIndex = 2;
-            this.btnManagemntPersonUpdate.Text = "Update employee information";
-            this.btnManagemntPersonUpdate.UseVisualStyleBackColor = true;
-            this.btnManagemntPersonUpdate.Click += new System.EventHandler(this.btnManagemntPersonUpdate_Click);
-            // 
-            // btnManagemntPersonCreation
-            // 
-            this.btnManagemntPersonCreation.Location = new System.Drawing.Point(167, 224);
-            this.btnManagemntPersonCreation.Name = "btnManagemntPersonCreation";
-            this.btnManagemntPersonCreation.Size = new System.Drawing.Size(93, 38);
-            this.btnManagemntPersonCreation.TabIndex = 1;
-            this.btnManagemntPersonCreation.Text = "Add a new employee";
-            this.btnManagemntPersonCreation.UseVisualStyleBackColor = true;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(364, 20);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(321, 368);
-            this.listBox1.TabIndex = 0;
             // 
             // Stock
             // 
+            this.Stock.Controls.Add(this.btnManagementUpdate);
+            this.Stock.Controls.Add(this.btnManagementNewStock);
             this.Stock.Controls.Add(this.rbManagementStockAmountFilter);
             this.Stock.Controls.Add(this.rbManagementStockBrandFilter);
             this.Stock.Controls.Add(this.rbManagementStockIDFilter);
             this.Stock.Controls.Add(this.btnManagementRestockRequest);
             this.Stock.Controls.Add(this.btnManagementStockFilter);
             this.Stock.Controls.Add(this.tbManagementStockFilter);
-            this.Stock.Controls.Add(this.listBox2);
+            this.Stock.Controls.Add(this.lbManagementStock);
             this.Stock.Location = new System.Drawing.Point(4, 22);
             this.Stock.Name = "Stock";
             this.Stock.Padding = new System.Windows.Forms.Padding(3);
-            this.Stock.Size = new System.Drawing.Size(734, 407);
+            this.Stock.Size = new System.Drawing.Size(779, 382);
             this.Stock.TabIndex = 1;
             this.Stock.Text = "Stock";
             this.Stock.UseVisualStyleBackColor = true;
+            // 
+            // btnManagementUpdate
+            // 
+            this.btnManagementUpdate.Location = new System.Drawing.Point(116, 201);
+            this.btnManagementUpdate.Name = "btnManagementUpdate";
+            this.btnManagementUpdate.Size = new System.Drawing.Size(134, 32);
+            this.btnManagementUpdate.TabIndex = 9;
+            this.btnManagementUpdate.Text = "Check for update";
+            this.btnManagementUpdate.UseVisualStyleBackColor = true;
+            this.btnManagementUpdate.Click += new System.EventHandler(this.btnManagementUpdate_Click);
+            // 
+            // btnManagementNewStock
+            // 
+            this.btnManagementNewStock.Location = new System.Drawing.Point(79, 277);
+            this.btnManagementNewStock.Name = "btnManagementNewStock";
+            this.btnManagementNewStock.Size = new System.Drawing.Size(201, 44);
+            this.btnManagementNewStock.TabIndex = 8;
+            this.btnManagementNewStock.Text = "Request new stock to be added to inventory";
+            this.btnManagementNewStock.UseVisualStyleBackColor = true;
+            this.btnManagementNewStock.Click += new System.EventHandler(this.btnManagementNewStock_Click);
             // 
             // rbManagementStockAmountFilter
             // 
@@ -188,7 +265,7 @@ namespace MediaBazzar
             // 
             // btnManagementRestockRequest
             // 
-            this.btnManagementRestockRequest.Location = new System.Drawing.Point(69, 217);
+            this.btnManagementRestockRequest.Location = new System.Drawing.Point(79, 239);
             this.btnManagementRestockRequest.Name = "btnManagementRestockRequest";
             this.btnManagementRestockRequest.Size = new System.Drawing.Size(201, 32);
             this.btnManagementRestockRequest.TabIndex = 4;
@@ -212,13 +289,13 @@ namespace MediaBazzar
             this.tbManagementStockFilter.Size = new System.Drawing.Size(100, 20);
             this.tbManagementStockFilter.TabIndex = 1;
             // 
-            // listBox2
+            // lbManagementStock
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(350, 26);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(321, 342);
-            this.listBox2.TabIndex = 0;
+            this.lbManagementStock.FormattingEnabled = true;
+            this.lbManagementStock.Location = new System.Drawing.Point(350, 26);
+            this.lbManagementStock.Name = "lbManagementStock";
+            this.lbManagementStock.Size = new System.Drawing.Size(379, 342);
+            this.lbManagementStock.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -233,28 +310,6 @@ namespace MediaBazzar
             this.tabPage1.Text = "Shifts";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(14, 9);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 0;
-            // 
-            // lbManagementShiftEmployeesToAssign
-            // 
-            this.lbManagementShiftEmployeesToAssign.FormattingEnabled = true;
-            this.lbManagementShiftEmployeesToAssign.Location = new System.Drawing.Point(262, 9);
-            this.lbManagementShiftEmployeesToAssign.Name = "lbManagementShiftEmployeesToAssign";
-            this.lbManagementShiftEmployeesToAssign.Size = new System.Drawing.Size(241, 290);
-            this.lbManagementShiftEmployeesToAssign.TabIndex = 1;
-            // 
-            // lbManagementShiftEmployeesAssigned
-            // 
-            this.lbManagementShiftEmployeesAssigned.FormattingEnabled = true;
-            this.lbManagementShiftEmployeesAssigned.Location = new System.Drawing.Point(525, 9);
-            this.lbManagementShiftEmployeesAssigned.Name = "lbManagementShiftEmployeesAssigned";
-            this.lbManagementShiftEmployeesAssigned.Size = new System.Drawing.Size(241, 290);
-            this.lbManagementShiftEmployeesAssigned.TabIndex = 2;
-            // 
             // btnManagementShiftAssignEmployee
             // 
             this.btnManagementShiftAssignEmployee.Location = new System.Drawing.Point(653, 305);
@@ -264,17 +319,40 @@ namespace MediaBazzar
             this.btnManagementShiftAssignEmployee.Text = "AssignEmployeeToShift";
             this.btnManagementShiftAssignEmployee.UseVisualStyleBackColor = true;
             // 
+            // lbManagementShiftEmployeesAssigned
+            // 
+            this.lbManagementShiftEmployeesAssigned.FormattingEnabled = true;
+            this.lbManagementShiftEmployeesAssigned.Location = new System.Drawing.Point(525, 9);
+            this.lbManagementShiftEmployeesAssigned.Name = "lbManagementShiftEmployeesAssigned";
+            this.lbManagementShiftEmployeesAssigned.Size = new System.Drawing.Size(241, 290);
+            this.lbManagementShiftEmployeesAssigned.TabIndex = 2;
+            // 
+            // lbManagementShiftEmployeesToAssign
+            // 
+            this.lbManagementShiftEmployeesToAssign.FormattingEnabled = true;
+            this.lbManagementShiftEmployeesToAssign.Location = new System.Drawing.Point(262, 9);
+            this.lbManagementShiftEmployeesToAssign.Name = "lbManagementShiftEmployeesToAssign";
+            this.lbManagementShiftEmployeesToAssign.Size = new System.Drawing.Size(241, 290);
+            this.lbManagementShiftEmployeesToAssign.TabIndex = 1;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(14, 9);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 0;
+            // 
             // Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 401);
+            this.ClientSize = new System.Drawing.Size(764, 400);
             this.Controls.Add(this.tabControl1);
             this.Name = "Management";
             this.Text = "Management";
             this.tabControl1.ResumeLayout(false);
             this.People.ResumeLayout(false);
-            this.People.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.Stock.ResumeLayout(false);
             this.Stock.PerformLayout();
             this.tabPage1.ResumeLayout(false);
@@ -288,16 +366,15 @@ namespace MediaBazzar
         private System.Windows.Forms.TabPage People;
         private System.Windows.Forms.TabPage Stock;
         private System.Windows.Forms.Button btnManagemntPersonCreation;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lbManagemendEmployees;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TextBox tbManagementEPFilter;
         private System.Windows.Forms.Button btnManagemntPersonUpdate;
         private System.Windows.Forms.Button btnManagementEPFilter;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnManagementRestockRequest;
         private System.Windows.Forms.Button btnManagementStockFilter;
         private System.Windows.Forms.TextBox tbManagementStockFilter;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox lbManagementStock;
         private System.Windows.Forms.RadioButton rbManagementStockAmountFilter;
         private System.Windows.Forms.RadioButton rbManagementStockBrandFilter;
         private System.Windows.Forms.RadioButton rbManagementStockIDFilter;
@@ -305,5 +382,12 @@ namespace MediaBazzar
         private System.Windows.Forms.ListBox lbManagementShiftEmployeesAssigned;
         private System.Windows.Forms.ListBox lbManagementShiftEmployeesToAssign;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Button btnManagementNewStock;
+        private System.Windows.Forms.Button btnManagementUpdate;
+        private System.Windows.Forms.RadioButton rbManagementName;
+        private System.Windows.Forms.RadioButton rbManagementRole;
+        private System.Windows.Forms.RadioButton rbManagementID;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnManagemendUpdate;
     }
 }

@@ -6,26 +6,56 @@ using System.Threading.Tasks;
 
 namespace MediaBazzar
 {
-    public class Administration
+    class Administration
     {
 
-         public List<Account> accounts = new List<Account>();
+      public static  List<Account> accounts = new List<Account>();
+         public static List<Employee> employees = new List<Employee>();
 
-        public Administration()
-        {
-            this.accounts = new List<Account>();
-            accounts.Add(new Account("john", "0", new Employee((Role)1)));
-            accounts.Add(new Account("peter", "0", new Employee((Role)2)));
-            accounts.Add(new Account("bryan", "0", new Employee((Role)3)));
-            accounts.Add(new Account("tommy", "0", new Employee((Role)4)));
-            accounts.Add(new Account("arthur", "0", new Employee((Role)5)));
-        }
 
         public void AddAccount(Account a)
         {
             accounts.Add(a);
         }
+        public void AddEmployee(Employee e)
+        {
+            employees.Add(e);
+        }
+        public void RemoveEmployee(Employee e)
+        {
+            employees.Remove(e);
+        }
+        public void RemoveAccount(Account a)
+        {
+            accounts.Remove(a);
+        }
+        public Employee GetEmployee(string email)
+        {
+            foreach (Employee item in employees)
+            {
+                if (item.getEmail() == email)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
 
+        public List<Employee> GetAll()
+        {
+            return employees;
+        }
+
+        public void setAccount(Account a, string username)
+        {
+            foreach (Account item in accounts)
+            {
+                if(item == a)
+                {
+                    item.SetUsername(username);
+                }
+            }
+        }
 
         public Account GetAccount(string username)
         {
@@ -39,6 +69,7 @@ namespace MediaBazzar
             }
             return null;
         }
+      
 
         public List<Account> GetAccounts()
         {

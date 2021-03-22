@@ -8,25 +8,28 @@ namespace MediaBazzar
 {
     public class Employee : Person
     {
-
+        private int ID;
         private Person contactPerson;
         private string dateOfBirth;
         private string BSN;
         private Contract contract;
-        private Role role;
+        private Account account;
 
-        public string BSNp { get { return this.BSN; } }
+        public string BSNp { get { return this.BSN; } set { this.BSN = value; } }
 
-        public Employee(Role role) : base()
+        public int EmployeeID { get { return this.ID; } set { this.ID = value; } }
+
+
+
+
+        public Employee(int ID,string firstName, string lastName, string phoneNumber, Address address, string email, Person contactPerson, string dateOfBirth, string BSN, Contract contract) : base(firstName, lastName, phoneNumber, address, email)
         {
-            this.role = role;
-        }
-        public Employee(string firstName, string lastName, string phoneNumber, Address address, string email, Person contactPerson, string dateOfBirth, string BSN, Contract contract) : base(firstName, lastName, phoneNumber, address, email)
-        {
+            this.ID = ID;
             this.contactPerson = contactPerson;
             this.dateOfBirth = dateOfBirth;
             this.BSN = BSN;
             this.contract = contract;
+            this.account = null;
         }
 
         public string getContactInfo()
@@ -34,9 +37,13 @@ namespace MediaBazzar
             return $"{contactPerson}";
         }
 
-        public Role getRole()
+        public void SetAccount(Account a)
         {
-            return this.role;
+            this.account = a;
+        }
+        public Account GetAccount()
+        {
+            return this.account;
         }
 
         public void fireEmployee(DateTime dateFired, string reason)
@@ -54,5 +61,14 @@ namespace MediaBazzar
             return inf;
         }
 
+        public override string ToString()
+        {
+            return $"{this.getName()} with BSN {this.BSNp}";
+        }
+
+        public string GetAccountRelationInfo()
+        {
+            return $"[{this.BSNp}] - {this.getName()} with account {account}";
+        }
     }
 }

@@ -15,10 +15,6 @@ namespace MediaBazzar
         private Address address;
         private string email;
 
-        public Person()
-        {
-
-        }
         public Person(string firstName, string lastName, string phoneNumber, Address address, string email)
         {
             this.firstName = firstName;

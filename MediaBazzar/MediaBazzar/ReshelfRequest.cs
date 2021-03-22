@@ -9,17 +9,28 @@ namespace MediaBazzar
     class ReshelfRequest
     {
         private Stock lowstock;
-        private DateTime filedDate;
+        private DateTime filedDate = DateTime.Now;
+        private int amount;
+        private ShopStock inventory;
 
-        public ReshelfRequest(Stock lowstock, DateTime filedDate)
+        public ReshelfRequest(Stock lowstock,int amount)
         {
             this.lowstock = lowstock;
-            this.filedDate = filedDate;
+            this.amount = amount;
+            inventory = new ShopStock();
+        }
+
+        public void ApproveReshelfRequest()
+        {
+            if(inventory.GetSpecificStock(lowstock.ID) == lowstock)
+            {
+                inventory.GetSpecificStock(lowstock.ID).Amount += amount;
+            }
         }
 
         public override string ToString()
         {
-            return $"{lowstock} is running low";
+            return $"{filedDate.ToShortDateString()}-{lowstock.Name}[{lowstock.ID}] is running low, there is a request for {amount} more";
         }
     }
 }

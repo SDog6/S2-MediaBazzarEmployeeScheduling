@@ -1,11 +1,46 @@
+<<<<<<< HEAD
+C:\Users\Hristo\source\repos\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.exe.config
+C:\Users\Hristo\source\repos\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.exe
+C:\Users\Hristo\source\repos\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.pdb
+C:\Users\Hristo\source\repos\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csprojAssemblyReference.cache
+C:\Users\Hristo\source\repos\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.Properties.Resources.resources
+C:\Users\Hristo\source\repos\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csproj.GenerateResource.cache
+C:\Users\Hristo\source\repos\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csproj.CoreCompileInputs.cache
+C:\Users\Hristo\source\repos\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.exe
+C:\Users\Hristo\source\repos\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.pdb
+C:\Users\Hristo\source\repos\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.AdministrationForm.resources
+C:\Users\Hristo\source\repos\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.ManagerForm.resources
+C:\Users\Kaloyan\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.exe.config
+C:\Users\Kaloyan\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.exe
+C:\Users\Kaloyan\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.pdb
+C:\Users\Kaloyan\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csprojAssemblyReference.cache
+C:\Users\Kaloyan\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.AdministrationForm.resources
+C:\Users\Kaloyan\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.ManagerForm.resources
+C:\Users\Kaloyan\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.Properties.Resources.resources
+C:\Users\Kaloyan\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.WarehouseManagement.resources
+C:\Users\Kaloyan\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csproj.GenerateResource.cache
+C:\Users\Kaloyan\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csproj.CoreCompileInputs.cache
+C:\Users\Kaloyan\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.exe
+C:\Users\Kaloyan\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.pdb
+C:\Users\brand\Desktop\Project 3.0\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csprojAssemblyReference.cache
+C:\Users\brand\Desktop\Project 3.0\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.AdministrationForm.resources
+C:\Users\brand\Desktop\Project 3.0\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.AccountCreateForm.resources
+C:\Users\brand\Desktop\Project 3.0\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.ManagerForm.resources
+C:\Users\brand\Desktop\Project 3.0\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.Properties.Resources.resources
+C:\Users\brand\Desktop\Project 3.0\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.WarehouseManagement.resources
+C:\Users\brand\Desktop\Project 3.0\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csproj.GenerateResource.cache
+C:\Users\brand\Desktop\Project 3.0\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csproj.CoreCompileInputs.cache
+C:\Users\brand\Desktop\Project 3.0\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.exe
+C:\Users\brand\Desktop\Project 3.0\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.pdb
+C:\Users\brand\Desktop\Project 3.0\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.exe.config
+C:\Users\brand\Desktop\Project 3.0\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.exe
+C:\Users\brand\Desktop\Project 3.0\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.pdb
+=======
 C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.exe.config
 C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.exe
 C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.pdb
 C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csprojAssemblyReference.cache
-C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.EmployeeCreation.resources
-C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.LogInForm.resources
-C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.Management.resources
-C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.AccountCreateForm.resources
+C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.AdministrationForm.resources
 C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.ManagerForm.resources
 C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.NewStock.resources
 C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.Properties.Resources.resources
@@ -14,3 +49,89 @@ C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\D
 C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csproj.CoreCompileInputs.cache
 C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.exe
 C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.pdb
+>>>>>>> 285f86237dc1fb4d91ff231cbf25f86fb8b308f1
+C:\Users\Hristo\Desktop\New folder (2)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csprojAssemblyReference.cache
+C:\Users\Hristo\Desktop\New folder (2)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.AdministrationForm.resources
+C:\Users\Hristo\Desktop\New folder (2)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.AccountCreateForm.resources
+C:\Users\Hristo\Desktop\New folder (2)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.ManagerForm.resources
+C:\Users\Hristo\Desktop\New folder (2)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.NewStock.resources
+C:\Users\Hristo\Desktop\New folder (2)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.Properties.Resources.resources
+C:\Users\Hristo\Desktop\New folder (2)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.WarehouseManagement.resources
+C:\Users\Hristo\Desktop\New folder (2)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csproj.GenerateResource.cache
+C:\Users\Hristo\Desktop\New folder (2)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csproj.CoreCompileInputs.cache
+C:\Users\Hristo\Desktop\New folder (2)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.exe
+C:\Users\Hristo\Desktop\New folder (2)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.pdb
+C:\Users\Hristo\Desktop\New folder (2)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.exe.config
+C:\Users\Hristo\Desktop\New folder (2)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.exe
+C:\Users\Hristo\Desktop\New folder (2)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.pdb
+C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.EmployeeCreation.resources
+C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.Management.resources
+C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.AccountCreateForm.resources
+C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.LogInForm.resources
+C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.ManagementReshelf.resources
+C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.EmployeeInfoUpdate.resources
+C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.ManagementNewInventory.resources
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.exe.config
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.exe
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.pdb
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.editAccount.resources
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.EmployeeCreation.resources
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.LogInForm.resources
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.Management.resources
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.AccountCreateForm.resources
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.ManagerForm.resources
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.NewStock.resources
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.Properties.Resources.resources
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.WarehouseManagement.resources
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csproj.GenerateResource.cache
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csproj.CoreCompileInputs.cache
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.exe
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.pdb
+C:\Users\brand\Desktop\Project\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csprojAssemblyReference.cache
+>>>>>>> 63331de8972fa61e73614c6af2eb0b7f67b64727
+C:\Users\Hristo\Desktop\PROJECT\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.editAccount.resources
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csprojAssemblyReference.cache
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.editAccount.resources
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.EmployeeCreation.resources
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.EmployeeInfoUpdate.resources
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.LogInForm.resources
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.Management.resources
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.AccountCreateForm.resources
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.ManagementNewInventory.resources
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.ManagementReshelf.resources
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.ManagerForm.resources
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.NewStock.resources
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.Properties.Resources.resources
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.WarehouseManagement.resources
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csproj.GenerateResource.cache
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csproj.CoreCompileInputs.cache
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.exe
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.pdb
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.exe.config
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.exe
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.pdb
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\Google.Protobuf.dll
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\MySql.Data.dll
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\Renci.SshNet.dll
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\System.Buffers.dll
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\System.Memory.dll
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\Zstandard.Net.dll
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\Google.Protobuf.pdb
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\Google.Protobuf.xml
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\MySql.Data.xml
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\Renci.SshNet.xml
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\System.Buffers.xml
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\System.Memory.xml
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Hristo\Desktop\New folder (4)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csproj.CopyComplete
