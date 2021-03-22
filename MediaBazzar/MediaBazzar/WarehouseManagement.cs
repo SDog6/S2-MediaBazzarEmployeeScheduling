@@ -12,14 +12,16 @@ namespace MediaBazzar
 {
     public partial class WarehouseManagement : Form
     {
-        WarehouseStock WarehouseStock;
+        WarehouseStockManager WarehouseStock;
 
         public WarehouseManagement()
         {
             InitializeComponent();
-            WarehouseStock = new WarehouseStock();
-            WarehouseStock.Add(new Stock("Nike", 30, 45, 60, "Nike"));
-            WarehouseStock.Add(new Stock("Nike", 30, 55, 60, "Suka"));
+            WarehouseStock = new WarehouseStockManager();
+            Object a  = new Stock("Nike", 30, 45, 60, "Nike");
+            Object b = new Stock("Nike", 30, 55, 60, "Suka");
+            WarehouseStock.Add(a);
+            WarehouseStock.Add(b);
         }
 
         private void btnWarehouseUpdate_Click(object sender, EventArgs e)
@@ -33,8 +35,8 @@ namespace MediaBazzar
 
         private void btnWarehouseAddItem_Click(object sender, EventArgs e)
         {
-            /*NewStock f = new NewStock(WarehouseStock);*/
-            /*f.Show();*/
+            NewStock f = new NewStock(WarehouseStock);
+            f.Show();
         }
 
         private void btnWarehouseSearch_Click(object sender, EventArgs e)

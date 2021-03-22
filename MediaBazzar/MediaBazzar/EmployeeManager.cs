@@ -6,35 +6,36 @@ using System.Threading.Tasks;
 
 namespace MediaBazzar
 {
-    class ReshelfRequestManager : IManager
+    class EmployeeManager : IManager
     {
-        private List<ReshelfRequest> Requests;
 
-        private ReshelfRequestData data;
+        private List<Employee> Emps;
 
-        public ReshelfRequestData RequestData { get { return this.data; } set { data = value; } }
+        private EmployeeData data;
 
-        public ReshelfRequestManager()
+        public EmployeeData EmpsData { get { return this.data; } set { data = value; } }
+
+        public EmployeeManager()
         {
-            RequestData = new ReshelfRequestData();
+            EmpsData = new EmployeeData();
             loadDataFromDatabase();
         }
 
 
         private void loadDataFromDatabase()
         {
-            Requests = new List<ReshelfRequest>();
+            Emps = new List<Employee>();
 
-            foreach (ReshelfRequest o in (List<ReshelfRequest>)RequestData.ReadAll())
+            foreach (Employee o in (List<Employee>)EmpsData.ReadAll())
             {
-                Requests.Add((ReshelfRequest)o);
+                Emps.Add((Employee)o);
             }
         }
         public bool Add(object obj)
         {
             if (obj != null)
             {
-                RequestData.Insert((ReshelfRequest)obj);
+                EmpsData.Insert((Employee)obj);
                 loadDataFromDatabase();
                 return true;
             }
@@ -50,7 +51,7 @@ namespace MediaBazzar
         {
             List<object> temp = new List<object>();
 
-            foreach (ReshelfRequest item in Requests)
+            foreach (Employee item in Emps)
             {
                 temp.Add(item);
             }

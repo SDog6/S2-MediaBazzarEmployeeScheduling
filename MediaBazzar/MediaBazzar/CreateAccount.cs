@@ -12,7 +12,7 @@ namespace MediaBazzar
 {
     public partial class AccountCreateForm : Form
     {
-        Administration ad = new Administration();
+        AccountManager Accounts = new AccountManager();
         DateTime time = DateTime.Now;
         
         public AccountCreateForm()
@@ -35,7 +35,7 @@ namespace MediaBazzar
                     else
                     {
                         Account account = new Account(tbUsername.Text, employee);
-                        ad.AddAccount(account);
+                        Accounts.Add(account);
                         employee.SetAccount(account);
                         if (employee != null)
                         {

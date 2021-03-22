@@ -6,35 +6,36 @@ using System.Threading.Tasks;
 
 namespace MediaBazzar
 {
-    class ReshelfRequestManager : IManager
+    public class WarehouseStockManager : IManager
     {
-        private List<ReshelfRequest> Requests;
 
-        private ReshelfRequestData data;
+        private List<Stock> WarehouseStocks;
 
-        public ReshelfRequestData RequestData { get { return this.data; } set { data = value; } }
+        private WarehouseStockData data;
 
-        public ReshelfRequestManager()
+        public WarehouseStockData StockData { get { return this.data; } set { data = value; } }
+
+        public WarehouseStockManager()
         {
-            RequestData = new ReshelfRequestData();
+            StockData = new WarehouseStockData();
             loadDataFromDatabase();
         }
 
 
         private void loadDataFromDatabase()
         {
-            Requests = new List<ReshelfRequest>();
+            WarehouseStocks = new List<Stock>();
 
-            foreach (ReshelfRequest o in (List<ReshelfRequest>)RequestData.ReadAll())
+            foreach (Stock o in (List<Stock>)StockData.ReadAll())
             {
-                Requests.Add((ReshelfRequest)o);
+                WarehouseStocks.Add((Stock)o);
             }
         }
         public bool Add(object obj)
         {
             if (obj != null)
             {
-                RequestData.Insert((ReshelfRequest)obj);
+                StockData.Insert((Stock)obj);
                 loadDataFromDatabase();
                 return true;
             }
@@ -42,7 +43,7 @@ namespace MediaBazzar
             {
                 return false;
             }
-
+            
 
         }
 
@@ -50,7 +51,7 @@ namespace MediaBazzar
         {
             List<object> temp = new List<object>();
 
-            foreach (ReshelfRequest item in Requests)
+            foreach (Stock item in WarehouseStocks)
             {
                 temp.Add(item);
             }

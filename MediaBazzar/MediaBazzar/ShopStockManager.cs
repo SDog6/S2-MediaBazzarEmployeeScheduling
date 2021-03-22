@@ -3,38 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MediaBazzar
 {
-    class ReshelfRequestManager : IManager
+    public class ShopStockManager : IManager
     {
-        private List<ReshelfRequest> Requests;
+        private List<Stock> ShopStocks;
 
-        private ReshelfRequestData data;
+        private ShopStockData data;
 
-        public ReshelfRequestData RequestData { get { return this.data; } set { data = value; } }
+        public ShopStockData StockData { get { return this.data; } set { data = value; } }
 
-        public ReshelfRequestManager()
+        public ShopStockManager()
         {
-            RequestData = new ReshelfRequestData();
+            StockData = new ShopStockData();
             loadDataFromDatabase();
         }
 
 
         private void loadDataFromDatabase()
         {
-            Requests = new List<ReshelfRequest>();
+            ShopStocks = new List<Stock>();
 
-            foreach (ReshelfRequest o in (List<ReshelfRequest>)RequestData.ReadAll())
+            foreach (Stock o in (List<Stock>)StockData.ReadAll())
             {
-                Requests.Add((ReshelfRequest)o);
+                ShopStocks.Add((Stock)o);
             }
         }
         public bool Add(object obj)
         {
             if (obj != null)
             {
-                RequestData.Insert((ReshelfRequest)obj);
+                StockData.Insert((Stock)obj);
                 loadDataFromDatabase();
                 return true;
             }
@@ -50,7 +51,7 @@ namespace MediaBazzar
         {
             List<object> temp = new List<object>();
 
-            foreach (ReshelfRequest item in Requests)
+            foreach (Stock item in ShopStocks)
             {
                 temp.Add(item);
             }
