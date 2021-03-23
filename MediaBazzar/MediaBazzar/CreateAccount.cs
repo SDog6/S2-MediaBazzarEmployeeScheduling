@@ -18,12 +18,12 @@ namespace MediaBazzar
         public AccountCreateForm()
         {
             InitializeComponent();
-          ad.AddEmployee(new Employee(2332,"Lee", "Johnson", "09808920203", new Address("Kenya", "Obama", "Sangerlaan", "28"), "Lee@gmail.com", new Person("John", "Lee", "03039393", new Address("Alabama", "Kanzas", "28 beach", "25"), "J@gmail.com"), "01.02.1998", "323242423", new Contract(time)));
+          //ad.AddEmployee(new Employee(2332,"Lee", "Johnson", "09808920203", new Address("Kenya", "Obama", "Sangerlaan", "28"), "Lee@gmail.com", new Person("John", "Lee", "03039393", new Address("Alabama", "Kanzas", "28 beach", "25"), "J@gmail.com"), "01.02.1998", "323242423", new Contract(time)));
         }
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
-            try
+            /*try
             {
                 if (tbUsername.Text != "")
                 {
@@ -34,7 +34,7 @@ namespace MediaBazzar
                     }
                     else
                     {
-                        Account account = new Account(tbUsername.Text, employee);
+                       // Account account = new Account(tbUsername.Text, employee);
                         Accounts.Add(account);
                         employee.SetAccount(account);
                         if (employee != null)
@@ -59,7 +59,7 @@ namespace MediaBazzar
             {
 
                 MessageBox.Show("There seems to be an error, Please try again!");
-            }
+            }*/
         }
 
         private void btnShowAllEmployees_Click(object sender, EventArgs e)

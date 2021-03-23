@@ -22,40 +22,46 @@ namespace MediaBazzar
 
         public void Insert(object obj)
         {
-            Employee person = (Employee)obj;
+            Employee employee = (Employee)obj;
             try
             {
-                // make sure in your table the id in auto-incremented
-                string sql = "INSERT INTO shopstock (StockID, StockName,StockAmount,Price,Brand) VALUES (@stockID, @stockname,@amount,@price,@brand)";
+                Person personalInfo = employee.personalInfo;
+                Address personalAddress = personalInfo.Address;
+                int addressId = insertAddress(personalAddress);
+                int personalInfoId = insertPerson(personalInfo, addressId);
+
+                Person contactPerson = employee.ContactPerson;
+                Address contactAdress = contactPerson.Address;
+                int contactAddressId = insertAddress(contactAdress);
+                int contactPersonId = insertPerson(contactPerson, contactAddressId);
+
+                Contract contract = employee.Contract;
+                int contractId = insertContract(contract);
+
+                Account account = employee.Account;
+                int accountId = insertAccount(account);
+
+                string sql = "INSERT INTO employee (personId, contactPersonId, dateOfBirth, BSN, role, contractId, accountId) VALUES (@personId, @contactPersonId, @dateOfBirth, @BSN, @role, @contractId, @accountId)";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@stockID", stock.ID);
-                cmd.Parameters.AddWithValue("@stockname", stock.Name);
-                cmd.Parameters.AddWithValue("@amount", stock.Amount);
-                cmd.Parameters.AddWithValue("@price", stock.Price);
-                cmd.Parameters.AddWithValue("@brand", stock.Brand);
-
-
+                cmd.Parameters.AddWithValue("@personId", personalInfoId);
+                cmd.Parameters.AddWithValue("@contactPersonId", contactPersonId);
+                cmd.Parameters.AddWithValue("@dateOfBirth", employee.DateOfBirth);
+                cmd.Parameters.AddWithValue("@BSN", employee.BSNp);
+                cmd.Parameters.AddWithValue("@role", employee.Role);
+                cmd.Parameters.AddWithValue("@contractId", contractId);
+                cmd.Parameters.AddWithValue("@accountId", accountId);
                 conn.Open();
-
                 cmd.ExecuteNonQuery();
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.Message);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occured! Try again.");
+                throw new FailedDatabaseInjectionException("employee");
             }
             finally
             {
-                if (conn != null)
-                {
-                    conn.Close();
-                }
+                conn.Close();
             }
         }
-
         public object ReadAll()
         {
             List<Employee> em = new List<Employee>();
@@ -71,7 +77,7 @@ namespace MediaBazzar
 
                 while (dr.Read())
                 {
-                    em.Add(new Employee(dr[1].ToString(), Convert.ToInt32(dr[2]), Convert.ToInt32(dr[0]), Convert.ToInt32(dr[3]), dr[4].ToString()));
+                    //em.Add(new Employee(dr[1].ToString(), Convert.ToInt32(dr[2]), Convert.ToInt32(dr[0]), Convert.ToInt32(dr[3]), dr[4].ToString()));
                 }
 
             }
@@ -91,6 +97,115 @@ namespace MediaBazzar
                 }
             }
             return em;
+        }
+
+        private int insertAddress(Address address)
+        {
+            string sql = "INSERT INTO address (state, city, street, apartmentNr) VALUES (@state, @city, @street, @apartmentNr);" + "SELECT LAST_INSERT_ID();";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@state", address.State);
+            cmd.Parameters.AddWithValue("@city", address.City);
+            cmd.Parameters.AddWithValue("@street", address.Street);
+            cmd.Parameters.AddWithValue("@apartmentNr", address.ApartmentNr);
+            int addressId = -1;
+            try
+            {
+                conn.Open();
+                addressId = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                throw new FailedDatabaseInjectionException("address");
+            }
+            finally
+            {
+                conn.Close();
+            }
+            MessageBox.Show(addressId.ToString());
+            return (int)addressId;
+
+        }
+
+        private int insertPerson(Person person, int addressId)
+        {
+            int personid = -1;
+            string sql = "INSERT INTO person (firstName, lastName, phoneNumber, email, addressId) VALUES (@firstName, @lastName, @phoneNumber, @email, @addressId);" + "SELECT LAST_INSERT_ID();";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@firstName", person.FirstName);
+            cmd.Parameters.AddWithValue("@lastName", person.LastName);
+            cmd.Parameters.AddWithValue("@phoneNumber", person.PhoneNumber);
+            cmd.Parameters.AddWithValue("@email", person.Email);
+            cmd.Parameters.AddWithValue("@addressId", addressId);
+            try
+            {
+                conn.Open();
+                personid = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                throw new FailedDatabaseInjectionException("person");
+            }
+            finally
+            {
+                conn.Close();
+            }
+            MessageBox.Show(personid.ToString());
+            return personid;
+        }
+        private int insertContract(Contract contract)
+        {
+            int contractId = -1;
+            string sql = "INSERT INTO contract (start, end, endReason) VALUES(@start, @end, @endReason);" + "SELECT LAST_INSERT_ID();";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@start", contract.EmploymentStart.Date);
+            if (contract.isTerminated())
+            {
+                cmd.Parameters.AddWithValue("@end", contract.EmploymentEnd);
+                cmd.Parameters.AddWithValue("@endReason", contract.TerminationReason);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@end", null);
+                cmd.Parameters.AddWithValue("@endReason", null);
+            }
+            try
+            {
+                conn.Open();
+                contractId = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch(Exception ex)
+            {
+                throw new FailedDatabaseInjectionException("contract");
+            }
+            finally
+            {
+                conn.Close();
+            }
+            MessageBox.Show(contractId.ToString());
+            return contractId;
+        }
+        private int insertAccount(Account account)
+        {
+            int accountId = -1;
+            string sql = "INSERT INTO account (username, password) VALUES (@username, @password);" + "SELECT LAST_INSERT_ID();";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@username", account.Username);
+            cmd.Parameters.AddWithValue("@password", account.Password);
+            try
+            {
+                conn.Open();
+                accountId = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+            catch(Exception ex)
+            {
+                throw new FailedDatabaseInjectionException("account");
+            }
+            finally
+            {
+                conn.Close();
+            }
+            MessageBox.Show(accountId.ToString());
+            return accountId;
         }
     }
 }

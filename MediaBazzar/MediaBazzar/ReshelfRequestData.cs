@@ -22,7 +22,7 @@ namespace MediaBazzar
 
         public void Insert(object obj)
         {
-            ReshelfRequest acc = (ReshelfRequest)obj;
+           /* ReshelfRequest acc = (ReshelfRequest)obj;
             try
             {
                 // make sure in your table the id in auto-incremented
@@ -53,7 +53,7 @@ namespace MediaBazzar
                 {
                     conn.Close();
                 }
-            }
+            }*/
         }
 
         public object ReadAll()
@@ -71,7 +71,7 @@ namespace MediaBazzar
 
                 while (dr.Read())
                 {
-                    Requests.Add(new Stock(dr[1].ToString(), Convert.ToInt32(dr[2]), Convert.ToInt32(dr[0]), Convert.ToInt32(dr[3]), dr[4].ToString()));
+                    //Requests.Add(new Stock(dr[1].ToString(), Convert.ToInt32(dr[2]), Convert.ToInt32(dr[0]), Convert.ToInt32(dr[3]), dr[4].ToString()));
                 }
 
             }

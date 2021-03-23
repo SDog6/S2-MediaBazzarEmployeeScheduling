@@ -34,5 +34,10 @@ namespace MediaBazzar
             WarehouseManagement f = new WarehouseManagement();
             f.Show();
         }
+
+        private void LogInForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -14,6 +14,10 @@ namespace MediaBazzar
         private string street;
         private string apartmentNr;
 
+        public string State { get { return this.state; } }
+        public string City { get { return this.city; } }
+        public string Street { get { return this.street; } }
+        public string ApartmentNr { get { return this.apartmentNr; } }
         public Address(string state, string city, string street)
         {
             this.state = state;

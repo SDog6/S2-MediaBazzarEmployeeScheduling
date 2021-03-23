@@ -20,7 +20,7 @@ namespace MediaBazzar
 
         public void Insert(object obj)
         {
-            Account acc = (Account)obj;
+            /*Account acc = (Account)obj;
             try
             {
                 // make sure in your table the id in auto-incremented
@@ -51,14 +51,14 @@ namespace MediaBazzar
                 {
                     conn.Close();
                 }
-            }
+            }*/
         }
 
         public object ReadAll()
         {
             List<Account> acc = new List<Account>();
 
-            try
+            /*try
             {
                 string sql = "SELECT StockID, StockName,StockAmount,Price,Brand FROM shopstock;";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -88,7 +88,8 @@ namespace MediaBazzar
                     conn.Close();
                 }
             }
-            return acc;
+            return acc;*/
+            return null;
         }
     }
 }

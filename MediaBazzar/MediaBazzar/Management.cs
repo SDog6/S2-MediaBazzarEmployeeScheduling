@@ -21,7 +21,7 @@ namespace MediaBazzar
             time = DateTime.Now;
             stock = new ShopStockManager();
             Employees = new Administration();
-            Employees.AddEmployee(new Employee(234,"Lee", "Johnson", "09808920203", new Address("Kenya", "Obama", "Sangerlaan", "28"), "Lee@gmail.com", new Person("John", "Lee", "03039393", new Address("Alabama", "Kanzas", "28 beach", "25"), "J@gmail.com"), "01.02.1998", "323242423", new Contract(time)));
+            //Employees.AddEmployee(new Employee(234,"Lee", "Johnson", "09808920203", new Address("Kenya", "Obama", "Sangerlaan", "28"), "Lee@gmail.com", new Person("John", "Lee", "03039393", new Address("Alabama", "Kanzas", "28 beach", "25"), "J@gmail.com"), "01.02.1998", "323242423", new Contract(time)));
         }
 
         private void btnManagementRestockRequest_Click(object sender, EventArgs e)

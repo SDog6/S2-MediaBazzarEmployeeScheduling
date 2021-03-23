@@ -9,12 +9,17 @@ namespace MediaBazzar
     public class Person
     {
 
-        private string firstName;
-        private string lastName;
-        private string phoneNumber;
-        private Address address;
-        private string email;
+        protected string firstName;
+        protected string lastName;
+        protected string phoneNumber;
+        protected Address address;
+        protected string email;
 
+        public string FirstName { get { return this.firstName; } }
+        public string LastName { get { return this.lastName; } }
+        public string PhoneNumber { get { return this.phoneNumber; } }
+        public string Email { get { return this.email; } }
+        public Address Address { get { return this.address; } }
         public Person(string firstName, string lastName, string phoneNumber, Address address, string email)
         {
             this.firstName = firstName;

@@ -20,9 +20,8 @@ namespace MediaBazzar
             try
             {
                 // make sure in your table the id in auto-incremented
-                string sql = "INSERT INTO shopstock (StockID, StockName,StockAmount,Price,Brand) VALUES (@stockID, @stockname,@amount,@price,@brand)";
+                string sql = "INSERT INTO stock (name, amount , price , brand) VALUES (@stockname,@amount,@price,@brand)";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@stockID", stock.ID);
                 cmd.Parameters.AddWithValue("@stockname", stock.Name);
                 cmd.Parameters.AddWithValue("@amount", stock.Amount);
                 cmd.Parameters.AddWithValue("@price", stock.Price);
@@ -56,7 +55,7 @@ namespace MediaBazzar
 
             try
             {
-                string sql = "SELECT StockID, StockName,StockAmount,Price,Brand FROM shopstock;";
+                string sql = "SELECT id, name, amount, price, brand FROM shopstock;";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 conn.Open();

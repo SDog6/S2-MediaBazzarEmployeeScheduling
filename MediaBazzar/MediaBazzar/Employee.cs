@@ -10,28 +10,39 @@ namespace MediaBazzar
     {
         private int ID;
         private Person contactPerson;
-        private string dateOfBirth;
+        private DateTime dateOfBirth;
         private string BSN;
+        private string role;
         private Contract contract;
         private Account account;
 
         public string BSNp { get { return this.BSN; } set { this.BSN = value; } }
-
+        public DateTime DateOfBirth { get { return this.dateOfBirth; } }
         public int EmployeeID { get { return this.ID; } set { this.ID = value; } }
+        public string Role { get { return this.role; } }
+        public Person personalInfo { get { return new Person(firstName, lastName, phoneNumber, address, email); } }
+        public Person ContactPerson { get { return this.contactPerson; } }
+        public Contract Contract { get { return this.contract; } }
+        public Account Account { get { return this.account; } }
 
-
-
-
-        public Employee(int ID,string firstName, string lastName, string phoneNumber, Address address, string email, Person contactPerson, string dateOfBirth, string BSN, Contract contract) : base(firstName, lastName, phoneNumber, address, email)
+        public Employee(int ID,string firstName, string lastName, string phoneNumber, Address address, string email, Person contactPerson, DateTime dateOfBirth, string BSN, string role, Contract contract, Account account) : base(firstName, lastName, phoneNumber, address, email)
         {
             this.ID = ID;
             this.contactPerson = contactPerson;
             this.dateOfBirth = dateOfBirth;
             this.BSN = BSN;
             this.contract = contract;
-            this.account = null;
+            this.account = account;
         }
-
+        public Employee(string firstName, string lastName, string phoneNumber, Address address, string email, Person contactPerson, DateTime dateOfBirth, string BSN, string role, Contract contract,Account account) : base(firstName, lastName, phoneNumber, address, email)
+        {
+            this.contactPerson = contactPerson;
+            this.dateOfBirth = dateOfBirth;
+            this.BSN = BSN;
+            this.contract = contract;
+            this.account = null;
+            this.account = account;
+        }
         public string getContactInfo()
         {
             return $"{contactPerson}";

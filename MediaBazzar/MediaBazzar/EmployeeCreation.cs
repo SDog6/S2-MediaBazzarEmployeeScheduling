@@ -12,17 +12,12 @@ namespace MediaBazzar
 {
     public partial class EmployeeCreation : Form
     {
-        Administration ad = new Administration();
+        EmployeeData database;
         public EmployeeCreation()
         {
             InitializeComponent();
+            database = new EmployeeData();
         }
-
-
-        
-            
-    
-
         private void btnOpenCreateForm_Click(object sender, EventArgs e)
         {
             AccountCreateForm createForm = new AccountCreateForm();
@@ -31,38 +26,30 @@ namespace MediaBazzar
 
         private void btnSubmit_Click_1(object sender, EventArgs e)
         {
-                try
-                {
-                    if (tbEState.Text != "" && tbCCity.Text != "" && tbEStreetName.Text != "" && tbEStreetNr.Text != "" && tbCstate.Text != "" && tbCCity.Text != "" && tbCstreetname.Text != "" && tbCstreetnr.Text != "" && tbEname.Text != "" && tbELastname.Text != "" && tbEPhoneNumber.Text != "" && tbEEmail.Text != "" && tbYear.Text != "" && tbEBSN.Text != "")
-                    {
-                        
-                        Address address = new Address(tbEState.Text, tbECity.Text, tbEStreetName.Text, tbEStreetNr.Text);
-                        Address contactAddress = new Address(tbCstate.Text, tbCCity.Text, tbCstreetname.Text, tbCstreetnr.Text);
-                        Person Contactperson = new Person(tbCName.Text, tbCLastname.Text, tbCPhoneNumber.Text, contactAddress, tbCEmail.Text);
-                        Contract contract = new Contract(DateTime.Now);
-                        Employee employee = new Employee(Convert.ToInt32(textBox1.Text),tbEname.Text, tbELastname.Text, tbEPhoneNumber.Text, address, tbEEmail.Text, Contactperson, tbYear.Text, tbEBSN.Text, contract);
-                        ad.AddEmployee(employee);
-                        MessageBox.Show("The Employees Has succesfully been added!");
-                        // Account account = new Account(tbUsername.Text, employee);
-                        //ad.AddAccount(account);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Make sure all the information is filled in before submitting !");
-                    }
 
 
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("There was an Error");
-                }
-            }
+            //Address address = new Address(tbEState.Text, tbECity.Text, tbEStreetName.Text, tbEStreetNr.Text);
+            //Address contactAddress = new Address(tbCstate.Text, tbCCity.Text, tbCstreetname.Text, tbCstreetnr.Text);
+            //Person Contactperson = new Person(tbCName.Text, tbCLastname.Text, tbCPhoneNumber.Text, contactAddress, tbCEmail.Text);
+            //Contract contract = new Contract(DateTime.Now);
+            //Employee employee = new Employee(Convert.ToInt32(textBox1.Text),tbEname.Text, tbELastname.Text, tbEPhoneNumber.Text, address, tbEEmail.Text, Contactperson, tbYear.Text, tbEBSN.Text, contract);
+            Address ad = new Address("0", "0", "0", "0");
+            Address cAd = new Address("0", "0", "0", "1");
+            Person contactPerson = new Person("a", "a", "a", cAd, "a");
+            Contract contract = new Contract(DateTime.Now);
+            Account acc = new Account("hasan");
+            Employee employee = new Employee("b", "b", "b", ad, "b", contactPerson, DateTime.Now, "b", "b", contract, acc);
+            database.Insert(employee);
+            // Account account = new Account(tbUsername.Text, employee);
+            //ad.AddAccount(account);
+
+
+        }
 
         private void EmployeeCreation_Load(object sender, EventArgs e)
         {
 
         }
     }
-    }
+}
 

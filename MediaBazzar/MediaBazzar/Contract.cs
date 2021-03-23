@@ -13,6 +13,9 @@ namespace MediaBazzar
         private DateTime employmentEnd;
         private string terminationReason;
 
+        public DateTime EmploymentStart { get { return this.employmentStart; } }
+        public DateTime EmploymentEnd { get { return this.employmentEnd; } }
+        public string TerminationReason { get { return this.terminationReason; } }
         public Contract(DateTime employmentStart)
         {
             this.employmentStart = employmentStart;

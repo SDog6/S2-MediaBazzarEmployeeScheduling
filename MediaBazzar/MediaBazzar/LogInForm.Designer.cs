@@ -43,55 +43,62 @@ namespace MediaBazzar
             // 
             // tbLogInUsername
             // 
-            this.tbLogInUsername.Location = new System.Drawing.Point(390, 76);
+            this.tbLogInUsername.Location = new System.Drawing.Point(520, 94);
+            this.tbLogInUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbLogInUsername.Name = "tbLogInUsername";
-            this.tbLogInUsername.Size = new System.Drawing.Size(100, 20);
+            this.tbLogInUsername.Size = new System.Drawing.Size(132, 22);
             this.tbLogInUsername.TabIndex = 0;
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // tbLogInPassword
             // 
-            this.tbLogInPassword.Location = new System.Drawing.Point(390, 123);
+            this.tbLogInPassword.Location = new System.Drawing.Point(520, 151);
+            this.tbLogInPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbLogInPassword.Name = "tbLogInPassword";
-            this.tbLogInPassword.Size = new System.Drawing.Size(100, 20);
+            this.tbLogInPassword.Size = new System.Drawing.Size(132, 22);
             this.tbLogInPassword.TabIndex = 2;
             // 
             // Username
             // 
             this.Username.AutoSize = true;
-            this.Username.Location = new System.Drawing.Point(329, 79);
+            this.Username.Location = new System.Drawing.Point(439, 97);
+            this.Username.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Username.Name = "Username";
-            this.Username.Size = new System.Drawing.Size(58, 13);
+            this.Username.Size = new System.Drawing.Size(77, 17);
             this.Username.TabIndex = 3;
             this.Username.Text = "Username:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(329, 126);
+            this.label1.Location = new System.Drawing.Point(439, 155);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.Size = new System.Drawing.Size(69, 17);
             this.label1.TabIndex = 4;
             this.label1.Text = "Password";
             // 
             // btnLogIn
             // 
-            this.btnLogIn.Location = new System.Drawing.Point(410, 170);
+            this.btnLogIn.Location = new System.Drawing.Point(547, 209);
+            this.btnLogIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogIn.Name = "btnLogIn";
-            this.btnLogIn.Size = new System.Drawing.Size(80, 37);
+            this.btnLogIn.Size = new System.Drawing.Size(107, 46);
             this.btnLogIn.TabIndex = 5;
             this.btnLogIn.Text = "Log in";
             this.btnLogIn.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(54, 257);
+            this.button1.Location = new System.Drawing.Point(72, 316);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 37);
+            this.button1.Size = new System.Drawing.Size(164, 46);
             this.button1.TabIndex = 6;
             this.button1.Text = "Open Manager Form";
             this.button1.UseVisualStyleBackColor = true;
@@ -99,9 +106,10 @@ namespace MediaBazzar
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(259, 257);
+            this.button2.Location = new System.Drawing.Point(345, 316);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 37);
+            this.button2.Size = new System.Drawing.Size(164, 46);
             this.button2.TabIndex = 7;
             this.button2.Text = "Open Account Administration Form";
             this.button2.UseVisualStyleBackColor = true;
@@ -109,9 +117,10 @@ namespace MediaBazzar
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(447, 257);
+            this.button3.Location = new System.Drawing.Point(596, 316);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(123, 37);
+            this.button3.Size = new System.Drawing.Size(164, 46);
             this.button3.TabIndex = 8;
             this.button3.Text = "Open Warehouse Form";
             this.button3.UseVisualStyleBackColor = true;
@@ -119,9 +128,9 @@ namespace MediaBazzar
             // 
             // LogInForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 330);
+            this.ClientSize = new System.Drawing.Size(879, 406);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -130,8 +139,10 @@ namespace MediaBazzar
             this.Controls.Add(this.Username);
             this.Controls.Add(this.tbLogInPassword);
             this.Controls.Add(this.tbLogInUsername);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "LogInForm";
             this.Text = "LogInForm";
+            this.Load += new System.EventHandler(this.LogInForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

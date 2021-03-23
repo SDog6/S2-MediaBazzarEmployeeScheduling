@@ -126,6 +126,7 @@
       <DependentUpon>EmployeeInfoUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="EmployeeManager.cs" />
+    <Compile Include="FailedDatabaseInjectionException.cs" />
     <Compile Include="IDatabaseManager.cs" />
     <Compile Include="IManager.cs" />
     <Compile Include="LogInForm.cs">
@@ -151,13 +152,6 @@
     </Compile>
     <Compile Include="ManagementReshelf.Designer.cs">
       <DependentUpon>ManagementReshelf.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Manager.cs" />
-    <Compile Include="ManagerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManagerForm.Designer.cs">
-      <DependentUpon>ManagerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="NewStock.cs">
       <SubType>Form</SubType>
@@ -205,9 +199,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagementReshelf.resx">
       <DependentUpon>ManagementReshelf.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManagerForm.resx">
-      <DependentUpon>ManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewStock.resx">
       <DependentUpon>NewStock.cs</DependentUpon>
