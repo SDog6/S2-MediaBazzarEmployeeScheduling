@@ -12,7 +12,6 @@ namespace MediaBazzar
 {
     public partial class editAccount : Form
     {
-        Administration ad = new Administration();
         public editAccount()
         {
             InitializeComponent();
@@ -27,27 +26,7 @@ namespace MediaBazzar
         {
             try
             {
-                if (tbUsername.Text != "")
-                {
-                    Account ac = (Account)lbEmployees.SelectedItem;
-                    
-
-                    if (ac != null)
-                    {
-                        ad.setAccount(ac, tbUsername.Text);
-                      MessageBox.Show("Username sucesfully changed");
-                        UpdateList();
-                    }
-                    else
-                    {
-                        MessageBox.Show("You did not select a employee yet!");
-                    }
-
-                }
-                else
-                {
-                    MessageBox.Show("Username was not changed, You have to write a username in the textbox!");
-                }
+               
             }
 
 
@@ -67,11 +46,6 @@ namespace MediaBazzar
         {
             try
             {
-                lbEmployees.Items.Clear();
-                foreach (Account item in ad.GetAccounts())
-                {
-                    lbEmployees.Items.Add(item);
-                }
             }
             catch(Exception)
             {

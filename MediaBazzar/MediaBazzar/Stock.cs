@@ -44,13 +44,13 @@ namespace MediaBazzar
             set { name = value; }
         }
 
-        public Stock(string name, int amount, int id, int price, string brand)
+        public Stock(string name, int amount,int id, int price, string brand)
         {
             this.name = name;
             this.amount = amount;
-            this.id = id;
             this.price = price;
             this.brand = brand;
+            this.id = id;
         }
 
         public void Resupply(int number)

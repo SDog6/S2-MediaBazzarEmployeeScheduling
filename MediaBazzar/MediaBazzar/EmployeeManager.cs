@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MediaBazzar
 {
-    class EmployeeManager : IManager
+   public class EmployeeManager
     {
 
         private List<Employee> Emps;
@@ -19,6 +19,18 @@ namespace MediaBazzar
         {
             EmpsData = new EmployeeData();
             loadDataFromDatabase();
+        }
+
+        public Employee  GetEmployeeForLogin(string username,string password)
+        {
+            foreach (Employee item in Emps)
+            {
+                if(item.Username == username && item.Password == password)
+                {
+                    return item;
+                }
+            }
+            return null;
         }
 
 
@@ -60,7 +72,17 @@ namespace MediaBazzar
 
         public bool Remove(object obj)
         {
-            throw new NotImplementedException();
+            if (obj != null)
+            {
+                EmpsData.Delete((Employee)obj);
+                loadDataFromDatabase();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
     }
 }

@@ -12,37 +12,31 @@ namespace MediaBazzar
 {
     public partial class Management : Form
     {
-        ShopStockManager stock;
-        Administration Employees;
-        DateTime time;
+        EmployeeManager Employees;
+        ShopStockManager ShopManager;
         public Management()
         {
             InitializeComponent();
-            time = DateTime.Now;
-            stock = new ShopStockManager();
-            Employees = new Administration();
-            Employees.AddEmployee(new Employee(234,"Lee", "Johnson", "09808920203", new Address("Kenya", "Obama", "Sangerlaan", "28"), "Lee@gmail.com", new Person("John", "Lee", "03039393", new Address("Alabama", "Kanzas", "28 beach", "25"), "J@gmail.com"), "01.02.1998", "323242423", new Contract(time)));
+            Employees = new EmployeeManager();
+            ShopManager = new ShopStockManager();
+            UpdateStockUI();
+            UpdateEmployee();
         }
 
         private void btnManagementRestockRequest_Click(object sender, EventArgs e)
         {
-            if(lbManagementStock.SelectedIndex > -1)
-            {
-                Stock a = (Stock)lbManagementStock.SelectedItem;
-                ManagementReshelf m = new ManagementReshelf(a);
-                m.Show();
-            }
+           
             
         }
 
         private void btnManagementEPFilter_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnManagemntPersonCreation_Click(object sender, EventArgs e)
         {
-            EmployeeCreation creation = new EmployeeCreation();
+            EmployeeCreation creation = new EmployeeCreation(Employees);
             creation.Show();
         }
 
@@ -55,20 +49,15 @@ namespace MediaBazzar
         }
 
 
-        private void btnManagemendUpdate_Click(object sender, EventArgs e)
-        {
-            lbManagemendEmployees.Items.Clear();
-            foreach (Employee item in Employees.GetAll())
-            {
-                lbManagemendEmployees.Items.Add(item);
-            }
-
-        }
-
         private void btnManagementUpdate_Click(object sender, EventArgs e)
         {
+            UpdateStockUI();
+        }
+
+        public void UpdateStockUI()
+        {
             lbManagementStock.Items.Clear();
-            foreach (Stock item in stock.GetAllPerType())
+            foreach (Stock item in ShopManager.GetAllPerType())
             {
                 lbManagementStock.Items.Add(item);
             }
@@ -80,9 +69,59 @@ namespace MediaBazzar
         }
 
         private void btnManagementNewStock_Click(object sender, EventArgs e)
-        {/*
-            NewStock a = new NewStock(stock);
-            a.Show();*/
+        {
+            ManagementNewInventory a = new ManagementNewInventory(ShopManager);
+            a.Show();
+        }
+
+        private void btnManagemendUpdate_Click(object sender, EventArgs e)
+        {
+            UpdateEmployee();
+        }
+
+        public void UpdateEmployee()
+        {
+            lbManagemendEmployees.Items.Clear();
+            foreach (Employee item in Employees.GetAllPerType())
+            {
+                lbManagemendEmployees.Items.Add(item);
+            }
+        }
+
+        private void btnStockRemove_Click(object sender, EventArgs e)
+        {
+            if(lbManagementStock.SelectedIndex > -1)
+            {
+                Object s = lbManagementStock.SelectedItem;
+                ShopManager.Remove(s);
+            }
+        }
+
+        private void btnManagementStockFilter_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(lbManagemendEmployees.SelectedIndex > -1)
+            {
+                Object s = lbManagemendEmployees.SelectedItem;
+                Employee selected = (Employee)s;
+                ViewEmployeeDetails v = new ViewEmployeeDetails(selected);
+                v.Show();
+
+            }
+        }
+
+        private void btnFire_Click(object sender, EventArgs e)
+        {
+            if(lbManagemendEmployees.SelectedIndex > -1)
+            {
+                Object s = lbManagemendEmployees.SelectedItem;
+                Employee emp = (Employee)s;
+                Employees.Remove(emp);
+            }
         }
     }
 }

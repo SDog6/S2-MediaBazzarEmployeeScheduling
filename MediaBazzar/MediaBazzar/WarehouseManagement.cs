@@ -18,19 +18,13 @@ namespace MediaBazzar
         {
             InitializeComponent();
             WarehouseStock = new WarehouseStockManager();
-            Object a  = new Stock("Nike", 30, 45, 60, "Nike");
-            Object b = new Stock("Nike", 30, 55, 60, "Suka");
-            WarehouseStock.Add(a);
-            WarehouseStock.Add(b);
+            UpdateUI();
+            rbWarehouseItemID.Checked = true;
         }
 
         private void btnWarehouseUpdate_Click(object sender, EventArgs e)
         {
-            lbWarehouseStock.Items.Clear();
-            foreach (Stock s in WarehouseStock.GetAllPerType())
-            {
-                lbWarehouseStock.Items.Add(s);
-            }
+            UpdateUI();
         }
 
         private void btnWarehouseAddItem_Click(object sender, EventArgs e)
@@ -45,25 +39,19 @@ namespace MediaBazzar
             if (rbWarehouseBrand.Checked)
             {
                 string brand = tbWarehouseSearch.Text;
-                foreach (Stock s in WarehouseStock.GetAllPerType())
+                foreach (Stock s in WarehouseStock.SearchByBrand(brand))
                 {
-                    if (s.Brand == brand)
-                    {
-                        lbWarehouseStock.Items.Add(s);
-                    }
-                    else { }
+                    lbWarehouseStock.Items.Add(s);
                 }
             }
             else if (rbWarehouseItemID.Checked)
             {
                 int ID = Convert.ToInt32(tbWarehouseSearch.Text);
-                foreach (Stock s in WarehouseStock.GetAllPerType())
+                foreach (Stock s in WarehouseStock.SearchByID(ID))
                 {
-                    if(s.ID == ID)
-                    {
+                 
                         lbWarehouseStock.Items.Add(s);
-                    }
-                    else { }
+                 
                 }
             }
         }
@@ -75,6 +63,26 @@ namespace MediaBazzar
                 Stock selected = (Stock)lbWarehouseStock.SelectedItem;
                 selected.Resupply(Convert.ToInt32(tbWarehouseResupply.Text));
             }
+        }
+
+        public void UpdateUI()
+        {
+            lbWarehouseStock.Items.Clear();
+            foreach (Stock s in WarehouseStock.GetAllPerType())
+            {
+                lbWarehouseStock.Items.Add(s);
+            }
+        }
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            Object s = lbWarehouseStock.SelectedItem;
+            WarehouseStock.Remove(s);
+            UpdateUI();
+        }
+
+        private void WarehouseManagement_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

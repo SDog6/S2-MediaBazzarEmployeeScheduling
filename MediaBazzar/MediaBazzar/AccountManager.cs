@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace MediaBazzar
 {
-    class AccountManager : IManager
+    class AccountManager 
     {
-
+/*
 
         private List<Account> accdata;
 
@@ -25,7 +25,7 @@ namespace MediaBazzar
 
         private void loadDataFromDatabase()
         {
-           accdata = new List<Account>();
+            accdata = new List<Account>();
 
             foreach (Account o in (List<Account>)accountData.ReadAll())
             {
@@ -62,6 +62,6 @@ namespace MediaBazzar
         public bool Remove(object obj)
         {
             throw new NotImplementedException();
-        }
+        }*/
     }
 }

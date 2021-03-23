@@ -96,7 +96,6 @@
     <Compile Include="AccountData.cs" />
     <Compile Include="AccountManager.cs" />
     <Compile Include="Address.cs" />
-    <Compile Include="Administration.cs" />
     <Compile Include="Contract.cs" />
     <Compile Include="CreateAccount.cs">
       <SubType>Form</SubType>
@@ -104,7 +103,6 @@
     <Compile Include="CreateAccount.Designer.cs">
       <DependentUpon>CreateAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="Department.cs" />
     <Compile Include="editAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,13 +150,6 @@
     <Compile Include="ManagementReshelf.Designer.cs">
       <DependentUpon>ManagementReshelf.cs</DependentUpon>
     </Compile>
-    <Compile Include="Manager.cs" />
-    <Compile Include="ManagerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManagerForm.Designer.cs">
-      <DependentUpon>ManagerForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="NewStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +165,12 @@
     <Compile Include="ShopStockData.cs" />
     <Compile Include="ShopStockManager.cs" />
     <Compile Include="Stock.cs" />
+    <Compile Include="ViewEmployeeDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewEmployeeDetails.Designer.cs">
+      <DependentUpon>ViewEmployeeDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="WarehouseStockData.cs" />
     <Compile Include="WarehouseStockManager.cs" />
     <Compile Include="WarehouseManagement.cs">
@@ -206,9 +203,6 @@
     <EmbeddedResource Include="ManagementReshelf.resx">
       <DependentUpon>ManagementReshelf.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerForm.resx">
-      <DependentUpon>ManagerForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="NewStock.resx">
       <DependentUpon>NewStock.cs</DependentUpon>
     </EmbeddedResource>
@@ -221,6 +215,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ViewEmployeeDetails.resx">
+      <DependentUpon>ViewEmployeeDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WarehouseManagement.resx">
       <DependentUpon>WarehouseManagement.cs</DependentUpon>
     </EmbeddedResource>

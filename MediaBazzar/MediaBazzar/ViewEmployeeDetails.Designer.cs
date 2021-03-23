@@ -1,7 +1,7 @@
 ﻿
 namespace MediaBazzar
 {
-    partial class EmployeeCreation
+    partial class ViewEmployeeDetails
     {
         /// <summary>
         /// Required designer variable.
@@ -55,7 +55,6 @@ namespace MediaBazzar
             this.tbDateOfBirth = new System.Windows.Forms.TextBox();
             this.tbEUsername = new System.Windows.Forms.TextBox();
             this.tbEPassword = new System.Windows.Forms.TextBox();
-            this.btnSubmit = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.EmployeeInfo.SuspendLayout();
             this.SuspendLayout();
@@ -66,10 +65,10 @@ namespace MediaBazzar
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.tbCName);
             this.groupBox1.Controls.Add(this.tbCPhone);
-            this.groupBox1.Location = new System.Drawing.Point(552, 25);
+            this.groupBox1.Location = new System.Drawing.Point(544, 25);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(369, 99);
-            this.groupBox1.TabIndex = 18;
+            this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contact Person";
             // 
@@ -127,10 +126,10 @@ namespace MediaBazzar
             this.EmployeeInfo.Controls.Add(this.tbDateOfBirth);
             this.EmployeeInfo.Controls.Add(this.tbEUsername);
             this.EmployeeInfo.Controls.Add(this.tbEPassword);
-            this.EmployeeInfo.Location = new System.Drawing.Point(23, 16);
+            this.EmployeeInfo.Location = new System.Drawing.Point(15, 16);
             this.EmployeeInfo.Name = "EmployeeInfo";
             this.EmployeeInfo.Size = new System.Drawing.Size(514, 370);
-            this.EmployeeInfo.TabIndex = 17;
+            this.EmployeeInfo.TabIndex = 20;
             this.EmployeeInfo.TabStop = false;
             this.EmployeeInfo.Text = "Employee details";
             // 
@@ -251,7 +250,6 @@ namespace MediaBazzar
             this.tbEname.Name = "tbEname";
             this.tbEname.Size = new System.Drawing.Size(97, 20);
             this.tbEname.TabIndex = 4;
-            this.tbEname.TextChanged += new System.EventHandler(this.tbEname_TextChanged);
             // 
             // tbAddress
             // 
@@ -295,27 +293,16 @@ namespace MediaBazzar
             this.tbEPassword.Size = new System.Drawing.Size(114, 20);
             this.tbEPassword.TabIndex = 8;
             // 
-            // btnSubmit
-            // 
-            this.btnSubmit.Location = new System.Drawing.Point(562, 337);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(102, 49);
-            this.btnSubmit.TabIndex = 15;
-            this.btnSubmit.Text = "Submit ";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click_1);
-            // 
-            // EmployeeCreation
+            // ViewEmployeeDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(930, 405);
+            this.ClientSize = new System.Drawing.Size(924, 411);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.EmployeeInfo);
-            this.Controls.Add(this.btnSubmit);
-            this.Name = "EmployeeCreation";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.EmployeeCreation_Load);
+            this.Name = "ViewEmployeeDetails";
+            this.Text = "ViewEmployeeDetails";
+            this.Load += new System.EventHandler(this.ViewEmployeeDetails_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.EmployeeInfo.ResumeLayout(false);
@@ -325,12 +312,16 @@ namespace MediaBazzar
         }
 
         #endregion
+
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbCName;
         private System.Windows.Forms.TextBox tbCPhone;
         private System.Windows.Forms.GroupBox EmployeeInfo;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbBSN;
         private System.Windows.Forms.TextBox tbEmployeeRole;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
@@ -348,10 +339,5 @@ namespace MediaBazzar
         private System.Windows.Forms.TextBox tbDateOfBirth;
         private System.Windows.Forms.TextBox tbEUsername;
         private System.Windows.Forms.TextBox tbEPassword;
-        private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbBSN;
-        private System.Windows.Forms.Label label4;
     }
 }
-

@@ -6,69 +6,58 @@ using System.Threading.Tasks;
 
 namespace MediaBazzar
 {
-    public class Employee : Person
+    public class Employee
     {
-        private int ID;
-        private Person contactPerson;
-        private string dateOfBirth;
-        private string BSN;
-        private Contract contract;
-        private Account account;
+        private string firstname;
+        private string lastname;
+        private string username;
+        private string password;
+        private int phonenumber;
+        private string address;
+        private string email;
+        private string contactpersonname;
+        private int contactperonphone;
+        private string dateofbirth;
+        private int bsn;
+        private string role;
 
-        public string BSNp { get { return this.BSN; } set { this.BSN = value; } }
+     public string FirstName { get { return this.firstname; } set { firstname = value; } }
+        public string LastName { get { return lastname; } set { lastname = value; } }
+        public string Username { get { return username; }set { username = value;} }
 
-        public int EmployeeID { get { return this.ID; } set { this.ID = value; } }
+        public string Password { get { return password; } set { password = value; } }
+        public int PhoneNumber { get { return phonenumber; } set { phonenumber = value; } }
+        public string Address { get { return address; } set { address = value; } }
+        public string Email { get { return email; } set { email = value; }  }
+
+        public string ContactPersonName { get { return contactpersonname; }set { contactpersonname = value; } }
+        public int ContactPeronPhone { get { return contactperonphone; } set { contactperonphone = value; } }
+        public string DateOfBirth { get { return dateofbirth; } set { dateofbirth = value; } }
+        public int BSN { get { return bsn; } set { bsn = value; } }
+        public string Role { get { return role; } set { role = value; } }
 
 
-
-
-        public Employee(int ID,string firstName, string lastName, string phoneNumber, Address address, string email, Person contactPerson, string dateOfBirth, string BSN, Contract contract) : base(firstName, lastName, phoneNumber, address, email)
+        public Employee(string firstname,string lastname,string username,string password,int phonenumber,string address,string email,string contactpersonname,int contactpersonphone,string dateofbirth,int bsn,string role)
         {
-            this.ID = ID;
-            this.contactPerson = contactPerson;
-            this.dateOfBirth = dateOfBirth;
-            this.BSN = BSN;
-            this.contract = contract;
-            this.account = null;
-        }
-
-        public string getContactInfo()
-        {
-            return $"{contactPerson}";
-        }
-
-        public void SetAccount(Account a)
-        {
-            this.account = a;
-        }
-        public Account GetAccount()
-        {
-            return this.account;
-        }
-
-        public void fireEmployee(DateTime dateFired, string reason)
-        {
-            contract.Terminate(dateFired, reason);
-        }
-
-        public bool isFired()
-        {
-            return contract.isTerminated();
-        }
-        public string GetInfo()
-        {
-            string inf = base.ToString();
-            return inf;
+            this.firstname = firstname;
+            this.lastname = lastname;
+            this.username = username;
+            this.password = password;
+            this.phonenumber = phonenumber;
+            this.address = address;
+            this.email = email;
+            this.contactpersonname = contactpersonname;
+            this.contactperonphone = contactpersonphone;
+            this.dateofbirth = dateofbirth;
+            this.bsn = bsn;
+            this.role = role;
         }
 
         public override string ToString()
         {
-            return $"{this.getName()} with BSN {this.BSNp}";
+            return $"{this.firstname} {this.lastname} with BSN {this.BSN} is a {this.role}";
         }
 
-        public string GetAccountRelationInfo()
-        {
-            return $"[{this.BSNp}] - {this.getName()} with account {account}";
-        }
+
     }
 }

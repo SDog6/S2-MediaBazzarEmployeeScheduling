@@ -31,6 +31,7 @@ namespace MediaBazzar
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.People = new System.Windows.Forms.TabPage();
+            this.btnFire = new System.Windows.Forms.Button();
             this.btnManagemendUpdate = new System.Windows.Forms.Button();
             this.btnManagemntPersonUpdate = new System.Windows.Forms.Button();
             this.btnManagemntPersonCreation = new System.Windows.Forms.Button();
@@ -56,6 +57,8 @@ namespace MediaBazzar
             this.lbManagementShiftEmployeesAssigned = new System.Windows.Forms.ListBox();
             this.lbManagementShiftEmployeesToAssign = new System.Windows.Forms.ListBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.btnStockRemove = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.People.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -76,6 +79,8 @@ namespace MediaBazzar
             // 
             // People
             // 
+            this.People.Controls.Add(this.button1);
+            this.People.Controls.Add(this.btnFire);
             this.People.Controls.Add(this.btnManagemendUpdate);
             this.People.Controls.Add(this.btnManagemntPersonUpdate);
             this.People.Controls.Add(this.btnManagemntPersonCreation);
@@ -88,6 +93,16 @@ namespace MediaBazzar
             this.People.TabIndex = 0;
             this.People.Text = "Employees";
             this.People.UseVisualStyleBackColor = true;
+            // 
+            // btnFire
+            // 
+            this.btnFire.Location = new System.Drawing.Point(8, 293);
+            this.btnFire.Name = "btnFire";
+            this.btnFire.Size = new System.Drawing.Size(93, 38);
+            this.btnFire.TabIndex = 10;
+            this.btnFire.Text = "Remove employee";
+            this.btnFire.UseVisualStyleBackColor = true;
+            this.btnFire.Click += new System.EventHandler(this.btnFire_Click);
             // 
             // btnManagemendUpdate
             // 
@@ -193,6 +208,7 @@ namespace MediaBazzar
             // 
             // Stock
             // 
+            this.Stock.Controls.Add(this.btnStockRemove);
             this.Stock.Controls.Add(this.btnManagementUpdate);
             this.Stock.Controls.Add(this.btnManagementNewStock);
             this.Stock.Controls.Add(this.rbManagementStockAmountFilter);
@@ -222,7 +238,7 @@ namespace MediaBazzar
             // 
             // btnManagementNewStock
             // 
-            this.btnManagementNewStock.Location = new System.Drawing.Point(79, 277);
+            this.btnManagementNewStock.Location = new System.Drawing.Point(79, 312);
             this.btnManagementNewStock.Name = "btnManagementNewStock";
             this.btnManagementNewStock.Size = new System.Drawing.Size(201, 44);
             this.btnManagementNewStock.TabIndex = 8;
@@ -281,6 +297,7 @@ namespace MediaBazzar
             this.btnManagementStockFilter.TabIndex = 3;
             this.btnManagementStockFilter.Text = "Filter";
             this.btnManagementStockFilter.UseVisualStyleBackColor = true;
+            this.btnManagementStockFilter.Click += new System.EventHandler(this.btnManagementStockFilter_Click);
             // 
             // tbManagementStockFilter
             // 
@@ -341,11 +358,31 @@ namespace MediaBazzar
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 0;
             // 
+            // btnStockRemove
+            // 
+            this.btnStockRemove.Location = new System.Drawing.Point(79, 274);
+            this.btnStockRemove.Name = "btnStockRemove";
+            this.btnStockRemove.Size = new System.Drawing.Size(201, 32);
+            this.btnStockRemove.TabIndex = 10;
+            this.btnStockRemove.Text = "Remove stock from inventory";
+            this.btnStockRemove.UseVisualStyleBackColor = true;
+            this.btnStockRemove.Click += new System.EventHandler(this.btnStockRemove_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(137, 293);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(93, 38);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "View employee details";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 400);
+            this.ClientSize = new System.Drawing.Size(780, 400);
             this.Controls.Add(this.tabControl1);
             this.Name = "Management";
             this.Text = "Management";
@@ -389,5 +426,8 @@ namespace MediaBazzar
         private System.Windows.Forms.RadioButton rbManagementID;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnManagemendUpdate;
+        private System.Windows.Forms.Button btnFire;
+        private System.Windows.Forms.Button btnStockRemove;
+        private System.Windows.Forms.Button button1;
     }
 }

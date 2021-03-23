@@ -34,10 +34,10 @@ namespace MediaBazzar
         }
 
         private void btnReshelfApprove_Click(object sender, EventArgs e)
-        {
+        {/*
             ReshelfRequest therequest = new ReshelfRequest(a, Convert.ToInt32(tbReshelfApprove.Text));
             requests.Add(therequest);
-            MessageBox.Show(therequest.ToString());
+            MessageBox.Show(therequest.ToString());*/
         }
     }
 }

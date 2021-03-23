@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace MediaBazzar
 {
-    class ReshelfRequestManager : IManager
-    {
+    class ReshelfRequestManager 
+    {/*
         private List<ReshelfRequest> Requests;
 
         private ReshelfRequestData data;
@@ -60,6 +60,6 @@ namespace MediaBazzar
         public bool Remove(object obj)
         {
             throw new NotImplementedException();
-        }
+        }*/
     }
 }

@@ -43,7 +43,7 @@ namespace MediaBazzar
             // 
             // tbLogInUsername
             // 
-            this.tbLogInUsername.Location = new System.Drawing.Point(390, 76);
+            this.tbLogInUsername.Location = new System.Drawing.Point(270, 75);
             this.tbLogInUsername.Name = "tbLogInUsername";
             this.tbLogInUsername.Size = new System.Drawing.Size(100, 20);
             this.tbLogInUsername.TabIndex = 0;
@@ -55,7 +55,7 @@ namespace MediaBazzar
             // 
             // tbLogInPassword
             // 
-            this.tbLogInPassword.Location = new System.Drawing.Point(390, 123);
+            this.tbLogInPassword.Location = new System.Drawing.Point(270, 122);
             this.tbLogInPassword.Name = "tbLogInPassword";
             this.tbLogInPassword.Size = new System.Drawing.Size(100, 20);
             this.tbLogInPassword.TabIndex = 2;
@@ -63,7 +63,7 @@ namespace MediaBazzar
             // Username
             // 
             this.Username.AutoSize = true;
-            this.Username.Location = new System.Drawing.Point(329, 79);
+            this.Username.Location = new System.Drawing.Point(209, 78);
             this.Username.Name = "Username";
             this.Username.Size = new System.Drawing.Size(58, 13);
             this.Username.TabIndex = 3;
@@ -72,7 +72,7 @@ namespace MediaBazzar
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(329, 126);
+            this.label1.Location = new System.Drawing.Point(209, 125);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 4;
@@ -80,12 +80,13 @@ namespace MediaBazzar
             // 
             // btnLogIn
             // 
-            this.btnLogIn.Location = new System.Drawing.Point(410, 170);
+            this.btnLogIn.Location = new System.Drawing.Point(290, 169);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(80, 37);
             this.btnLogIn.TabIndex = 5;
             this.btnLogIn.Text = "Log in";
             this.btnLogIn.UseVisualStyleBackColor = true;
+            this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
             // button1
             // 

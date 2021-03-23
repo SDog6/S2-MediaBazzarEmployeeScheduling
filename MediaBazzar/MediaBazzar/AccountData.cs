@@ -9,9 +9,9 @@ using MySql.Data.MySqlClient;
 
 namespace MediaBazzar
 {
-    class AccountData : IDatabaseManager
+    class AccountData 
     {
-        public static MySqlConnection conn = new MySqlConnection("Server=studmysql01.fhict.local; Uid=dbi457108; Database=dbi457108; Pwd=NewPassword123");
+      /*  public static MySqlConnection conn = new MySqlConnection("Server=studmysql01.fhict.local; Uid=dbi457108; Database=dbi457108; Pwd=NewPassword123");
 
         public void Delete(int id)
         {
@@ -89,6 +89,6 @@ namespace MediaBazzar
                 }
             }
             return acc;
-        }
+        }*/
     }
 }

@@ -10,29 +10,64 @@ using MySql.Data.MySqlClient;
 
 namespace MediaBazzar
 {
-    class EmployeeData : IDatabaseManager
+    public class EmployeeData
     {
 
         public static MySqlConnection conn = new MySqlConnection("Server=studmysql01.fhict.local; Uid=dbi457108; Database=dbi457108; Pwd=NewPassword123");
 
-        public void Delete(int id)
+        public void Delete(Object obj)
         {
-            throw new NotImplementedException();
-        }
+            Employee em = (Employee)obj;
+            try
+            {
+                string sql = "DELETE FROM employeetemp WHERE bsn = @bsn";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@bsn", em.BSN);
 
+
+                conn.Open();
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured! Try again.");
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+        }
+        
         public void Insert(object obj)
         {
             Employee person = (Employee)obj;
             try
             {
                 // make sure in your table the id in auto-incremented
-                string sql = "INSERT INTO shopstock (StockID, StockName,StockAmount,Price,Brand) VALUES (@stockID, @stockname,@amount,@price,@brand)";
+                string sql = "INSERT INTO employeetemp (firstname,lastname,username,password,phonenumber,address,email,contactpersonname,contactpersonphone,dateofbirth,bsn,role) VALUES (@firstname,@lastname,@username,@password,@phonenumber,@address,@email,@contactpersonname,@contactpersonphone,@dateofbirth,@bsn,@role)";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@stockID", stock.ID);
-                cmd.Parameters.AddWithValue("@stockname", stock.Name);
-                cmd.Parameters.AddWithValue("@amount", stock.Amount);
-                cmd.Parameters.AddWithValue("@price", stock.Price);
-                cmd.Parameters.AddWithValue("@brand", stock.Brand);
+                cmd.Parameters.AddWithValue("@firstname", person.FirstName);
+                cmd.Parameters.AddWithValue("@lastname", person.LastName);
+                cmd.Parameters.AddWithValue("@username", person.Username);
+                cmd.Parameters.AddWithValue("@password", person.Password);
+                cmd.Parameters.AddWithValue("@phonenumber", person.PhoneNumber);
+                cmd.Parameters.AddWithValue("@address", person.Address);
+                cmd.Parameters.AddWithValue("@email", person.Email);
+                cmd.Parameters.AddWithValue("@contactpersonname", person.ContactPersonName);
+                cmd.Parameters.AddWithValue("@contactpersonphone", person.ContactPeronPhone);
+                cmd.Parameters.AddWithValue("@dateofbirth", person.DateOfBirth);
+                cmd.Parameters.AddWithValue("@bsn", person.BSN);
+                cmd.Parameters.AddWithValue("@role", person.Role);
+
+
 
 
                 conn.Open();
@@ -62,7 +97,7 @@ namespace MediaBazzar
 
             try
             {
-                string sql = "SELECT StockID, StockName,StockAmount,Price,Brand FROM shopstock;";
+                string sql = "SELECT firstname,lastname,username,password,phonenumber,address,email,contactpersonname,contactpersonphone,dateofbirth,bsn,role FROM employeetemp;";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 conn.Open();
@@ -71,7 +106,7 @@ namespace MediaBazzar
 
                 while (dr.Read())
                 {
-                    em.Add(new Employee(dr[1].ToString(), Convert.ToInt32(dr[2]), Convert.ToInt32(dr[0]), Convert.ToInt32(dr[3]), dr[4].ToString()));
+                    em.Add(new Employee(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), Convert.ToInt32(dr[4]),dr[5].ToString(),dr[6].ToString(),dr[7].ToString(),Convert.ToInt32(dr[8]),dr[9].ToString(),Convert.ToInt32(dr[10]),dr[11].ToString()));
                 }
 
             }
