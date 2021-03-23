@@ -19,6 +19,10 @@ namespace MediaBazzar
             InitializeComponent();
             stock = new ShopStockManager();
             Employees = new EmployeeManager();
+            rbManagementID.Checked = true;
+            rbManagementStockIDFilter.Checked = true;
+            UpdateStockUI();
+            UpdateEmployeeUI();
         }
 
         private void btnManagementRestockRequest_Click(object sender, EventArgs e)
@@ -34,7 +38,23 @@ namespace MediaBazzar
 
         private void btnManagementEPFilter_Click(object sender, EventArgs e)
         {
-
+            lbManagemendEmployees.Items.Clear();
+            if (rbManagementID.Checked)
+            {
+                int id = Convert.ToInt32(tbManagementEPFilter.Text);
+                foreach (Employee item in Employees.GetAllPerID(id))
+                {
+                    lbManagemendEmployees.Items.Add(item);
+                } 
+            }
+            else if (rbManagementRole.Checked)
+            {
+                string role = tbManagementEPFilter.Text;
+                foreach (Employee item in Employees.GetAllPerRole(role))
+                {
+                    lbManagemendEmployees.Items.Add(item);
+                }
+            }
         }
 
         private void btnManagemntPersonCreation_Click(object sender, EventArgs e)
@@ -54,6 +74,11 @@ namespace MediaBazzar
 
         private void btnManagemendUpdate_Click(object sender, EventArgs e)
         {
+            UpdateEmployeeUI();
+        }
+
+        public void UpdateEmployeeUI()
+        {
             lbManagemendEmployees.Items.Clear();
             foreach (Employee item in Employees.GetAllPerType())
             {
@@ -61,7 +86,6 @@ namespace MediaBazzar
             }
 
         }
-
         private void btnManagementStockUpdate_Click(object sender, EventArgs e)
         {
             lbManagementStock.Items.Clear();
@@ -114,6 +138,36 @@ namespace MediaBazzar
             {
                 Object s = lbManagementStock.SelectedItem;
                 stock.Remove(s);
+            }
+        }
+
+        private void btnManagementStockFilter_Click(object sender, EventArgs e)
+        {
+            lbManagementStock.Items.Clear();
+            if (rbManagementStockIDFilter.Checked)
+            {
+                int id = Convert.ToInt32(tbManagementStockFilter.Text);
+                foreach (Stock item in stock.GetAllPerID(id))
+                {
+                    lbManagementStock.Items.Add(item);
+                }
+            }
+            else if (rbManagementStockBrandFilter.Checked)
+            {
+                string brand = tbManagementStockFilter.Text;
+                foreach (Stock item in stock.GetAllPerBrand(brand))
+                {
+                    lbManagementStock.Items.Add(item);
+                }
+            }
+            else if (rbManagementStockAmountFilter.Checked)
+            {
+
+                int amount = Convert.ToInt32(tbManagementStockFilter.Text);
+                foreach (Stock item in stock.GetAllPerAmount(amount))
+                {
+                    lbManagementStock.Items.Add(item);
+                }
             }
         }
     }

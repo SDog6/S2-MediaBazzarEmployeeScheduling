@@ -67,6 +67,38 @@ namespace MediaBazzar
             return temp;
         }
 
+        public List<object> GetAllPerID(int id)
+        {
+            List<object> temp = new List<object>();
+
+            foreach (Stock item in (List<Stock>)data.ReadAllID(id))
+            {
+                temp.Add(item);
+            }
+            return temp;
+        }
+
+        public List<object> GetAllPerAmount(int amount)
+        {
+            List<object> temp = new List<object>();
+
+            foreach (Stock item in (List<Stock>)data.ReadAllAmount(amount))
+            {
+                temp.Add(item);
+            }
+            return temp;
+        }
+        public List<object> GetAllPerBrand(string brand)
+        {
+            List<object> temp = new List<object>();
+
+            foreach (Stock item in (List<Stock>)data.ReadAllBrand(brand))
+            {
+                temp.Add(item);
+            }
+            return temp;
+        }
+
         public bool Remove(object obj)
         {
             if (obj != null)

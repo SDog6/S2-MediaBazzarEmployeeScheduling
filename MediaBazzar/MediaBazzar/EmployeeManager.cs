@@ -58,6 +58,29 @@ namespace MediaBazzar
             return temp;
         }
 
+
+        public List<object> GetAllPerID(int id)
+        {
+            List<object> temp = new List<object>();
+
+            foreach (Employee item in (List<Employee>)EmpsData.ReadAllID(id))
+            {
+                temp.Add(item);
+            }
+            return temp;
+        }
+
+        public List<object> GetAllPerRole(string role)
+        {
+            List<object> temp = new List<object>();
+
+            foreach (Employee item in (List<Employee>)EmpsData.ReadAllRoles(role))
+            {
+                temp.Add(item);
+            }
+            return temp;
+        }
+
         public bool Remove(object obj)
         {
             throw new NotImplementedException();

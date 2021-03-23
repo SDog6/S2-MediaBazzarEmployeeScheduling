@@ -122,6 +122,123 @@ namespace MediaBazzar
         }
 
 
+        public object ReadAllID(int ID)
+        {
+            List<Stock> stocks = new List<Stock>();
+
+            try
+            {
+                string sql = "SELECT shopstock.StockID, stock.Name,shopstock.Amount,stock.Price,stock.Brand FROM shopstock INNER JOIN stock ON shopstock.stockid =stock.id WHERE shopstock.StockID = @id;";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@id", ID);
+
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    stocks.Add(new Stock(dr[1].ToString(), Convert.ToInt32(dr[2]), Convert.ToInt32(dr[0]), Convert.ToInt32(dr[3]), dr[4].ToString()));
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured! Try again.");
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+            return stocks;
+        }
+
+        public object ReadAllBrand(string brand)
+        {
+            List<Stock> stocks = new List<Stock>();
+
+            try
+            {
+                string sql = "SELECT shopstock.StockID, stock.Name,shopstock.Amount,stock.Price,stock.Brand FROM shopstock INNER JOIN stock ON shopstock.stockid =stock.id WHERE stock.Brand = @brand;";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@brand", brand);
+
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    stocks.Add(new Stock(dr[1].ToString(), Convert.ToInt32(dr[2]), Convert.ToInt32(dr[0]), Convert.ToInt32(dr[3]), dr[4].ToString()));
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured! Try again.");
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+            return stocks;
+        }
+
+
+        public object ReadAllAmount(int amount)
+        {
+            List<Stock> stocks = new List<Stock>();
+
+            try
+            {
+                string sql = "SELECT shopstock.StockID, stock.Name,shopstock.Amount,stock.Price,stock.Brand FROM shopstock INNER JOIN stock ON shopstock.stockid =stock.id WHERE shopstock.Amount = @amount;";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@amount", amount);
+
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    stocks.Add(new Stock(dr[1].ToString(), Convert.ToInt32(dr[2]), Convert.ToInt32(dr[0]), Convert.ToInt32(dr[3]), dr[4].ToString()));
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured! Try again.");
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+            return stocks;
+        }
+
+
+
         public void Delete(Object obj)
         {
             Stock stock = (Stock)obj;

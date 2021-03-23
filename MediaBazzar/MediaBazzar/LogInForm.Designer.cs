@@ -43,7 +43,7 @@ namespace MediaBazzar
             // 
             // tbLogInUsername
             // 
-            this.tbLogInUsername.Location = new System.Drawing.Point(266, 54);
+            this.tbLogInUsername.Location = new System.Drawing.Point(244, 43);
             this.tbLogInUsername.Name = "tbLogInUsername";
             this.tbLogInUsername.Size = new System.Drawing.Size(100, 20);
             this.tbLogInUsername.TabIndex = 0;
@@ -56,7 +56,7 @@ namespace MediaBazzar
             // 
             // tbLogInPassword
             // 
-            this.tbLogInPassword.Location = new System.Drawing.Point(266, 101);
+            this.tbLogInPassword.Location = new System.Drawing.Point(244, 90);
             this.tbLogInPassword.Name = "tbLogInPassword";
             this.tbLogInPassword.Size = new System.Drawing.Size(100, 20);
             this.tbLogInPassword.TabIndex = 2;
@@ -64,7 +64,7 @@ namespace MediaBazzar
             // Username
             // 
             this.Username.AutoSize = true;
-            this.Username.Location = new System.Drawing.Point(205, 57);
+            this.Username.Location = new System.Drawing.Point(183, 46);
             this.Username.Name = "Username";
             this.Username.Size = new System.Drawing.Size(58, 13);
             this.Username.TabIndex = 3;
@@ -73,7 +73,7 @@ namespace MediaBazzar
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(205, 104);
+            this.label1.Location = new System.Drawing.Point(183, 93);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 4;
@@ -81,7 +81,7 @@ namespace MediaBazzar
             // 
             // btnLogIn
             // 
-            this.btnLogIn.Location = new System.Drawing.Point(286, 148);
+            this.btnLogIn.Location = new System.Drawing.Point(264, 134);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(80, 37);
             this.btnLogIn.TabIndex = 5;
@@ -91,7 +91,7 @@ namespace MediaBazzar
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(54, 257);
+            this.button1.Location = new System.Drawing.Point(43, 201);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 37);
             this.button1.TabIndex = 6;
@@ -101,7 +101,7 @@ namespace MediaBazzar
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(259, 257);
+            this.button2.Location = new System.Drawing.Point(248, 201);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(123, 37);
             this.button2.TabIndex = 7;
@@ -111,7 +111,7 @@ namespace MediaBazzar
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(447, 257);
+            this.button3.Location = new System.Drawing.Point(436, 201);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(123, 37);
             this.button3.TabIndex = 8;
@@ -123,7 +123,7 @@ namespace MediaBazzar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 330);
+            this.ClientSize = new System.Drawing.Size(615, 266);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);

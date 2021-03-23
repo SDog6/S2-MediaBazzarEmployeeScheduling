@@ -39,7 +39,6 @@ namespace MediaBazzar
             this.btnManagementEPFilter = new System.Windows.Forms.Button();
             this.rbManagementID = new System.Windows.Forms.RadioButton();
             this.rbManagementRole = new System.Windows.Forms.RadioButton();
-            this.rbManagementName = new System.Windows.Forms.RadioButton();
             this.tbManagementEPFilter = new System.Windows.Forms.TextBox();
             this.Stock = new System.Windows.Forms.TabPage();
             this.btnManagementStockUpdate = new System.Windows.Forms.Button();
@@ -58,11 +57,13 @@ namespace MediaBazzar
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.btnViewEmployeeInfo = new System.Windows.Forms.Button();
             this.btnStockRemove = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.People.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.Stock.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -98,7 +99,7 @@ namespace MediaBazzar
             this.btnManagemendUpdate.Name = "btnManagemendUpdate";
             this.btnManagemendUpdate.Size = new System.Drawing.Size(93, 38);
             this.btnManagemendUpdate.TabIndex = 9;
-            this.btnManagemendUpdate.Text = "Check for updates";
+            this.btnManagemendUpdate.Text = "View all employees";
             this.btnManagemendUpdate.UseVisualStyleBackColor = true;
             this.btnManagemendUpdate.Click += new System.EventHandler(this.btnManagemendUpdate_Click);
             // 
@@ -135,9 +136,8 @@ namespace MediaBazzar
             this.groupBox1.Controls.Add(this.btnManagementEPFilter);
             this.groupBox1.Controls.Add(this.rbManagementID);
             this.groupBox1.Controls.Add(this.rbManagementRole);
-            this.groupBox1.Controls.Add(this.rbManagementName);
             this.groupBox1.Controls.Add(this.tbManagementEPFilter);
-            this.groupBox1.Location = new System.Drawing.Point(68, 32);
+            this.groupBox1.Location = new System.Drawing.Point(57, 32);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(251, 172);
             this.groupBox1.TabIndex = 8;
@@ -146,7 +146,7 @@ namespace MediaBazzar
             // 
             // btnManagementEPFilter
             // 
-            this.btnManagementEPFilter.Location = new System.Drawing.Point(69, 128);
+            this.btnManagementEPFilter.Location = new System.Drawing.Point(79, 128);
             this.btnManagementEPFilter.Name = "btnManagementEPFilter";
             this.btnManagementEPFilter.Size = new System.Drawing.Size(93, 38);
             this.btnManagementEPFilter.TabIndex = 4;
@@ -157,7 +157,7 @@ namespace MediaBazzar
             // rbManagementID
             // 
             this.rbManagementID.AutoSize = true;
-            this.rbManagementID.Location = new System.Drawing.Point(25, 28);
+            this.rbManagementID.Location = new System.Drawing.Point(65, 28);
             this.rbManagementID.Name = "rbManagementID";
             this.rbManagementID.Size = new System.Drawing.Size(36, 17);
             this.rbManagementID.TabIndex = 5;
@@ -168,7 +168,7 @@ namespace MediaBazzar
             // rbManagementRole
             // 
             this.rbManagementRole.AutoSize = true;
-            this.rbManagementRole.Location = new System.Drawing.Point(100, 28);
+            this.rbManagementRole.Location = new System.Drawing.Point(126, 28);
             this.rbManagementRole.Name = "rbManagementRole";
             this.rbManagementRole.Size = new System.Drawing.Size(47, 17);
             this.rbManagementRole.TabIndex = 6;
@@ -176,22 +176,11 @@ namespace MediaBazzar
             this.rbManagementRole.Text = "Role";
             this.rbManagementRole.UseVisualStyleBackColor = true;
             // 
-            // rbManagementName
-            // 
-            this.rbManagementName.AutoSize = true;
-            this.rbManagementName.Location = new System.Drawing.Point(181, 28);
-            this.rbManagementName.Name = "rbManagementName";
-            this.rbManagementName.Size = new System.Drawing.Size(53, 17);
-            this.rbManagementName.TabIndex = 7;
-            this.rbManagementName.TabStop = true;
-            this.rbManagementName.Text = "Name";
-            this.rbManagementName.UseVisualStyleBackColor = true;
-            // 
             // tbManagementEPFilter
             // 
-            this.tbManagementEPFilter.Location = new System.Drawing.Point(69, 75);
+            this.tbManagementEPFilter.Location = new System.Drawing.Point(44, 75);
             this.tbManagementEPFilter.Name = "tbManagementEPFilter";
-            this.tbManagementEPFilter.Size = new System.Drawing.Size(93, 20);
+            this.tbManagementEPFilter.Size = new System.Drawing.Size(157, 20);
             this.tbManagementEPFilter.TabIndex = 3;
             // 
             // Stock
@@ -199,13 +188,9 @@ namespace MediaBazzar
             this.Stock.Controls.Add(this.btnStockRemove);
             this.Stock.Controls.Add(this.btnManagementStockUpdate);
             this.Stock.Controls.Add(this.btnManagementNewStock);
-            this.Stock.Controls.Add(this.rbManagementStockAmountFilter);
-            this.Stock.Controls.Add(this.rbManagementStockBrandFilter);
-            this.Stock.Controls.Add(this.rbManagementStockIDFilter);
             this.Stock.Controls.Add(this.btnManagementRestockRequest);
-            this.Stock.Controls.Add(this.btnManagementStockFilter);
-            this.Stock.Controls.Add(this.tbManagementStockFilter);
             this.Stock.Controls.Add(this.lbManagementStock);
+            this.Stock.Controls.Add(this.groupBox2);
             this.Stock.Location = new System.Drawing.Point(4, 22);
             this.Stock.Name = "Stock";
             this.Stock.Padding = new System.Windows.Forms.Padding(3);
@@ -220,13 +205,13 @@ namespace MediaBazzar
             this.btnManagementStockUpdate.Name = "btnManagementStockUpdate";
             this.btnManagementStockUpdate.Size = new System.Drawing.Size(134, 32);
             this.btnManagementStockUpdate.TabIndex = 9;
-            this.btnManagementStockUpdate.Text = "Check for update";
+            this.btnManagementStockUpdate.Text = "View store inventory";
             this.btnManagementStockUpdate.UseVisualStyleBackColor = true;
             this.btnManagementStockUpdate.Click += new System.EventHandler(this.btnManagementStockUpdate_Click_1);
             // 
             // btnManagementNewStock
             // 
-            this.btnManagementNewStock.Location = new System.Drawing.Point(91, 313);
+            this.btnManagementNewStock.Location = new System.Drawing.Point(79, 315);
             this.btnManagementNewStock.Name = "btnManagementNewStock";
             this.btnManagementNewStock.Size = new System.Drawing.Size(201, 44);
             this.btnManagementNewStock.TabIndex = 8;
@@ -237,7 +222,7 @@ namespace MediaBazzar
             // rbManagementStockAmountFilter
             // 
             this.rbManagementStockAmountFilter.AutoSize = true;
-            this.rbManagementStockAmountFilter.Location = new System.Drawing.Point(231, 86);
+            this.rbManagementStockAmountFilter.Location = new System.Drawing.Point(187, 29);
             this.rbManagementStockAmountFilter.Name = "rbManagementStockAmountFilter";
             this.rbManagementStockAmountFilter.Size = new System.Drawing.Size(61, 17);
             this.rbManagementStockAmountFilter.TabIndex = 7;
@@ -248,7 +233,7 @@ namespace MediaBazzar
             // rbManagementStockBrandFilter
             // 
             this.rbManagementStockBrandFilter.AutoSize = true;
-            this.rbManagementStockBrandFilter.Location = new System.Drawing.Point(136, 86);
+            this.rbManagementStockBrandFilter.Location = new System.Drawing.Point(98, 29);
             this.rbManagementStockBrandFilter.Name = "rbManagementStockBrandFilter";
             this.rbManagementStockBrandFilter.Size = new System.Drawing.Size(53, 17);
             this.rbManagementStockBrandFilter.TabIndex = 6;
@@ -259,7 +244,7 @@ namespace MediaBazzar
             // rbManagementStockIDFilter
             // 
             this.rbManagementStockIDFilter.AutoSize = true;
-            this.rbManagementStockIDFilter.Location = new System.Drawing.Point(45, 86);
+            this.rbManagementStockIDFilter.Location = new System.Drawing.Point(6, 29);
             this.rbManagementStockIDFilter.Name = "rbManagementStockIDFilter";
             this.rbManagementStockIDFilter.Size = new System.Drawing.Size(36, 17);
             this.rbManagementStockIDFilter.TabIndex = 5;
@@ -269,7 +254,7 @@ namespace MediaBazzar
             // 
             // btnManagementRestockRequest
             // 
-            this.btnManagementRestockRequest.Location = new System.Drawing.Point(91, 275);
+            this.btnManagementRestockRequest.Location = new System.Drawing.Point(79, 277);
             this.btnManagementRestockRequest.Name = "btnManagementRestockRequest";
             this.btnManagementRestockRequest.Size = new System.Drawing.Size(201, 32);
             this.btnManagementRestockRequest.TabIndex = 4;
@@ -279,16 +264,17 @@ namespace MediaBazzar
             // 
             // btnManagementStockFilter
             // 
-            this.btnManagementStockFilter.Location = new System.Drawing.Point(143, 163);
+            this.btnManagementStockFilter.Location = new System.Drawing.Point(88, 95);
             this.btnManagementStockFilter.Name = "btnManagementStockFilter";
             this.btnManagementStockFilter.Size = new System.Drawing.Size(75, 32);
             this.btnManagementStockFilter.TabIndex = 3;
             this.btnManagementStockFilter.Text = "Filter";
             this.btnManagementStockFilter.UseVisualStyleBackColor = true;
+            this.btnManagementStockFilter.Click += new System.EventHandler(this.btnManagementStockFilter_Click);
             // 
             // tbManagementStockFilter
             // 
-            this.tbManagementStockFilter.Location = new System.Drawing.Point(128, 127);
+            this.tbManagementStockFilter.Location = new System.Drawing.Point(74, 69);
             this.tbManagementStockFilter.Name = "tbManagementStockFilter";
             this.tbManagementStockFilter.Size = new System.Drawing.Size(100, 20);
             this.tbManagementStockFilter.TabIndex = 1;
@@ -357,13 +343,27 @@ namespace MediaBazzar
             // 
             // btnStockRemove
             // 
-            this.btnStockRemove.Location = new System.Drawing.Point(91, 239);
+            this.btnStockRemove.Location = new System.Drawing.Point(79, 239);
             this.btnStockRemove.Name = "btnStockRemove";
             this.btnStockRemove.Size = new System.Drawing.Size(201, 32);
             this.btnStockRemove.TabIndex = 11;
             this.btnStockRemove.Text = "Remove stock from inventory";
             this.btnStockRemove.UseVisualStyleBackColor = true;
             this.btnStockRemove.Click += new System.EventHandler(this.btnStockRemove_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rbManagementStockBrandFilter);
+            this.groupBox2.Controls.Add(this.rbManagementStockIDFilter);
+            this.groupBox2.Controls.Add(this.rbManagementStockAmountFilter);
+            this.groupBox2.Controls.Add(this.tbManagementStockFilter);
+            this.groupBox2.Controls.Add(this.btnManagementStockFilter);
+            this.groupBox2.Location = new System.Drawing.Point(55, 41);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(276, 144);
+            this.groupBox2.TabIndex = 12;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Search";
             // 
             // Management
             // 
@@ -378,8 +378,9 @@ namespace MediaBazzar
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.Stock.ResumeLayout(false);
-            this.Stock.PerformLayout();
             this.tabPage1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -408,12 +409,12 @@ namespace MediaBazzar
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Button btnManagementNewStock;
         private System.Windows.Forms.Button btnManagementStockUpdate;
-        private System.Windows.Forms.RadioButton rbManagementName;
         private System.Windows.Forms.RadioButton rbManagementRole;
         private System.Windows.Forms.RadioButton rbManagementID;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnManagemendUpdate;
         private System.Windows.Forms.Button btnViewEmployeeInfo;
         private System.Windows.Forms.Button btnStockRemove;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
