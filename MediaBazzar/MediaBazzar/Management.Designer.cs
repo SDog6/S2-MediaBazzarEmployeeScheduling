@@ -254,11 +254,11 @@ namespace MediaBazzar
             // 
             // btnManagementRestockRequest
             // 
-            this.btnManagementRestockRequest.Location = new System.Drawing.Point(79, 277);
+            this.btnManagementRestockRequest.Location = new System.Drawing.Point(61, 277);
             this.btnManagementRestockRequest.Name = "btnManagementRestockRequest";
-            this.btnManagementRestockRequest.Size = new System.Drawing.Size(201, 32);
+            this.btnManagementRestockRequest.Size = new System.Drawing.Size(242, 32);
             this.btnManagementRestockRequest.TabIndex = 4;
-            this.btnManagementRestockRequest.Text = "Make new restock request";
+            this.btnManagementRestockRequest.Text = "[IN DEVELOPMENT]Make new restock request";
             this.btnManagementRestockRequest.UseVisualStyleBackColor = true;
             this.btnManagementRestockRequest.Click += new System.EventHandler(this.btnManagementRestockRequest_Click);
             // 
@@ -302,11 +302,11 @@ namespace MediaBazzar
             // 
             // btnManagementShiftAssignEmployee
             // 
-            this.btnManagementShiftAssignEmployee.Location = new System.Drawing.Point(653, 305);
+            this.btnManagementShiftAssignEmployee.Location = new System.Drawing.Point(491, 305);
             this.btnManagementShiftAssignEmployee.Name = "btnManagementShiftAssignEmployee";
-            this.btnManagementShiftAssignEmployee.Size = new System.Drawing.Size(109, 36);
+            this.btnManagementShiftAssignEmployee.Size = new System.Drawing.Size(235, 36);
             this.btnManagementShiftAssignEmployee.TabIndex = 1;
-            this.btnManagementShiftAssignEmployee.Text = "AssignEmployeeToShift";
+            this.btnManagementShiftAssignEmployee.Text = "[IN DEVELOPMENT]AssignEmployeeToShift";
             this.btnManagementShiftAssignEmployee.UseVisualStyleBackColor = true;
             // 
             // lbManagementShiftEmployeesAssigned

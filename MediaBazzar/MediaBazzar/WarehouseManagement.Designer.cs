@@ -122,7 +122,7 @@ namespace MediaBazzar
             this.btnWarehouseUpdate.Name = "btnWarehouseUpdate";
             this.btnWarehouseUpdate.Size = new System.Drawing.Size(101, 45);
             this.btnWarehouseUpdate.TabIndex = 9;
-            this.btnWarehouseUpdate.Text = "Check for update";
+            this.btnWarehouseUpdate.Text = "All warehouse stock";
             this.btnWarehouseUpdate.UseVisualStyleBackColor = true;
             this.btnWarehouseUpdate.Click += new System.EventHandler(this.btnWarehouseUpdate_Click);
             // 
@@ -151,9 +151,9 @@ namespace MediaBazzar
             // 
             this.btnWarehouseResupply.Location = new System.Drawing.Point(9, 67);
             this.btnWarehouseResupply.Name = "btnWarehouseResupply";
-            this.btnWarehouseResupply.Size = new System.Drawing.Size(75, 23);
+            this.btnWarehouseResupply.Size = new System.Drawing.Size(172, 23);
             this.btnWarehouseResupply.TabIndex = 7;
-            this.btnWarehouseResupply.Text = "Increase";
+            this.btnWarehouseResupply.Text = "[IN DEVELOPMENT]Increase";
             this.btnWarehouseResupply.UseVisualStyleBackColor = true;
             this.btnWarehouseResupply.Click += new System.EventHandler(this.btnWarehouseResupply_Click);
             // 
