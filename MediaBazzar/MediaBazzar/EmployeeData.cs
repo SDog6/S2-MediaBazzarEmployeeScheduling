@@ -261,37 +261,12 @@ namespace MediaBazzar
             return null;
         }
 
-        public Account getAccountLogIn(string username)
+        public string getAccountLogInRole(string username,string password)
         {
-            string sql = $"SELECT password FROM account WHERE username = '@username'";
+            string sql = $"SELECT employee.role FROM account INNER JOIN employee ON account.id = employee.accountId WHERE account.username = @username AND account.password = @password";
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@username", username);
-          
-            try
-            {
-                conn.Open();
-                string password = cmd.ExecuteScalar().ToString();
-                Account account = new Account(username,password);
-                return account;
-              
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                conn.Close();
-            }
-            return null;
-        }
-        //1TX9Y9fqIP
-
-        public string getAccountLogInRole(string username)
-        {
-            string sql = $"SELECT employee.role FROM account INNER JOIN employee ON account.id = employee.accountId WHERE account.username = @username";
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@username", username);
+            cmd.Parameters.AddWithValue("@password", password);
             try
             {
                 conn.Open();

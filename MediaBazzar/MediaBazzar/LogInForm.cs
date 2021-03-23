@@ -46,14 +46,22 @@ namespace MediaBazzar
         {
             string username = tbLogInUsername.Text;
             string password = tbLogInPassword.Text;
-            if(data.getAccountLogIn(username) != null)
-            {
-                if(data.getAccountLogInRole(username) == "Manager")
+           
+                if(data.getAccountLogInRole(username,password) == "Manager")
                 {
                     Management v = new Management();
                     v.Show();
                 }
+                else if(data.getAccountLogInRole(username, password) == "Warehouse Manager")
+            {
+                WarehouseManagement f = new WarehouseManagement();
+                f.Show();
             }
+                else
+            {
+                MessageBox.Show("Access Denied");
+            }
+            
             
         }
     }
