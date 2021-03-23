@@ -1,7 +1,7 @@
 ﻿
 namespace MediaBazzar
 {
-    partial class EmployeeCreation
+    partial class EmployeeDetails
     {
         /// <summary>
         /// Required designer variable.
@@ -92,10 +92,10 @@ namespace MediaBazzar
             this.groupBox1.Controls.Add(this.tbCPhoneNumber);
             this.groupBox1.Controls.Add(this.tbCName);
             this.groupBox1.Controls.Add(this.tbCLastname);
-            this.groupBox1.Location = new System.Drawing.Point(543, 27);
+            this.groupBox1.Location = new System.Drawing.Point(537, 30);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(503, 298);
-            this.groupBox1.TabIndex = 18;
+            this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contact Person";
             // 
@@ -252,10 +252,10 @@ namespace MediaBazzar
             this.EmployeeInfo.Controls.Add(this.tbEStreetNr);
             this.EmployeeInfo.Controls.Add(this.tbEState);
             this.EmployeeInfo.Controls.Add(this.tbECity);
-            this.EmployeeInfo.Location = new System.Drawing.Point(23, 16);
+            this.EmployeeInfo.Location = new System.Drawing.Point(17, 19);
             this.EmployeeInfo.Name = "EmployeeInfo";
             this.EmployeeInfo.Size = new System.Drawing.Size(503, 370);
-            this.EmployeeInfo.TabIndex = 17;
+            this.EmployeeInfo.TabIndex = 19;
             this.EmployeeInfo.TabStop = false;
             this.EmployeeInfo.Text = "Employee details";
             // 
@@ -296,7 +296,7 @@ namespace MediaBazzar
             this.date_dateOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.date_dateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.date_dateOfBirth.Location = new System.Drawing.Point(112, 332);
-            this.date_dateOfBirth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.date_dateOfBirth.Margin = new System.Windows.Forms.Padding(2);
             this.date_dateOfBirth.Name = "date_dateOfBirth";
             this.date_dateOfBirth.Size = new System.Drawing.Size(218, 23);
             this.date_dateOfBirth.TabIndex = 28;
@@ -445,16 +445,15 @@ namespace MediaBazzar
             this.tbECity.Size = new System.Drawing.Size(114, 20);
             this.tbECity.TabIndex = 8;
             // 
-            // EmployeeCreation
+            // EmployeeDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 405);
+            this.ClientSize = new System.Drawing.Size(1062, 450);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.EmployeeInfo);
-            this.Name = "EmployeeCreation";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.EmployeeCreation_Load);
+            this.Name = "EmployeeDetails";
+            this.Text = "EmployeeDetails";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.EmployeeInfo.ResumeLayout(false);
@@ -464,6 +463,7 @@ namespace MediaBazzar
         }
 
         #endregion
+
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -482,6 +482,11 @@ namespace MediaBazzar
         private System.Windows.Forms.TextBox tbCName;
         private System.Windows.Forms.TextBox tbCLastname;
         private System.Windows.Forms.GroupBox EmployeeInfo;
+        private System.Windows.Forms.TextBox tbUsername;
+        private System.Windows.Forms.Label l_username;
+        private System.Windows.Forms.TextBox tbErole;
+        private System.Windows.Forms.Label l_role;
+        private System.Windows.Forms.DateTimePicker date_dateOfBirth;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
@@ -500,11 +505,5 @@ namespace MediaBazzar
         private System.Windows.Forms.TextBox tbEStreetNr;
         private System.Windows.Forms.TextBox tbEState;
         private System.Windows.Forms.TextBox tbECity;
-        private System.Windows.Forms.DateTimePicker date_dateOfBirth;
-        private System.Windows.Forms.TextBox tbErole;
-        private System.Windows.Forms.Label l_role;
-        private System.Windows.Forms.TextBox tbUsername;
-        private System.Windows.Forms.Label l_username;
     }
 }
-
