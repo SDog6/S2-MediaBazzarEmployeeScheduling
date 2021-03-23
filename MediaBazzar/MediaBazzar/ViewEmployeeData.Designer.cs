@@ -1,7 +1,7 @@
 ﻿
 namespace MediaBazzar
 {
-    partial class EmployeeCreation
+    partial class ViewEmployeeData
     {
         /// <summary>
         /// Required designer variable.
@@ -70,7 +70,6 @@ namespace MediaBazzar
             this.tbEStreetNr = new System.Windows.Forms.TextBox();
             this.tbEState = new System.Windows.Forms.TextBox();
             this.tbECity = new System.Windows.Forms.TextBox();
-            this.btnSubmit = new System.Windows.Forms.Button();
             this.tbEPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -95,10 +94,10 @@ namespace MediaBazzar
             this.groupBox1.Controls.Add(this.tbCPhoneNumber);
             this.groupBox1.Controls.Add(this.tbCName);
             this.groupBox1.Controls.Add(this.tbCLastname);
-            this.groupBox1.Location = new System.Drawing.Point(543, 27);
+            this.groupBox1.Location = new System.Drawing.Point(531, 29);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(503, 298);
-            this.groupBox1.TabIndex = 18;
+            this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contact Person";
             // 
@@ -257,10 +256,10 @@ namespace MediaBazzar
             this.EmployeeInfo.Controls.Add(this.tbEStreetNr);
             this.EmployeeInfo.Controls.Add(this.tbEState);
             this.EmployeeInfo.Controls.Add(this.tbECity);
-            this.EmployeeInfo.Location = new System.Drawing.Point(23, 16);
+            this.EmployeeInfo.Location = new System.Drawing.Point(11, 18);
             this.EmployeeInfo.Name = "EmployeeInfo";
             this.EmployeeInfo.Size = new System.Drawing.Size(503, 370);
-            this.EmployeeInfo.TabIndex = 17;
+            this.EmployeeInfo.TabIndex = 19;
             this.EmployeeInfo.TabStop = false;
             this.EmployeeInfo.Text = "Employee details";
             // 
@@ -301,7 +300,7 @@ namespace MediaBazzar
             this.date_dateOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.date_dateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.date_dateOfBirth.Location = new System.Drawing.Point(112, 332);
-            this.date_dateOfBirth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.date_dateOfBirth.Margin = new System.Windows.Forms.Padding(2);
             this.date_dateOfBirth.Name = "date_dateOfBirth";
             this.date_dateOfBirth.Size = new System.Drawing.Size(218, 23);
             this.date_dateOfBirth.TabIndex = 28;
@@ -450,19 +449,9 @@ namespace MediaBazzar
             this.tbECity.Size = new System.Drawing.Size(114, 20);
             this.tbECity.TabIndex = 8;
             // 
-            // btnSubmit
-            // 
-            this.btnSubmit.Location = new System.Drawing.Point(546, 337);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(102, 49);
-            this.btnSubmit.TabIndex = 15;
-            this.btnSubmit.Text = "Submit ";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click_1);
-            // 
             // tbEPassword
             // 
-            this.tbEPassword.Location = new System.Drawing.Point(349, 18);
+            this.tbEPassword.Location = new System.Drawing.Point(342, 19);
             this.tbEPassword.Name = "tbEPassword";
             this.tbEPassword.Size = new System.Drawing.Size(97, 20);
             this.tbEPassword.TabIndex = 33;
@@ -470,24 +459,22 @@ namespace MediaBazzar
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(288, 22);
+            this.label1.Location = new System.Drawing.Point(283, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 34;
             this.label1.Text = "Password";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // EmployeeCreation
+            // ViewEmployeeData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 405);
+            this.ClientSize = new System.Drawing.Size(1061, 450);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.EmployeeInfo);
-            this.Controls.Add(this.btnSubmit);
-            this.Name = "EmployeeCreation";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.EmployeeCreation_Load);
+            this.Name = "ViewEmployeeData";
+            this.Text = "ViewEmployeeData";
+            this.Load += new System.EventHandler(this.ViewEmployeeData_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.EmployeeInfo.ResumeLayout(false);
@@ -497,6 +484,7 @@ namespace MediaBazzar
         }
 
         #endregion
+
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -515,6 +503,11 @@ namespace MediaBazzar
         private System.Windows.Forms.TextBox tbCName;
         private System.Windows.Forms.TextBox tbCLastname;
         private System.Windows.Forms.GroupBox EmployeeInfo;
+        private System.Windows.Forms.TextBox tbUsername;
+        private System.Windows.Forms.Label l_username;
+        private System.Windows.Forms.TextBox tbErole;
+        private System.Windows.Forms.Label l_role;
+        private System.Windows.Forms.DateTimePicker date_dateOfBirth;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
@@ -533,14 +526,7 @@ namespace MediaBazzar
         private System.Windows.Forms.TextBox tbEStreetNr;
         private System.Windows.Forms.TextBox tbEState;
         private System.Windows.Forms.TextBox tbECity;
-        private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.DateTimePicker date_dateOfBirth;
-        private System.Windows.Forms.TextBox tbErole;
-        private System.Windows.Forms.Label l_role;
-        private System.Windows.Forms.TextBox tbUsername;
-        private System.Windows.Forms.Label l_username;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbEPassword;
     }
 }
-

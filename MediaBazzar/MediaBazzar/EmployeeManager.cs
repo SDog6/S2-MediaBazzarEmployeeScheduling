@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MediaBazzar
 {
-    class EmployeeManager : IManager
+    public class EmployeeManager : IManager
     {
 
         private List<Employee> Emps;

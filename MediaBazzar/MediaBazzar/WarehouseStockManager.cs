@@ -43,7 +43,7 @@ namespace MediaBazzar
             {
                 return false;
             }
-            
+
 
         }
 
@@ -58,9 +58,40 @@ namespace MediaBazzar
             return temp;
         }
 
+        public List<object> SearchByID(int id)
+        {
+            List<object> temp = new List<object>();
+
+            foreach (Stock item in (List<Stock>)data.SearchByStockID(id))
+            {
+                temp.Add(item);
+            }
+            return temp;
+        }
+
+        public List<object> SearchByBrand(string brand)
+        {
+            List<object> temp = new List<object>();
+
+            foreach (Stock item in (List<Stock>)data.SearchByStockBrand(brand))
+            {
+                temp.Add(item);
+            }
+            return temp;
+        }
+
         public bool Remove(object obj)
         {
-            throw new NotImplementedException();
+            if (obj != null)
+            {
+                StockData.Delete((Stock)obj);
+                loadDataFromDatabase();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

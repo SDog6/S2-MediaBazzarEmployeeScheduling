@@ -12,11 +12,11 @@ namespace MediaBazzar
 {
     public partial class EmployeeCreation : Form
     {
-        EmployeeData database;
-        public EmployeeCreation()
+        EmployeeManager em;
+        public EmployeeCreation(EmployeeManager em)
         {
             InitializeComponent();
-            database = new EmployeeData();
+            this.em = em;
         }
         private void btnOpenCreateForm_Click(object sender, EventArgs e)
         {
@@ -84,8 +84,9 @@ namespace MediaBazzar
 
                 Contract contract = new Contract(DateTime.Now);
 
-                string username = textboxes[16];
-                Account account = new Account(username);
+                string username = tbUsername.Text;
+                string password = tbEPassword.Text;
+                Account account = new Account(username) ;
                 DateTime dateOfBirth = date_dateOfBirth.Value;
 
                 string firstName = textboxes[0];
@@ -106,12 +107,12 @@ namespace MediaBazzar
         }
         private void btnSubmit_Click_1(object sender, EventArgs e)
         {
-            Employee employee = createEmployee();
+           Employee employee = createEmployee();
             if(employee != null)
             {
                 try
                 {
-                    database.Insert(employee);
+                    em.Add(employee);
                 }
                 catch(Exception ex)
                 {

@@ -11,7 +11,7 @@ using MySql.Data.MySqlClient;
 
 namespace MediaBazzar
 {
-    class EmployeeData : IDatabaseManager
+    public class EmployeeData : IDatabaseManager
     {
 
         public static MySqlConnection conn = new MySqlConnection("Server=studmysql01.fhict.local; Uid=dbi457108; Database=dbi457108; Pwd=NewPassword123");
@@ -151,7 +151,6 @@ namespace MediaBazzar
             {
                 conn.Close();
             }
-            MessageBox.Show(addressId.ToString());
             return (int)addressId;
 
         }
@@ -179,7 +178,6 @@ namespace MediaBazzar
             {
                 conn.Close();
             }
-            MessageBox.Show(personid.ToString());
             return personid;
         }
         private int insertContract(Contract contract)
@@ -211,7 +209,6 @@ namespace MediaBazzar
             {
                 conn.Close();
             }
-            MessageBox.Show(contractId.ToString());
             return contractId;
         }
         private int insertAccount(Account account)
@@ -234,7 +231,6 @@ namespace MediaBazzar
             {
                 conn.Close();
             }
-            MessageBox.Show(accountId.ToString());
             return accountId;
         }
 

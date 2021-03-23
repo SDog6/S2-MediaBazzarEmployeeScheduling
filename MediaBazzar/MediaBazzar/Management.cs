@@ -13,15 +13,12 @@ namespace MediaBazzar
     public partial class Management : Form
     {
         ShopStockManager stock;
-        Administration Employees;
-        DateTime time;
+        EmployeeManager Employees;
         public Management()
         {
             InitializeComponent();
-            time = DateTime.Now;
             stock = new ShopStockManager();
-            Employees = new Administration();
-            //Employees.AddEmployee(new Employee(234,"Lee", "Johnson", "09808920203", new Address("Kenya", "Obama", "Sangerlaan", "28"), "Lee@gmail.com", new Person("John", "Lee", "03039393", new Address("Alabama", "Kanzas", "28 beach", "25"), "J@gmail.com"), "01.02.1998", "323242423", new Contract(time)));
+            Employees = new EmployeeManager();
         }
 
         private void btnManagementRestockRequest_Click(object sender, EventArgs e)
@@ -42,7 +39,7 @@ namespace MediaBazzar
 
         private void btnManagemntPersonCreation_Click(object sender, EventArgs e)
         {
-            EmployeeCreation creation = new EmployeeCreation();
+            EmployeeCreation creation = new EmployeeCreation(Employees);
             creation.Show();
         }
 
@@ -58,14 +55,14 @@ namespace MediaBazzar
         private void btnManagemendUpdate_Click(object sender, EventArgs e)
         {
             lbManagemendEmployees.Items.Clear();
-            foreach (Employee item in Employees.GetAll())
+            foreach (Employee item in Employees.GetAllPerType())
             {
                 lbManagemendEmployees.Items.Add(item);
             }
 
         }
 
-        private void btnManagementUpdate_Click(object sender, EventArgs e)
+        private void btnManagementStockUpdate_Click(object sender, EventArgs e)
         {
             lbManagementStock.Items.Clear();
             foreach (Stock item in stock.GetAllPerType())
@@ -80,9 +77,44 @@ namespace MediaBazzar
         }
 
         private void btnManagementNewStock_Click(object sender, EventArgs e)
-        {/*
-            NewStock a = new NewStock(stock);
-            a.Show();*/
+        {
+            ManagementNewInventory a = new ManagementNewInventory(stock);
+            a.Show();
+        }
+
+        private void btnManagementStockUpdate_Click_1(object sender, EventArgs e)
+        {
+            UpdateStockUI();
+        }
+        public void UpdateStockUI()
+        {
+            lbManagementStock.Items.Clear();
+            foreach (Stock item in stock.GetAllPerType())
+            {
+                lbManagementStock.Items.Add(item);
+            }
+        }
+
+        private void btnViewEmployeeInfo_Click(object sender, EventArgs e)
+        {
+            if(lbManagemendEmployees.SelectedIndex > -1) 
+            {
+                Object s = lbManagemendEmployees.SelectedItem;
+                Employee Selected = (Employee)s;
+                ViewEmployeeData v = new ViewEmployeeData(Selected);
+                v.Show();
+            
+            }
+        }
+
+        private void btnStockRemove_Click(object sender, EventArgs e)
+        {
+
+            if (lbManagementStock.SelectedIndex > -1)
+            {
+                Object s = lbManagementStock.SelectedItem;
+                stock.Remove(s);
+            }
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace MediaBazzar
 {
-    public class ShopStockManager : IManager
+    public class ShopStockManager
     {
         private List<Stock> ShopStocks;
 
@@ -31,11 +31,11 @@ namespace MediaBazzar
                 ShopStocks.Add((Stock)o);
             }
         }
-        public bool Add(object obj)
+        public bool Add(object obj, int amount)
         {
             if (obj != null)
             {
-                StockData.Insert((Stock)obj);
+                StockData.Add((Stock)obj, amount);
                 loadDataFromDatabase();
                 return true;
             }
@@ -46,7 +46,16 @@ namespace MediaBazzar
 
 
         }
+        public List<object> GetAllRequestItems()
+        {
+            List<object> temp = new List<object>();
 
+            foreach (Stock item in (List<Stock>)StockData.GetRequestItems())
+            {
+                temp.Add(item);
+            }
+            return temp;
+        }
         public List<object> GetAllPerType()
         {
             List<object> temp = new List<object>();
@@ -60,7 +69,17 @@ namespace MediaBazzar
 
         public bool Remove(object obj)
         {
-            throw new NotImplementedException();
+            if (obj != null)
+            {
+                StockData.Delete((Stock)obj);
+                loadDataFromDatabase();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
     }
 }

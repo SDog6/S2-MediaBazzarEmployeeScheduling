@@ -30,7 +30,7 @@ namespace MediaBazzar
             {
                 stock.Add(new Stock(name, Amount, ID, price, brand));
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

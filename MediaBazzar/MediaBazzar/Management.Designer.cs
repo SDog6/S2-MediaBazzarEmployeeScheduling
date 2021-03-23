@@ -42,7 +42,7 @@ namespace MediaBazzar
             this.rbManagementName = new System.Windows.Forms.RadioButton();
             this.tbManagementEPFilter = new System.Windows.Forms.TextBox();
             this.Stock = new System.Windows.Forms.TabPage();
-            this.btnManagementUpdate = new System.Windows.Forms.Button();
+            this.btnManagementStockUpdate = new System.Windows.Forms.Button();
             this.btnManagementNewStock = new System.Windows.Forms.Button();
             this.rbManagementStockAmountFilter = new System.Windows.Forms.RadioButton();
             this.rbManagementStockBrandFilter = new System.Windows.Forms.RadioButton();
@@ -56,6 +56,8 @@ namespace MediaBazzar
             this.lbManagementShiftEmployeesAssigned = new System.Windows.Forms.ListBox();
             this.lbManagementShiftEmployeesToAssign = new System.Windows.Forms.ListBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.btnViewEmployeeInfo = new System.Windows.Forms.Button();
+            this.btnStockRemove = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.People.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -76,6 +78,7 @@ namespace MediaBazzar
             // 
             // People
             // 
+            this.People.Controls.Add(this.btnViewEmployeeInfo);
             this.People.Controls.Add(this.btnManagemendUpdate);
             this.People.Controls.Add(this.btnManagemntPersonUpdate);
             this.People.Controls.Add(this.btnManagemntPersonCreation);
@@ -193,7 +196,8 @@ namespace MediaBazzar
             // 
             // Stock
             // 
-            this.Stock.Controls.Add(this.btnManagementUpdate);
+            this.Stock.Controls.Add(this.btnStockRemove);
+            this.Stock.Controls.Add(this.btnManagementStockUpdate);
             this.Stock.Controls.Add(this.btnManagementNewStock);
             this.Stock.Controls.Add(this.rbManagementStockAmountFilter);
             this.Stock.Controls.Add(this.rbManagementStockBrandFilter);
@@ -210,19 +214,19 @@ namespace MediaBazzar
             this.Stock.Text = "Stock";
             this.Stock.UseVisualStyleBackColor = true;
             // 
-            // btnManagementUpdate
+            // btnManagementStockUpdate
             // 
-            this.btnManagementUpdate.Location = new System.Drawing.Point(116, 201);
-            this.btnManagementUpdate.Name = "btnManagementUpdate";
-            this.btnManagementUpdate.Size = new System.Drawing.Size(134, 32);
-            this.btnManagementUpdate.TabIndex = 9;
-            this.btnManagementUpdate.Text = "Check for update";
-            this.btnManagementUpdate.UseVisualStyleBackColor = true;
-            this.btnManagementUpdate.Click += new System.EventHandler(this.btnManagementUpdate_Click);
+            this.btnManagementStockUpdate.Location = new System.Drawing.Point(116, 201);
+            this.btnManagementStockUpdate.Name = "btnManagementStockUpdate";
+            this.btnManagementStockUpdate.Size = new System.Drawing.Size(134, 32);
+            this.btnManagementStockUpdate.TabIndex = 9;
+            this.btnManagementStockUpdate.Text = "Check for update";
+            this.btnManagementStockUpdate.UseVisualStyleBackColor = true;
+            this.btnManagementStockUpdate.Click += new System.EventHandler(this.btnManagementStockUpdate_Click_1);
             // 
             // btnManagementNewStock
             // 
-            this.btnManagementNewStock.Location = new System.Drawing.Point(79, 277);
+            this.btnManagementNewStock.Location = new System.Drawing.Point(91, 313);
             this.btnManagementNewStock.Name = "btnManagementNewStock";
             this.btnManagementNewStock.Size = new System.Drawing.Size(201, 44);
             this.btnManagementNewStock.TabIndex = 8;
@@ -265,7 +269,7 @@ namespace MediaBazzar
             // 
             // btnManagementRestockRequest
             // 
-            this.btnManagementRestockRequest.Location = new System.Drawing.Point(79, 239);
+            this.btnManagementRestockRequest.Location = new System.Drawing.Point(91, 275);
             this.btnManagementRestockRequest.Name = "btnManagementRestockRequest";
             this.btnManagementRestockRequest.Size = new System.Drawing.Size(201, 32);
             this.btnManagementRestockRequest.TabIndex = 4;
@@ -341,6 +345,26 @@ namespace MediaBazzar
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 0;
             // 
+            // btnViewEmployeeInfo
+            // 
+            this.btnViewEmployeeInfo.Location = new System.Drawing.Point(137, 293);
+            this.btnViewEmployeeInfo.Name = "btnViewEmployeeInfo";
+            this.btnViewEmployeeInfo.Size = new System.Drawing.Size(93, 38);
+            this.btnViewEmployeeInfo.TabIndex = 10;
+            this.btnViewEmployeeInfo.Text = "View employee info";
+            this.btnViewEmployeeInfo.UseVisualStyleBackColor = true;
+            this.btnViewEmployeeInfo.Click += new System.EventHandler(this.btnViewEmployeeInfo_Click);
+            // 
+            // btnStockRemove
+            // 
+            this.btnStockRemove.Location = new System.Drawing.Point(91, 239);
+            this.btnStockRemove.Name = "btnStockRemove";
+            this.btnStockRemove.Size = new System.Drawing.Size(201, 32);
+            this.btnStockRemove.TabIndex = 11;
+            this.btnStockRemove.Text = "Remove stock from inventory";
+            this.btnStockRemove.UseVisualStyleBackColor = true;
+            this.btnStockRemove.Click += new System.EventHandler(this.btnStockRemove_Click);
+            // 
             // Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -383,11 +407,13 @@ namespace MediaBazzar
         private System.Windows.Forms.ListBox lbManagementShiftEmployeesToAssign;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Button btnManagementNewStock;
-        private System.Windows.Forms.Button btnManagementUpdate;
+        private System.Windows.Forms.Button btnManagementStockUpdate;
         private System.Windows.Forms.RadioButton rbManagementName;
         private System.Windows.Forms.RadioButton rbManagementRole;
         private System.Windows.Forms.RadioButton rbManagementID;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnManagemendUpdate;
+        private System.Windows.Forms.Button btnViewEmployeeInfo;
+        private System.Windows.Forms.Button btnStockRemove;
     }
 }

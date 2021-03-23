@@ -12,8 +12,7 @@ namespace MediaBazzar
 {
     public partial class AccountCreateForm : Form
     {
-        AccountManager Accounts = new AccountManager();
-        DateTime time = DateTime.Now;
+
         
         public AccountCreateForm()
         {

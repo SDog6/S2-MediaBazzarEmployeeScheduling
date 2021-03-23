@@ -75,7 +75,7 @@ namespace MediaBazzar
 
         public override string ToString()
         {
-            return $"{this.getName()} with BSN {this.BSNp}";
+           return $"{this.getName()} with BSN {this.BSNp} ";
         }
 
         public string GetAccountRelationInfo()
