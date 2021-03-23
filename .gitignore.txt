@@ -1,1 +1,3 @@
 MediaBazaar\.vs
+MediaBazaar\MediaBazaar\bin
+MediaBazaar\MediaBazaar\obj
