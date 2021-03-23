@@ -20,7 +20,11 @@ namespace MediaBazzar
             this.password = generatePassword();
         }
 
-        
+        public Account(string username, string password)
+        {
+            this.username = username;
+            this.password = password;
+        }
         public string getUsername()
         {
             return this.username;

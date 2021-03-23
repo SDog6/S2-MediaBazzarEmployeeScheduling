@@ -65,39 +65,44 @@ namespace MediaBazzar
         }
         public object ReadAll()
         {
-            List<Employee> em = new List<Employee>();
-
+            List<Employee> employees = new List<Employee>();
+            string sql = "SELECT * FROM employee";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            List<int> employeeIds = new List<int>();
             try
             {
-                string sql = "SELECT StockID, StockName,StockAmount,Price,Brand FROM shopstock;";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-
-                conn.Open();
-
-                MySqlDataReader dr = cmd.ExecuteReader();
-
-                while (dr.Read())
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while(reader.Read())
                 {
-                    //em.Add(new Employee(dr[1].ToString(), Convert.ToInt32(dr[2]), Convert.ToInt32(dr[0]), Convert.ToInt32(dr[3]), dr[4].ToString()));
-                }
+                    int id = Convert.ToInt32(reader[0]);
+                    int personId = Convert.ToInt32(reader[1]);
+                    int contactPersonId = Convert.ToInt32(reader[2]);
+                    DateTime dateOfBirth = Convert.ToDateTime(reader[3]);
+                    string BSN = reader[4].ToString();
+                    string role = reader[5].ToString();
+                    int contractId = Convert.ToInt32(reader[6]);
+                    int accountId = Convert.ToInt32(reader[7]);
 
+                    Person person = getPerson(personId);
+                    Person contactPerson = getPerson(contactPersonId);
+                    Contract contract = getContract(contractId);
+                    Account account = getAccount(accountId);
+
+                    Employee employee = new Employee(id, person.FirstName, person.LastName, person.PhoneNumber, person.Address, person.Email, contactPerson, dateOfBirth, BSN, role, contract, account);
+                    employees.Add(employee);
+                }
             }
-            catch (MySqlException ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occured! Try again.");
+                throw new FailedReadFromDBException();
             }
             finally
-            {
-                if (conn != null)
-                {
+            { 
+
                     conn.Close();
-                }
+
             }
-            return em;
+            return employees;
         }
 
         private int insertAddress(Address address)
@@ -207,6 +212,126 @@ namespace MediaBazzar
             }
             MessageBox.Show(accountId.ToString());
             return accountId;
+        }
+
+        private Account getAccount(int accountId)
+        {
+            string sql = $"SELECT account.username, account.password FROM account WHERE account.id = {accountId}";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            try
+            {
+                conn.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                reader.Read();
+                string username = reader[0].ToString();
+                string password = reader[1].ToString();
+                Account account = new Account(username, password);
+                return account;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return null;
+        }
+        private Contract getContract(int contractId)
+        {
+            string sql = $"SELECT contract.start, contract.end, contract.endReason FROM contract WHERE contract.id = {contractId}";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            try
+            {
+                conn.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                reader.Read();
+                DateTime startDate = Convert.ToDateTime(reader[0]);
+                Contract contract;
+                if (reader[1] == null)
+                {
+                    contract = new Contract(startDate);
+                }
+                else
+                {
+                    DateTime endDate = Convert.ToDateTime(reader[1]);
+                    string terminationReason = reader[2].ToString();
+                    contract = new Contract(startDate, endDate, terminationReason);
+                }
+                return contract;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return null;
+        }
+        private Person getPerson(int personId)
+        {
+            string sql = $"SELECT person.firstName, person.lastName, person.phoneNumber, person.email, person.addressId WHERE person.id = {personId}";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            try
+            {
+                conn.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                reader.Read();
+                string firstName = reader[0].ToString();
+                string lastName = reader[1].ToString();
+                string phoneNumber = reader[2].ToString();
+                string email = reader[3].ToString();
+                int addressId = Convert.ToInt32(reader[4]);
+                Address address = getAddress(addressId);
+                Person person = new Person(firstName, lastName, phoneNumber, address, email);
+                return person;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return null;
+        }
+        public Address getAddress(int addressId)
+        {
+            string sql = $"SELECT address.state, address.city, address.street, address.apartmentNr FROM address WHERE address.id = {addressId}";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            try
+            {
+                conn.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                reader.Read();
+                string state = reader[0].ToString();
+                string city = reader[1].ToString();
+                string street = reader[2].ToString();
+                string apartmentNr;
+                if(reader[4] == null)
+                {
+                    apartmentNr = String.Empty;
+                }
+                else
+                {
+                    apartmentNr = reader[4].ToString();
+                }    
+                Address address = new Address(state, city, street, apartmentNr);
+                return address;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return null;
         }
     }
 }

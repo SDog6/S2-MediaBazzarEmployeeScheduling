@@ -128,6 +128,7 @@
     <Compile Include="EmployeeManager.cs" />
     <Compile Include="EmptyTextBoxException.cs" />
     <Compile Include="FailedDatabaseInjectionException.cs" />
+    <Compile Include="FailedReadFromDBException.cs" />
     <Compile Include="IDatabaseManager.cs" />
     <Compile Include="IManager.cs" />
     <Compile Include="LogInForm.cs">

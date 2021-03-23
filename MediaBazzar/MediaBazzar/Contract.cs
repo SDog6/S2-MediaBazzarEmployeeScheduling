@@ -23,6 +23,13 @@ namespace MediaBazzar
             terminationReason = string.Empty;
         }
 
+        public Contract(DateTime employmentStart, DateTime employmentEnd, string terminationReason)
+        {
+            this.employmentStart = employmentStart;
+            this.employmentEnd = employmentEnd;
+            this.terminationReason = terminationReason;
+        }
+
         public void Terminate(DateTime date, string reason)
         {
             this.employmentEnd = date;
