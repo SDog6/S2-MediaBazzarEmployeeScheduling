@@ -126,6 +126,7 @@
       <DependentUpon>EmployeeInfoUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="EmployeeManager.cs" />
+    <Compile Include="EmptyTextBoxException.cs" />
     <Compile Include="FailedDatabaseInjectionException.cs" />
     <Compile Include="IDatabaseManager.cs" />
     <Compile Include="IManager.cs" />

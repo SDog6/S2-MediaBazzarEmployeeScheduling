@@ -18,16 +18,11 @@ namespace MediaBazzar
         public string City { get { return this.city; } }
         public string Street { get { return this.street; } }
         public string ApartmentNr { get { return this.apartmentNr; } }
-        public Address(string state, string city, string street)
+        public Address(string state, string city, string street, string apartmentNr)
         {
             this.state = state;
             this.city = city;
             this.street = street;
-            apartmentNr = String.Empty;
-        }
-
-        public Address(string state, string city, string street, string apartmentNr) : this(state, city, street)
-        {
             this.apartmentNr = apartmentNr;
         }
 

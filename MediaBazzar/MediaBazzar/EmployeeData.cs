@@ -55,6 +55,7 @@ namespace MediaBazzar
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 throw new FailedDatabaseInjectionException("employee");
             }
             finally

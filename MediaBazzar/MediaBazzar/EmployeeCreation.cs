@@ -23,27 +23,102 @@ namespace MediaBazzar
             AccountCreateForm createForm = new AccountCreateForm();
             createForm.Show();
         }
+        public void checkEmpty(List<string> strings)
+        {
+            foreach(string s in strings)
+            {
+                if(String.IsNullOrEmpty(s))
+                {
+                    throw new EmptyTextBoxException();
+                }
+            }
+        }
+        public Employee createEmployee()
+        {
+            List<string> textboxes = new List<string>()
+            {
+                tbEname.Text,
+                tbELastname.Text,
+                tbEPhoneNumber.Text,
+                tbEEmail.Text,
 
+                tbEState.Text,
+                tbECity.Text,
+                tbEStreetName.Text,
+
+                tbCName.Text,
+                tbCLastname.Text,
+                tbCPhoneNumber.Text,
+                tbCEmail.Text,
+
+                tbCstate.Text,
+                tbCCity.Text,
+                tbCstreetname.Text,
+
+                tbEBSN.Text,
+                tbErole.Text,
+                tbUsername.Text
+            };
+            try
+            {
+                checkEmpty(textboxes);
+                
+                
+                string personalState = textboxes[4];
+                string personalCity = textboxes[5];
+                string personalStreetName = textboxes[6];
+                string personalStreetNr = tbEStreetNr.Text;
+                Address personalAddress =  new Address(personalState, personalCity, personalStreetName, personalStreetNr);
+
+                string contactState = textboxes[11];
+                string contactCity = textboxes[12];
+                string contactStreetName = textboxes[13];
+                string contactStreetNr = tbCstreetnr.Text;
+                Address contactAddress = new Address(contactState, contactCity, contactStreetName, contactStreetNr);
+
+                string contactFirstName = textboxes[7];
+                string contactLastname = textboxes[8];
+                string contactPhoneNumber = textboxes[9];
+                string contactEmail = textboxes[10];
+                Person contactPerson = new Person(contactFirstName, contactLastname, contactPhoneNumber, contactAddress, contactEmail);
+
+                Contract contract = new Contract(DateTime.Now);
+
+                string username = textboxes[16];
+                Account account = new Account(username);
+                DateTime dateOfBirth = date_dateOfBirth.Value;
+
+                string firstName = textboxes[0];
+                string lastName = textboxes[1];
+                string phoneNumber = textboxes[2];
+                string email = textboxes[3];
+
+                string BSN = textboxes[14];
+                string role = textboxes[15];
+                Employee employee = new Employee(firstName, lastName, phoneNumber, personalAddress, email, contactPerson, dateOfBirth, BSN, role, contract, account);
+                return employee;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return null;
+        }
         private void btnSubmit_Click_1(object sender, EventArgs e)
         {
+            Employee employee = createEmployee();
+            if(employee != null)
+            {
+                try
+                {
+                    database.Insert(employee);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
 
-
-            //Address address = new Address(tbEState.Text, tbECity.Text, tbEStreetName.Text, tbEStreetNr.Text);
-            //Address contactAddress = new Address(tbCstate.Text, tbCCity.Text, tbCstreetname.Text, tbCstreetnr.Text);
-            //Person Contactperson = new Person(tbCName.Text, tbCLastname.Text, tbCPhoneNumber.Text, contactAddress, tbCEmail.Text);
-            //Contract contract = new Contract(DateTime.Now);
-            //Employee employee = new Employee(Convert.ToInt32(textBox1.Text),tbEname.Text, tbELastname.Text, tbEPhoneNumber.Text, address, tbEEmail.Text, Contactperson, tbYear.Text, tbEBSN.Text, contract);
-            Address ad = new Address("0", "0", "0", "0");
-            Address cAd = new Address("0", "0", "0", "1");
-            Person contactPerson = new Person("a", "a", "a", cAd, "a");
-            Contract contract = new Contract(DateTime.Now);
-            Account acc = new Account("hasan");
-            Employee employee = new Employee("b", "b", "b", ad, "b", contactPerson, DateTime.Now, "b", "b", contract, acc);
-            database.Insert(employee);
-            // Account account = new Account(tbUsername.Text, employee);
-            //ad.AddAccount(account);
-
-
+            }
         }
 
         private void EmployeeCreation_Load(object sender, EventArgs e)

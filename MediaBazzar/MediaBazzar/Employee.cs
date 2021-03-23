@@ -31,6 +31,7 @@ namespace MediaBazzar
             this.contactPerson = contactPerson;
             this.dateOfBirth = dateOfBirth;
             this.BSN = BSN;
+            this.role = role;
             this.contract = contract;
             this.account = account;
         }
@@ -39,8 +40,8 @@ namespace MediaBazzar
             this.contactPerson = contactPerson;
             this.dateOfBirth = dateOfBirth;
             this.BSN = BSN;
+            this.role = role;
             this.contract = contract;
-            this.account = null;
             this.account = account;
         }
         public string getContactInfo()
