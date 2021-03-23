@@ -12,9 +12,11 @@ namespace MediaBazzar
 {
     public partial class LogInForm : Form
     {
+        EmployeeData data;
         public LogInForm()
         {
             InitializeComponent();
+            data = new EmployeeData();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -38,6 +40,21 @@ namespace MediaBazzar
         private void LogInForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLogIn_Click(object sender, EventArgs e)
+        {
+            string username = tbLogInUsername.Text;
+            string password = tbLogInPassword.Text;
+            if(data.getAccountLogIn(username) != null)
+            {
+                if(data.getAccountLogInRole(username) == "Manager")
+                {
+                    Management v = new Management();
+                    v.Show();
+                }
+            }
+            
         }
     }
 }

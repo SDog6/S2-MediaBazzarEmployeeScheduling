@@ -105,6 +105,7 @@ namespace MediaBazzar
                     string query = $"SELECT dateOfBirth, BSN, role FROM employee WHERE id = {id}";
                     cmd = new MySqlCommand(query, conn);
                     conn.Open();
+
                     reader = cmd.ExecuteReader();
                     reader.Read();
 
@@ -113,6 +114,8 @@ namespace MediaBazzar
                     string role = reader[2].ToString();
                     Employee employee = new Employee(id, person.FirstName, person.LastName, person.PhoneNumber, person.Address, person.Email, contactPerson, dateOfBirth, BSN, role, contract, account);
                     employees.Add(employee);
+                    conn.Close();
+
                 }
 
             }
@@ -257,6 +260,59 @@ namespace MediaBazzar
             }
             return null;
         }
+
+        public Account getAccountLogIn(string username)
+        {
+            string sql = $"SELECT password FROM account WHERE username = '@username'";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@username", username);
+          
+            try
+            {
+                conn.Open();
+                string password = cmd.ExecuteScalar().ToString();
+                Account account = new Account(username,password);
+                return account;
+              
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return null;
+        }
+        //1TX9Y9fqIP
+
+        public string getAccountLogInRole(string username)
+        {
+            string sql = $"SELECT employee.role FROM account INNER JOIN employee ON account.id = employee.accountId WHERE account.username = @username";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@username", username);
+            try
+            {
+                conn.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                reader.Read();
+                string role = reader[0].ToString();
+                return role;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return null;
+        }
+
+
         private Contract getContract(int employeeId)
         {
             string sql = $"SELECT contract.start, contract.end, contract.endReason FROM employee INNER JOIN contract ON employee.contractId = contract.id WHERE employee.id = {employeeId}";

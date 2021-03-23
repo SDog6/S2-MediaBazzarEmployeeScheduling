@@ -85,7 +85,6 @@ namespace MediaBazzar
                 Contract contract = new Contract(DateTime.Now);
 
                 string username = tbUsername.Text;
-                string password = tbEPassword.Text;
                 Account account = new Account(username) ;
                 DateTime dateOfBirth = date_dateOfBirth.Value;
 
