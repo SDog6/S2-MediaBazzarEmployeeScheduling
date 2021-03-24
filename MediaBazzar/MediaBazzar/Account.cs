@@ -11,16 +11,20 @@ namespace MediaBazzar
 
         private string username;
         private string password;
-        private Employee employee;
 
-        public Account(string username, Employee employee)
+        public string Username { get { return this.username; } }
+        public string Password { get { return this.password; } }
+        public Account(string username)
         {
             this.username = username;
-            this.employee = employee;
             this.password = generatePassword();
         }
 
-        
+        public Account(string username, string password)
+        {
+            this.username = username;
+            this.password = password;
+        }
         public string getUsername()
         {
             return this.username;
@@ -35,15 +39,6 @@ namespace MediaBazzar
         public string getPassword()
         {
             return this.password;
-        }
-
-        public Employee login(string password)
-        {
-            if (this.password == password)
-            {
-                return employee;
-            }
-            return null;
         }
 
         private string generatePassword()

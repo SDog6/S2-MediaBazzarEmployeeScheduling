@@ -3,34 +3,46 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MediaBazzar
 {
-    class ShopStock
+    public class ShopStock
     {
 
         private List<Stock> ShopStocks;
+        private StockDatabase StockData;
 
+
+        public StockDatabase stockData { get { return this.StockData; } set { StockData = value; } }
         public ShopStock()
         {
-            ShopStocks = new List<Stock>();
+            StockData = new StockDatabase();
+            loadDataFromDatabase();
         }
-        public bool Add(object obj)
+
+
+        private void loadDataFromDatabase()
         {
-            if (obj is Stock)
+            ShopStocks = new List<Stock>();
+
+            foreach (Stock o in (List<Stock>)StockData.ReadAll())
             {
-                Stock b = (Stock)obj;
-                foreach (Stock s in ShopStocks)
-                {
-                    if (s.ID == b.ID)
-                    {
-                        return false;
-                    }
-                }
-                ShopStocks.Add((Stock)obj);
-                return true;
+                ShopStocks.Add((Stock)o);
             }
-            return false;
+        }
+
+        public void Add(object obj)
+        {
+            try
+            {
+                StockData.Insert((Stock)obj);
+                loadDataFromDatabase();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public Stock GetSpecificStock(int id)

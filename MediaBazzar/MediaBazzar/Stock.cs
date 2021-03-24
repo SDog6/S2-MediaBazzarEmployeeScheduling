@@ -12,17 +12,19 @@ namespace MediaBazzar
         private string name;
         private int amount;
         private int id;
-        private double price;
+        private int price;
         private string brand;
 
         public int ID
         {
             get { return this.id; }
+            set { id = value; }
         }
 
         public string Brand
         {
             get { return this.brand; }
+            set { brand = value; }
         }
 
         public int Amount
@@ -30,12 +32,19 @@ namespace MediaBazzar
             get { return this.amount; }
             set { this.amount = value; }
         }
+
+        public int Price
+        {
+            get { return this.price; }
+            set { price = value; }
+        }
         public string Name
         {
             get { return this.name; }
+            set { name = value; }
         }
 
-        public Stock(string name, int amount, int id, double price, string brand)
+        public Stock(string name, int amount, int id, int price, string brand)
         {
             this.name = name;
             this.amount = amount;

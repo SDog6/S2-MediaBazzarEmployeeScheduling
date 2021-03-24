@@ -8,28 +8,49 @@ namespace MediaBazzar
 {
     class ReshelfRequestManager : IManager
     {
-        private List<ReshelfRequest> requests;
+        private List<ReshelfRequest> Requests;
+
+        private ReshelfRequestData data;
+
+        public ReshelfRequestData RequestData { get { return this.data; } set { data = value; } }
 
         public ReshelfRequestManager()
         {
-            this.requests = new List<ReshelfRequest>();
+            RequestData = new ReshelfRequestData();
+            loadDataFromDatabase();
+        }
+
+
+        private void loadDataFromDatabase()
+        {
+            Requests = new List<ReshelfRequest>();
+
+            foreach (ReshelfRequest o in (List<ReshelfRequest>)RequestData.ReadAll())
+            {
+                Requests.Add((ReshelfRequest)o);
+            }
         }
         public bool Add(object obj)
         {
-            if (obj is ReshelfRequest)
+            if (obj != null)
             {
-                ReshelfRequest r = (ReshelfRequest)obj;
-                requests.Add((ReshelfRequest)obj);
+                RequestData.Insert((ReshelfRequest)obj);
+                loadDataFromDatabase();
                 return true;
             }
-            return false;
+            else
+            {
+                return false;
+            }
+
+
         }
 
         public List<object> GetAllPerType()
         {
             List<object> temp = new List<object>();
 
-            foreach (ReshelfRequest item in requests)
+            foreach (ReshelfRequest item in Requests)
             {
                 temp.Add(item);
             }
@@ -38,12 +59,7 @@ namespace MediaBazzar
 
         public bool Remove(object obj)
         {
-            if(obj is ReshelfRequest)
-            {
-                this.GetAllPerType().Remove(obj);
-                return true;
-            }
-            return false;
+            throw new NotImplementedException();
         }
     }
 }

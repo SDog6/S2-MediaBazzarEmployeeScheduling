@@ -38,9 +38,10 @@ namespace MediaBazzar
             this.lbWarehouseStock = new System.Windows.Forms.ListBox();
             this.btnWarehouseUpdate = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnWarehouseResupply = new System.Windows.Forms.Button();
             this.tbWarehouseResupply = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnRemove = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -117,11 +118,11 @@ namespace MediaBazzar
             // 
             // btnWarehouseUpdate
             // 
-            this.btnWarehouseUpdate.Location = new System.Drawing.Point(229, 335);
+            this.btnWarehouseUpdate.Location = new System.Drawing.Point(12, 386);
             this.btnWarehouseUpdate.Name = "btnWarehouseUpdate";
             this.btnWarehouseUpdate.Size = new System.Drawing.Size(101, 45);
             this.btnWarehouseUpdate.TabIndex = 9;
-            this.btnWarehouseUpdate.Text = "Check for update";
+            this.btnWarehouseUpdate.Text = "All warehouse stock";
             this.btnWarehouseUpdate.UseVisualStyleBackColor = true;
             this.btnWarehouseUpdate.Click += new System.EventHandler(this.btnWarehouseUpdate_Click);
             // 
@@ -137,13 +138,22 @@ namespace MediaBazzar
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Resupply";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(140, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Increase amount in stock by";
+            // 
             // btnWarehouseResupply
             // 
             this.btnWarehouseResupply.Location = new System.Drawing.Point(9, 67);
             this.btnWarehouseResupply.Name = "btnWarehouseResupply";
-            this.btnWarehouseResupply.Size = new System.Drawing.Size(75, 23);
+            this.btnWarehouseResupply.Size = new System.Drawing.Size(172, 23);
             this.btnWarehouseResupply.TabIndex = 7;
-            this.btnWarehouseResupply.Text = "Increase";
+            this.btnWarehouseResupply.Text = "[IN DEVELOPMENT]Increase";
             this.btnWarehouseResupply.UseVisualStyleBackColor = true;
             this.btnWarehouseResupply.Click += new System.EventHandler(this.btnWarehouseResupply_Click);
             // 
@@ -154,20 +164,22 @@ namespace MediaBazzar
             this.tbWarehouseResupply.Size = new System.Drawing.Size(100, 20);
             this.tbWarehouseResupply.TabIndex = 6;
             // 
-            // label1
+            // btnRemove
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Increase amount in stock by";
+            this.btnRemove.Location = new System.Drawing.Point(122, 386);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(101, 45);
+            this.btnRemove.TabIndex = 11;
+            this.btnRemove.Text = "Remove stock";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click_1);
             // 
             // WarehouseManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(755, 456);
+            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnWarehouseUpdate);
             this.Controls.Add(this.btnWarehouseAddItem);
@@ -197,5 +209,6 @@ namespace MediaBazzar
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnWarehouseResupply;
         private System.Windows.Forms.TextBox tbWarehouseResupply;
+        private System.Windows.Forms.Button btnRemove;
     }
 }

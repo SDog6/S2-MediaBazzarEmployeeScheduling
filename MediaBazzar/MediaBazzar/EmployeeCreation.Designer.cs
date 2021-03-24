@@ -47,7 +47,11 @@ namespace MediaBazzar
             this.tbCName = new System.Windows.Forms.TextBox();
             this.tbCLastname = new System.Windows.Forms.TextBox();
             this.EmployeeInfo = new System.Windows.Forms.GroupBox();
-            this.tbYear = new System.Windows.Forms.TextBox();
+            this.tbUsername = new System.Windows.Forms.TextBox();
+            this.l_username = new System.Windows.Forms.Label();
+            this.tbErole = new System.Windows.Forms.TextBox();
+            this.l_role = new System.Windows.Forms.Label();
+            this.date_dateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -67,6 +71,8 @@ namespace MediaBazzar
             this.tbEState = new System.Windows.Forms.TextBox();
             this.tbECity = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.tbEPassword = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.EmployeeInfo.SuspendLayout();
             this.SuspendLayout();
@@ -226,7 +232,13 @@ namespace MediaBazzar
             // 
             // EmployeeInfo
             // 
-            this.EmployeeInfo.Controls.Add(this.tbYear);
+            this.EmployeeInfo.Controls.Add(this.label1);
+            this.EmployeeInfo.Controls.Add(this.tbEPassword);
+            this.EmployeeInfo.Controls.Add(this.tbUsername);
+            this.EmployeeInfo.Controls.Add(this.l_username);
+            this.EmployeeInfo.Controls.Add(this.tbErole);
+            this.EmployeeInfo.Controls.Add(this.l_role);
+            this.EmployeeInfo.Controls.Add(this.date_dateOfBirth);
             this.EmployeeInfo.Controls.Add(this.label18);
             this.EmployeeInfo.Controls.Add(this.label17);
             this.EmployeeInfo.Controls.Add(this.label16);
@@ -252,17 +264,52 @@ namespace MediaBazzar
             this.EmployeeInfo.TabStop = false;
             this.EmployeeInfo.Text = "Employee details";
             // 
-            // tbYear
+            // tbUsername
             // 
-            this.tbYear.Location = new System.Drawing.Point(112, 321);
-            this.tbYear.Name = "tbYear";
-            this.tbYear.Size = new System.Drawing.Size(218, 20);
-            this.tbYear.TabIndex = 30;
+            this.tbUsername.Location = new System.Drawing.Point(180, 19);
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.Size = new System.Drawing.Size(97, 20);
+            this.tbUsername.TabIndex = 32;
+            // 
+            // l_username
+            // 
+            this.l_username.AutoSize = true;
+            this.l_username.Location = new System.Drawing.Point(111, 21);
+            this.l_username.Name = "l_username";
+            this.l_username.Size = new System.Drawing.Size(55, 13);
+            this.l_username.TabIndex = 31;
+            this.l_username.Text = "Username";
+            // 
+            // tbErole
+            // 
+            this.tbErole.Location = new System.Drawing.Point(112, 301);
+            this.tbErole.Name = "tbErole";
+            this.tbErole.Size = new System.Drawing.Size(218, 20);
+            this.tbErole.TabIndex = 30;
+            // 
+            // l_role
+            // 
+            this.l_role.AutoSize = true;
+            this.l_role.Location = new System.Drawing.Point(54, 306);
+            this.l_role.Name = "l_role";
+            this.l_role.Size = new System.Drawing.Size(29, 13);
+            this.l_role.TabIndex = 29;
+            this.l_role.Text = "Role";
+            // 
+            // date_dateOfBirth
+            // 
+            this.date_dateOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.date_dateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.date_dateOfBirth.Location = new System.Drawing.Point(112, 332);
+            this.date_dateOfBirth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.date_dateOfBirth.Name = "date_dateOfBirth";
+            this.date_dateOfBirth.Size = new System.Drawing.Size(218, 23);
+            this.date_dateOfBirth.TabIndex = 28;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(55, 283);
+            this.label18.Location = new System.Drawing.Point(55, 272);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(38, 13);
             this.label18.TabIndex = 26;
@@ -271,7 +318,7 @@ namespace MediaBazzar
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(66, 243);
+            this.label17.Location = new System.Drawing.Point(66, 232);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(32, 13);
             this.label17.TabIndex = 27;
@@ -307,7 +354,7 @@ namespace MediaBazzar
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(18, 117);
+            this.label13.Location = new System.Drawing.Point(18, 128);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(79, 13);
             this.label13.TabIndex = 26;
@@ -316,7 +363,7 @@ namespace MediaBazzar
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(18, 74);
+            this.label12.Location = new System.Drawing.Point(18, 95);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(75, 13);
             this.label12.TabIndex = 26;
@@ -325,7 +372,7 @@ namespace MediaBazzar
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(202, 31);
+            this.label11.Location = new System.Drawing.Point(201, 58);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(55, 13);
             this.label11.TabIndex = 26;
@@ -334,7 +381,7 @@ namespace MediaBazzar
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(27, 31);
+            this.label10.Location = new System.Drawing.Point(26, 58);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(54, 13);
             this.label10.TabIndex = 26;
@@ -342,28 +389,28 @@ namespace MediaBazzar
             // 
             // tbEEmail
             // 
-            this.tbEEmail.Location = new System.Drawing.Point(112, 276);
+            this.tbEEmail.Location = new System.Drawing.Point(112, 266);
             this.tbEEmail.Name = "tbEEmail";
             this.tbEEmail.Size = new System.Drawing.Size(218, 20);
             this.tbEEmail.TabIndex = 12;
             // 
             // tbEname
             // 
-            this.tbEname.Location = new System.Drawing.Point(91, 24);
+            this.tbEname.Location = new System.Drawing.Point(86, 54);
             this.tbEname.Name = "tbEname";
             this.tbEname.Size = new System.Drawing.Size(97, 20);
             this.tbEname.TabIndex = 4;
             // 
             // tbEBSN
             // 
-            this.tbEBSN.Location = new System.Drawing.Point(112, 240);
+            this.tbEBSN.Location = new System.Drawing.Point(112, 229);
             this.tbEBSN.Name = "tbEBSN";
             this.tbEBSN.Size = new System.Drawing.Size(218, 20);
             this.tbEBSN.TabIndex = 11;
             // 
             // tbELastname
             // 
-            this.tbELastname.Location = new System.Drawing.Point(263, 24);
+            this.tbELastname.Location = new System.Drawing.Point(262, 52);
             this.tbELastname.Name = "tbELastname";
             this.tbELastname.Size = new System.Drawing.Size(100, 20);
             this.tbELastname.TabIndex = 5;
@@ -377,7 +424,7 @@ namespace MediaBazzar
             // 
             // tbEPhoneNumber
             // 
-            this.tbEPhoneNumber.Location = new System.Drawing.Point(112, 71);
+            this.tbEPhoneNumber.Location = new System.Drawing.Point(112, 92);
             this.tbEPhoneNumber.Name = "tbEPhoneNumber";
             this.tbEPhoneNumber.Size = new System.Drawing.Size(218, 20);
             this.tbEPhoneNumber.TabIndex = 6;
@@ -391,7 +438,7 @@ namespace MediaBazzar
             // 
             // tbEState
             // 
-            this.tbEState.Location = new System.Drawing.Point(112, 110);
+            this.tbEState.Location = new System.Drawing.Point(112, 124);
             this.tbEState.Name = "tbEState";
             this.tbEState.Size = new System.Drawing.Size(114, 20);
             this.tbEState.TabIndex = 7;
@@ -413,11 +460,28 @@ namespace MediaBazzar
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click_1);
             // 
+            // tbEPassword
+            // 
+            this.tbEPassword.Location = new System.Drawing.Point(349, 18);
+            this.tbEPassword.Name = "tbEPassword";
+            this.tbEPassword.Size = new System.Drawing.Size(97, 20);
+            this.tbEPassword.TabIndex = 33;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(288, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Password";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // EmployeeCreation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1058, 405);
+            this.ClientSize = new System.Drawing.Size(1028, 405);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.EmployeeInfo);
             this.Controls.Add(this.btnSubmit);
@@ -451,7 +515,6 @@ namespace MediaBazzar
         private System.Windows.Forms.TextBox tbCName;
         private System.Windows.Forms.TextBox tbCLastname;
         private System.Windows.Forms.GroupBox EmployeeInfo;
-        private System.Windows.Forms.TextBox tbYear;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
@@ -471,6 +534,13 @@ namespace MediaBazzar
         private System.Windows.Forms.TextBox tbEState;
         private System.Windows.Forms.TextBox tbECity;
         private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.DateTimePicker date_dateOfBirth;
+        private System.Windows.Forms.TextBox tbErole;
+        private System.Windows.Forms.Label l_role;
+        private System.Windows.Forms.TextBox tbUsername;
+        private System.Windows.Forms.Label l_username;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbEPassword;
     }
 }
 
