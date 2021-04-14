@@ -33,10 +33,9 @@ namespace MediaBazzar
             this.People = new System.Windows.Forms.TabPage();
             this.btnViewEmployeeInfo = new System.Windows.Forms.Button();
             this.btnManagemendUpdate = new System.Windows.Forms.Button();
-            this.btnManagemntPersonUpdate = new System.Windows.Forms.Button();
-            this.btnManagemntPersonCreation = new System.Windows.Forms.Button();
             this.lbManagemendEmployees = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cb_allRoles = new System.Windows.Forms.ComboBox();
             this.radio_name = new System.Windows.Forms.RadioButton();
             this.radio_ID = new System.Windows.Forms.RadioButton();
             this.radio_role = new System.Windows.Forms.RadioButton();
@@ -58,7 +57,6 @@ namespace MediaBazzar
             this.lbManagementShiftEmployeesAssigned = new System.Windows.Forms.ListBox();
             this.lbManagementShiftEmployeesToAssign = new System.Windows.Forms.ListBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.cb_allRoles = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.People.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -83,8 +81,6 @@ namespace MediaBazzar
             // 
             this.People.Controls.Add(this.btnViewEmployeeInfo);
             this.People.Controls.Add(this.btnManagemendUpdate);
-            this.People.Controls.Add(this.btnManagemntPersonUpdate);
-            this.People.Controls.Add(this.btnManagemntPersonCreation);
             this.People.Controls.Add(this.lbManagemendEmployees);
             this.People.Controls.Add(this.groupBox1);
             this.People.Location = new System.Drawing.Point(4, 25);
@@ -98,10 +94,11 @@ namespace MediaBazzar
             // 
             // btnViewEmployeeInfo
             // 
-            this.btnViewEmployeeInfo.Location = new System.Drawing.Point(183, 361);
+            this.btnViewEmployeeInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewEmployeeInfo.Location = new System.Drawing.Point(265, 206);
             this.btnViewEmployeeInfo.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewEmployeeInfo.Name = "btnViewEmployeeInfo";
-            this.btnViewEmployeeInfo.Size = new System.Drawing.Size(124, 47);
+            this.btnViewEmployeeInfo.Size = new System.Drawing.Size(162, 55);
             this.btnViewEmployeeInfo.TabIndex = 10;
             this.btnViewEmployeeInfo.Text = "View employee info";
             this.btnViewEmployeeInfo.UseVisualStyleBackColor = true;
@@ -109,36 +106,15 @@ namespace MediaBazzar
             // 
             // btnManagemendUpdate
             // 
-            this.btnManagemendUpdate.Location = new System.Drawing.Point(353, 306);
+            this.btnManagemendUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManagemendUpdate.Location = new System.Drawing.Point(66, 206);
             this.btnManagemendUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnManagemendUpdate.Name = "btnManagemendUpdate";
-            this.btnManagemendUpdate.Size = new System.Drawing.Size(124, 47);
+            this.btnManagemendUpdate.Size = new System.Drawing.Size(162, 55);
             this.btnManagemendUpdate.TabIndex = 9;
             this.btnManagemendUpdate.Text = "View all employees";
             this.btnManagemendUpdate.UseVisualStyleBackColor = true;
             this.btnManagemendUpdate.Click += new System.EventHandler(this.btnManagemendUpdate_Click);
-            // 
-            // btnManagemntPersonUpdate
-            // 
-            this.btnManagemntPersonUpdate.Location = new System.Drawing.Point(183, 306);
-            this.btnManagemntPersonUpdate.Margin = new System.Windows.Forms.Padding(4);
-            this.btnManagemntPersonUpdate.Name = "btnManagemntPersonUpdate";
-            this.btnManagemntPersonUpdate.Size = new System.Drawing.Size(124, 47);
-            this.btnManagemntPersonUpdate.TabIndex = 2;
-            this.btnManagemntPersonUpdate.Text = "Update employee information";
-            this.btnManagemntPersonUpdate.UseVisualStyleBackColor = true;
-            this.btnManagemntPersonUpdate.Click += new System.EventHandler(this.btnManagemntPersonUpdate_Click_1);
-            // 
-            // btnManagemntPersonCreation
-            // 
-            this.btnManagemntPersonCreation.Location = new System.Drawing.Point(11, 306);
-            this.btnManagemntPersonCreation.Margin = new System.Windows.Forms.Padding(4);
-            this.btnManagemntPersonCreation.Name = "btnManagemntPersonCreation";
-            this.btnManagemntPersonCreation.Size = new System.Drawing.Size(124, 47);
-            this.btnManagemntPersonCreation.TabIndex = 1;
-            this.btnManagemntPersonCreation.Text = "Add a new employee";
-            this.btnManagemntPersonCreation.UseVisualStyleBackColor = true;
-            this.btnManagemntPersonCreation.Click += new System.EventHandler(this.btnManagemntPersonCreation_Click);
             // 
             // lbManagemendEmployees
             // 
@@ -158,7 +134,7 @@ namespace MediaBazzar
             this.groupBox1.Controls.Add(this.radio_role);
             this.groupBox1.Controls.Add(this.txt_search);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(117, 17);
+            this.groupBox1.Location = new System.Drawing.Point(46, 26);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -166,6 +142,15 @@ namespace MediaBazzar
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Search by";
+            // 
+            // cb_allRoles
+            // 
+            this.cb_allRoles.FormattingEnabled = true;
+            this.cb_allRoles.Location = new System.Drawing.Point(87, 94);
+            this.cb_allRoles.Name = "cb_allRoles";
+            this.cb_allRoles.Size = new System.Drawing.Size(226, 28);
+            this.cb_allRoles.TabIndex = 8;
+            this.cb_allRoles.SelectedIndexChanged += new System.EventHandler(this.cb_allRoles_SelectedIndexChanged);
             // 
             // radio_name
             // 
@@ -408,15 +393,6 @@ namespace MediaBazzar
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 0;
             // 
-            // cb_allRoles
-            // 
-            this.cb_allRoles.FormattingEnabled = true;
-            this.cb_allRoles.Location = new System.Drawing.Point(87, 94);
-            this.cb_allRoles.Name = "cb_allRoles";
-            this.cb_allRoles.Size = new System.Drawing.Size(226, 28);
-            this.cb_allRoles.TabIndex = 8;
-            this.cb_allRoles.SelectedIndexChanged += new System.EventHandler(this.cb_allRoles_SelectedIndexChanged);
-            // 
             // Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -443,11 +419,9 @@ namespace MediaBazzar
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage People;
         private System.Windows.Forms.TabPage Stock;
-        private System.Windows.Forms.Button btnManagemntPersonCreation;
         private System.Windows.Forms.ListBox lbManagemendEmployees;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TextBox txt_search;
-        private System.Windows.Forms.Button btnManagemntPersonUpdate;
         private System.Windows.Forms.Button btnManagementRestockRequest;
         private System.Windows.Forms.Button btnManagementStockFilter;
         private System.Windows.Forms.TextBox tbManagementStockFilter;
