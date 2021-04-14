@@ -14,15 +14,19 @@ namespace MediaBazzar
     {
         ShopStockManager stock;
         EmployeeManager Employees;
+        ShiftSchedulingManager Shifts;
         public Management()
         {
             InitializeComponent();
             stock = new ShopStockManager();
             Employees = new EmployeeManager();
+            Shifts = new ShiftSchedulingManager();
             rbManagementID.Checked = true;
             rbManagementStockIDFilter.Checked = true;
+            cbShiftType.SelectedIndex = 1;
             UpdateStockUI();
             UpdateEmployeeUI();
+            UpdateShiftEmployeeUI();
         }
 
         private void btnManagementRestockRequest_Click(object sender, EventArgs e)
@@ -83,6 +87,24 @@ namespace MediaBazzar
             foreach (Employee item in Employees.GetAllPerType())
             {
                 lbManagemendEmployees.Items.Add(item);
+            }
+
+        }
+
+        public void UpdateShiftEmployeeUI()
+        {
+
+            lbManagementShiftEmployeesToAssign.Items.Clear();
+            foreach (Employee item in Employees.GetAllPerType())
+            {
+                lbManagementShiftEmployeesToAssign.Items.Add(item);
+            }
+
+
+            lbManagementShiftEmployeesAssigned.Items.Clear();
+            foreach (Shift item in Shifts.GetAllPerType())
+            {
+                lbManagementShiftEmployeesAssigned.Items.Add(item);
             }
 
         }
@@ -169,6 +191,27 @@ namespace MediaBazzar
                     lbManagementStock.Items.Add(item);
                 }
             }
+        }
+
+        private void btnManagementShiftAssignEmployee_Click(object sender, EventArgs e)
+        {
+            Employee emp = (Employee)lbManagementShiftEmployeesToAssign.SelectedItem;
+            string time = monthCalendar1.SelectionRange.Start.ToShortDateString();
+            string shifttype = cbShiftType.SelectedItem.ToString();
+
+            Shift temp = new Shift(emp, time, shifttype);
+            Shifts.Add(temp);
+            UpdateShiftEmployeeUI();
+        }
+
+        private void btnShiftsUpdate_Click(object sender, EventArgs e)
+        {
+            UpdateShiftEmployeeUI();
+        }
+
+        private void lbManagementShiftEmployeesAssigned_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

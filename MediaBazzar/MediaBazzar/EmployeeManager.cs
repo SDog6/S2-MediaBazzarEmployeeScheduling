@@ -59,6 +59,15 @@ namespace MediaBazzar
         }
 
 
+        public Employee GetEmp(int id)
+        {
+            Employee temp = (Employee)EmpsData.GetEmployeeByID(id);
+            return temp;
+
+        }
+
+
+
         public List<object> GetAllPerID(int id)
         {
             List<object> temp = new List<object>();

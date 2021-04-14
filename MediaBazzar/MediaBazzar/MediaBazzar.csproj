@@ -167,6 +167,9 @@
     <Compile Include="ReshelfRequest.cs" />
     <Compile Include="ReshelfRequestData.cs" />
     <Compile Include="ReshelfRequestManager.cs" />
+    <Compile Include="Shift.cs" />
+    <Compile Include="ShiftSchedulingData.cs" />
+    <Compile Include="ShiftSchedulingManager.cs" />
     <Compile Include="ShopStockData.cs" />
     <Compile Include="ShopStockManager.cs" />
     <Compile Include="Stock.cs" />
