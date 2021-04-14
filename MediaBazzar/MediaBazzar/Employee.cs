@@ -16,7 +16,6 @@ namespace MediaBazzar
         private Contract contract;
         private Account account;
 
-        public int EmID { get { return this.ID; } }
         public string BSNp { get { return this.BSN; } set { this.BSN = value; } }
         public DateTime DateOfBirth { get { return this.dateOfBirth; } }
         public int EmployeeID { get { return this.ID; } set { this.ID = value; } }
@@ -76,7 +75,7 @@ namespace MediaBazzar
 
         public override string ToString()
         {
-           return $"[{this.EmID}] - {this.getName()} with BSN {this.BSNp} ";
+           return $"[{this.ID}] - {this.getName()} with BSN {this.BSNp} ";
         }
 
         public string GetAccountRelationInfo()

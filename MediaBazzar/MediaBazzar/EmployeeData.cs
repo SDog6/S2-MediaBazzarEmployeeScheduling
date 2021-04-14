@@ -78,21 +78,6 @@ namespace MediaBazzar
                 {
                     int id = Convert.ToInt32(reader[0]);
                     employeeIds.Add(id);
-                    /*int personId = Convert.ToInt32(reader[1]);
-                    int contactPersonId = Convert.ToInt32(reader[2]);
-                    DateTime dateOfBirth = Convert.ToDateTime(reader[3]);
-                    string BSN = reader[4].ToString();
-                    string role = reader[5].ToString();
-                    int contractId = Convert.ToInt32(reader[6]);
-                    int accountId = Convert.ToInt32(reader[7]);
-
-                    Person person = getPerson(personId);
-                    Person contactPerson = getPerson(contactPersonId);
-                    Contract contract = getContract(contractId);
-                    Account account = getAccount(accountId);
-
-                    Employee employee = new Employee(id, person.FirstName, person.LastName, person.PhoneNumber, person.Address, person.Email, contactPerson, dateOfBirth, BSN, role, contract, account);
-                    employees.Add(employee);*/
                 }
                 conn.Close();
                 foreach(int id in employeeIds)
@@ -381,7 +366,7 @@ namespace MediaBazzar
             return null;
         }
 
-        public object ReadAllID(int ID)
+        /*public object ReadAllID(int ID)
         {
             List<Employee> employees = new List<Employee>();
             string sql = "SELECT id FROM employee WHERE id = @id";
@@ -492,6 +477,6 @@ namespace MediaBazzar
             }
 
             return employees;
-        }
+        }*/
     }
 }

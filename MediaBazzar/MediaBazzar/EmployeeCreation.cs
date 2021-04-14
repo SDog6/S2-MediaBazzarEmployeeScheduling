@@ -124,6 +124,11 @@ namespace MediaBazzar
         {
 
         }
+
+        private void tbELastname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

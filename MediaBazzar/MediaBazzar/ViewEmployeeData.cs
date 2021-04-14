@@ -37,13 +37,9 @@ namespace MediaBazzar
                 tbCCity.Text = emp.ContactPerson.Address.City;
                 tbCstreetname.Text = emp.ContactPerson.Address.Street;
 
-                tbEBSN.Text = emp.BSNp;
                 tbErole.Text = emp.Role;
                 tbCstreetnr.Text = emp.ContactPerson.Address.ApartmentNr;
                 tbEStreetNr.Text = emp.Address.ApartmentNr;
-                date_dateOfBirth.Value = emp.DateOfBirth;
-                tbUsername.Text = emp.Account.Username; 
-                tbEPassword.Text = emp.Account.Password;
             }
             catch (Exception ex)
             {
@@ -55,5 +51,6 @@ namespace MediaBazzar
         {
 
         }
+
     }
 }

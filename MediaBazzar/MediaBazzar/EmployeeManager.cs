@@ -59,7 +59,7 @@ namespace MediaBazzar
         }
 
 
-        public List<object> GetAllPerID(int id)
+        /*public List<object> GetAllPerID(int id)
         {
             List<object> temp = new List<object>();
 
@@ -79,7 +79,7 @@ namespace MediaBazzar
                 temp.Add(item);
             }
             return temp;
-        }
+        }*/
 
         public bool Remove(object obj)
         {
