@@ -1,19 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Account</title>
-    <link rel="stylesheet" type="text/css" href="LoginStyle.css">
+<?php include("./includes/autoload.inc.php");?>
+<?php include("./templates/header.php");?>
 
-<ul class="topnav">
-  <li><a class="active" href="Home.php">Home</a></li>
-  <li><a href="MyAccount.php">My Account</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li><a href="login.php">Login</a></li>
-</head>
-<body>
-    
-</body>
+
+<?php
+$id = $_SESSION["id"];
+$loginattempt = new Userdata();
+$founduser = $loginattempt->GetAUserByID($id);
+
+echo "ID: " . $founduser->GetID();
+echo "<br>";
+echo "Username: " . $founduser->GetUsername();
+echo "<br>";
+echo "Password: ********** ";
+echo "<br>";
+echo "<br>";
+echo "<a href='changeusername.php' >Change username</a>";
+echo "<br>";
+echo "<a href='changeemail.php' >Change email</a>";
+echo "<br>";
+echo "<a href='changepassword.php' >Change password</a>";
+
+
+?>
 </html>

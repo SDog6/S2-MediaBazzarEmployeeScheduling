@@ -1,13 +1,31 @@
+
+<?php
+
+include_once('./includes/autoload.inc.php');
+
+
+if(isset($_POST['login_user']))
+{
+	
+	$password = $_POST["password"];
+	$username = $_POST["username"];
+	$loginattempt = new Userdata();
+	$founduser = $loginattempt->GetAUser($username);
+	if($founduser->GetUsername() == null){
+		header("login.php?error=wronglogin");
+	}
+	else if ($password == $founduser->GetPassword()) {
+		session_start();
+		$_SESSION["id"] = $founduser->GetID();
+		$_SESSION["username"] = $founduser->GetUsername();
+		header("location: index.php");
+	}  
+}
+?>
+
+
 <!DOCTYPE html>
-<link rel="stylesheet" type="text/css" href="LoginStyle.css">
-
-<ul class="topnav">
-  <li><a class="active" href="index.php">Home</a></li>
-  <li><a href="MyAccount.php">My Account</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li><a href="login.php">Login</a></li>
-
-</ul>
+<?php include("./templates/header.php");?>
 
 
 <div class="header">
