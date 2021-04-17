@@ -478,5 +478,74 @@ namespace MediaBazzar
 
             return employees;
         }*/
+
+
+        public object GetEmployeeByID(int rid)
+        {
+            string sql = "SELECT id FROM employee WHERE id = @id";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@id", rid);
+            List<int> employeeIds = new List<int>();
+            try
+            {
+                conn.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    int id = Convert.ToInt32(reader[0]);
+                    employeeIds.Add(id);
+                    /*int personId = Convert.ToInt32(reader[1]);
+                    int contactPersonId = Convert.ToInt32(reader[2]);
+                    DateTime dateOfBirth = Convert.ToDateTime(reader[3]);
+                    string BSN = reader[4].ToString();
+                    string role = reader[5].ToString();
+                    int contractId = Convert.ToInt32(reader[6]);
+                    int accountId = Convert.ToInt32(reader[7]);
+
+                    Person person = getPerson(personId);
+                    Person contactPerson = getPerson(contactPersonId);
+                    Contract contract = getContract(contractId);
+                    Account account = getAccount(accountId);
+
+                    Employee employee = new Employee(id, person.FirstName, person.LastName, person.PhoneNumber, person.Address, person.Email, contactPerson, dateOfBirth, BSN, role, contract, account);
+                    employees.Add(employee);*/
+                }
+                conn.Close();
+                foreach (int id in employeeIds)
+                {
+                    Account account = getAccount(id);
+                    Contract contract = getContract(id);
+                    Person person = getPerson("personId", id);
+                    Person contactPerson = getPerson("contactPersonId", id);
+
+                    string query = $"SELECT dateOfBirth, BSN, role FROM employee WHERE id = {id}";
+                    cmd = new MySqlCommand(query, conn);
+                    conn.Open();
+
+                    reader = cmd.ExecuteReader();
+                    reader.Read();
+
+                    DateTime dateOfBirth = Convert.ToDateTime(reader[0]);
+                    string BSN = reader[1].ToString();
+                    string role = reader[2].ToString();
+                    Employee employee = new Employee(id, person.FirstName, person.LastName, person.PhoneNumber, person.Address, person.Email, contactPerson, dateOfBirth, BSN, role, contract, account);
+                    return employee;
+                    conn.Close();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw new FailedReadFromDBException();
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return null;
+
+        }
     }
 }
