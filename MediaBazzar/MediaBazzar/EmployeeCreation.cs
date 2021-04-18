@@ -124,6 +124,11 @@ namespace MediaBazzar
         {
 
         }
+
+        private void l_username_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

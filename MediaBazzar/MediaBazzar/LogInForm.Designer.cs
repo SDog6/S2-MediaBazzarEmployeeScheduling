@@ -101,11 +101,11 @@ namespace MediaBazzar
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(218, 201);
+            this.button2.Location = new System.Drawing.Point(229, 201);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(153, 53);
+            this.button2.Size = new System.Drawing.Size(144, 37);
             this.button2.TabIndex = 7;
-            this.button2.Text = "[STILL IN DEVELOPMENT]\r\nOpen Account Administration Form";
+            this.button2.Text = "Open HR form";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 

@@ -126,9 +126,21 @@
       <DependentUpon>EmployeeInfoUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="EmployeeManager.cs" />
+    <Compile Include="Employees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employees.Designer.cs">
+      <DependentUpon>Employees.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmptyTextBoxException.cs" />
     <Compile Include="FailedDatabaseInjectionException.cs" />
     <Compile Include="FailedReadFromDBException.cs" />
+    <Compile Include="HR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HR.Designer.cs">
+      <DependentUpon>HR.cs</DependentUpon>
+    </Compile>
     <Compile Include="IDatabaseManager.cs" />
     <Compile Include="IManager.cs" />
     <Compile Include="LogInForm.cs">
@@ -195,6 +207,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeInfoUpdate.resx">
       <DependentUpon>EmployeeInfoUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employees.resx">
+      <DependentUpon>Employees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HR.resx">
+      <DependentUpon>HR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogInForm.resx">
       <DependentUpon>LogInForm.cs</DependentUpon>

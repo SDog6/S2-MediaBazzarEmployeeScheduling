@@ -47,6 +47,8 @@ namespace MediaBazzar
             this.tbCName = new System.Windows.Forms.TextBox();
             this.tbCLastname = new System.Windows.Forms.TextBox();
             this.EmployeeInfo = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbEPassword = new System.Windows.Forms.TextBox();
             this.tbUsername = new System.Windows.Forms.TextBox();
             this.l_username = new System.Windows.Forms.Label();
             this.tbErole = new System.Windows.Forms.TextBox();
@@ -70,8 +72,6 @@ namespace MediaBazzar
             this.tbEStreetNr = new System.Windows.Forms.TextBox();
             this.tbEState = new System.Windows.Forms.TextBox();
             this.tbECity = new System.Windows.Forms.TextBox();
-            this.tbEPassword = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.EmployeeInfo.SuspendLayout();
             this.SuspendLayout();
@@ -263,9 +263,25 @@ namespace MediaBazzar
             this.EmployeeInfo.TabStop = false;
             this.EmployeeInfo.Text = "Employee details";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(232, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Password";
+            // 
+            // tbEPassword
+            // 
+            this.tbEPassword.Location = new System.Drawing.Point(310, 19);
+            this.tbEPassword.Name = "tbEPassword";
+            this.tbEPassword.Size = new System.Drawing.Size(97, 20);
+            this.tbEPassword.TabIndex = 33;
+            // 
             // tbUsername
             // 
-            this.tbUsername.Location = new System.Drawing.Point(180, 19);
+            this.tbUsername.Location = new System.Drawing.Point(112, 21);
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(97, 20);
             this.tbUsername.TabIndex = 32;
@@ -273,7 +289,7 @@ namespace MediaBazzar
             // l_username
             // 
             this.l_username.AutoSize = true;
-            this.l_username.Location = new System.Drawing.Point(111, 21);
+            this.l_username.Location = new System.Drawing.Point(25, 21);
             this.l_username.Name = "l_username";
             this.l_username.Size = new System.Drawing.Size(55, 13);
             this.l_username.TabIndex = 31;
@@ -371,7 +387,7 @@ namespace MediaBazzar
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(201, 58);
+            this.label11.Location = new System.Drawing.Point(230, 55);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(55, 13);
             this.label11.TabIndex = 26;
@@ -395,7 +411,7 @@ namespace MediaBazzar
             // 
             // tbEname
             // 
-            this.tbEname.Location = new System.Drawing.Point(86, 54);
+            this.tbEname.Location = new System.Drawing.Point(112, 55);
             this.tbEname.Name = "tbEname";
             this.tbEname.Size = new System.Drawing.Size(97, 20);
             this.tbEname.TabIndex = 4;
@@ -409,7 +425,7 @@ namespace MediaBazzar
             // 
             // tbELastname
             // 
-            this.tbELastname.Location = new System.Drawing.Point(262, 52);
+            this.tbELastname.Location = new System.Drawing.Point(310, 55);
             this.tbELastname.Name = "tbELastname";
             this.tbELastname.Size = new System.Drawing.Size(100, 20);
             this.tbELastname.TabIndex = 5;
@@ -448,22 +464,6 @@ namespace MediaBazzar
             this.tbECity.Name = "tbECity";
             this.tbECity.Size = new System.Drawing.Size(114, 20);
             this.tbECity.TabIndex = 8;
-            // 
-            // tbEPassword
-            // 
-            this.tbEPassword.Location = new System.Drawing.Point(342, 19);
-            this.tbEPassword.Name = "tbEPassword";
-            this.tbEPassword.Size = new System.Drawing.Size(97, 20);
-            this.tbEPassword.TabIndex = 33;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(283, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "Password";
             // 
             // ViewEmployeeData
             // 

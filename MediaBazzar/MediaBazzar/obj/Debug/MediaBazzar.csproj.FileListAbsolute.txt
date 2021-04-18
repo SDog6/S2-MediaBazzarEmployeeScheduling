@@ -132,3 +132,5 @@ C:\Users\Hristo\Desktop\New folder (13)\semester_2-project\MediaBazzar\MediaBazz
 C:\Users\Hristo\Desktop\New folder (13)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Hristo\Desktop\New folder (13)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Hristo\Desktop\New folder (13)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csproj.CopyComplete
+C:\Users\Hristo\Desktop\New folder (13)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.Employees.resources
+C:\Users\Hristo\Desktop\New folder (13)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.HR.resources
