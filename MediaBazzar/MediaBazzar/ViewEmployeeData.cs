@@ -19,14 +19,14 @@ namespace MediaBazzar
             this.emp = emp;
             try
             {
-                tbEname.Text = emp.FirstName;
-                tbELastname.Text = emp.LastName;
-                tbEPhoneNumber.Text = emp.PhoneNumber;
-                tbEEmail.Text = emp.Email;
+                tbEname.Text = emp.PersonalInfo.FirstName;
+                tbELastname.Text = emp.PersonalInfo.LastName;
+                tbEPhoneNumber.Text = emp.PersonalInfo.PhoneNumber;
+                tbEEmail.Text = emp.PersonalInfo.Email;
 
-                tbEState.Text = emp.Address.State;
-                tbECity.Text = emp.Address.City;
-                tbEStreetName.Text = emp.Address.Street;
+                tbEState.Text = emp.PersonalInfo.Address.State;
+                tbECity.Text = emp.PersonalInfo.Address.City;
+                tbEStreetName.Text = emp.PersonalInfo.Address.Street;
 
                 tbCName.Text = emp.ContactPerson.FirstName;
                 tbCLastname.Text = emp.ContactPerson.LastName;
@@ -39,7 +39,7 @@ namespace MediaBazzar
 
                 tbErole.Text = emp.Role;
                 tbCstreetnr.Text = emp.ContactPerson.Address.ApartmentNr;
-                tbEStreetNr.Text = emp.Address.ApartmentNr;
+                tbEStreetNr.Text = emp.PersonalInfo.Address.ApartmentNr;
             }
             catch (Exception ex)
             {

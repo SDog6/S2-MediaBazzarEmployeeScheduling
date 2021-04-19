@@ -33,7 +33,7 @@ namespace MediaBazzar
         {
             foreach (Employee item in employees)
             {
-                if (item.getEmail() == email)
+                if (item.PersonalInfo.getEmail() == email)
                 {
                     return item;
                 }

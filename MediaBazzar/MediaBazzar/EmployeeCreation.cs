@@ -92,10 +92,11 @@ namespace MediaBazzar
                 string lastName = textboxes[1];
                 string phoneNumber = textboxes[2];
                 string email = textboxes[3];
+                Person personalInfo = new Person(firstName, lastName, phoneNumber, personalAddress, email);
 
                 string BSN = textboxes[14];
                 string role = textboxes[15];
-                Employee employee = new Employee(firstName, lastName, phoneNumber, personalAddress, email, contactPerson, dateOfBirth, BSN, role, contract, account);
+                Employee employee = new Employee(personalInfo, contactPerson, dateOfBirth, BSN, role, contract, account, true);
                 return employee;
             }
             catch(Exception ex)

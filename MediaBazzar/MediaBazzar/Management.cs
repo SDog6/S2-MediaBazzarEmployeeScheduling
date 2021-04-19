@@ -35,27 +35,6 @@ namespace MediaBazzar
             }
 
         }
-
-        /*private void btnManagementEPFilter_Click(object sender, EventArgs e)
-        {
-            lbManagemendEmployees.Items.Clear();
-            if (radio_ID.Checked)
-            {
-                int id = Convert.ToInt32(txt_search.Text);
-                foreach (Employee item in Employees.GetAllPerID(id))
-                {
-                    lbManagemendEmployees.Items.Add(item);
-                }
-            }
-            else if (radio_role.Checked)
-            {
-                string role = txt_search.Text;
-                foreach (Employee item in Employees.GetAllPerRole(role))
-                {
-                    lbManagemendEmployees.Items.Add(item);
-                }
-            }
-        }*/
         private void btnManagemntPersonUpdate_Click(object sender, EventArgs e)
         {
             if (lbManagemendEmployees.SelectedIndex > -1)
@@ -63,15 +42,12 @@ namespace MediaBazzar
 
             }
         }
-
-
         private void btnManagemendUpdate_Click(object sender, EventArgs e)
         {
             ShowAllEmployees();
             cb_allRoles.SelectedIndex = -1;
             txt_search.Text = String.Empty;
         }
-
         public void ShowAllEmployees()
         {
             lbManagemendEmployees.Items.Clear();
@@ -193,8 +169,8 @@ namespace MediaBazzar
             string searchWord = txt_search.Text.ToLower();
             foreach(Employee emp in Employees.GetAllPerType())
             {
-                string firstName = emp.personalInfo.FirstName.ToLower();
-                string lastName = emp.personalInfo.LastName.ToLower();
+                string firstName = emp.PersonalInfo.FirstName.ToLower();
+                string lastName = emp.PersonalInfo.LastName.ToLower();
                 if(firstName.Contains(searchWord) || lastName.Contains(searchWord))
                 {
                     lbManagemendEmployees.Items.Add(emp);
