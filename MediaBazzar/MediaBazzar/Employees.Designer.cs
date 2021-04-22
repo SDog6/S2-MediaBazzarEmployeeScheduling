@@ -33,6 +33,8 @@ namespace MediaBazzar
             this.btnEmpDetails = new System.Windows.Forms.Button();
             this.btnFireEmp = new System.Windows.Forms.Button();
             this.btnEmpUpdate = new System.Windows.Forms.Button();
+            this.DGVManagementEmployees = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVManagementEmployees)).BeginInit();
             this.SuspendLayout();
             // 
             // lbManagemendEmployees
@@ -73,17 +75,31 @@ namespace MediaBazzar
             this.btnEmpUpdate.UseVisualStyleBackColor = true;
             this.btnEmpUpdate.Click += new System.EventHandler(this.btnEmpUpdate_Click);
             // 
+            // DGVManagementEmployees
+            // 
+            this.DGVManagementEmployees.AllowUserToAddRows = false;
+            this.DGVManagementEmployees.AllowUserToDeleteRows = false;
+            this.DGVManagementEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVManagementEmployees.Location = new System.Drawing.Point(24, 452);
+            this.DGVManagementEmployees.Name = "DGVManagementEmployees";
+            this.DGVManagementEmployees.ReadOnly = true;
+            this.DGVManagementEmployees.Size = new System.Drawing.Size(710, 263);
+            this.DGVManagementEmployees.TabIndex = 13;
+            // 
             // Employees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(752, 416);
+            this.ClientSize = new System.Drawing.Size(1032, 802);
+            this.Controls.Add(this.DGVManagementEmployees);
             this.Controls.Add(this.btnEmpUpdate);
             this.Controls.Add(this.btnFireEmp);
             this.Controls.Add(this.btnEmpDetails);
             this.Controls.Add(this.lbManagemendEmployees);
             this.Name = "Employees";
             this.Text = "Employees";
+            this.Load += new System.EventHandler(this.Employees_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DGVManagementEmployees)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -94,5 +110,6 @@ namespace MediaBazzar
         private System.Windows.Forms.Button btnEmpDetails;
         private System.Windows.Forms.Button btnFireEmp;
         private System.Windows.Forms.Button btnEmpUpdate;
+        private System.Windows.Forms.DataGridView DGVManagementEmployees;
     }
 }

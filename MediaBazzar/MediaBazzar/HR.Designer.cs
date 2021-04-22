@@ -38,7 +38,7 @@ namespace MediaBazzar
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(274, 48);
+            this.label1.Location = new System.Drawing.Point(218, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(247, 23);
             this.label1.TabIndex = 0;
@@ -46,7 +46,7 @@ namespace MediaBazzar
             // 
             // btnViewAllEmployees
             // 
-            this.btnViewAllEmployees.Location = new System.Drawing.Point(217, 176);
+            this.btnViewAllEmployees.Location = new System.Drawing.Point(161, 166);
             this.btnViewAllEmployees.Name = "btnViewAllEmployees";
             this.btnViewAllEmployees.Size = new System.Drawing.Size(111, 53);
             this.btnViewAllEmployees.TabIndex = 1;
@@ -56,7 +56,7 @@ namespace MediaBazzar
             // 
             // btnCreateEmployee
             // 
-            this.btnCreateEmployee.Location = new System.Drawing.Point(493, 176);
+            this.btnCreateEmployee.Location = new System.Drawing.Point(437, 166);
             this.btnCreateEmployee.Name = "btnCreateEmployee";
             this.btnCreateEmployee.Size = new System.Drawing.Size(111, 53);
             this.btnCreateEmployee.TabIndex = 2;

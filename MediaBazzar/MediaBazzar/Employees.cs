@@ -13,17 +13,22 @@ namespace MediaBazzar
     public partial class Employees : Form
     {
         EmployeeManager Employeess;
+        DataTable EmployeeTable = new DataTable("all employees table");
         public Employees()
         {
             InitializeComponent();
             Employeess = new EmployeeManager();
-
+          
+            DGVManagementEmployees.DataSource = Employeess.GetAllPerType();
+            DGVManagementEmployees.Columns[1].Visible = false;
+            DGVManagementEmployees.Rows[1].Visible = false;
             lbManagemendEmployees.Items.Clear();
             foreach (Employee item in Employeess.GetAllPerType())
             {
                 lbManagemendEmployees.Items.Add(item);
+                
             }
-
+          
         }
 
         private void btnEmpDetails_Click(object sender, EventArgs e)
@@ -45,6 +50,12 @@ namespace MediaBazzar
 
         private void btnEmpUpdate_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void Employees_Load(object sender, EventArgs e)
+        {
+           
 
         }
     }
