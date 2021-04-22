@@ -26,9 +26,10 @@ namespace MediaBazzar
             int ID = Convert.ToInt32(tbNewStockID.Text);
             int Amount = Convert.ToInt32(tbNewStockAmount.Text);
             int price = Convert.ToInt32(tbNewStockPrice.Text);
+            int available = 1;
             try
             {
-                stock.Add(new Stock(name, Amount, ID, price, brand));
+                stock.Add(new Stock(name, Amount, ID, price, brand, available));
             }
             catch (Exception ex)
             {
