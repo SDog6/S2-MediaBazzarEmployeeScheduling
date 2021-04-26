@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data;
+using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace MediaBazzar
 {
@@ -15,6 +18,10 @@ namespace MediaBazzar
         ShopStockManager stock;
         EmployeeManager Employees;
         ShiftSchedulingManager Shifts;
+        EmployeeManager Employeess;
+        MySqlConnection conn = new MySqlConnection("Server=studmysql01.fhict.local; Uid=dbi457108; Database=dbi457108; Pwd=NewPassword123");
+        MySqlDataAdapter Da;
+        DataTable EmployeeTable = new DataTable("all employees table");
         public Management()
         {
             InitializeComponent();
@@ -244,6 +251,14 @@ namespace MediaBazzar
         private void lbManagementShiftEmployeesAssigned_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Management_Load(object sender, EventArgs e)
+        {
+            Da = new MySqlDataAdapter("SELECT employee.role, person.firstName, person.lastName FROM employee LEFT JOIN person on employee.personId = person.id", conn);
+            Da.Fill(EmployeeTable);
+            DgvManagemendEmployees.DataSource = EmployeeTable;
+            DgvManagemendEmployees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
     }
 }

@@ -42,6 +42,7 @@ namespace MediaBazzar
             this.rbManagementRole = new System.Windows.Forms.RadioButton();
             this.tbManagementEPFilter = new System.Windows.Forms.TextBox();
             this.Stock = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnStockRemove = new System.Windows.Forms.Button();
             this.btnManagementStockUpdate = new System.Windows.Forms.Button();
             this.btnManagementNewStock = new System.Windows.Forms.Button();
@@ -58,14 +59,15 @@ namespace MediaBazzar
             this.lbManagementShiftEmployeesAssigned = new System.Windows.Forms.ListBox();
             this.lbManagementShiftEmployeesToAssign = new System.Windows.Forms.ListBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DgvManagemendEmployees = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.People.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.Stock.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvManagemendEmployees)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -74,35 +76,33 @@ namespace MediaBazzar
             this.tabControl1.Controls.Add(this.Stock);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1049, 502);
+            this.tabControl1.Size = new System.Drawing.Size(845, 728);
             this.tabControl1.TabIndex = 0;
             // 
             // People
             // 
+            this.People.Controls.Add(this.DgvManagemendEmployees);
             this.People.Controls.Add(this.btnViewEmployeeInfo);
             this.People.Controls.Add(this.btnManagemendUpdate);
             this.People.Controls.Add(this.btnManagemntPersonUpdate);
             this.People.Controls.Add(this.btnManagemntPersonCreation);
             this.People.Controls.Add(this.lbManagemendEmployees);
             this.People.Controls.Add(this.groupBox1);
-            this.People.Location = new System.Drawing.Point(4, 25);
-            this.People.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.People.Location = new System.Drawing.Point(4, 22);
             this.People.Name = "People";
-            this.People.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.People.Size = new System.Drawing.Size(1041, 473);
+            this.People.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.People.Size = new System.Drawing.Size(837, 702);
             this.People.TabIndex = 0;
             this.People.Text = "Employees";
             this.People.UseVisualStyleBackColor = true;
             // 
             // btnViewEmployeeInfo
             // 
-            this.btnViewEmployeeInfo.Location = new System.Drawing.Point(183, 361);
-            this.btnViewEmployeeInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnViewEmployeeInfo.Location = new System.Drawing.Point(137, 293);
             this.btnViewEmployeeInfo.Name = "btnViewEmployeeInfo";
-            this.btnViewEmployeeInfo.Size = new System.Drawing.Size(124, 47);
+            this.btnViewEmployeeInfo.Size = new System.Drawing.Size(93, 38);
             this.btnViewEmployeeInfo.TabIndex = 10;
             this.btnViewEmployeeInfo.Text = "View employee info";
             this.btnViewEmployeeInfo.UseVisualStyleBackColor = true;
@@ -110,10 +110,9 @@ namespace MediaBazzar
             // 
             // btnManagemendUpdate
             // 
-            this.btnManagemendUpdate.Location = new System.Drawing.Point(353, 306);
-            this.btnManagemendUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnManagemendUpdate.Location = new System.Drawing.Point(265, 249);
             this.btnManagemendUpdate.Name = "btnManagemendUpdate";
-            this.btnManagemendUpdate.Size = new System.Drawing.Size(124, 47);
+            this.btnManagemendUpdate.Size = new System.Drawing.Size(93, 38);
             this.btnManagemendUpdate.TabIndex = 9;
             this.btnManagemendUpdate.Text = "View all employees";
             this.btnManagemendUpdate.UseVisualStyleBackColor = true;
@@ -121,10 +120,9 @@ namespace MediaBazzar
             // 
             // btnManagemntPersonUpdate
             // 
-            this.btnManagemntPersonUpdate.Location = new System.Drawing.Point(183, 306);
-            this.btnManagemntPersonUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnManagemntPersonUpdate.Location = new System.Drawing.Point(137, 249);
             this.btnManagemntPersonUpdate.Name = "btnManagemntPersonUpdate";
-            this.btnManagemntPersonUpdate.Size = new System.Drawing.Size(124, 47);
+            this.btnManagemntPersonUpdate.Size = new System.Drawing.Size(93, 38);
             this.btnManagemntPersonUpdate.TabIndex = 2;
             this.btnManagemntPersonUpdate.Text = "Update employee information";
             this.btnManagemntPersonUpdate.UseVisualStyleBackColor = true;
@@ -132,10 +130,9 @@ namespace MediaBazzar
             // 
             // btnManagemntPersonCreation
             // 
-            this.btnManagemntPersonCreation.Location = new System.Drawing.Point(11, 306);
-            this.btnManagemntPersonCreation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnManagemntPersonCreation.Location = new System.Drawing.Point(8, 249);
             this.btnManagemntPersonCreation.Name = "btnManagemntPersonCreation";
-            this.btnManagemntPersonCreation.Size = new System.Drawing.Size(124, 47);
+            this.btnManagemntPersonCreation.Size = new System.Drawing.Size(93, 38);
             this.btnManagemntPersonCreation.TabIndex = 1;
             this.btnManagemntPersonCreation.Text = "Add a new employee";
             this.btnManagemntPersonCreation.UseVisualStyleBackColor = true;
@@ -144,11 +141,9 @@ namespace MediaBazzar
             // lbManagemendEmployees
             // 
             this.lbManagemendEmployees.FormattingEnabled = true;
-            this.lbManagemendEmployees.ItemHeight = 16;
-            this.lbManagemendEmployees.Location = new System.Drawing.Point(485, 25);
-            this.lbManagemendEmployees.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbManagemendEmployees.Location = new System.Drawing.Point(364, 20);
             this.lbManagemendEmployees.Name = "lbManagemendEmployees";
-            this.lbManagemendEmployees.Size = new System.Drawing.Size(413, 404);
+            this.lbManagemendEmployees.Size = new System.Drawing.Size(311, 329);
             this.lbManagemendEmployees.TabIndex = 0;
             // 
             // groupBox1
@@ -157,21 +152,18 @@ namespace MediaBazzar
             this.groupBox1.Controls.Add(this.rbManagementID);
             this.groupBox1.Controls.Add(this.rbManagementRole);
             this.groupBox1.Controls.Add(this.tbManagementEPFilter);
-            this.groupBox1.Location = new System.Drawing.Point(76, 39);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(57, 32);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(335, 212);
+            this.groupBox1.Size = new System.Drawing.Size(251, 172);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtering";
             // 
             // btnManagementEPFilter
             // 
-            this.btnManagementEPFilter.Location = new System.Drawing.Point(105, 158);
-            this.btnManagementEPFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnManagementEPFilter.Location = new System.Drawing.Point(79, 128);
             this.btnManagementEPFilter.Name = "btnManagementEPFilter";
-            this.btnManagementEPFilter.Size = new System.Drawing.Size(124, 47);
+            this.btnManagementEPFilter.Size = new System.Drawing.Size(93, 38);
             this.btnManagementEPFilter.TabIndex = 4;
             this.btnManagementEPFilter.Text = "Filter";
             this.btnManagementEPFilter.UseVisualStyleBackColor = true;
@@ -180,10 +172,9 @@ namespace MediaBazzar
             // rbManagementID
             // 
             this.rbManagementID.AutoSize = true;
-            this.rbManagementID.Location = new System.Drawing.Point(87, 34);
-            this.rbManagementID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbManagementID.Location = new System.Drawing.Point(65, 28);
             this.rbManagementID.Name = "rbManagementID";
-            this.rbManagementID.Size = new System.Drawing.Size(42, 21);
+            this.rbManagementID.Size = new System.Drawing.Size(36, 17);
             this.rbManagementID.TabIndex = 5;
             this.rbManagementID.TabStop = true;
             this.rbManagementID.Text = "ID";
@@ -192,10 +183,9 @@ namespace MediaBazzar
             // rbManagementRole
             // 
             this.rbManagementRole.AutoSize = true;
-            this.rbManagementRole.Location = new System.Drawing.Point(168, 34);
-            this.rbManagementRole.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbManagementRole.Location = new System.Drawing.Point(126, 28);
             this.rbManagementRole.Name = "rbManagementRole";
-            this.rbManagementRole.Size = new System.Drawing.Size(58, 21);
+            this.rbManagementRole.Size = new System.Drawing.Size(47, 17);
             this.rbManagementRole.TabIndex = 6;
             this.rbManagementRole.TabStop = true;
             this.rbManagementRole.Text = "Role";
@@ -203,10 +193,9 @@ namespace MediaBazzar
             // 
             // tbManagementEPFilter
             // 
-            this.tbManagementEPFilter.Location = new System.Drawing.Point(59, 92);
-            this.tbManagementEPFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbManagementEPFilter.Location = new System.Drawing.Point(44, 75);
             this.tbManagementEPFilter.Name = "tbManagementEPFilter";
-            this.tbManagementEPFilter.Size = new System.Drawing.Size(208, 22);
+            this.tbManagementEPFilter.Size = new System.Drawing.Size(157, 20);
             this.tbManagementEPFilter.TabIndex = 3;
             // 
             // Stock
@@ -217,21 +206,31 @@ namespace MediaBazzar
             this.Stock.Controls.Add(this.btnManagementNewStock);
             this.Stock.Controls.Add(this.btnManagementRestockRequest);
             this.Stock.Controls.Add(this.groupBox2);
-            this.Stock.Location = new System.Drawing.Point(4, 25);
-            this.Stock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Stock.Location = new System.Drawing.Point(4, 22);
             this.Stock.Name = "Stock";
-            this.Stock.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Stock.Size = new System.Drawing.Size(1041, 473);
+            this.Stock.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.Stock.Size = new System.Drawing.Size(779, 382);
             this.Stock.TabIndex = 1;
             this.Stock.Text = "Stock";
             this.Stock.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(308, 50);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(444, 244);
+            this.dataGridView1.TabIndex = 13;
+            // 
             // btnStockRemove
             // 
-            this.btnStockRemove.Location = new System.Drawing.Point(56, 306);
-            this.btnStockRemove.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStockRemove.Location = new System.Drawing.Point(42, 249);
             this.btnStockRemove.Name = "btnStockRemove";
-            this.btnStockRemove.Size = new System.Drawing.Size(268, 39);
+            this.btnStockRemove.Size = new System.Drawing.Size(201, 32);
             this.btnStockRemove.TabIndex = 11;
             this.btnStockRemove.Text = "Remove stock from inventory";
             this.btnStockRemove.UseVisualStyleBackColor = true;
@@ -239,10 +238,9 @@ namespace MediaBazzar
             // 
             // btnManagementStockUpdate
             // 
-            this.btnManagementStockUpdate.Location = new System.Drawing.Point(106, 259);
-            this.btnManagementStockUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnManagementStockUpdate.Location = new System.Drawing.Point(80, 210);
             this.btnManagementStockUpdate.Name = "btnManagementStockUpdate";
-            this.btnManagementStockUpdate.Size = new System.Drawing.Size(179, 39);
+            this.btnManagementStockUpdate.Size = new System.Drawing.Size(134, 32);
             this.btnManagementStockUpdate.TabIndex = 9;
             this.btnManagementStockUpdate.Text = "View store inventory";
             this.btnManagementStockUpdate.UseVisualStyleBackColor = true;
@@ -250,10 +248,9 @@ namespace MediaBazzar
             // 
             // btnManagementNewStock
             // 
-            this.btnManagementNewStock.Location = new System.Drawing.Point(56, 400);
-            this.btnManagementNewStock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnManagementNewStock.Location = new System.Drawing.Point(42, 325);
             this.btnManagementNewStock.Name = "btnManagementNewStock";
-            this.btnManagementNewStock.Size = new System.Drawing.Size(268, 54);
+            this.btnManagementNewStock.Size = new System.Drawing.Size(201, 44);
             this.btnManagementNewStock.TabIndex = 8;
             this.btnManagementNewStock.Text = "Request new stock to be added to inventory";
             this.btnManagementNewStock.UseVisualStyleBackColor = true;
@@ -261,10 +258,9 @@ namespace MediaBazzar
             // 
             // btnManagementRestockRequest
             // 
-            this.btnManagementRestockRequest.Location = new System.Drawing.Point(32, 353);
-            this.btnManagementRestockRequest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnManagementRestockRequest.Location = new System.Drawing.Point(24, 287);
             this.btnManagementRestockRequest.Name = "btnManagementRestockRequest";
-            this.btnManagementRestockRequest.Size = new System.Drawing.Size(323, 39);
+            this.btnManagementRestockRequest.Size = new System.Drawing.Size(242, 32);
             this.btnManagementRestockRequest.TabIndex = 4;
             this.btnManagementRestockRequest.Text = "[IN DEVELOPMENT]Make new restock request";
             this.btnManagementRestockRequest.UseVisualStyleBackColor = true;
@@ -277,11 +273,9 @@ namespace MediaBazzar
             this.groupBox2.Controls.Add(this.rbManagementStockAmountFilter);
             this.groupBox2.Controls.Add(this.tbManagementStockFilter);
             this.groupBox2.Controls.Add(this.btnManagementStockFilter);
-            this.groupBox2.Location = new System.Drawing.Point(24, 62);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Location = new System.Drawing.Point(18, 50);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(368, 177);
+            this.groupBox2.Size = new System.Drawing.Size(276, 144);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search";
@@ -289,10 +283,9 @@ namespace MediaBazzar
             // rbManagementStockBrandFilter
             // 
             this.rbManagementStockBrandFilter.AutoSize = true;
-            this.rbManagementStockBrandFilter.Location = new System.Drawing.Point(131, 36);
-            this.rbManagementStockBrandFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbManagementStockBrandFilter.Location = new System.Drawing.Point(98, 29);
             this.rbManagementStockBrandFilter.Name = "rbManagementStockBrandFilter";
-            this.rbManagementStockBrandFilter.Size = new System.Drawing.Size(67, 21);
+            this.rbManagementStockBrandFilter.Size = new System.Drawing.Size(53, 17);
             this.rbManagementStockBrandFilter.TabIndex = 6;
             this.rbManagementStockBrandFilter.TabStop = true;
             this.rbManagementStockBrandFilter.Text = "Brand";
@@ -301,10 +294,9 @@ namespace MediaBazzar
             // rbManagementStockIDFilter
             // 
             this.rbManagementStockIDFilter.AutoSize = true;
-            this.rbManagementStockIDFilter.Location = new System.Drawing.Point(8, 36);
-            this.rbManagementStockIDFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbManagementStockIDFilter.Location = new System.Drawing.Point(6, 29);
             this.rbManagementStockIDFilter.Name = "rbManagementStockIDFilter";
-            this.rbManagementStockIDFilter.Size = new System.Drawing.Size(42, 21);
+            this.rbManagementStockIDFilter.Size = new System.Drawing.Size(36, 17);
             this.rbManagementStockIDFilter.TabIndex = 5;
             this.rbManagementStockIDFilter.TabStop = true;
             this.rbManagementStockIDFilter.Text = "ID";
@@ -313,10 +305,9 @@ namespace MediaBazzar
             // rbManagementStockAmountFilter
             // 
             this.rbManagementStockAmountFilter.AutoSize = true;
-            this.rbManagementStockAmountFilter.Location = new System.Drawing.Point(249, 36);
-            this.rbManagementStockAmountFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbManagementStockAmountFilter.Location = new System.Drawing.Point(187, 29);
             this.rbManagementStockAmountFilter.Name = "rbManagementStockAmountFilter";
-            this.rbManagementStockAmountFilter.Size = new System.Drawing.Size(77, 21);
+            this.rbManagementStockAmountFilter.Size = new System.Drawing.Size(61, 17);
             this.rbManagementStockAmountFilter.TabIndex = 7;
             this.rbManagementStockAmountFilter.TabStop = true;
             this.rbManagementStockAmountFilter.Text = "Amount";
@@ -324,18 +315,16 @@ namespace MediaBazzar
             // 
             // tbManagementStockFilter
             // 
-            this.tbManagementStockFilter.Location = new System.Drawing.Point(99, 85);
-            this.tbManagementStockFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbManagementStockFilter.Location = new System.Drawing.Point(74, 69);
             this.tbManagementStockFilter.Name = "tbManagementStockFilter";
-            this.tbManagementStockFilter.Size = new System.Drawing.Size(132, 22);
+            this.tbManagementStockFilter.Size = new System.Drawing.Size(100, 20);
             this.tbManagementStockFilter.TabIndex = 1;
             // 
             // btnManagementStockFilter
             // 
-            this.btnManagementStockFilter.Location = new System.Drawing.Point(117, 117);
-            this.btnManagementStockFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnManagementStockFilter.Location = new System.Drawing.Point(88, 95);
             this.btnManagementStockFilter.Name = "btnManagementStockFilter";
-            this.btnManagementStockFilter.Size = new System.Drawing.Size(100, 39);
+            this.btnManagementStockFilter.Size = new System.Drawing.Size(75, 32);
             this.btnManagementStockFilter.TabIndex = 3;
             this.btnManagementStockFilter.Text = "Filter";
             this.btnManagementStockFilter.UseVisualStyleBackColor = true;
@@ -348,10 +337,9 @@ namespace MediaBazzar
             this.tabPage1.Controls.Add(this.lbManagementShiftEmployeesAssigned);
             this.tabPage1.Controls.Add(this.lbManagementShiftEmployeesToAssign);
             this.tabPage1.Controls.Add(this.monthCalendar1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1041, 473);
+            this.tabPage1.Size = new System.Drawing.Size(779, 382);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Shifts";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -363,18 +351,16 @@ namespace MediaBazzar
             "Morning (7AM-2PM)",
             "Afternoon (1PM-6PM)",
             "Night (5PM-10PM)"});
-            this.cbShiftType.Location = new System.Drawing.Point(676, 342);
-            this.cbShiftType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbShiftType.Location = new System.Drawing.Point(507, 278);
             this.cbShiftType.Name = "cbShiftType";
-            this.cbShiftType.Size = new System.Drawing.Size(160, 24);
+            this.cbShiftType.Size = new System.Drawing.Size(121, 21);
             this.cbShiftType.TabIndex = 3;
             // 
             // btnManagementShiftAssignEmployee
             // 
-            this.btnManagementShiftAssignEmployee.Location = new System.Drawing.Point(676, 375);
-            this.btnManagementShiftAssignEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnManagementShiftAssignEmployee.Location = new System.Drawing.Point(507, 305);
             this.btnManagementShiftAssignEmployee.Name = "btnManagementShiftAssignEmployee";
-            this.btnManagementShiftAssignEmployee.Size = new System.Drawing.Size(188, 44);
+            this.btnManagementShiftAssignEmployee.Size = new System.Drawing.Size(141, 36);
             this.btnManagementShiftAssignEmployee.TabIndex = 1;
             this.btnManagementShiftAssignEmployee.Text = "Assign shift";
             this.btnManagementShiftAssignEmployee.UseVisualStyleBackColor = true;
@@ -383,61 +369,58 @@ namespace MediaBazzar
             // lbManagementShiftEmployeesAssigned
             // 
             this.lbManagementShiftEmployeesAssigned.FormattingEnabled = true;
-            this.lbManagementShiftEmployeesAssigned.ItemHeight = 16;
-            this.lbManagementShiftEmployeesAssigned.Location = new System.Drawing.Point(23, 255);
-            this.lbManagementShiftEmployeesAssigned.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbManagementShiftEmployeesAssigned.Location = new System.Drawing.Point(17, 207);
             this.lbManagementShiftEmployeesAssigned.Name = "lbManagementShiftEmployeesAssigned";
-            this.lbManagementShiftEmployeesAssigned.Size = new System.Drawing.Size(647, 164);
+            this.lbManagementShiftEmployeesAssigned.Size = new System.Drawing.Size(486, 134);
             this.lbManagementShiftEmployeesAssigned.TabIndex = 2;
             this.lbManagementShiftEmployeesAssigned.SelectedIndexChanged += new System.EventHandler(this.lbManagementShiftEmployeesAssigned_SelectedIndexChanged);
             // 
             // lbManagementShiftEmployeesToAssign
             // 
             this.lbManagementShiftEmployeesToAssign.FormattingEnabled = true;
-            this.lbManagementShiftEmployeesToAssign.ItemHeight = 16;
-            this.lbManagementShiftEmployeesToAssign.Location = new System.Drawing.Point(23, 21);
-            this.lbManagementShiftEmployeesToAssign.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbManagementShiftEmployeesToAssign.Location = new System.Drawing.Point(17, 17);
             this.lbManagementShiftEmployeesToAssign.Name = "lbManagementShiftEmployeesToAssign";
-            this.lbManagementShiftEmployeesToAssign.Size = new System.Drawing.Size(647, 212);
+            this.lbManagementShiftEmployeesToAssign.Size = new System.Drawing.Size(486, 173);
             this.lbManagementShiftEmployeesToAssign.TabIndex = 1;
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(687, 21);
-            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
+            this.monthCalendar1.Location = new System.Drawing.Point(515, 17);
             this.monthCalendar1.MaxSelectionCount = 1;
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 0;
             // 
-            // dataGridView1
+            // DgvManagemendEmployees
             // 
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(411, 62);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(592, 300);
-            this.dataGridView1.TabIndex = 13;
+            this.DgvManagemendEmployees.AllowUserToAddRows = false;
+            this.DgvManagemendEmployees.AllowUserToDeleteRows = false;
+            this.DgvManagemendEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvManagemendEmployees.Location = new System.Drawing.Point(265, 426);
+            this.DgvManagemendEmployees.Name = "DgvManagemendEmployees";
+            this.DgvManagemendEmployees.ReadOnly = true;
+            this.DgvManagemendEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgvManagemendEmployees.Size = new System.Drawing.Size(453, 248);
+            this.DgvManagemendEmployees.TabIndex = 11;
             // 
             // Management
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1019, 492);
+            this.ClientSize = new System.Drawing.Size(919, 740);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Management";
             this.Text = "Management";
+            this.Load += new System.EventHandler(this.Management_Load);
             this.tabControl1.ResumeLayout(false);
             this.People.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.Stock.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvManagemendEmployees)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -474,5 +457,6 @@ namespace MediaBazzar
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox cbShiftType;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DgvManagemendEmployees;
     }
 }

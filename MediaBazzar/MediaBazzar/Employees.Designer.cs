@@ -29,12 +29,17 @@ namespace MediaBazzar
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbManagemendEmployees = new System.Windows.Forms.ListBox();
             this.btnEmpDetails = new System.Windows.Forms.Button();
             this.btnFireEmp = new System.Windows.Forms.Button();
             this.btnEmpUpdate = new System.Windows.Forms.Button();
             this.DGVManagementEmployees = new System.Windows.Forms.DataGridView();
+            this.dbi457108DataSet1 = new MediaBazzar.dbi457108DataSet1();
+            this.dbi457108DataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DGVManagementEmployees)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbi457108DataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbi457108DataSet1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lbManagemendEmployees
@@ -83,8 +88,19 @@ namespace MediaBazzar
             this.DGVManagementEmployees.Location = new System.Drawing.Point(24, 452);
             this.DGVManagementEmployees.Name = "DGVManagementEmployees";
             this.DGVManagementEmployees.ReadOnly = true;
+            this.DGVManagementEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGVManagementEmployees.Size = new System.Drawing.Size(710, 263);
             this.DGVManagementEmployees.TabIndex = 13;
+            // 
+            // dbi457108DataSet1
+            // 
+            this.dbi457108DataSet1.DataSetName = "dbi457108DataSet1";
+            this.dbi457108DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dbi457108DataSet1BindingSource
+            // 
+            this.dbi457108DataSet1BindingSource.DataSource = this.dbi457108DataSet1;
+            this.dbi457108DataSet1BindingSource.Position = 0;
             // 
             // Employees
             // 
@@ -100,6 +116,8 @@ namespace MediaBazzar
             this.Text = "Employees";
             this.Load += new System.EventHandler(this.Employees_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVManagementEmployees)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbi457108DataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbi457108DataSet1BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -111,5 +129,7 @@ namespace MediaBazzar
         private System.Windows.Forms.Button btnFireEmp;
         private System.Windows.Forms.Button btnEmpUpdate;
         private System.Windows.Forms.DataGridView DGVManagementEmployees;
+        private System.Windows.Forms.BindingSource dbi457108DataSet1BindingSource;
+        private dbi457108DataSet1 dbi457108DataSet1;
     }
 }

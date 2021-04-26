@@ -7,21 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data;
+using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace MediaBazzar
 {
     public partial class Employees : Form
     {
         EmployeeManager Employeess;
+        MySqlConnection conn = new MySqlConnection("Server=studmysql01.fhict.local; Uid=dbi457108; Database=dbi457108; Pwd=NewPassword123");
+        MySqlDataAdapter Da;
         DataTable EmployeeTable = new DataTable("all employees table");
         public Employees()
         {
             InitializeComponent();
             Employeess = new EmployeeManager();
           
-            DGVManagementEmployees.DataSource = Employeess.GetAllPerType();
-            DGVManagementEmployees.Columns[1].Visible = false;
-            DGVManagementEmployees.Rows[1].Visible = false;
+            
+          
             lbManagemendEmployees.Items.Clear();
             foreach (Employee item in Employeess.GetAllPerType())
             {
@@ -55,8 +59,11 @@ namespace MediaBazzar
 
         private void Employees_Load(object sender, EventArgs e)
         {
-           
 
+            Da = new MySqlDataAdapter("SELECT employee.role, person.firstName, person.lastName, employee.contractId , person.phoneNumber, person.email FROM employee LEFT JOIN person on employee.personId = person.id", conn);
+            Da.Fill(EmployeeTable);
+            DGVManagementEmployees.DataSource = EmployeeTable;
+            DGVManagementEmployees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
     }
 }
