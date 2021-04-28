@@ -21,8 +21,9 @@ namespace MediaBazzar
             Employees = new EmployeeManager();
             radio_ID.Checked = true;
             rbManagementStockIDFilter.Checked = true;
+            checkBox_active.CheckState = CheckState.Checked;
             UpdateStockUI();
-            ShowAllEmployees();
+            ShowAllEmployees(true);
         }
 
         private void btnManagementRestockRequest_Click(object sender, EventArgs e)
@@ -35,25 +36,22 @@ namespace MediaBazzar
             }
 
         }
-        private void btnManagemntPersonUpdate_Click(object sender, EventArgs e)
-        {
-            if (lbManagemendEmployees.SelectedIndex > -1)
-            {
-
-            }
-        }
         private void btnManagemendUpdate_Click(object sender, EventArgs e)
         {
-            ShowAllEmployees();
+            bool employeeStatus = GetEmployeeStatus();
+            ShowAllEmployees(employeeStatus);
             cb_allRoles.SelectedIndex = -1;
             txt_search.Text = String.Empty;
         }
-        public void ShowAllEmployees()
+        public void ShowAllEmployees(bool employeeStatus)
         {
             lbManagemendEmployees.Items.Clear();
             foreach (Employee item in Employees.GetAllPerType())
             {
-                lbManagemendEmployees.Items.Add(item);
+                if(item.Active == employeeStatus)
+                {
+                    lbManagemendEmployees.Items.Add(item);
+                }            
             }
 
         }
@@ -135,27 +133,51 @@ namespace MediaBazzar
                 }
             }
         }
-
+        private bool GetEmployeeStatus()
+        {
+            bool employeeStatus = false;
+            if (checkBox_active.Checked)
+            {
+                employeeStatus = true;
+            }
+            return employeeStatus;
+        }
         private void filter()
         {
             lbManagemendEmployees.Items.Clear();
+            bool employeeStatus = GetEmployeeStatus();
+            if (radio_role.Checked)
+            {
+                fillRoles();
+                ShowAllEmployees(employeeStatus);
+                if(cb_allRoles.SelectedIndex > -1)
+                {
+                    RoleSearch(cb_allRoles.SelectedIndex, employeeStatus);
+                }
+            }
             if (radio_ID.Checked)
             {
-                IDSearch();
+                IDSearch(employeeStatus);
             }
             else if (radio_name.Checked)
             {
-                NameSearch();
+                NameSearch(employeeStatus);
             }
         }
 
-        private void IDSearch()
+        private void IDSearch(bool employeeStatus)
         {
-            if (int.TryParse(txt_search.Text, out int ID))
+            string searchId = txt_search.Text;
+            if(String.IsNullOrEmpty(searchId))
+            {
+                ShowAllEmployees(employeeStatus);
+                return;
+            }
+            if (int.TryParse(searchId, out int ID))
             {
                 foreach (Employee emp in Employees.GetAllPerType())
                 {
-                    if(emp.EmployeeID == ID)
+                    if(emp.EmployeeID == ID && emp.Active == employeeStatus)
                     {
                         lbManagemendEmployees.Items.Add(emp);
                     }
@@ -164,14 +186,19 @@ namespace MediaBazzar
             }
         }
 
-        private void NameSearch()
+        private void NameSearch(bool employeeStatus)
         {
             string searchWord = txt_search.Text.ToLower();
+            if (String.IsNullOrEmpty(searchWord))
+            {
+                ShowAllEmployees(employeeStatus);
+                return;
+            }
             foreach(Employee emp in Employees.GetAllPerType())
             {
                 string firstName = emp.PersonalInfo.FirstName.ToLower();
                 string lastName = emp.PersonalInfo.LastName.ToLower();
-                if(firstName.Contains(searchWord) || lastName.Contains(searchWord))
+                if((firstName.Contains(searchWord) || lastName.Contains(searchWord)) && emp.Active == employeeStatus)
                 {
                     lbManagemendEmployees.Items.Add(emp);
                 }
@@ -189,76 +216,72 @@ namespace MediaBazzar
                 }
             }
         }
-        private void RoleSearch()
+        private void RoleSearch(int index, bool employeeStatus)
         {
             lbManagemendEmployees.Items.Clear();
             foreach (Employee emp in Employees.GetAllPerType())
             {
-                if (emp.Role == cb_allRoles.SelectedItem.ToString())
+                if (emp.Role == cb_allRoles.Items[index].ToString() && emp.Active == employeeStatus)
                 {
                     lbManagemendEmployees.Items.Add(emp);
-
                 }
             }
         }
         private void txt_search_TextChanged(object sender, EventArgs e)
         {
-            lbManagemendEmployees.SelectedIndex = -1;
-            if (String.IsNullOrEmpty(txt_search.Text))
-            {
-                ShowAllEmployees();
-            }
-            else
-            {
-                filter();
-            }
+            filter();
         }
 
         private void radio_role_CheckedChanged(object sender, EventArgs e)
         {           
             if (radio_role.Checked)
             {
-                fillRoles();
-                ShowAllEmployees();
                 txt_search.Visible = false;
                 cb_allRoles.Visible = true;
+                filter();
             }
-            else
-            {
-                cb_allRoles.SelectedIndex = -1;
-            }
-            txt_search.Text = String.Empty;
         }
-
         private void radio_ID_CheckedChanged(object sender, EventArgs e)
         {
             if(radio_ID.Checked)
             {
-                ShowAllEmployees();
                 txt_search.Visible = true;
                 cb_allRoles.Visible = false;
-            }
-            txt_search.Text = String.Empty;
+                filter();
+                txt_search.Text = String.Empty;
+            }         
         }
-
         private void radio_name_CheckedChanged(object sender, EventArgs e)
         {
             if (radio_name.Checked)
             {
-                ShowAllEmployees();
                 txt_search.Visible = true;
                 cb_allRoles.Visible = false;
-            }
-            txt_search.Text = String.Empty;
-            
+                filter();
+                txt_search.Text = String.Empty;
+            }    
         }
 
         private void cb_allRoles_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cb_allRoles.SelectedIndex > -1)
+            filter();
+        }
+
+        private void checkBox_active_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox_active.Checked)
             {
-                RoleSearch();
+                checkbox_fired.CheckState = CheckState.Unchecked;
             }
+            filter();       
+        }
+        private void checkbox_fired_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkbox_fired.Checked)
+            {
+                checkBox_active.CheckState = CheckState.Unchecked;
+            }
+            filter();
         }
     }
 }

@@ -57,6 +57,8 @@ namespace MediaBazzar
             this.lbManagementShiftEmployeesAssigned = new System.Windows.Forms.ListBox();
             this.lbManagementShiftEmployeesToAssign = new System.Windows.Forms.ListBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.checkBox_active = new System.Windows.Forms.CheckBox();
+            this.checkbox_fired = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.People.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -79,6 +81,8 @@ namespace MediaBazzar
             // 
             // People
             // 
+            this.People.Controls.Add(this.checkbox_fired);
+            this.People.Controls.Add(this.checkBox_active);
             this.People.Controls.Add(this.btnViewEmployeeInfo);
             this.People.Controls.Add(this.btnManagemendUpdate);
             this.People.Controls.Add(this.lbManagemendEmployees);
@@ -95,7 +99,7 @@ namespace MediaBazzar
             // btnViewEmployeeInfo
             // 
             this.btnViewEmployeeInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewEmployeeInfo.Location = new System.Drawing.Point(265, 206);
+            this.btnViewEmployeeInfo.Location = new System.Drawing.Point(251, 206);
             this.btnViewEmployeeInfo.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewEmployeeInfo.Name = "btnViewEmployeeInfo";
             this.btnViewEmployeeInfo.Size = new System.Drawing.Size(162, 55);
@@ -107,7 +111,7 @@ namespace MediaBazzar
             // btnManagemendUpdate
             // 
             this.btnManagemendUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManagemendUpdate.Location = new System.Drawing.Point(66, 206);
+            this.btnManagemendUpdate.Location = new System.Drawing.Point(52, 206);
             this.btnManagemendUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnManagemendUpdate.Name = "btnManagemendUpdate";
             this.btnManagemendUpdate.Size = new System.Drawing.Size(162, 55);
@@ -120,7 +124,7 @@ namespace MediaBazzar
             // 
             this.lbManagemendEmployees.FormattingEnabled = true;
             this.lbManagemendEmployees.ItemHeight = 16;
-            this.lbManagemendEmployees.Location = new System.Drawing.Point(526, 26);
+            this.lbManagemendEmployees.Location = new System.Drawing.Point(572, 26);
             this.lbManagemendEmployees.Margin = new System.Windows.Forms.Padding(4);
             this.lbManagemendEmployees.Name = "lbManagemendEmployees";
             this.lbManagemendEmployees.Size = new System.Drawing.Size(413, 404);
@@ -134,7 +138,7 @@ namespace MediaBazzar
             this.groupBox1.Controls.Add(this.radio_role);
             this.groupBox1.Controls.Add(this.txt_search);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(46, 26);
+            this.groupBox1.Location = new System.Drawing.Point(32, 26);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -145,6 +149,7 @@ namespace MediaBazzar
             // 
             // cb_allRoles
             // 
+            this.cb_allRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_allRoles.FormattingEnabled = true;
             this.cb_allRoles.Location = new System.Drawing.Point(87, 94);
             this.cb_allRoles.Name = "cb_allRoles";
@@ -393,6 +398,30 @@ namespace MediaBazzar
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 0;
             // 
+            // checkBox_active
+            // 
+            this.checkBox_active.AutoSize = true;
+            this.checkBox_active.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox_active.Location = new System.Drawing.Point(482, 33);
+            this.checkBox_active.Name = "checkBox_active";
+            this.checkBox_active.Size = new System.Drawing.Size(83, 28);
+            this.checkBox_active.TabIndex = 12;
+            this.checkBox_active.Text = "Active";
+            this.checkBox_active.UseVisualStyleBackColor = true;
+            this.checkBox_active.CheckedChanged += new System.EventHandler(this.checkBox_active_CheckedChanged);
+            // 
+            // checkbox_fired
+            // 
+            this.checkbox_fired.AutoSize = true;
+            this.checkbox_fired.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkbox_fired.Location = new System.Drawing.Point(483, 74);
+            this.checkbox_fired.Name = "checkbox_fired";
+            this.checkbox_fired.Size = new System.Drawing.Size(76, 28);
+            this.checkbox_fired.TabIndex = 13;
+            this.checkbox_fired.Text = "Fired";
+            this.checkbox_fired.UseVisualStyleBackColor = true;
+            this.checkbox_fired.CheckedChanged += new System.EventHandler(this.checkbox_fired_CheckedChanged);
+            // 
             // Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -404,6 +433,7 @@ namespace MediaBazzar
             this.Text = "Management";
             this.tabControl1.ResumeLayout(false);
             this.People.ResumeLayout(false);
+            this.People.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.Stock.ResumeLayout(false);
@@ -444,5 +474,7 @@ namespace MediaBazzar
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton radio_name;
         private System.Windows.Forms.ComboBox cb_allRoles;
+        private System.Windows.Forms.CheckBox checkbox_fired;
+        private System.Windows.Forms.CheckBox checkBox_active;
     }
 }

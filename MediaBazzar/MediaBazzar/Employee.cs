@@ -38,6 +38,7 @@ namespace MediaBazzar
             this.role = role;
             this.contract = contract;
             this.account = account;
+            this.active = active;
         }
         public Employee(Person personalInfo, Person contactPerson, DateTime dateOfBirth, string BSN, string role, Contract contract,Account account, bool active)
         {
@@ -48,6 +49,7 @@ namespace MediaBazzar
             this.role = role;
             this.contract = contract;
             this.account = account;
+            this.active = active;
         }
         public string getContactInfo()
         {
