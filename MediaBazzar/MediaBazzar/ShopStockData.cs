@@ -53,7 +53,7 @@ namespace MediaBazzar
 
             try
             {
-                string sql = "SELECT shopstock.StockID, stock.Name,shopstock.Amount,stock.Price,stock.Brand FROM stock RIGHT JOIN shopstock ON shopstock.stockid =stock.id WHERE shopstock.stockid IS NULL;";
+                string sql = "SELECT shopstock.StockID, stock.Name,shopstock.Amount,stock.Price,stock.Brand, stock.available FROM stock RIGHT JOIN shopstock ON shopstock.stockid =stock.id WHERE shopstock.stockid IS NULL;";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 conn.Open();
@@ -62,7 +62,7 @@ namespace MediaBazzar
 
                 while (dr.Read())
                 {
-                    stocks.Add(new Stock(dr[1].ToString(), Convert.ToInt32(dr[2]), Convert.ToInt32(dr[0]), Convert.ToInt32(dr[3]), dr[4].ToString()));
+                    stocks.Add(new Stock(dr[1].ToString(), Convert.ToInt32(dr[2]), Convert.ToInt32(dr[0]), Convert.ToInt32(dr[3]), dr[4].ToString(), Convert.ToInt32(dr[5])));
                 }
 
             }
@@ -90,7 +90,7 @@ namespace MediaBazzar
 
             try
             {
-                string sql = "SELECT shopstock.StockID, stock.Name,shopstock.Amount,stock.Price,stock.Brand FROM shopstock INNER JOIN stock ON shopstock.stockid =stock.id;";
+                string sql = "SELECT shopstock.StockID, stock.Name,shopstock.Amount,stock.Price,stock.Brand, stock.available FROM shopstock INNER JOIN stock ON shopstock.stockid =stock.id;";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 conn.Open();
@@ -99,7 +99,9 @@ namespace MediaBazzar
 
                 while (dr.Read())
                 {
-                    stocks.Add(new Stock(dr[1].ToString(), Convert.ToInt32(dr[2]), Convert.ToInt32(dr[0]), Convert.ToInt32(dr[3]), dr[4].ToString()));
+                    
+                    stocks.Add(new Stock(dr[1].ToString(), Convert.ToInt32(dr[2]), Convert.ToInt32(dr[0]), Convert.ToInt32(dr[3]), dr[4].ToString(), Convert.ToInt32(dr[5])));
+         
                 }
 
             }
@@ -128,7 +130,7 @@ namespace MediaBazzar
 
             try
             {
-                string sql = "SELECT shopstock.StockID, stock.Name,shopstock.Amount,stock.Price,stock.Brand FROM shopstock INNER JOIN stock ON shopstock.stockid =stock.id WHERE shopstock.StockID = @id;";
+                string sql = "SELECT shopstock.StockID, stock.Name,shopstock.Amount,stock.Price,stock.Brand, stock.available FROM shopstock INNER JOIN stock ON shopstock.stockid =stock.id WHERE shopstock.StockID = @id;";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@id", ID);
 
@@ -138,7 +140,7 @@ namespace MediaBazzar
 
                 while (dr.Read())
                 {
-                    stocks.Add(new Stock(dr[1].ToString(), Convert.ToInt32(dr[2]), Convert.ToInt32(dr[0]), Convert.ToInt32(dr[3]), dr[4].ToString()));
+                    stocks.Add(new Stock(dr[1].ToString(), Convert.ToInt32(dr[2]), Convert.ToInt32(dr[0]), Convert.ToInt32(dr[3]), dr[4].ToString(), Convert.ToInt32(dr[5])));
                 }
 
             }
@@ -166,7 +168,7 @@ namespace MediaBazzar
 
             try
             {
-                string sql = "SELECT shopstock.StockID, stock.Name,shopstock.Amount,stock.Price,stock.Brand FROM shopstock INNER JOIN stock ON shopstock.stockid =stock.id WHERE stock.Brand = @brand;";
+                string sql = "SELECT shopstock.StockID, stock.Name,shopstock.Amount,stock.Price,stock.Brand, stock.available FROM shopstock INNER JOIN stock ON shopstock.stockid =stock.id WHERE stock.Brand = @brand;";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@brand", brand);
 
@@ -176,7 +178,7 @@ namespace MediaBazzar
 
                 while (dr.Read())
                 {
-                    stocks.Add(new Stock(dr[1].ToString(), Convert.ToInt32(dr[2]), Convert.ToInt32(dr[0]), Convert.ToInt32(dr[3]), dr[4].ToString()));
+                    stocks.Add(new Stock(dr[1].ToString(), Convert.ToInt32(dr[2]), Convert.ToInt32(dr[0]), Convert.ToInt32(dr[3]), dr[4].ToString(), Convert.ToInt32(dr[5])));
                 }
 
             }
@@ -205,7 +207,7 @@ namespace MediaBazzar
 
             try
             {
-                string sql = "SELECT shopstock.StockID, stock.Name,shopstock.Amount,stock.Price,stock.Brand FROM shopstock INNER JOIN stock ON shopstock.stockid =stock.id WHERE shopstock.Amount = @amount;";
+                string sql = "SELECT shopstock.StockID, stock.Name,shopstock.Amount,stock.Price,stock.Brand, stock.available FROM shopstock INNER JOIN stock ON shopstock.stockid =stock.id WHERE shopstock.Amount = @amount;";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@amount", amount);
 
@@ -215,7 +217,7 @@ namespace MediaBazzar
 
                 while (dr.Read())
                 {
-                    stocks.Add(new Stock(dr[1].ToString(), Convert.ToInt32(dr[2]), Convert.ToInt32(dr[0]), Convert.ToInt32(dr[3]), dr[4].ToString()));
+                    stocks.Add(new Stock(dr[1].ToString(), Convert.ToInt32(dr[2]), Convert.ToInt32(dr[0]), Convert.ToInt32(dr[3]), dr[4].ToString(), Convert.ToInt32(dr[5])));
                 }
 
             }

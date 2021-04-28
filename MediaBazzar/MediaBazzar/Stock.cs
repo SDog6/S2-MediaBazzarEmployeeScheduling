@@ -14,7 +14,23 @@ namespace MediaBazzar
         private int id;
         private int price;
         private string brand;
+        private int available;
+        public int Available
+        {
+            get { return this.available; }
+            set { available = value; }
+        }
 
+        public string AvailableStr
+        {
+            get { if (this.available == 1)
+                {
+                    return "Available";
+                }
+                else return "Unavailable";
+            }
+                
+        }
         public int ID
         {
             get { return this.id; }
@@ -44,13 +60,14 @@ namespace MediaBazzar
             set { name = value; }
         }
 
-        public Stock(string name, int amount, int id, int price, string brand)
+        public Stock(string name, int amount, int id, int price, string brand, int available)
         {
             this.name = name;
             this.amount = amount;
             this.id = id;
             this.price = price;
             this.brand = brand;
+            this.available = available;
         }
 
         public void Resupply(int number)
@@ -60,7 +77,11 @@ namespace MediaBazzar
 
         public override string ToString()
         {
-            return $"{this.name} of brand:'{this.brand}'. In stock currently:{amount}. Price: {price}$ - [{this.id}] ID";
+            if(this.available == 1)
+            return $"{this.name} of brand:'{this.brand}'. In stock currently:{amount}. Price: {price}$ - [{this.id}] ID (Available)";
+            else
+            return $"{this.name} of brand:'{this.brand}'. In stock currently:{amount}. Price: {price}$ - [{this.id}] ID (Unavailable)";
+
         }
     }
 }

@@ -72,6 +72,7 @@ namespace MediaBazzar
             this.tbEStreetNr = new System.Windows.Forms.TextBox();
             this.tbEState = new System.Windows.Forms.TextBox();
             this.tbECity = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.EmployeeInfo.SuspendLayout();
             this.SuspendLayout();
@@ -231,6 +232,7 @@ namespace MediaBazzar
             // 
             // EmployeeInfo
             // 
+            this.EmployeeInfo.Controls.Add(this.label19);
             this.EmployeeInfo.Controls.Add(this.label1);
             this.EmployeeInfo.Controls.Add(this.tbEPassword);
             this.EmployeeInfo.Controls.Add(this.tbUsername);
@@ -465,6 +467,15 @@ namespace MediaBazzar
             this.tbECity.Size = new System.Drawing.Size(114, 20);
             this.tbECity.TabIndex = 8;
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(46, 340);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(45, 13);
+            this.label19.TabIndex = 35;
+            this.label19.Text = "Birthday";
+            // 
             // ViewEmployeeData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -528,5 +539,6 @@ namespace MediaBazzar
         private System.Windows.Forms.TextBox tbECity;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbEPassword;
+        private System.Windows.Forms.Label label19;
     }
 }

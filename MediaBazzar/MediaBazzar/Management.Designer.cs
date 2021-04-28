@@ -42,11 +42,11 @@ namespace MediaBazzar
             this.rbManagementRole = new System.Windows.Forms.RadioButton();
             this.tbManagementEPFilter = new System.Windows.Forms.TextBox();
             this.Stock = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnStockRemove = new System.Windows.Forms.Button();
             this.btnManagementStockUpdate = new System.Windows.Forms.Button();
             this.btnManagementNewStock = new System.Windows.Forms.Button();
             this.btnManagementRestockRequest = new System.Windows.Forms.Button();
-            this.lbManagementStock = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rbManagementStockBrandFilter = new System.Windows.Forms.RadioButton();
             this.rbManagementStockIDFilter = new System.Windows.Forms.RadioButton();
@@ -59,12 +59,15 @@ namespace MediaBazzar
             this.lbManagementShiftEmployeesAssigned = new System.Windows.Forms.ListBox();
             this.lbManagementShiftEmployeesToAssign = new System.Windows.Forms.ListBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.DgvManagemendEmployees = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.People.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.Stock.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvManagemendEmployees)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -75,11 +78,12 @@ namespace MediaBazzar
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(787, 408);
+            this.tabControl1.Size = new System.Drawing.Size(845, 728);
             this.tabControl1.TabIndex = 0;
             // 
             // People
             // 
+            this.People.Controls.Add(this.DgvManagemendEmployees);
             this.People.Controls.Add(this.btnViewEmployeeInfo);
             this.People.Controls.Add(this.btnManagemendUpdate);
             this.People.Controls.Add(this.btnManagemntPersonUpdate);
@@ -88,8 +92,8 @@ namespace MediaBazzar
             this.People.Controls.Add(this.groupBox1);
             this.People.Location = new System.Drawing.Point(4, 22);
             this.People.Name = "People";
-            this.People.Padding = new System.Windows.Forms.Padding(3);
-            this.People.Size = new System.Drawing.Size(779, 382);
+            this.People.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.People.Size = new System.Drawing.Size(837, 702);
             this.People.TabIndex = 0;
             this.People.Text = "Employees";
             this.People.UseVisualStyleBackColor = true;
@@ -196,23 +200,35 @@ namespace MediaBazzar
             // 
             // Stock
             // 
+            this.Stock.Controls.Add(this.dataGridView1);
             this.Stock.Controls.Add(this.btnStockRemove);
             this.Stock.Controls.Add(this.btnManagementStockUpdate);
             this.Stock.Controls.Add(this.btnManagementNewStock);
             this.Stock.Controls.Add(this.btnManagementRestockRequest);
-            this.Stock.Controls.Add(this.lbManagementStock);
             this.Stock.Controls.Add(this.groupBox2);
             this.Stock.Location = new System.Drawing.Point(4, 22);
             this.Stock.Name = "Stock";
-            this.Stock.Padding = new System.Windows.Forms.Padding(3);
+            this.Stock.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.Stock.Size = new System.Drawing.Size(779, 382);
             this.Stock.TabIndex = 1;
             this.Stock.Text = "Stock";
             this.Stock.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(308, 50);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(444, 244);
+            this.dataGridView1.TabIndex = 13;
+            // 
             // btnStockRemove
             // 
-            this.btnStockRemove.Location = new System.Drawing.Point(79, 239);
+            this.btnStockRemove.Location = new System.Drawing.Point(42, 249);
             this.btnStockRemove.Name = "btnStockRemove";
             this.btnStockRemove.Size = new System.Drawing.Size(201, 32);
             this.btnStockRemove.TabIndex = 11;
@@ -222,7 +238,7 @@ namespace MediaBazzar
             // 
             // btnManagementStockUpdate
             // 
-            this.btnManagementStockUpdate.Location = new System.Drawing.Point(116, 201);
+            this.btnManagementStockUpdate.Location = new System.Drawing.Point(80, 210);
             this.btnManagementStockUpdate.Name = "btnManagementStockUpdate";
             this.btnManagementStockUpdate.Size = new System.Drawing.Size(134, 32);
             this.btnManagementStockUpdate.TabIndex = 9;
@@ -232,7 +248,7 @@ namespace MediaBazzar
             // 
             // btnManagementNewStock
             // 
-            this.btnManagementNewStock.Location = new System.Drawing.Point(79, 315);
+            this.btnManagementNewStock.Location = new System.Drawing.Point(42, 325);
             this.btnManagementNewStock.Name = "btnManagementNewStock";
             this.btnManagementNewStock.Size = new System.Drawing.Size(201, 44);
             this.btnManagementNewStock.TabIndex = 8;
@@ -242,21 +258,13 @@ namespace MediaBazzar
             // 
             // btnManagementRestockRequest
             // 
-            this.btnManagementRestockRequest.Location = new System.Drawing.Point(61, 277);
+            this.btnManagementRestockRequest.Location = new System.Drawing.Point(24, 287);
             this.btnManagementRestockRequest.Name = "btnManagementRestockRequest";
             this.btnManagementRestockRequest.Size = new System.Drawing.Size(242, 32);
             this.btnManagementRestockRequest.TabIndex = 4;
             this.btnManagementRestockRequest.Text = "[IN DEVELOPMENT]Make new restock request";
             this.btnManagementRestockRequest.UseVisualStyleBackColor = true;
             this.btnManagementRestockRequest.Click += new System.EventHandler(this.btnManagementRestockRequest_Click);
-            // 
-            // lbManagementStock
-            // 
-            this.lbManagementStock.FormattingEnabled = true;
-            this.lbManagementStock.Location = new System.Drawing.Point(350, 26);
-            this.lbManagementStock.Name = "lbManagementStock";
-            this.lbManagementStock.Size = new System.Drawing.Size(379, 342);
-            this.lbManagementStock.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -265,7 +273,7 @@ namespace MediaBazzar
             this.groupBox2.Controls.Add(this.rbManagementStockAmountFilter);
             this.groupBox2.Controls.Add(this.tbManagementStockFilter);
             this.groupBox2.Controls.Add(this.btnManagementStockFilter);
-            this.groupBox2.Location = new System.Drawing.Point(55, 41);
+            this.groupBox2.Location = new System.Drawing.Point(18, 50);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(276, 144);
             this.groupBox2.TabIndex = 12;
@@ -349,6 +357,18 @@ namespace MediaBazzar
             this.cbShiftType.Size = new System.Drawing.Size(121, 21);
             this.cbShiftType.TabIndex = 3;
             // 
+            // cbShiftType
+            // 
+            this.cbShiftType.FormattingEnabled = true;
+            this.cbShiftType.Items.AddRange(new object[] {
+            "Morning (7AM-2PM)",
+            "Afternoon (1PM-6PM)",
+            "Night (5PM-10PM)"});
+            this.cbShiftType.Location = new System.Drawing.Point(507, 278);
+            this.cbShiftType.Name = "cbShiftType";
+            this.cbShiftType.Size = new System.Drawing.Size(121, 21);
+            this.cbShiftType.TabIndex = 3;
+            // 
             // btnManagementShiftAssignEmployee
             // 
             this.btnManagementShiftAssignEmployee.Location = new System.Drawing.Point(507, 305);
@@ -385,22 +405,37 @@ namespace MediaBazzar
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 0;
             // 
+            // DgvManagemendEmployees
+            // 
+            this.DgvManagemendEmployees.AllowUserToAddRows = false;
+            this.DgvManagemendEmployees.AllowUserToDeleteRows = false;
+            this.DgvManagemendEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvManagemendEmployees.Location = new System.Drawing.Point(265, 426);
+            this.DgvManagemendEmployees.Name = "DgvManagemendEmployees";
+            this.DgvManagemendEmployees.ReadOnly = true;
+            this.DgvManagemendEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgvManagemendEmployees.Size = new System.Drawing.Size(453, 248);
+            this.DgvManagemendEmployees.TabIndex = 11;
+            // 
             // Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 400);
+            this.ClientSize = new System.Drawing.Size(919, 740);
             this.Controls.Add(this.tabControl1);
             this.Name = "Management";
             this.Text = "Management";
+            this.Load += new System.EventHandler(this.Management_Load);
             this.tabControl1.ResumeLayout(false);
             this.People.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.Stock.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvManagemendEmployees)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -419,7 +454,6 @@ namespace MediaBazzar
         private System.Windows.Forms.Button btnManagementRestockRequest;
         private System.Windows.Forms.Button btnManagementStockFilter;
         private System.Windows.Forms.TextBox tbManagementStockFilter;
-        private System.Windows.Forms.ListBox lbManagementStock;
         private System.Windows.Forms.RadioButton rbManagementStockAmountFilter;
         private System.Windows.Forms.RadioButton rbManagementStockBrandFilter;
         private System.Windows.Forms.RadioButton rbManagementStockIDFilter;
@@ -437,5 +471,7 @@ namespace MediaBazzar
         private System.Windows.Forms.Button btnStockRemove;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox cbShiftType;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DgvManagemendEmployees;
     }
 }
