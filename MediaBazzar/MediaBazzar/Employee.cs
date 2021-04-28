@@ -15,6 +15,7 @@ namespace MediaBazzar
         private string role;
         private Contract contract;
         private Account account;
+        private bool status;
 
         public int EmID { get { return this.ID; } }
         public string BSNp { get { return this.BSN; } set { this.BSN = value; } }
@@ -26,6 +27,8 @@ namespace MediaBazzar
         public Contract Contract { get { return this.contract; } }
         public Account Account { get { return this.account; } }
 
+        public bool Status { get { return this.status; } set { this.status = value; } }
+
         public Employee(int ID,string firstName, string lastName, string phoneNumber, Address address, string email, Person contactPerson, DateTime dateOfBirth, string BSN, string role, Contract contract, Account account) : base(firstName, lastName, phoneNumber, address, email)
         {
             this.ID = ID;
@@ -35,6 +38,7 @@ namespace MediaBazzar
             this.role = role;
             this.contract = contract;
             this.account = account;
+            Status = true;
         }
         public Employee(string firstName, string lastName, string phoneNumber, Address address, string email, Person contactPerson, DateTime dateOfBirth, string BSN, string role, Contract contract,Account account) : base(firstName, lastName, phoneNumber, address, email)
         {

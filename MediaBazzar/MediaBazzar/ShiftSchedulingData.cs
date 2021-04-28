@@ -68,7 +68,7 @@ namespace MediaBazzar
                 {
                     int id = Convert.ToInt32(dr[0]);
                     Employee gottenEmp = getemp.GetEmp(id);
-                    shifts.Add(new Shift(gottenEmp, dr[1].ToString(), dr[2].ToString()));
+                    shifts.Add(new Shift(gottenEmp, Convert.ToDateTime(dr[1]), dr[2].ToString()));
                 }
 
             }
@@ -90,6 +90,127 @@ namespace MediaBazzar
             return shifts;
         }
 
+        public object GetAllMorningShifts()
+        {
+            List<Shift> shifts = new List<Shift>();
+            EmployeeManager getemp = new EmployeeManager();
+
+            try
+            {
+                string sql = "SELECT employee_id, Date,Type FROM shifts WHERE Type LIKE 'Morning%';";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    int id = Convert.ToInt32(dr[0]);
+                    Employee gottenEmp = getemp.GetEmp(id);
+                    shifts.Add(new Shift(gottenEmp, Convert.ToDateTime(dr[1]), dr[2].ToString()));
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured! Try again.");
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+            return shifts;
+        }
+
+
+        public object GetAllAfternoonShifts()
+        {
+            List<Shift> shifts = new List<Shift>();
+            EmployeeManager getemp = new EmployeeManager();
+
+            try
+            {
+                string sql = "SELECT employee_id, Date,Type FROM shifts WHERE Type LIKE 'Afternoon%';";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    int id = Convert.ToInt32(dr[0]);
+                    Employee gottenEmp = getemp.GetEmp(id);
+                    shifts.Add(new Shift(gottenEmp, Convert.ToDateTime(dr[1]), dr[2].ToString()));
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured! Try again.");
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+            return shifts;
+        }
+
+
+        public object GetAllEveningShifts()
+        {
+            List<Shift> shifts = new List<Shift>();
+            EmployeeManager getemp = new EmployeeManager();
+
+            try
+            {
+                string sql = "SELECT employee_id, Date,Type FROM shifts WHERE Type LIKE 'Evening%';";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    int id = Convert.ToInt32(dr[0]);
+                    Employee gottenEmp = getemp.GetEmp(id);
+                    shifts.Add(new Shift(gottenEmp, Convert.ToDateTime(dr[1]), dr[2].ToString()));
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured! Try again.");
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+            return shifts;
+        }
 
         public void Delete(Object obj)
         {

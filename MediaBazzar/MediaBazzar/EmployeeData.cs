@@ -563,5 +563,37 @@ namespace MediaBazzar
 
         }
 
+        public void FireEmployee(object obj)
+        {
+            Employee emp = (Employee)obj;
+            try
+            {
+                // make sure in your table the id in auto-incremented
+                string sql = "UPDATE employee SET status = false WHERE id = @id";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@id", emp.EmployeeID);
+
+
+                conn.Open();
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured! Try again.");
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+        }
+
     }
 }

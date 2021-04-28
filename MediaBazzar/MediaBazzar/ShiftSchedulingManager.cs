@@ -58,6 +58,42 @@ namespace MediaBazzar
             return temp;
         }
 
+        public List<object> GetAllMorningShifts()
+        {
+            List<object> temp = new List<object>();
+
+            foreach (Shift item in (List<Shift>)ShiftData.GetAllMorningShifts())
+            {
+                temp.Add(item);
+            }
+            return temp;
+        }
+
+
+        public List<object> GetAllAfternoonShifts()
+        {
+            List<object> temp = new List<object>();
+
+            foreach (Shift item in (List<Shift>)ShiftData.GetAllMorningShifts())
+            {
+                temp.Add(item);
+            }
+            return temp;
+        }
+
+
+        public List<object> GetAllEveningShifts()
+        {
+            List<object> temp = new List<object>();
+
+            foreach (Shift item in (List<Shift>)ShiftData.GetAllMorningShifts())
+            {
+                temp.Add(item);
+            }
+            return temp;
+        }
+
+
         public bool Remove(object obj)
         {
             if (obj != null)

@@ -66,6 +66,20 @@ namespace MediaBazzar
 
         }
 
+        public bool Fire(Object emp)
+        {
+            Employee em = (Employee)emp;
+            if(em.Status == true)
+            {
+                EmpsData.FireEmployee(emp);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
 
 
         public List<object> GetAllPerID(int id)

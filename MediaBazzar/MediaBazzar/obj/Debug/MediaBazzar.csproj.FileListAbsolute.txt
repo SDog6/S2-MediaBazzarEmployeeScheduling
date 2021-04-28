@@ -132,8 +132,6 @@ C:\Users\Hristo\Desktop\New folder (13)\semester_2-project\MediaBazzar\MediaBazz
 C:\Users\Hristo\Desktop\New folder (13)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Hristo\Desktop\New folder (13)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Hristo\Desktop\New folder (13)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csproj.CopyComplete
-C:\Users\Hristo\Desktop\New folder (13)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.Employees.resources
-C:\Users\Hristo\Desktop\New folder (13)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.HR.resources
 C:\Users\brand\Desktop\New folder (2)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.exe.config
 C:\Users\brand\Desktop\New folder (2)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.exe
 C:\Users\brand\Desktop\New folder (2)\semester_2-project\MediaBazzar\MediaBazzar\bin\Debug\MediaBazzar.pdb
@@ -181,3 +179,5 @@ C:\Users\brand\Desktop\New folder (2)\semester_2-project\MediaBazzar\MediaBazzar
 C:\Users\brand\Desktop\New folder (2)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csproj.CopyComplete
 C:\Users\brand\Desktop\New folder (2)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.exe
 C:\Users\brand\Desktop\New folder (2)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.pdb
+C:\Users\Hristo\Desktop\New folder (13)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.EmployeeFiring.resources
+C:\Users\Hristo\Desktop\New folder (13)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.HR.resources

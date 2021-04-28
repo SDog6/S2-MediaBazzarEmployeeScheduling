@@ -15,6 +15,10 @@ namespace MediaBazzar
         ShopStockManager stock;
         EmployeeManager Employees;
         ShiftSchedulingManager Shifts;
+        DateTime Monday;
+        DateTime Sunday;
+        int shiftcounter;
+
         public Management()
         {
             InitializeComponent();
@@ -27,6 +31,24 @@ namespace MediaBazzar
             UpdateStockUI();
             UpdateEmployeeUI();
             UpdateShiftEmployeeUI();
+
+            DateTime today = DateTime.Now;
+
+            int daysuntillmonday = DayOfWeek.Monday - today.DayOfWeek;
+            daysuntillmonday += 7;
+            
+            if (daysuntillmonday > 0)
+            {
+                Monday = today.AddDays(daysuntillmonday);
+                Sunday = Monday.AddDays(6);
+            }
+            else 
+            {
+                Monday = today;
+                Sunday = today.AddDays(6);
+            }
+            monthCalendar1.MinDate = Monday;
+            monthCalendar1.MaxDate = Sunday;
         }
 
         private void btnManagementRestockRequest_Click(object sender, EventArgs e)
@@ -102,7 +124,7 @@ namespace MediaBazzar
 
 
             lbManagementShiftEmployeesAssigned.Items.Clear();
-            foreach (Shift item in Shifts.GetAllPerType())
+            foreach (Shift item in Shifts.GetAllMorningShifts())
             {
                 lbManagementShiftEmployeesAssigned.Items.Add(item);
             }
@@ -195,13 +217,20 @@ namespace MediaBazzar
 
         private void btnManagementShiftAssignEmployee_Click(object sender, EventArgs e)
         {
-            Employee emp = (Employee)lbManagementShiftEmployeesToAssign.SelectedItem;
-            string time = monthCalendar1.SelectionRange.Start.ToShortDateString();
-            string shifttype = cbShiftType.SelectedItem.ToString();
 
-            Shift temp = new Shift(emp, time, shifttype);
-            Shifts.Add(temp);
-            UpdateShiftEmployeeUI();
+            Employee emp = (Employee)lbManagementShiftEmployeesToAssign.SelectedItem;
+            DateTime time = monthCalendar1.SelectionRange.Start.Date;
+            string shifttype = cbShiftType.SelectedItem.ToString();
+            if(shiftcounter + 5 > emp.Contract.maxworkhours)
+            {
+                MessageBox.Show("Employee is beeing overscheduled !");
+            }
+            else
+            {
+                Shift temp = new Shift(emp, time, shifttype);
+                Shifts.Add(temp);
+                UpdateShiftEmployeeUI();
+            }
         }
 
         private void btnShiftsUpdate_Click(object sender, EventArgs e)
@@ -213,5 +242,26 @@ namespace MediaBazzar
         {
 
         }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbManagementShiftEmployeesToAssign_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Employee emp = (Employee)lbManagementShiftEmployeesToAssign.SelectedItem;
+            shiftcounter = 0;
+            foreach (Shift item in Shifts.GetAllPerType())
+            {
+                if(item.Emp.EmployeeID == emp.EmployeeID && item.Time >= Monday)
+                {
+                    shiftcounter += 5;
+                }
+            }
+            MessageBox.Show($"Hours already assigned: {shiftcounter.ToString()} / {emp.Contract.maxworkhours}");
+        }
+
+
     }
 }

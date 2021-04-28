@@ -54,11 +54,11 @@ namespace MediaBazzar
             this.tbManagementStockFilter = new System.Windows.Forms.TextBox();
             this.btnManagementStockFilter = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.cbShiftType = new System.Windows.Forms.ComboBox();
             this.btnManagementShiftAssignEmployee = new System.Windows.Forms.Button();
             this.lbManagementShiftEmployeesAssigned = new System.Windows.Forms.ListBox();
             this.lbManagementShiftEmployeesToAssign = new System.Windows.Forms.ListBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.cbShiftType = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.People.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -335,6 +335,19 @@ namespace MediaBazzar
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Shifts";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // cbShiftType
+            // 
+            this.cbShiftType.FormattingEnabled = true;
+            this.cbShiftType.Items.AddRange(new object[] {
+            "Morning (7AM-2PM)",
+            "Afternoon (1PM-6PM)",
+            "Night (5PM-10PM)"});
+            this.cbShiftType.Location = new System.Drawing.Point(507, 278);
+            this.cbShiftType.Name = "cbShiftType";
+            this.cbShiftType.Size = new System.Drawing.Size(121, 21);
+            this.cbShiftType.TabIndex = 3;
             // 
             // btnManagementShiftAssignEmployee
             // 
@@ -362,25 +375,15 @@ namespace MediaBazzar
             this.lbManagementShiftEmployeesToAssign.Name = "lbManagementShiftEmployeesToAssign";
             this.lbManagementShiftEmployeesToAssign.Size = new System.Drawing.Size(486, 173);
             this.lbManagementShiftEmployeesToAssign.TabIndex = 1;
+            this.lbManagementShiftEmployeesToAssign.SelectedIndexChanged += new System.EventHandler(this.lbManagementShiftEmployeesToAssign_SelectedIndexChanged);
             // 
             // monthCalendar1
             // 
+            this.monthCalendar1.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
             this.monthCalendar1.Location = new System.Drawing.Point(515, 17);
             this.monthCalendar1.MaxSelectionCount = 1;
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 0;
-            // 
-            // cbShiftType
-            // 
-            this.cbShiftType.FormattingEnabled = true;
-            this.cbShiftType.Items.AddRange(new object[] {
-            "Morning (7AM-2PM)",
-            "Afternoon (1PM-6PM)",
-            "Night (5PM-10PM)"});
-            this.cbShiftType.Location = new System.Drawing.Point(507, 278);
-            this.cbShiftType.Name = "cbShiftType";
-            this.cbShiftType.Size = new System.Drawing.Size(121, 21);
-            this.cbShiftType.TabIndex = 3;
             // 
             // Management
             // 

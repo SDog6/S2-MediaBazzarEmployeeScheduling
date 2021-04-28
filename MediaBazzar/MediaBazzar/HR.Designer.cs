@@ -29,60 +29,100 @@ namespace MediaBazzar
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnViewAllEmployees = new System.Windows.Forms.Button();
-            this.btnCreateEmployee = new System.Windows.Forms.Button();
+            this.lbManagemendEmployees = new System.Windows.Forms.ListBox();
+            this.btnEmpDetails = new System.Windows.Forms.Button();
+            this.btnFireEmp = new System.Windows.Forms.Button();
+            this.btnEmpUpdate = new System.Windows.Forms.Button();
+            this.DGVManagementEmployees = new System.Windows.Forms.DataGridView();
+            this.btnAdd = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVManagementEmployees)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lbManagemendEmployees
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(218, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(247, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "What would you like to do ?";
+            this.lbManagemendEmployees.FormattingEnabled = true;
+            this.lbManagemendEmployees.Location = new System.Drawing.Point(24, 12);
+            this.lbManagemendEmployees.Name = "lbManagemendEmployees";
+            this.lbManagemendEmployees.Size = new System.Drawing.Size(710, 329);
+            this.lbManagemendEmployees.TabIndex = 1;
             // 
-            // btnViewAllEmployees
+            // btnEmpDetails
             // 
-            this.btnViewAllEmployees.Location = new System.Drawing.Point(161, 166);
-            this.btnViewAllEmployees.Name = "btnViewAllEmployees";
-            this.btnViewAllEmployees.Size = new System.Drawing.Size(111, 53);
-            this.btnViewAllEmployees.TabIndex = 1;
-            this.btnViewAllEmployees.Text = "View all employees";
-            this.btnViewAllEmployees.UseVisualStyleBackColor = true;
-            this.btnViewAllEmployees.Click += new System.EventHandler(this.btnViewAllEmployees_Click);
+            this.btnEmpDetails.Location = new System.Drawing.Point(92, 367);
+            this.btnEmpDetails.Name = "btnEmpDetails";
+            this.btnEmpDetails.Size = new System.Drawing.Size(93, 38);
+            this.btnEmpDetails.TabIndex = 10;
+            this.btnEmpDetails.Text = "View details about employee";
+            this.btnEmpDetails.UseVisualStyleBackColor = true;
+            this.btnEmpDetails.Click += new System.EventHandler(this.btnEmpDetails_Click);
             // 
-            // btnCreateEmployee
+            // btnFireEmp
             // 
-            this.btnCreateEmployee.Location = new System.Drawing.Point(437, 166);
-            this.btnCreateEmployee.Name = "btnCreateEmployee";
-            this.btnCreateEmployee.Size = new System.Drawing.Size(111, 53);
-            this.btnCreateEmployee.TabIndex = 2;
-            this.btnCreateEmployee.Text = "Add employee to the system";
-            this.btnCreateEmployee.UseVisualStyleBackColor = true;
-            this.btnCreateEmployee.Click += new System.EventHandler(this.btnCreateEmployee_Click);
+            this.btnFireEmp.Location = new System.Drawing.Point(262, 367);
+            this.btnFireEmp.Name = "btnFireEmp";
+            this.btnFireEmp.Size = new System.Drawing.Size(93, 38);
+            this.btnFireEmp.TabIndex = 11;
+            this.btnFireEmp.Text = "Fire an employee";
+            this.btnFireEmp.UseVisualStyleBackColor = true;
+            this.btnFireEmp.Click += new System.EventHandler(this.btnFireEmp_Click);
             // 
-            // HR
+            // btnEmpUpdate
+            // 
+            this.btnEmpUpdate.Location = new System.Drawing.Point(617, 367);
+            this.btnEmpUpdate.Name = "btnEmpUpdate";
+            this.btnEmpUpdate.Size = new System.Drawing.Size(93, 38);
+            this.btnEmpUpdate.TabIndex = 12;
+            this.btnEmpUpdate.Text = "Update employee info";
+            this.btnEmpUpdate.UseVisualStyleBackColor = true;
+            this.btnEmpUpdate.Click += new System.EventHandler(this.btnEmpUpdate_Click);
+            // 
+            // DGVManagementEmployees
+            // 
+            this.DGVManagementEmployees.AllowUserToAddRows = false;
+            this.DGVManagementEmployees.AllowUserToDeleteRows = false;
+            this.DGVManagementEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVManagementEmployees.Location = new System.Drawing.Point(24, 452);
+            this.DGVManagementEmployees.Name = "DGVManagementEmployees";
+            this.DGVManagementEmployees.ReadOnly = true;
+            this.DGVManagementEmployees.Size = new System.Drawing.Size(710, 263);
+            this.DGVManagementEmployees.TabIndex = 13;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(448, 367);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(93, 38);
+            this.btnAdd.TabIndex = 14;
+            this.btnAdd.Text = "Add employee to the system";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // Employees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(750, 289);
-            this.Controls.Add(this.btnCreateEmployee);
-            this.Controls.Add(this.btnViewAllEmployees);
-            this.Controls.Add(this.label1);
-            this.Name = "HR";
-            this.Text = "HR";
+            this.ClientSize = new System.Drawing.Size(1032, 749);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.DGVManagementEmployees);
+            this.Controls.Add(this.btnEmpUpdate);
+            this.Controls.Add(this.btnFireEmp);
+            this.Controls.Add(this.btnEmpDetails);
+            this.Controls.Add(this.lbManagemendEmployees);
+            this.Name = "Employees";
+            this.Text = "Employees";
+            this.Load += new System.EventHandler(this.Employees_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DGVManagementEmployees)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnViewAllEmployees;
-        private System.Windows.Forms.Button btnCreateEmployee;
+        private System.Windows.Forms.ListBox lbManagemendEmployees;
+        private System.Windows.Forms.Button btnEmpDetails;
+        private System.Windows.Forms.Button btnFireEmp;
+        private System.Windows.Forms.Button btnEmpUpdate;
+        private System.Windows.Forms.DataGridView DGVManagementEmployees;
+        private System.Windows.Forms.Button btnAdd;
     }
 }

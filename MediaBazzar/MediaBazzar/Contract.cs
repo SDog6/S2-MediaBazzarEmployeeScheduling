@@ -12,6 +12,7 @@ namespace MediaBazzar
         private DateTime employmentStart;
         private DateTime employmentEnd;
         private string terminationReason;
+        public int maxworkhours;
 
         public DateTime EmploymentStart { get { return this.employmentStart; } }
         public DateTime EmploymentEnd { get { return this.employmentEnd; } }
@@ -21,6 +22,7 @@ namespace MediaBazzar
             this.employmentStart = employmentStart;
             this.employmentEnd = new DateTime();
             terminationReason = string.Empty;
+            maxworkhours = 20;
         }
 
         public Contract(DateTime employmentStart, DateTime employmentEnd, string terminationReason)
@@ -28,6 +30,7 @@ namespace MediaBazzar
             this.employmentStart = employmentStart;
             this.employmentEnd = employmentEnd;
             this.terminationReason = terminationReason;
+            maxworkhours = 20;
         }
 
         public void Terminate(DateTime date, string reason)
