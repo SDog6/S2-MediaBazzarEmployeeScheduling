@@ -179,7 +179,7 @@ namespace MediaBazzar
 
             try
             {
-                string sql = "SELECT employee_id, Date,Type FROM shifts WHERE Type LIKE 'Evening%';";
+                string sql = "SELECT employee_id, Date,Type FROM shifts WHERE Type LIKE 'Night%';";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 conn.Open();

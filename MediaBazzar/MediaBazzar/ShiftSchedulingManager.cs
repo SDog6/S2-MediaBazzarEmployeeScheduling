@@ -74,7 +74,7 @@ namespace MediaBazzar
         {
             List<object> temp = new List<object>();
 
-            foreach (Shift item in (List<Shift>)ShiftData.GetAllMorningShifts())
+            foreach (Shift item in (List<Shift>)ShiftData.GetAllAfternoonShifts())
             {
                 temp.Add(item);
             }
@@ -86,7 +86,7 @@ namespace MediaBazzar
         {
             List<object> temp = new List<object>();
 
-            foreach (Shift item in (List<Shift>)ShiftData.GetAllMorningShifts())
+            foreach (Shift item in (List<Shift>)ShiftData.GetAllEveningShifts())
             {
                 temp.Add(item);
             }

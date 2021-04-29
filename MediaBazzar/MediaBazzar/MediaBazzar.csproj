@@ -190,6 +190,12 @@
     <Compile Include="ReshelfRequestData.cs" />
     <Compile Include="ReshelfRequestManager.cs" />
     <Compile Include="Shift.cs" />
+    <Compile Include="ShiftScheduling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShiftScheduling.Designer.cs">
+      <DependentUpon>ShiftScheduling.cs</DependentUpon>
+    </Compile>
     <Compile Include="ShiftSchedulingData.cs" />
     <Compile Include="ShiftSchedulingManager.cs" />
     <Compile Include="ShopStockData.cs" />
@@ -251,6 +257,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ShiftScheduling.resx">
+      <DependentUpon>ShiftScheduling.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewEmployeeData.resx">
       <DependentUpon>ViewEmployeeData.cs</DependentUpon>
     </EmbeddedResource>

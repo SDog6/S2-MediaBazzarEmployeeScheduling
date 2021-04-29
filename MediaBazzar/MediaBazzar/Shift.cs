@@ -27,7 +27,7 @@ namespace MediaBazzar
 
         public override string ToString()
         {
-            return $"{this.emp.FirstName} with id {emp.EmID} is scheduled for a {this.shifttype} shift on {this.date.ToString("yyyy-MM-dd")}";
+            return $"[{emp.EmID}] - {this.emp.FirstName} scheduled: {this.shifttype}";
         }
     }
 }

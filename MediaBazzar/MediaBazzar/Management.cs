@@ -30,6 +30,8 @@ namespace MediaBazzar
             stock = new ShopStockManager();
             Employees = new EmployeeManager();
             Shifts = new ShiftSchedulingManager();
+            cbShiftType.SelectedIndex = 1;
+
             rbManagementID.Checked = true;
             rbManagementStockIDFilter.Checked = true;
             cbShiftType.SelectedIndex = 1;
@@ -310,6 +312,12 @@ namespace MediaBazzar
             Da.Fill(EmployeeTable);
             DgvManagemendEmployees.DataSource = EmployeeTable;
             DgvManagemendEmployees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void btnScheduling_Click(object sender, EventArgs e)
+        {
+            ShiftScheduling s = new ShiftScheduling();
+            s.Show();
         }
     }
 }

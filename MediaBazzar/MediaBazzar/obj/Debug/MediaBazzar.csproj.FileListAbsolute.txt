@@ -231,3 +231,4 @@ C:\Users\brand\Desktop\New folder\semester_2-project\MediaBazzar\MediaBazzar\obj
 C:\Users\brand\Desktop\New folder\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.pdb
 C:\Users\brand\Desktop\New folder\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csprojAssemblyReference.cache
 >>>>>>> 462f206c3a4fc80abc71a45d08a191f6631abdf9
+C:\Users\Hristo\Desktop\New folder (13)\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.ShiftScheduling.resources
