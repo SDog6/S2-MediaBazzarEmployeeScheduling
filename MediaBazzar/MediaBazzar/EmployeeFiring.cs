@@ -21,7 +21,7 @@ namespace MediaBazzar
             this.emp = emp;
 
 
-            lblFire.Text = $"Please state the reason for firing {emp.FirstName}";
+            lblFire.Text = $"Please state the reason for firing {emp.PersonalInfo.FirstName}";
         }
 
         private void EmployeeFiring_Load(object sender, EventArgs e)

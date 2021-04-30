@@ -61,7 +61,7 @@ namespace MediaBazzar
 
         public Employee GetEmp(int id)
         {
-            Employee temp = (Employee)EmpsData.GetEmployeeByID(id);
+            Employee temp = (Employee)EmpsData.ReadAllByID(id);
             return temp;
 
         }
@@ -69,7 +69,7 @@ namespace MediaBazzar
         public bool Fire(Object emp)
         {
             Employee em = (Employee)emp;
-            if(em.Status == true)
+            if(em.Active == true)
             {
                 EmpsData.FireEmployee(emp);
                 return true;
@@ -80,24 +80,11 @@ namespace MediaBazzar
             }
         }
 
-
-
-        public List<object> GetAllPerID(int id)
-        {
-            List<object> temp = new List<object>();
-
-            foreach (Employee item in (List<Employee>)EmpsData.ReadAllID(id))
-            {
-                temp.Add(item);
-            }
-            return temp;
-        }
-
         public List<object> GetAllPerRole(string role)
         {
             List<object> temp = new List<object>();
 
-            foreach (Employee item in (List<Employee>)EmpsData.ReadAllRoles(role))
+            foreach (Employee item in (List<Employee>)EmpsData.ReadAllByRole(role))
             {
                 temp.Add(item);
             }

@@ -24,7 +24,7 @@ namespace MediaBazzar
                 // make sure in your table the id in auto-incremented
                 string sql = "INSERT INTO shifts (employee_id,Date,Type) VALUES (@employee_id,@Date,@Type)";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@employee_id", shift.Emp.EmID);
+                cmd.Parameters.AddWithValue("@employee_id", shift.Emp.EmployeeID);
                 cmd.Parameters.AddWithValue("@Date", shift.Time);
                 cmd.Parameters.AddWithValue("@Type", shift.ShiftType);
 

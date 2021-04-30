@@ -30,8 +30,10 @@ namespace MediaBazzar
             stock = new ShopStockManager();
             Employees = new EmployeeManager();
             Shifts = new ShiftSchedulingManager();
-            rbManagementID.Checked = true;
+            ShowAllEmployees(true);
+            radio_ID.Checked = true;
             rbManagementStockIDFilter.Checked = true;
+            checkBox_active.CheckState = CheckState.Checked;
             UpdateStockUI();
             UpdateEmployeeUI();
           
@@ -48,26 +50,6 @@ namespace MediaBazzar
             */
         }
 
-        private void btnManagementEPFilter_Click(object sender, EventArgs e)
-        {
-            lbManagemendEmployees.Items.Clear();
-            if (rbManagementID.Checked)
-            {
-                int id = Convert.ToInt32(tbManagementEPFilter.Text);
-                foreach (Employee item in Employees.GetAllPerID(id))
-                {
-                    lbManagemendEmployees.Items.Add(item);
-                } 
-            }
-            else if (rbManagementRole.Checked)
-            {
-                string role = tbManagementEPFilter.Text;
-                foreach (Employee item in Employees.GetAllPerRole(role))
-                {
-                    lbManagemendEmployees.Items.Add(item);
-                }
-            }
-        }
 
         private void btnManagemntPersonCreation_Click(object sender, EventArgs e)
         {
@@ -224,15 +206,7 @@ namespace MediaBazzar
         }
 
 
-        private void lbManagementShiftEmployeesAssigned_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void Management_Load(object sender, EventArgs e)
         {
@@ -243,6 +217,182 @@ namespace MediaBazzar
         }
 
         private void btnSchedule_Click(object sender, EventArgs e)
+        {
+            ShiftScheduling s = new ShiftScheduling();
+            s.Show();
+        }
+
+        private void checkBox_active_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox_active.Checked)
+            {
+                checkbox_fired.CheckState = CheckState.Unchecked;
+            }
+            filter();
+        }
+
+        private void radio_ID_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radio_ID.Checked)
+            {
+                txt_search.Visible = true;
+                cb_allRoles.Visible = false;
+                filter();
+                txt_search.Text = String.Empty;
+            }
+        }
+
+        private void radio_role_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radio_role.Checked)
+            {
+                txt_search.Visible = false;
+                cb_allRoles.Visible = true;
+                filter();
+            }
+        }
+
+        private void radio_name_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radio_name.Checked)
+            {
+                txt_search.Visible = true;
+                cb_allRoles.Visible = false;
+                filter();
+                txt_search.Text = String.Empty;
+            }
+        }
+        private bool GetEmployeeStatus()
+        {
+            bool employeeStatus = false;
+            if (checkBox_active.Checked)
+            {
+                employeeStatus = true;
+            }
+            return employeeStatus;
+        }
+
+        private void filter()
+        {
+            lbManagemendEmployees.Items.Clear();
+            bool employeeStatus = GetEmployeeStatus();
+            if (radio_role.Checked)
+            {
+                fillRoles();
+                ShowAllEmployees(employeeStatus);
+                if (cb_allRoles.SelectedIndex > -1)
+                {
+                    RoleSearch(cb_allRoles.SelectedIndex, employeeStatus);
+                }
+            }
+            if (radio_ID.Checked)
+            {
+                IDSearch(employeeStatus);
+            }
+            else if (radio_name.Checked)
+            {
+                NameSearch(employeeStatus);
+            }
+        }
+
+
+        private void IDSearch(bool employeeStatus)
+        {
+            string searchId = txt_search.Text;
+            if (String.IsNullOrEmpty(searchId))
+            {
+                ShowAllEmployees(employeeStatus);
+                return;
+            }
+            if (int.TryParse(searchId, out int ID))
+            {
+                foreach (Employee emp in Employees.GetAllPerType())
+                {
+                    if (emp.EmployeeID == ID && emp.Active == employeeStatus)
+                    {
+                        lbManagemendEmployees.Items.Add(emp);
+                    }
+
+                }
+            }
+        }
+
+        private void NameSearch(bool employeeStatus)
+        {
+            string searchWord = txt_search.Text.ToLower();
+            if (String.IsNullOrEmpty(searchWord))
+            {
+                ShowAllEmployees(employeeStatus);
+                return;
+            }
+            foreach (Employee emp in Employees.GetAllPerType())
+            {
+                string firstName = emp.PersonalInfo.FirstName.ToLower();
+                string lastName = emp.PersonalInfo.LastName.ToLower();
+                if ((firstName.Contains(searchWord) || lastName.Contains(searchWord)) && emp.Active == employeeStatus)
+                {
+                    lbManagemendEmployees.Items.Add(emp);
+                }
+            }
+        }
+
+        private void fillRoles()
+        {
+            cb_allRoles.Items.Clear();
+            foreach (Employee emp in Employees.GetAllPerType())
+            {
+                if (!cb_allRoles.Items.Contains(emp.Role))
+                {
+                    cb_allRoles.Items.Add(emp.Role);
+                }
+            }
+        }
+        private void RoleSearch(int index, bool employeeStatus)
+        {
+            lbManagemendEmployees.Items.Clear();
+            foreach (Employee emp in Employees.GetAllPerType())
+            {
+                if (emp.Role == cb_allRoles.Items[index].ToString() && emp.Active == employeeStatus)
+                {
+                    lbManagemendEmployees.Items.Add(emp);
+                }
+            }
+        }
+
+
+        public void ShowAllEmployees(bool employeeStatus)
+        {
+            lbManagemendEmployees.Items.Clear();
+            foreach (Employee item in Employees.GetAllPerType())
+            {
+                if (item.Active == employeeStatus)
+                {
+                    lbManagemendEmployees.Items.Add(item);
+                }
+            }
+
+        }
+
+        private void cb_allRoles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            filter();
+        }
+
+        private void txt_search_TextChanged(object sender, EventArgs e)
+        {
+            filter();
+        }
+
+        private void checkbox_fired_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkbox_fired.Checked)
+            {
+                checkBox_active.CheckState = CheckState.Unchecked;
+            }
+            filter();
+        }
+
+        private void btnViewEmployeeInfo_Click_1(object sender, EventArgs e)
         {
             ShiftScheduling s = new ShiftScheduling();
             s.Show();

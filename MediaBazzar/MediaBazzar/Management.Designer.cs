@@ -31,17 +31,18 @@ namespace MediaBazzar
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.People = new System.Windows.Forms.TabPage();
-            this.DgvManagemendEmployees = new System.Windows.Forms.DataGridView();
+            this.checkbox_fired = new System.Windows.Forms.CheckBox();
+            this.checkBox_active = new System.Windows.Forms.CheckBox();
             this.btnViewEmployeeInfo = new System.Windows.Forms.Button();
             this.btnManagemendUpdate = new System.Windows.Forms.Button();
-            this.btnManagemntPersonUpdate = new System.Windows.Forms.Button();
-            this.btnManagemntPersonCreation = new System.Windows.Forms.Button();
             this.lbManagemendEmployees = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnManagementEPFilter = new System.Windows.Forms.Button();
-            this.rbManagementID = new System.Windows.Forms.RadioButton();
-            this.rbManagementRole = new System.Windows.Forms.RadioButton();
-            this.tbManagementEPFilter = new System.Windows.Forms.TextBox();
+            this.cb_allRoles = new System.Windows.Forms.ComboBox();
+            this.radio_name = new System.Windows.Forms.RadioButton();
+            this.radio_ID = new System.Windows.Forms.RadioButton();
+            this.radio_role = new System.Windows.Forms.RadioButton();
+            this.txt_search = new System.Windows.Forms.TextBox();
+            this.DgvManagemendEmployees = new System.Windows.Forms.DataGridView();
             this.Stock = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnStockRemove = new System.Windows.Forms.Button();
@@ -54,11 +55,10 @@ namespace MediaBazzar
             this.rbManagementStockAmountFilter = new System.Windows.Forms.RadioButton();
             this.tbManagementStockFilter = new System.Windows.Forms.TextBox();
             this.btnManagementStockFilter = new System.Windows.Forms.Button();
-            this.btnSchedule = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.People.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvManagemendEmployees)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvManagemendEmployees)).BeginInit();
             this.Stock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -76,14 +76,13 @@ namespace MediaBazzar
             // 
             // People
             // 
-            this.People.Controls.Add(this.btnSchedule);
-            this.People.Controls.Add(this.DgvManagemendEmployees);
+            this.People.Controls.Add(this.checkbox_fired);
+            this.People.Controls.Add(this.checkBox_active);
             this.People.Controls.Add(this.btnViewEmployeeInfo);
             this.People.Controls.Add(this.btnManagemendUpdate);
-            this.People.Controls.Add(this.btnManagemntPersonUpdate);
-            this.People.Controls.Add(this.btnManagemntPersonCreation);
             this.People.Controls.Add(this.lbManagemendEmployees);
             this.People.Controls.Add(this.groupBox1);
+            this.People.Controls.Add(this.DgvManagemendEmployees);
             this.People.Location = new System.Drawing.Point(4, 22);
             this.People.Name = "People";
             this.People.Padding = new System.Windows.Forms.Padding(3);
@@ -91,6 +90,131 @@ namespace MediaBazzar
             this.People.TabIndex = 0;
             this.People.Text = "Employees";
             this.People.UseVisualStyleBackColor = true;
+            // 
+            // checkbox_fired
+            // 
+            this.checkbox_fired.AutoSize = true;
+            this.checkbox_fired.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkbox_fired.Location = new System.Drawing.Point(380, 99);
+            this.checkbox_fired.Margin = new System.Windows.Forms.Padding(2);
+            this.checkbox_fired.Name = "checkbox_fired";
+            this.checkbox_fired.Size = new System.Drawing.Size(60, 22);
+            this.checkbox_fired.TabIndex = 19;
+            this.checkbox_fired.Text = "Fired";
+            this.checkbox_fired.UseVisualStyleBackColor = true;
+            this.checkbox_fired.CheckedChanged += new System.EventHandler(this.checkbox_fired_CheckedChanged);
+            // 
+            // checkBox_active
+            // 
+            this.checkBox_active.AutoSize = true;
+            this.checkBox_active.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox_active.Location = new System.Drawing.Point(380, 66);
+            this.checkBox_active.Margin = new System.Windows.Forms.Padding(2);
+            this.checkBox_active.Name = "checkBox_active";
+            this.checkBox_active.Size = new System.Drawing.Size(66, 22);
+            this.checkBox_active.TabIndex = 18;
+            this.checkBox_active.Text = "Active";
+            this.checkBox_active.UseVisualStyleBackColor = true;
+            this.checkBox_active.CheckedChanged += new System.EventHandler(this.checkBox_active_CheckedChanged);
+            // 
+            // btnViewEmployeeInfo
+            // 
+            this.btnViewEmployeeInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewEmployeeInfo.Location = new System.Drawing.Point(206, 206);
+            this.btnViewEmployeeInfo.Name = "btnViewEmployeeInfo";
+            this.btnViewEmployeeInfo.Size = new System.Drawing.Size(122, 45);
+            this.btnViewEmployeeInfo.TabIndex = 17;
+            this.btnViewEmployeeInfo.Text = "Schedule shifts";
+            this.btnViewEmployeeInfo.UseVisualStyleBackColor = true;
+            this.btnViewEmployeeInfo.Click += new System.EventHandler(this.btnViewEmployeeInfo_Click_1);
+            // 
+            // btnManagemendUpdate
+            // 
+            this.btnManagemendUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManagemendUpdate.Location = new System.Drawing.Point(57, 206);
+            this.btnManagemendUpdate.Name = "btnManagemendUpdate";
+            this.btnManagemendUpdate.Size = new System.Drawing.Size(122, 45);
+            this.btnManagemendUpdate.TabIndex = 16;
+            this.btnManagemendUpdate.Text = "View all employees";
+            this.btnManagemendUpdate.UseVisualStyleBackColor = true;
+            // 
+            // lbManagemendEmployees
+            // 
+            this.lbManagemendEmployees.FormattingEnabled = true;
+            this.lbManagemendEmployees.Location = new System.Drawing.Point(447, 60);
+            this.lbManagemendEmployees.Name = "lbManagemendEmployees";
+            this.lbManagemendEmployees.Size = new System.Drawing.Size(311, 329);
+            this.lbManagemendEmployees.TabIndex = 14;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cb_allRoles);
+            this.groupBox1.Controls.Add(this.radio_name);
+            this.groupBox1.Controls.Add(this.radio_ID);
+            this.groupBox1.Controls.Add(this.radio_role);
+            this.groupBox1.Controls.Add(this.txt_search);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(42, 60);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(301, 128);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Search by";
+            // 
+            // cb_allRoles
+            // 
+            this.cb_allRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_allRoles.FormattingEnabled = true;
+            this.cb_allRoles.Location = new System.Drawing.Point(65, 74);
+            this.cb_allRoles.Margin = new System.Windows.Forms.Padding(2);
+            this.cb_allRoles.Name = "cb_allRoles";
+            this.cb_allRoles.Size = new System.Drawing.Size(170, 25);
+            this.cb_allRoles.TabIndex = 8;
+            this.cb_allRoles.SelectedIndexChanged += new System.EventHandler(this.cb_allRoles_SelectedIndexChanged);
+            // 
+            // radio_name
+            // 
+            this.radio_name.AutoSize = true;
+            this.radio_name.Location = new System.Drawing.Point(218, 28);
+            this.radio_name.Name = "radio_name";
+            this.radio_name.Size = new System.Drawing.Size(63, 21);
+            this.radio_name.TabIndex = 7;
+            this.radio_name.TabStop = true;
+            this.radio_name.Text = "Name";
+            this.radio_name.UseVisualStyleBackColor = true;
+            this.radio_name.CheckedChanged += new System.EventHandler(this.radio_name_CheckedChanged);
+            // 
+            // radio_ID
+            // 
+            this.radio_ID.AutoSize = true;
+            this.radio_ID.Location = new System.Drawing.Point(28, 28);
+            this.radio_ID.Name = "radio_ID";
+            this.radio_ID.Size = new System.Drawing.Size(39, 21);
+            this.radio_ID.TabIndex = 5;
+            this.radio_ID.TabStop = true;
+            this.radio_ID.Text = "ID";
+            this.radio_ID.UseVisualStyleBackColor = true;
+            this.radio_ID.CheckedChanged += new System.EventHandler(this.radio_ID_CheckedChanged);
+            // 
+            // radio_role
+            // 
+            this.radio_role.AutoSize = true;
+            this.radio_role.Location = new System.Drawing.Point(117, 28);
+            this.radio_role.Name = "radio_role";
+            this.radio_role.Size = new System.Drawing.Size(55, 21);
+            this.radio_role.TabIndex = 6;
+            this.radio_role.TabStop = true;
+            this.radio_role.Text = "Role";
+            this.radio_role.UseVisualStyleBackColor = true;
+            this.radio_role.CheckedChanged += new System.EventHandler(this.radio_role_CheckedChanged);
+            // 
+            // txt_search
+            // 
+            this.txt_search.Location = new System.Drawing.Point(65, 76);
+            this.txt_search.Name = "txt_search";
+            this.txt_search.Size = new System.Drawing.Size(170, 23);
+            this.txt_search.TabIndex = 3;
+            this.txt_search.TextChanged += new System.EventHandler(this.txt_search_TextChanged);
             // 
             // DgvManagemendEmployees
             // 
@@ -103,106 +227,6 @@ namespace MediaBazzar
             this.DgvManagemendEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvManagemendEmployees.Size = new System.Drawing.Size(453, 248);
             this.DgvManagemendEmployees.TabIndex = 11;
-            // 
-            // btnViewEmployeeInfo
-            // 
-            this.btnViewEmployeeInfo.Location = new System.Drawing.Point(137, 293);
-            this.btnViewEmployeeInfo.Name = "btnViewEmployeeInfo";
-            this.btnViewEmployeeInfo.Size = new System.Drawing.Size(93, 38);
-            this.btnViewEmployeeInfo.TabIndex = 10;
-            this.btnViewEmployeeInfo.Text = "View employee info";
-            this.btnViewEmployeeInfo.UseVisualStyleBackColor = true;
-            this.btnViewEmployeeInfo.Click += new System.EventHandler(this.btnViewEmployeeInfo_Click);
-            // 
-            // btnManagemendUpdate
-            // 
-            this.btnManagemendUpdate.Location = new System.Drawing.Point(265, 249);
-            this.btnManagemendUpdate.Name = "btnManagemendUpdate";
-            this.btnManagemendUpdate.Size = new System.Drawing.Size(93, 38);
-            this.btnManagemendUpdate.TabIndex = 9;
-            this.btnManagemendUpdate.Text = "View all employees";
-            this.btnManagemendUpdate.UseVisualStyleBackColor = true;
-            this.btnManagemendUpdate.Click += new System.EventHandler(this.btnManagemendUpdate_Click);
-            // 
-            // btnManagemntPersonUpdate
-            // 
-            this.btnManagemntPersonUpdate.Location = new System.Drawing.Point(137, 249);
-            this.btnManagemntPersonUpdate.Name = "btnManagemntPersonUpdate";
-            this.btnManagemntPersonUpdate.Size = new System.Drawing.Size(93, 38);
-            this.btnManagemntPersonUpdate.TabIndex = 2;
-            this.btnManagemntPersonUpdate.Text = "Update employee information";
-            this.btnManagemntPersonUpdate.UseVisualStyleBackColor = true;
-            this.btnManagemntPersonUpdate.Click += new System.EventHandler(this.btnManagemntPersonUpdate_Click_1);
-            // 
-            // btnManagemntPersonCreation
-            // 
-            this.btnManagemntPersonCreation.Location = new System.Drawing.Point(8, 249);
-            this.btnManagemntPersonCreation.Name = "btnManagemntPersonCreation";
-            this.btnManagemntPersonCreation.Size = new System.Drawing.Size(93, 38);
-            this.btnManagemntPersonCreation.TabIndex = 1;
-            this.btnManagemntPersonCreation.Text = "Add a new employee";
-            this.btnManagemntPersonCreation.UseVisualStyleBackColor = true;
-            this.btnManagemntPersonCreation.Click += new System.EventHandler(this.btnManagemntPersonCreation_Click);
-            // 
-            // lbManagemendEmployees
-            // 
-            this.lbManagemendEmployees.FormattingEnabled = true;
-            this.lbManagemendEmployees.Location = new System.Drawing.Point(364, 20);
-            this.lbManagemendEmployees.Name = "lbManagemendEmployees";
-            this.lbManagemendEmployees.Size = new System.Drawing.Size(311, 329);
-            this.lbManagemendEmployees.TabIndex = 0;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnManagementEPFilter);
-            this.groupBox1.Controls.Add(this.rbManagementID);
-            this.groupBox1.Controls.Add(this.rbManagementRole);
-            this.groupBox1.Controls.Add(this.tbManagementEPFilter);
-            this.groupBox1.Location = new System.Drawing.Point(57, 32);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(251, 172);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtering";
-            // 
-            // btnManagementEPFilter
-            // 
-            this.btnManagementEPFilter.Location = new System.Drawing.Point(79, 128);
-            this.btnManagementEPFilter.Name = "btnManagementEPFilter";
-            this.btnManagementEPFilter.Size = new System.Drawing.Size(93, 38);
-            this.btnManagementEPFilter.TabIndex = 4;
-            this.btnManagementEPFilter.Text = "Filter";
-            this.btnManagementEPFilter.UseVisualStyleBackColor = true;
-            this.btnManagementEPFilter.Click += new System.EventHandler(this.btnManagementEPFilter_Click);
-            // 
-            // rbManagementID
-            // 
-            this.rbManagementID.AutoSize = true;
-            this.rbManagementID.Location = new System.Drawing.Point(65, 28);
-            this.rbManagementID.Name = "rbManagementID";
-            this.rbManagementID.Size = new System.Drawing.Size(36, 17);
-            this.rbManagementID.TabIndex = 5;
-            this.rbManagementID.TabStop = true;
-            this.rbManagementID.Text = "ID";
-            this.rbManagementID.UseVisualStyleBackColor = true;
-            // 
-            // rbManagementRole
-            // 
-            this.rbManagementRole.AutoSize = true;
-            this.rbManagementRole.Location = new System.Drawing.Point(126, 28);
-            this.rbManagementRole.Name = "rbManagementRole";
-            this.rbManagementRole.Size = new System.Drawing.Size(47, 17);
-            this.rbManagementRole.TabIndex = 6;
-            this.rbManagementRole.TabStop = true;
-            this.rbManagementRole.Text = "Role";
-            this.rbManagementRole.UseVisualStyleBackColor = true;
-            // 
-            // tbManagementEPFilter
-            // 
-            this.tbManagementEPFilter.Location = new System.Drawing.Point(44, 75);
-            this.tbManagementEPFilter.Name = "tbManagementEPFilter";
-            this.tbManagementEPFilter.Size = new System.Drawing.Size(157, 20);
-            this.tbManagementEPFilter.TabIndex = 3;
             // 
             // Stock
             // 
@@ -336,16 +360,6 @@ namespace MediaBazzar
             this.btnManagementStockFilter.UseVisualStyleBackColor = true;
             this.btnManagementStockFilter.Click += new System.EventHandler(this.btnManagementStockFilter_Click);
             // 
-            // btnSchedule
-            // 
-            this.btnSchedule.Location = new System.Drawing.Point(265, 293);
-            this.btnSchedule.Name = "btnSchedule";
-            this.btnSchedule.Size = new System.Drawing.Size(93, 38);
-            this.btnSchedule.TabIndex = 12;
-            this.btnSchedule.Text = "Schedule shift";
-            this.btnSchedule.UseVisualStyleBackColor = true;
-            this.btnSchedule.Click += new System.EventHandler(this.btnSchedule_Click);
-            // 
             // Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -357,9 +371,10 @@ namespace MediaBazzar
             this.Load += new System.EventHandler(this.Management_Load);
             this.tabControl1.ResumeLayout(false);
             this.People.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DgvManagemendEmployees)).EndInit();
+            this.People.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvManagemendEmployees)).EndInit();
             this.Stock.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -373,11 +388,6 @@ namespace MediaBazzar
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage People;
         private System.Windows.Forms.TabPage Stock;
-        private System.Windows.Forms.Button btnManagemntPersonCreation;
-        private System.Windows.Forms.ListBox lbManagemendEmployees;
-        private System.Windows.Forms.TextBox tbManagementEPFilter;
-        private System.Windows.Forms.Button btnManagemntPersonUpdate;
-        private System.Windows.Forms.Button btnManagementEPFilter;
         private System.Windows.Forms.Button btnManagementRestockRequest;
         private System.Windows.Forms.Button btnManagementStockFilter;
         private System.Windows.Forms.TextBox tbManagementStockFilter;
@@ -386,15 +396,20 @@ namespace MediaBazzar
         private System.Windows.Forms.RadioButton rbManagementStockIDFilter;
         private System.Windows.Forms.Button btnManagementNewStock;
         private System.Windows.Forms.Button btnManagementStockUpdate;
-        private System.Windows.Forms.RadioButton rbManagementRole;
-        private System.Windows.Forms.RadioButton rbManagementID;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnManagemendUpdate;
-        private System.Windows.Forms.Button btnViewEmployeeInfo;
         private System.Windows.Forms.Button btnStockRemove;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView DgvManagemendEmployees;
-        private System.Windows.Forms.Button btnSchedule;
+        private System.Windows.Forms.CheckBox checkbox_fired;
+        private System.Windows.Forms.CheckBox checkBox_active;
+        private System.Windows.Forms.Button btnViewEmployeeInfo;
+        private System.Windows.Forms.Button btnManagemendUpdate;
+        private System.Windows.Forms.ListBox lbManagemendEmployees;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox cb_allRoles;
+        private System.Windows.Forms.RadioButton radio_name;
+        private System.Windows.Forms.RadioButton radio_ID;
+        private System.Windows.Forms.RadioButton radio_role;
+        private System.Windows.Forms.TextBox txt_search;
     }
 }

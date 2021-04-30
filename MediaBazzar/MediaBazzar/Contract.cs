@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace MediaBazzar
 {
-   public class Contract
+    public class Contract
     {
-
+        private int workingHours;
         private DateTime employmentStart;
         private DateTime employmentEnd;
         private string terminationReason;
-        public int maxworkhours;
 
+        public int Workinghours { get { return this.workingHours; } }
         public DateTime EmploymentStart { get { return this.employmentStart; } }
         public DateTime EmploymentEnd { get { return this.employmentEnd; } }
         public string TerminationReason { get { return this.terminationReason; } }
@@ -22,15 +22,14 @@ namespace MediaBazzar
             this.employmentStart = employmentStart;
             this.employmentEnd = new DateTime();
             terminationReason = string.Empty;
-            maxworkhours = 20;
         }
 
-        public Contract(DateTime employmentStart, DateTime employmentEnd, string terminationReason)
+        public Contract(int workingHours, DateTime employmentStart, DateTime employmentEnd, string terminationReason)
         {
+            this.workingHours = workingHours;
             this.employmentStart = employmentStart;
             this.employmentEnd = employmentEnd;
             this.terminationReason = terminationReason;
-            maxworkhours = 20;
         }
 
         public void Terminate(DateTime date, string reason)

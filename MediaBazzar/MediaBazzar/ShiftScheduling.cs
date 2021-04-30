@@ -59,7 +59,7 @@ namespace MediaBazzar
                     shiftcounter += 5;
                 }
             }
-            MessageBox.Show($"Hours already assigned: {shiftcounter.ToString()} / {emp.Contract.maxworkhours}");
+            MessageBox.Show($"Hours already assigned: {shiftcounter.ToString()} / {emp.Contract.Workinghours}");
         }
 
         private void btnManagementShiftAssignEmployee_Click(object sender, EventArgs e)
@@ -69,7 +69,7 @@ namespace MediaBazzar
             Employee emp = (Employee)lbManagementShiftEmployeesToAssign.SelectedItem;
             DateTime time = monthCalendar1.SelectionRange.Start.Date;
             string shifttype = cbShiftType.SelectedItem.ToString();
-            if (shiftcounter + 5 > emp.Contract.maxworkhours)
+            if (shiftcounter + 5 > emp.Contract.Workinghours)
             {
                 MessageBox.Show("Employee is beeing overscheduled !");
             }

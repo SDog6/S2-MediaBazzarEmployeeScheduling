@@ -47,8 +47,6 @@ namespace MediaBazzar
             this.tbCName = new System.Windows.Forms.TextBox();
             this.tbCLastname = new System.Windows.Forms.TextBox();
             this.EmployeeInfo = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbEPassword = new System.Windows.Forms.TextBox();
             this.tbUsername = new System.Windows.Forms.TextBox();
             this.l_username = new System.Windows.Forms.Label();
             this.tbErole = new System.Windows.Forms.TextBox();
@@ -95,17 +93,17 @@ namespace MediaBazzar
             this.groupBox1.Controls.Add(this.tbCPhoneNumber);
             this.groupBox1.Controls.Add(this.tbCName);
             this.groupBox1.Controls.Add(this.tbCLastname);
-            this.groupBox1.Location = new System.Drawing.Point(543, 27);
+            this.groupBox1.Location = new System.Drawing.Point(563, 17);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(503, 298);
-            this.groupBox1.TabIndex = 18;
+            this.groupBox1.Size = new System.Drawing.Size(421, 298);
+            this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contact Person";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(38, 266);
+            this.label9.Location = new System.Drawing.Point(51, 266);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(38, 13);
             this.label9.TabIndex = 25;
@@ -114,7 +112,7 @@ namespace MediaBazzar
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(228, 223);
+            this.label8.Location = new System.Drawing.Point(241, 223);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(21, 13);
             this.label8.TabIndex = 24;
@@ -123,7 +121,7 @@ namespace MediaBazzar
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 227);
+            this.label7.Location = new System.Drawing.Point(19, 228);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 13);
             this.label7.TabIndex = 23;
@@ -132,7 +130,7 @@ namespace MediaBazzar
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(38, 191);
+            this.label6.Location = new System.Drawing.Point(51, 192);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(24, 13);
             this.label6.TabIndex = 22;
@@ -141,7 +139,7 @@ namespace MediaBazzar
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(0, 153);
+            this.label5.Location = new System.Drawing.Point(13, 154);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 13);
             this.label5.TabIndex = 21;
@@ -150,7 +148,7 @@ namespace MediaBazzar
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 112);
+            this.label4.Location = new System.Drawing.Point(19, 113);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 13);
             this.label4.TabIndex = 20;
@@ -159,7 +157,7 @@ namespace MediaBazzar
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(188, 58);
+            this.label3.Location = new System.Drawing.Point(201, 58);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 19;
@@ -168,7 +166,7 @@ namespace MediaBazzar
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 58);
+            this.label2.Location = new System.Drawing.Point(32, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 14;
@@ -176,64 +174,62 @@ namespace MediaBazzar
             // 
             // tbCEmail
             // 
-            this.tbCEmail.Location = new System.Drawing.Point(83, 259);
+            this.tbCEmail.Location = new System.Drawing.Point(96, 260);
             this.tbCEmail.Name = "tbCEmail";
             this.tbCEmail.Size = new System.Drawing.Size(218, 20);
             this.tbCEmail.TabIndex = 13;
             // 
             // tbCstreetname
             // 
-            this.tbCstreetname.Location = new System.Drawing.Point(83, 220);
+            this.tbCstreetname.Location = new System.Drawing.Point(96, 221);
             this.tbCstreetname.Name = "tbCstreetname";
             this.tbCstreetname.Size = new System.Drawing.Size(114, 20);
             this.tbCstreetname.TabIndex = 18;
             // 
             // tbCstreetnr
             // 
-            this.tbCstreetnr.Location = new System.Drawing.Point(255, 220);
+            this.tbCstreetnr.Location = new System.Drawing.Point(268, 221);
             this.tbCstreetnr.Name = "tbCstreetnr";
             this.tbCstreetnr.Size = new System.Drawing.Size(64, 20);
             this.tbCstreetnr.TabIndex = 17;
             // 
             // tbCstate
             // 
-            this.tbCstate.Location = new System.Drawing.Point(85, 146);
+            this.tbCstate.Location = new System.Drawing.Point(98, 147);
             this.tbCstate.Name = "tbCstate";
             this.tbCstate.Size = new System.Drawing.Size(114, 20);
             this.tbCstate.TabIndex = 15;
             // 
             // tbCCity
             // 
-            this.tbCCity.Location = new System.Drawing.Point(83, 184);
+            this.tbCCity.Location = new System.Drawing.Point(96, 184);
             this.tbCCity.Name = "tbCCity";
             this.tbCCity.Size = new System.Drawing.Size(114, 20);
             this.tbCCity.TabIndex = 16;
             // 
             // tbCPhoneNumber
             // 
-            this.tbCPhoneNumber.Location = new System.Drawing.Point(83, 112);
+            this.tbCPhoneNumber.Location = new System.Drawing.Point(96, 113);
             this.tbCPhoneNumber.Name = "tbCPhoneNumber";
             this.tbCPhoneNumber.Size = new System.Drawing.Size(218, 20);
             this.tbCPhoneNumber.TabIndex = 13;
             // 
             // tbCName
             // 
-            this.tbCName.Location = new System.Drawing.Point(83, 55);
+            this.tbCName.Location = new System.Drawing.Point(96, 56);
             this.tbCName.Name = "tbCName";
             this.tbCName.Size = new System.Drawing.Size(97, 20);
             this.tbCName.TabIndex = 13;
             // 
             // tbCLastname
             // 
-            this.tbCLastname.Location = new System.Drawing.Point(255, 55);
+            this.tbCLastname.Location = new System.Drawing.Point(268, 56);
             this.tbCLastname.Name = "tbCLastname";
             this.tbCLastname.Size = new System.Drawing.Size(100, 20);
             this.tbCLastname.TabIndex = 14;
             // 
             // EmployeeInfo
             // 
-            this.EmployeeInfo.Controls.Add(this.label1);
-            this.EmployeeInfo.Controls.Add(this.tbEPassword);
             this.EmployeeInfo.Controls.Add(this.tbUsername);
             this.EmployeeInfo.Controls.Add(this.l_username);
             this.EmployeeInfo.Controls.Add(this.tbErole);
@@ -257,33 +253,16 @@ namespace MediaBazzar
             this.EmployeeInfo.Controls.Add(this.tbEStreetNr);
             this.EmployeeInfo.Controls.Add(this.tbEState);
             this.EmployeeInfo.Controls.Add(this.tbECity);
-            this.EmployeeInfo.Location = new System.Drawing.Point(23, 16);
+            this.EmployeeInfo.Location = new System.Drawing.Point(45, 5);
             this.EmployeeInfo.Name = "EmployeeInfo";
-            this.EmployeeInfo.Size = new System.Drawing.Size(503, 370);
-            this.EmployeeInfo.TabIndex = 17;
+            this.EmployeeInfo.Size = new System.Drawing.Size(503, 394);
+            this.EmployeeInfo.TabIndex = 20;
             this.EmployeeInfo.TabStop = false;
             this.EmployeeInfo.Text = "Employee details";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(254, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "Password";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // tbEPassword
-            // 
-            this.tbEPassword.Location = new System.Drawing.Point(318, 15);
-            this.tbEPassword.Name = "tbEPassword";
-            this.tbEPassword.Size = new System.Drawing.Size(97, 20);
-            this.tbEPassword.TabIndex = 33;
-            // 
             // tbUsername
             // 
-            this.tbUsername.Location = new System.Drawing.Point(114, 15);
+            this.tbUsername.Location = new System.Drawing.Point(112, 25);
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(97, 20);
             this.tbUsername.TabIndex = 32;
@@ -291,16 +270,15 @@ namespace MediaBazzar
             // l_username
             // 
             this.l_username.AutoSize = true;
-            this.l_username.Location = new System.Drawing.Point(43, 22);
+            this.l_username.Location = new System.Drawing.Point(38, 25);
             this.l_username.Name = "l_username";
             this.l_username.Size = new System.Drawing.Size(55, 13);
             this.l_username.TabIndex = 31;
             this.l_username.Text = "Username";
-            this.l_username.Click += new System.EventHandler(this.l_username_Click);
             // 
             // tbErole
             // 
-            this.tbErole.Location = new System.Drawing.Point(112, 301);
+            this.tbErole.Location = new System.Drawing.Point(112, 327);
             this.tbErole.Name = "tbErole";
             this.tbErole.Size = new System.Drawing.Size(218, 20);
             this.tbErole.TabIndex = 30;
@@ -308,7 +286,7 @@ namespace MediaBazzar
             // l_role
             // 
             this.l_role.AutoSize = true;
-            this.l_role.Location = new System.Drawing.Point(61, 304);
+            this.l_role.Location = new System.Drawing.Point(54, 333);
             this.l_role.Name = "l_role";
             this.l_role.Size = new System.Drawing.Size(29, 13);
             this.l_role.TabIndex = 29;
@@ -318,7 +296,7 @@ namespace MediaBazzar
             // 
             this.date_dateOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.date_dateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.date_dateOfBirth.Location = new System.Drawing.Point(112, 332);
+            this.date_dateOfBirth.Location = new System.Drawing.Point(112, 359);
             this.date_dateOfBirth.Margin = new System.Windows.Forms.Padding(2);
             this.date_dateOfBirth.Name = "date_dateOfBirth";
             this.date_dateOfBirth.Size = new System.Drawing.Size(218, 23);
@@ -327,7 +305,7 @@ namespace MediaBazzar
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(55, 273);
+            this.label18.Location = new System.Drawing.Point(55, 299);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(38, 13);
             this.label18.TabIndex = 26;
@@ -336,7 +314,7 @@ namespace MediaBazzar
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(61, 231);
+            this.label17.Location = new System.Drawing.Point(66, 259);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(32, 13);
             this.label17.TabIndex = 27;
@@ -345,7 +323,7 @@ namespace MediaBazzar
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(230, 194);
+            this.label16.Location = new System.Drawing.Point(230, 221);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(21, 13);
             this.label16.TabIndex = 26;
@@ -354,7 +332,7 @@ namespace MediaBazzar
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(29, 190);
+            this.label15.Location = new System.Drawing.Point(42, 221);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(64, 13);
             this.label15.TabIndex = 26;
@@ -363,7 +341,7 @@ namespace MediaBazzar
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(69, 157);
+            this.label14.Location = new System.Drawing.Point(69, 184);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(24, 13);
             this.label14.TabIndex = 26;
@@ -372,7 +350,7 @@ namespace MediaBazzar
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(18, 128);
+            this.label13.Location = new System.Drawing.Point(18, 155);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(79, 13);
             this.label13.TabIndex = 26;
@@ -381,7 +359,7 @@ namespace MediaBazzar
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(18, 95);
+            this.label12.Location = new System.Drawing.Point(18, 122);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(75, 13);
             this.label12.TabIndex = 26;
@@ -390,99 +368,99 @@ namespace MediaBazzar
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(254, 58);
+            this.label11.Location = new System.Drawing.Point(38, 91);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(55, 13);
+            this.label11.Size = new System.Drawing.Size(59, 13);
             this.label11.TabIndex = 26;
-            this.label11.Text = "LastName";
+            this.label11.Text = "Last name:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(39, 58);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 13);
+            this.label10.Size = new System.Drawing.Size(58, 13);
             this.label10.TabIndex = 26;
-            this.label10.Text = "FirstName";
+            this.label10.Text = "First name:";
             // 
             // tbEEmail
             // 
-            this.tbEEmail.Location = new System.Drawing.Point(112, 266);
+            this.tbEEmail.Location = new System.Drawing.Point(112, 292);
             this.tbEEmail.Name = "tbEEmail";
             this.tbEEmail.Size = new System.Drawing.Size(218, 20);
             this.tbEEmail.TabIndex = 12;
             // 
             // tbEname
             // 
-            this.tbEname.Location = new System.Drawing.Point(114, 51);
+            this.tbEname.Location = new System.Drawing.Point(112, 56);
             this.tbEname.Name = "tbEname";
             this.tbEname.Size = new System.Drawing.Size(97, 20);
             this.tbEname.TabIndex = 4;
             // 
             // tbEBSN
             // 
-            this.tbEBSN.Location = new System.Drawing.Point(112, 229);
+            this.tbEBSN.Location = new System.Drawing.Point(112, 256);
             this.tbEBSN.Name = "tbEBSN";
             this.tbEBSN.Size = new System.Drawing.Size(218, 20);
             this.tbEBSN.TabIndex = 11;
             // 
             // tbELastname
             // 
-            this.tbELastname.Location = new System.Drawing.Point(318, 51);
+            this.tbELastname.Location = new System.Drawing.Point(112, 89);
             this.tbELastname.Name = "tbELastname";
             this.tbELastname.Size = new System.Drawing.Size(97, 20);
             this.tbELastname.TabIndex = 5;
             // 
             // tbEStreetName
             // 
-            this.tbEStreetName.Location = new System.Drawing.Point(112, 187);
+            this.tbEStreetName.Location = new System.Drawing.Point(112, 214);
             this.tbEStreetName.Name = "tbEStreetName";
             this.tbEStreetName.Size = new System.Drawing.Size(64, 20);
             this.tbEStreetName.TabIndex = 10;
             // 
             // tbEPhoneNumber
             // 
-            this.tbEPhoneNumber.Location = new System.Drawing.Point(112, 92);
+            this.tbEPhoneNumber.Location = new System.Drawing.Point(112, 119);
             this.tbEPhoneNumber.Name = "tbEPhoneNumber";
             this.tbEPhoneNumber.Size = new System.Drawing.Size(218, 20);
             this.tbEPhoneNumber.TabIndex = 6;
             // 
             // tbEStreetNr
             // 
-            this.tbEStreetNr.Location = new System.Drawing.Point(257, 187);
+            this.tbEStreetNr.Location = new System.Drawing.Point(257, 214);
             this.tbEStreetNr.Name = "tbEStreetNr";
             this.tbEStreetNr.Size = new System.Drawing.Size(64, 20);
             this.tbEStreetNr.TabIndex = 9;
             // 
             // tbEState
             // 
-            this.tbEState.Location = new System.Drawing.Point(112, 124);
+            this.tbEState.Location = new System.Drawing.Point(112, 151);
             this.tbEState.Name = "tbEState";
             this.tbEState.Size = new System.Drawing.Size(114, 20);
             this.tbEState.TabIndex = 7;
             // 
             // tbECity
             // 
-            this.tbECity.Location = new System.Drawing.Point(112, 154);
+            this.tbECity.Location = new System.Drawing.Point(112, 181);
             this.tbECity.Name = "tbECity";
             this.tbECity.Size = new System.Drawing.Size(114, 20);
             this.tbECity.TabIndex = 8;
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(546, 337);
+            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Location = new System.Drawing.Point(566, 328);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(102, 49);
-            this.btnSubmit.TabIndex = 15;
-            this.btnSubmit.Text = "Submit ";
+            this.btnSubmit.Size = new System.Drawing.Size(140, 72);
+            this.btnSubmit.TabIndex = 19;
+            this.btnSubmit.Text = "Create Employee";
             this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click_1);
             // 
             // EmployeeCreation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 405);
+            this.ClientSize = new System.Drawing.Size(1020, 405);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.EmployeeInfo);
             this.Controls.Add(this.btnSubmit);
@@ -498,6 +476,7 @@ namespace MediaBazzar
         }
 
         #endregion
+
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -516,6 +495,11 @@ namespace MediaBazzar
         private System.Windows.Forms.TextBox tbCName;
         private System.Windows.Forms.TextBox tbCLastname;
         private System.Windows.Forms.GroupBox EmployeeInfo;
+        private System.Windows.Forms.TextBox tbUsername;
+        private System.Windows.Forms.Label l_username;
+        private System.Windows.Forms.TextBox tbErole;
+        private System.Windows.Forms.Label l_role;
+        private System.Windows.Forms.DateTimePicker date_dateOfBirth;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
@@ -535,13 +519,6 @@ namespace MediaBazzar
         private System.Windows.Forms.TextBox tbEState;
         private System.Windows.Forms.TextBox tbECity;
         private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.DateTimePicker date_dateOfBirth;
-        private System.Windows.Forms.TextBox tbErole;
-        private System.Windows.Forms.Label l_role;
-        private System.Windows.Forms.TextBox tbUsername;
-        private System.Windows.Forms.Label l_username;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbEPassword;
     }
 }
 

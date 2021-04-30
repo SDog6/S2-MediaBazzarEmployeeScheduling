@@ -96,14 +96,7 @@
     <Compile Include="AccountData.cs" />
     <Compile Include="AccountManager.cs" />
     <Compile Include="Address.cs" />
-    <Compile Include="Administration.cs" />
     <Compile Include="Contract.cs" />
-    <Compile Include="CreateAccount.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CreateAccount.Designer.cs">
-      <DependentUpon>CreateAccount.cs</DependentUpon>
-    </Compile>
     <Compile Include="dbi457108DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -115,12 +108,6 @@
       <DependentUpon>dbi457108DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Department.cs" />
-    <Compile Include="editAccount.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="editAccount.Designer.cs">
-      <DependentUpon>editAccount.cs</DependentUpon>
-    </Compile>
     <Compile Include="Employee.cs" />
     <Compile Include="EmployeeCreation.cs">
       <SubType>Form</SubType>
@@ -215,9 +202,6 @@
     <Compile Include="WarehouseManagement.Designer.cs">
       <DependentUpon>WarehouseManagement.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="editAccount.resx">
-      <DependentUpon>editAccount.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="EmployeeCreation.resx">
       <DependentUpon>EmployeeCreation.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,9 +219,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Management.resx">
       <DependentUpon>Management.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CreateAccount.resx">
-      <DependentUpon>CreateAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagementNewInventory.resx">
       <DependentUpon>ManagementNewInventory.cs</DependentUpon>

@@ -16,17 +16,12 @@ namespace MediaBazzar
 
         public static MySqlConnection conn = new MySqlConnection("Server=studmysql01.fhict.local; Uid=dbi457108; Database=dbi457108; Pwd=NewPassword123");
 
-        public void Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public void Insert(object obj)
         {
             Employee employee = (Employee)obj;
             try
             {
-                Person personalInfo = employee.personalInfo;
+                Person personalInfo = employee.PersonalInfo;
                 Address personalAddress = personalInfo.Address;
                 int addressId = insertAddress(personalAddress);
                 int personalInfoId = insertPerson(personalInfo, addressId);
@@ -66,121 +61,45 @@ namespace MediaBazzar
         }
         public object ReadAll()
         {
+            MessageBox.Show("kur");
             List<Employee> employees = new List<Employee>();
-            string sql = "SELECT id FROM employee";
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
-            List<int> employeeIds = new List<int>();
+            string query = "SELECT * FROM employee";
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+            DataTable table = new DataTable();
             try
             {
                 conn.Open();
-                MySqlDataReader reader = cmd.ExecuteReader();
-                while(reader.Read())
+                adapter.Fill(table);
+                conn.Close();
+                for (int i = 0; i < table.Rows.Count; i++)
                 {
-                    int id = Convert.ToInt32(reader[0]);
-                    employeeIds.Add(id);
-                    /*int personId = Convert.ToInt32(reader[1]);
-                    int contactPersonId = Convert.ToInt32(reader[2]);
-                    DateTime dateOfBirth = Convert.ToDateTime(reader[3]);
-                    string BSN = reader[4].ToString();
-                    string role = reader[5].ToString();
-                    int contractId = Convert.ToInt32(reader[6]);
-                    int accountId = Convert.ToInt32(reader[7]);
+                    int id = Convert.ToInt32(table.Rows[i][0]);
+                    int personId = Convert.ToInt32(table.Rows[i][1]);
+                    int contactPersonId = Convert.ToInt32(table.Rows[i][2]);
+                    DateTime dateOfBirth = Convert.ToDateTime(table.Rows[i][3]);
+                    string BSN = table.Rows[i][4].ToString();
+                    string role = table.Rows[i][5].ToString();
+                    int contractId = Convert.ToInt32(table.Rows[i][6]);
+                    int accountId = Convert.ToInt32(table.Rows[i][7]);
+                    bool active = Convert.ToBoolean(table.Rows[i][8]);
 
+                    Account account = getAccount(accountId);
+                    Contract contract = getContract(contractId);
                     Person person = getPerson(personId);
                     Person contactPerson = getPerson(contactPersonId);
-                    Contract contract = getContract(contractId);
-                    Account account = getAccount(accountId);
 
-                    Employee employee = new Employee(id, person.FirstName, person.LastName, person.PhoneNumber, person.Address, person.Email, contactPerson, dateOfBirth, BSN, role, contract, account);
-                    employees.Add(employee);*/
-                }
-                conn.Close();
-                foreach(int id in employeeIds)
-                {
-                    Account account = getAccount(id);
-                    Contract contract = getContract(id);
-                    Person person = getPerson("personId",id);
-                    Person contactPerson = getPerson("contactPersonId", id);
-
-                    string query = $"SELECT dateOfBirth, BSN, role FROM employee WHERE id = {id}";
-                    cmd = new MySqlCommand(query, conn);
-                    conn.Open();
-
-                    reader = cmd.ExecuteReader();
-                    reader.Read();
-
-                    DateTime dateOfBirth = Convert.ToDateTime(reader[0]);
-                    string BSN = reader[1].ToString();
-                    string role = reader[2].ToString();
-                    Employee employee = new Employee(id, person.FirstName, person.LastName, person.PhoneNumber, person.Address, person.Email, contactPerson, dateOfBirth, BSN, role, contract, account);
+                    Employee employee = new Employee(id, person, contactPerson, dateOfBirth, BSN, role, contract, account, active);
                     employees.Add(employee);
-                    conn.Close();
-
                 }
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 throw new FailedReadFromDBException();
             }
-            finally
-            { 
-                conn.Close();
-            }
-            
             return employees;
         }
-        /*public object ReadEmployeeInfo()
-        {
-            List<Employee> employees = new List<Employee>();
-            string sql = "SELECT id FROM employee";
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
-            List<int> employeeIds = new List<int>();
-            try
-            {
-                conn.Open();
-                MySqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    int id = Convert.ToInt32(reader[0]);
-                    employeeIds.Add(id);
-                }
 
-             foreach(int id in employeeIds)
-                {
-                    Account account = getAccount(id);
-                    Contract contract = getContract(id);
-                    Person person = getPerson("personId",id);
-                    Person contactPerson = getPerson("contactPersonId", id);
-
-                    string query = $"SELECT dateOfBirth, BSN, role FROM employee WHERE id = {id}";
-                    cmd = new MySqlCommand(query, conn);
-                    conn.Open();
-
-                    reader = cmd.ExecuteReader();
-                    reader.Read();
-
-                    DateTime dateOfBirth = Convert.ToDateTime(reader[0]);
-                    string BSN = reader[1].ToString();
-                    string role = reader[2].ToString();
-                    Employee employee = new Employee(id, person.FirstName, person.LastName, person.PhoneNumber, person.Address, person.Email, contactPerson, dateOfBirth, BSN, role, contract, account);
-                    employees.Add(employee);
-                    conn.Close();
-
-                }
-
-            }
-
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }*/
-
-
-       
         private int insertAddress(Address address)
         {
             string sql = "INSERT INTO address (state, city, street, apartmentNr) VALUES (@state, @city, @street, @apartmentNr);" + "SELECT LAST_INSERT_ID();";
@@ -253,7 +172,7 @@ namespace MediaBazzar
                 conn.Open();
                 contractId = Convert.ToInt32(cmd.ExecuteScalar());
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new FailedDatabaseInjectionException("contract");
             }
@@ -275,7 +194,7 @@ namespace MediaBazzar
                 conn.Open();
                 accountId = Convert.ToInt32(cmd.ExecuteScalar());
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new FailedDatabaseInjectionException("account");
             }
@@ -286,20 +205,21 @@ namespace MediaBazzar
             return accountId;
         }
 
-        private Account getAccount(int employeeId)
+        private Account getAccount(int id)
         {
-            string sql = $"SELECT account.username, account.password FROM employee INNER JOIN account ON employee.accountId = account.id WHERE employee.id = {employeeId}";
-            MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conn);
-            DataTable table = new DataTable();
+            string query = $"SELECT username, password FROM account WHERE id = {id}";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
             try
             {
-                adapter.Fill(table);
-                string username = table.Rows[0][0].ToString();
-                string password = table.Rows[0][1].ToString();
+                conn.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                reader.Read();
+                string username = reader[0].ToString();
+                string password = reader[1].ToString();
                 Account account = new Account(username, password);
                 return account;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -310,7 +230,7 @@ namespace MediaBazzar
             return null;
         }
 
-        public string getAccountLogInRole(string username,string password)
+        public string getAccountLogInRole(string username, string password)
         {
             string sql = $"SELECT employee.role FROM account INNER JOIN employee ON account.id = employee.accountId WHERE account.username = @username AND account.password = @password";
             MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -337,25 +257,27 @@ namespace MediaBazzar
         }
 
 
-        private Contract getContract(int employeeId)
+        private Contract getContract(int id)
         {
-            string sql = $"SELECT contract.start, contract.end, contract.endReason FROM employee INNER JOIN contract ON employee.contractId = contract.id WHERE employee.id = {employeeId}";
-            MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conn);
-            DataTable table = new DataTable();
+            string query = $"SELECT workingHours, start, end, endReason FROM contract WHERE id = {id}";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
             try
             {
-                adapter.Fill(table);
-                DateTime startDate = Convert.ToDateTime(table.Rows[0][0]);
+                conn.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                reader.Read();
+                int workingHours = Convert.ToInt32(reader[0]);
+                DateTime startDate = Convert.ToDateTime(reader[1]);
                 Contract contract;
-                if (table.Rows[0][1] is DBNull)
+                if (reader[2] is DBNull)
                 {
                     contract = new Contract(startDate);
                 }
                 else
                 {
-                    DateTime endDate = Convert.ToDateTime(table.Rows[0][1]);
-                    string terminationReason = table.Rows[0][2].ToString();
-                    contract = new Contract(startDate, DateTime.Now, terminationReason);
+                    DateTime endDate = Convert.ToDateTime(reader[2]);
+                    string terminationReason = reader[3].ToString();
+                    contract = new Contract(workingHours, startDate, endDate, terminationReason);
                 }
                 return contract;
             }
@@ -369,19 +291,21 @@ namespace MediaBazzar
             }
             return null;
         }
-        private Person getPerson(string personType, int employeeId)
+        private Person getPerson(int id)
         {
-            string sql = $"SELECT person.firstName, person.lastName, person.phoneNumber, person.email, person.addressId FROM employee INNER JOIN person ON employee.{personType} = person.id WHERE employee.id = {employeeId}";
-            MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conn);
-            DataTable table = new DataTable();
+            string query = $"SELECT firstName, lastName, phoneNumber, email, addressId FROM person WHERE id = {id}";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
             try
             {
-                adapter.Fill(table);
-                string firstName = table.Rows[0][0].ToString();
-                string lastName = table.Rows[0][1].ToString();
-                string phoneNumber = table.Rows[0][2].ToString();
-                string email = table.Rows[0][3].ToString();
-                int addressId = Convert.ToInt32(table.Rows[0][4]);
+                conn.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                reader.Read();
+                string firstName = reader[0].ToString();
+                string lastName = reader[1].ToString();
+                string phoneNumber = reader[2].ToString();
+                string email = reader[3].ToString();
+                int addressId = Convert.ToInt32(reader[4]);
+                conn.Close();
                 Address address = getAddress(addressId);
                 Person person = new Person(firstName, lastName, phoneNumber, address, email);
                 return person;
@@ -398,24 +322,25 @@ namespace MediaBazzar
         }
         public Address getAddress(int addressId)
         {
-            string sql = $"SELECT address.state, address.city, address.street, address.apartmentNr FROM address WHERE address.id = {addressId}";
-            MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conn);
-            DataTable table = new DataTable();
+            string query = $"SELECT state, city, street, apartmentNr FROM address WHERE id = {addressId}";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
             try
             {
-                adapter.Fill(table);
-                string state = table.Rows[0][0].ToString();
-                string city = table.Rows[0][1].ToString();
-                string street = table.Rows[0][2].ToString();
+                conn.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                reader.Read();
+                string state = reader[0].ToString();
+                string city = reader[1].ToString();
+                string street = reader[2].ToString();
                 string apartmentNr;
-                if(table.Rows[0][3] == null)
+                if (reader[3] is DBNull)
                 {
                     apartmentNr = String.Empty;
                 }
                 else
                 {
-                    apartmentNr = table.Rows[0][3].ToString();
-                }    
+                    apartmentNr = reader[3].ToString();
+                }
                 Address address = new Address(state, city, street, apartmentNr);
                 return address;
             }
@@ -430,187 +355,93 @@ namespace MediaBazzar
             return null;
         }
 
-        public object ReadAllID(int ID)
+
+        public object ReadAllByID(int Id)
         {
-            List<Employee> employees = new List<Employee>();
-            string sql = "SELECT id FROM employee WHERE id = @id";
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@id", ID);
-            List<int> employeeIds = new List<int>();
+            MessageBox.Show("kur");
+            string query = "SELECT * FROM employee WHERE id = @id";
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+            adapter.SelectCommand.Parameters.AddWithValue("@id", Id);
+            DataTable table = new DataTable();
+            Employee employee = null;
             try
             {
                 conn.Open();
-                MySqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    int id = Convert.ToInt32(reader[0]);
-                    employeeIds.Add(id);
-                }
+                adapter.Fill(table);
                 conn.Close();
-                foreach (int id in employeeIds)
+                for (int i = 0; i < table.Rows.Count; i++)
                 {
-                    Account account = getAccount(id);
-                    Contract contract = getContract(id);
-                    Person person = getPerson("personId", id);
-                    Person contactPerson = getPerson("contactPersonId", id);
+                    int id = Convert.ToInt32(table.Rows[i][0]);
+                    int personId = Convert.ToInt32(table.Rows[i][1]);
+                    int contactPersonId = Convert.ToInt32(table.Rows[i][2]);
+                    DateTime dateOfBirth = Convert.ToDateTime(table.Rows[i][3]);
+                    string BSN = table.Rows[i][4].ToString();
+                    string role = table.Rows[i][5].ToString();
+                    int contractId = Convert.ToInt32(table.Rows[i][6]);
+                    int accountId = Convert.ToInt32(table.Rows[i][7]);
+                    bool active = Convert.ToBoolean(table.Rows[i][8]);
 
-                    string query = $"SELECT dateOfBirth, BSN, role FROM employee WHERE id = {id}";
-                    cmd = new MySqlCommand(query, conn);
-                    conn.Open();
-
-                    reader = cmd.ExecuteReader();
-                    reader.Read();
-
-                    DateTime dateOfBirth = Convert.ToDateTime(reader[0]);
-                    string BSN = reader[1].ToString();
-                    string role = reader[2].ToString();
-                    Employee employee = new Employee(id, person.FirstName, person.LastName, person.PhoneNumber, person.Address, person.Email, contactPerson, dateOfBirth, BSN, role, contract, account);
-                    employees.Add(employee);
-                    conn.Close();
-
-                }
-
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                throw new FailedReadFromDBException();
-            }
-            finally
-            {
-                conn.Close();
-            }
-
-            return employees;
-        }
-
-
-        public object ReadAllRoles(string requiredrole)
-        {
-            List<Employee> employees = new List<Employee>();
-            string sql = "SELECT id FROM employee WHERE role = @role";
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@role", requiredrole);
-            List<int> employeeIds = new List<int>();
-            try
-            {
-                conn.Open();
-                MySqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    int id = Convert.ToInt32(reader[0]);
-                    employeeIds.Add(id);
-                }
-                conn.Close();
-                foreach (int id in employeeIds)
-                {
-                    Account account = getAccount(id);
-                    Contract contract = getContract(id);
-                    Person person = getPerson("personId", id);
-                    Person contactPerson = getPerson("contactPersonId", id);
-
-                    string query = $"SELECT dateOfBirth, BSN, role FROM employee WHERE id = {id}";
-                    cmd = new MySqlCommand(query, conn);
-                    conn.Open();
-
-                    reader = cmd.ExecuteReader();
-                    reader.Read();
-
-                    DateTime dateOfBirth = Convert.ToDateTime(reader[0]);
-                    string BSN = reader[1].ToString();
-                    string role = reader[2].ToString();
-                    Employee employee = new Employee(id, person.FirstName, person.LastName, person.PhoneNumber, person.Address, person.Email, contactPerson, dateOfBirth, BSN, role, contract, account);
-                    employees.Add(employee);
-                    conn.Close();
-
-                }
-
-
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                throw new FailedReadFromDBException();
-            }
-            finally
-            {
-                conn.Close();
-            }
-
-            return employees;
-        }
-
-
-        public object GetEmployeeByID(int rid)
-        {
-            string sql = "SELECT id FROM employee WHERE id = @id";
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@id", rid);
-            List<int> employeeIds = new List<int>();
-            try
-            {
-                conn.Open();
-                MySqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    int id = Convert.ToInt32(reader[0]);
-                    employeeIds.Add(id);
-                    /*int personId = Convert.ToInt32(reader[1]);
-                    int contactPersonId = Convert.ToInt32(reader[2]);
-                    DateTime dateOfBirth = Convert.ToDateTime(reader[3]);
-                    string BSN = reader[4].ToString();
-                    string role = reader[5].ToString();
-                    int contractId = Convert.ToInt32(reader[6]);
-                    int accountId = Convert.ToInt32(reader[7]);
-
+                    Account account = getAccount(accountId);
+                    Contract contract = getContract(contractId);
                     Person person = getPerson(personId);
                     Person contactPerson = getPerson(contactPersonId);
-                    Contract contract = getContract(contractId);
-                    Account account = getAccount(accountId);
 
-                    Employee employee = new Employee(id, person.FirstName, person.LastName, person.PhoneNumber, person.Address, person.Email, contactPerson, dateOfBirth, BSN, role, contract, account);
-                    employees.Add(employee);*/
-                }
-                conn.Close();
-                foreach (int id in employeeIds)
-                {
-                    Account account = getAccount(id);
-                    Contract contract = getContract(id);
-                    Person person = getPerson("personId", id);
-                    Person contactPerson = getPerson("contactPersonId", id);
-
-                    string query = $"SELECT dateOfBirth, BSN, role FROM employee WHERE id = {id}";
-                    cmd = new MySqlCommand(query, conn);
-                    conn.Open();
-
-                    reader = cmd.ExecuteReader();
-                    reader.Read();
-
-                    DateTime dateOfBirth = Convert.ToDateTime(reader[0]);
-                    string BSN = reader[1].ToString();
-                    string role = reader[2].ToString();
-                    Employee employee = new Employee(id, person.FirstName, person.LastName, person.PhoneNumber, person.Address, person.Email, contactPerson, dateOfBirth, BSN, role, contract, account);
+                    employee = new Employee(id, person, contactPerson, dateOfBirth, BSN, role, contract, account, active);
                     return employee;
-                    conn.Close();
-
                 }
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 throw new FailedReadFromDBException();
             }
-            finally
-            {
-                conn.Close();
-            }
-            return null;
-
+            return employee;
         }
+
+
+        public object ReadAllByRole(string Role)
+        {
+            MessageBox.Show("kur");
+            List<Employee> employees = new List<Employee>();
+            string query = "SELECT * FROM employee WHERE role = @role";
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+            adapter.SelectCommand.Parameters.AddWithValue("@role", Role);
+            DataTable table = new DataTable();
+            try
+            {
+                conn.Open();
+                adapter.Fill(table);
+                conn.Close();
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    int id = Convert.ToInt32(table.Rows[i][0]);
+                    int personId = Convert.ToInt32(table.Rows[i][1]);
+                    int contactPersonId = Convert.ToInt32(table.Rows[i][2]);
+                    DateTime dateOfBirth = Convert.ToDateTime(table.Rows[i][3]);
+                    string BSN = table.Rows[i][4].ToString();
+                    string role = table.Rows[i][5].ToString();
+                    int contractId = Convert.ToInt32(table.Rows[i][6]);
+                    int accountId = Convert.ToInt32(table.Rows[i][7]);
+                    bool active = Convert.ToBoolean(table.Rows[i][8]);
+
+                    Account account = getAccount(accountId);
+                    Contract contract = getContract(contractId);
+                    Person person = getPerson(personId);
+                    Person contactPerson = getPerson(contactPersonId);
+
+                    Employee employee = new Employee(id, person, contactPerson, dateOfBirth, BSN, role, contract, account, active);
+                    employees.Add(employee);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw new FailedReadFromDBException();
+            }
+            return employees;
+        }
+
+
 
         public void FireEmployee(object obj)
         {
@@ -644,5 +475,9 @@ namespace MediaBazzar
             }
         }
 
+        public void Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
