@@ -30,32 +30,11 @@ namespace MediaBazzar
             stock = new ShopStockManager();
             Employees = new EmployeeManager();
             Shifts = new ShiftSchedulingManager();
-            cbShiftType.SelectedIndex = 1;
-
             rbManagementID.Checked = true;
             rbManagementStockIDFilter.Checked = true;
-            cbShiftType.SelectedIndex = 1;
             UpdateStockUI();
             UpdateEmployeeUI();
-            UpdateShiftEmployeeUI();
-
-            DateTime today = DateTime.Now;
-
-            int daysuntillmonday = DayOfWeek.Monday - today.DayOfWeek;
-            daysuntillmonday += 7;
-            
-            if (daysuntillmonday > 0)
-            {
-                Monday = today.AddDays(daysuntillmonday);
-                Sunday = Monday.AddDays(6);
-            }
-            else 
-            {
-                Monday = today;
-                Sunday = today.AddDays(6);
-            }
-            monthCalendar1.MinDate = Monday;
-            monthCalendar1.MaxDate = Sunday;
+          
         }
 
         private void btnManagementRestockRequest_Click(object sender, EventArgs e)
@@ -120,22 +99,6 @@ namespace MediaBazzar
 
         }
 
-        public void UpdateShiftEmployeeUI()
-        {
-
-            lbManagementShiftEmployeesToAssign.Items.Clear();
-            foreach (Employee item in Employees.GetAllPerType())
-            {
-                lbManagementShiftEmployeesToAssign.Items.Add(item);
-            }
-
-
-            lbManagementShiftEmployeesAssigned.Items.Clear();
-            foreach (Shift item in Shifts.GetAllPerType())
-            {
-                lbManagementShiftEmployeesAssigned.Items.Add(item);
-            }
-        }
         private void btnManagementStockUpdate_Click(object sender, EventArgs e)
         {
             /*lbManagementStock.Items.Clear();
@@ -260,28 +223,6 @@ namespace MediaBazzar
             }
         }
 
-        private void btnManagementShiftAssignEmployee_Click(object sender, EventArgs e)
-        {
-
-            Employee emp = (Employee)lbManagementShiftEmployeesToAssign.SelectedItem;
-            DateTime time = monthCalendar1.SelectionRange.Start.Date;
-            string shifttype = cbShiftType.SelectedItem.ToString();
-            if(shiftcounter + 5 > emp.Contract.maxworkhours)
-            {
-                MessageBox.Show("Employee is beeing overscheduled !");
-            }
-            else
-            {
-                Shift temp = new Shift(emp, time, shifttype);
-                Shifts.Add(temp);
-                UpdateShiftEmployeeUI();
-            }
-        }
-
-        private void btnShiftsUpdate_Click(object sender, EventArgs e)
-        {
-            UpdateShiftEmployeeUI();
-        }
 
         private void lbManagementShiftEmployeesAssigned_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -293,19 +234,6 @@ namespace MediaBazzar
 
         }
 
-        private void lbManagementShiftEmployeesToAssign_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Employee emp = (Employee)lbManagementShiftEmployeesToAssign.SelectedItem;
-            shiftcounter = 0;
-            foreach (Shift item in Shifts.GetAllPerType())
-            {
-                if(item.Emp.EmployeeID == emp.EmployeeID && item.Time >= Monday)
-                {
-                    shiftcounter += 5;
-                }
-            }
-            MessageBox.Show($"Hours already assigned: {shiftcounter.ToString()} / {emp.Contract.maxworkhours}");
-        }
         private void Management_Load(object sender, EventArgs e)
         {
             Da = new MySqlDataAdapter("SELECT employee.role, person.firstName, person.lastName FROM employee LEFT JOIN person on employee.personId = person.id", conn);
@@ -314,7 +242,7 @@ namespace MediaBazzar
             DgvManagemendEmployees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
-        private void btnScheduling_Click(object sender, EventArgs e)
+        private void btnSchedule_Click(object sender, EventArgs e)
         {
             ShiftScheduling s = new ShiftScheduling();
             s.Show();
