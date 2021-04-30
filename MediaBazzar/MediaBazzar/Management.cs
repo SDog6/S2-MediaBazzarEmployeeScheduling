@@ -397,5 +397,21 @@ namespace MediaBazzar
             ShiftScheduling s = new ShiftScheduling();
             s.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ShiftScheduling s = new ShiftScheduling();
+            s.Show();
+        }
+
+        private void People_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Stock_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -112,5 +112,10 @@ namespace MediaBazzar
                 lbEveningShifts.Items.Add(item);
             }
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

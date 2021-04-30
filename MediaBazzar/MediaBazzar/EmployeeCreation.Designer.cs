@@ -71,12 +71,17 @@ namespace MediaBazzar
             this.tbEState = new System.Windows.Forms.TextBox();
             this.tbECity = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.EmployeeInfo.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
@@ -93,12 +98,14 @@ namespace MediaBazzar
             this.groupBox1.Controls.Add(this.tbCPhoneNumber);
             this.groupBox1.Controls.Add(this.tbCName);
             this.groupBox1.Controls.Add(this.tbCLastname);
-            this.groupBox1.Location = new System.Drawing.Point(563, 17);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox1.Location = new System.Drawing.Point(739, 31);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(421, 298);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contact Person";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label9
             // 
@@ -230,6 +237,7 @@ namespace MediaBazzar
             // 
             // EmployeeInfo
             // 
+            this.EmployeeInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.EmployeeInfo.Controls.Add(this.tbUsername);
             this.EmployeeInfo.Controls.Add(this.l_username);
             this.EmployeeInfo.Controls.Add(this.tbErole);
@@ -253,7 +261,8 @@ namespace MediaBazzar
             this.EmployeeInfo.Controls.Add(this.tbEStreetNr);
             this.EmployeeInfo.Controls.Add(this.tbEState);
             this.EmployeeInfo.Controls.Add(this.tbECity);
-            this.EmployeeInfo.Location = new System.Drawing.Point(45, 5);
+            this.EmployeeInfo.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.EmployeeInfo.Location = new System.Drawing.Point(220, 17);
             this.EmployeeInfo.Name = "EmployeeInfo";
             this.EmployeeInfo.Size = new System.Drawing.Size(503, 394);
             this.EmployeeInfo.TabIndex = 20;
@@ -448,22 +457,45 @@ namespace MediaBazzar
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(566, 328);
+            this.btnSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(62)))));
+            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmit.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnSubmit.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnSubmit.Location = new System.Drawing.Point(0, 102);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(140, 72);
+            this.btnSubmit.Size = new System.Drawing.Size(191, 62);
             this.btnSubmit.TabIndex = 19;
             this.btnSubmit.Text = "Create Employee";
-            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.EmployeeInfo);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1181, 447);
+            this.panel1.TabIndex = 22;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panel2.Controls.Add(this.btnSubmit);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(196, 447);
+            this.panel2.TabIndex = 22;
             // 
             // EmployeeCreation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1020, 405);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.EmployeeInfo);
-            this.Controls.Add(this.btnSubmit);
+            this.ClientSize = new System.Drawing.Size(1181, 447);
+            this.Controls.Add(this.panel1);
             this.Name = "EmployeeCreation";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.EmployeeCreation_Load);
@@ -471,6 +503,8 @@ namespace MediaBazzar
             this.groupBox1.PerformLayout();
             this.EmployeeInfo.ResumeLayout(false);
             this.EmployeeInfo.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -519,6 +553,8 @@ namespace MediaBazzar
         private System.Windows.Forms.TextBox tbEState;
         private System.Windows.Forms.TextBox tbECity;
         private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

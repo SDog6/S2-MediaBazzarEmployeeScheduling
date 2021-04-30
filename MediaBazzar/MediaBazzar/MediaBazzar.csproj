@@ -238,6 +238,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ShiftScheduling.resx">
+      <DependentUpon>ShiftScheduling.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewEmployeeData.resx">
       <DependentUpon>ViewEmployeeData.cs</DependentUpon>
     </EmbeddedResource>
