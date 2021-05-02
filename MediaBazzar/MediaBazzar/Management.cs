@@ -177,7 +177,7 @@ namespace MediaBazzar
 
         private void btnManagementStockFilter_Click(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Clear();
+           /* dataGridView1.Rows.Clear();
             if (rbManagementStockIDFilter.Checked)
             {
                 int id = Convert.ToInt32(tbManagementStockFilter.Text);
@@ -202,7 +202,7 @@ namespace MediaBazzar
                 {
                     dataGridView1.Rows.Add(item.Name, item.Amount, item.Price, item.AvailableStr);
                 }
-            }
+            }*/
         }
 
 
@@ -403,15 +403,24 @@ namespace MediaBazzar
             ShiftScheduling s = new ShiftScheduling();
             s.Show();
         }
-
-        private void People_Click(object sender, EventArgs e)
+        private void filterStock()
         {
+            if (rbManagementStockAmountFilter.Checked)
+            {
 
+            }
+            if (rbManagementStockBrandFilter.Checked)
+            {
+
+            }
+            if (rbManagementStockIDFilter.Checked)
+            {
+
+            }
         }
-
-        private void Stock_Click(object sender, EventArgs e)
+        private void tbManagementStockFilter_TextChanged(object sender, EventArgs e)
         {
-
+            filterStock();
         }
     }
 }

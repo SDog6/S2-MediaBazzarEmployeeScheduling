@@ -11,6 +11,7 @@ namespace MediaBazzar
         private Stock lowstock;
         private DateTime filedDate = DateTime.Now;
         private int amount;
+        private int shopId;
 
         public ReshelfRequest(Stock lowstock,int amount)
         {
