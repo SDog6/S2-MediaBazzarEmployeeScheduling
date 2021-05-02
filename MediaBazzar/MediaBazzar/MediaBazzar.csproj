@@ -36,8 +36,8 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Protobuf, Version=3.11.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Protobuf.3.11.4\lib\net45\Google.Protobuf.dll</HintPath>
+    <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.14.0\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="K4os.Compression.LZ4, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
       <HintPath>..\packages\K4os.Compression.LZ4.1.1.11\lib\net46\K4os.Compression.LZ4.dll</HintPath>
@@ -48,8 +48,8 @@
     <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
       <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=8.0.23.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.8.0.23\lib\net452\MySql.Data.dll</HintPath>
+    <Reference Include="MySql.Data, Version=8.0.24.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.24\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="Renci.SshNet, Version=2020.0.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
       <HintPath>..\packages\SSH.NET.2020.0.0\lib\net40\Renci.SshNet.dll</HintPath>
@@ -85,10 +85,10 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.8.0.23\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+      <HintPath>..\packages\MySql.Data.8.0.24\lib\net452\Ubiety.Dns.Core.dll</HintPath>
     </Reference>
     <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.8.0.23\lib\net452\Zstandard.Net.dll</HintPath>
+      <HintPath>..\packages\MySql.Data.8.0.24\lib\net452\Zstandard.Net.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -96,21 +96,18 @@
     <Compile Include="AccountData.cs" />
     <Compile Include="AccountManager.cs" />
     <Compile Include="Address.cs" />
-    <Compile Include="Administration.cs" />
     <Compile Include="Contract.cs" />
-    <Compile Include="CreateAccount.cs">
-      <SubType>Form</SubType>
+    <Compile Include="dbi457108DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbi457108DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="CreateAccount.Designer.cs">
-      <DependentUpon>CreateAccount.cs</DependentUpon>
+    <Compile Include="dbi457108DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbi457108DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Department.cs" />
-    <Compile Include="editAccount.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="editAccount.Designer.cs">
-      <DependentUpon>editAccount.cs</DependentUpon>
-    </Compile>
     <Compile Include="Employee.cs" />
     <Compile Include="EmployeeCreation.cs">
       <SubType>Form</SubType>
@@ -119,6 +116,12 @@
       <DependentUpon>EmployeeCreation.cs</DependentUpon>
     </Compile>
     <Compile Include="EmployeeData.cs" />
+    <Compile Include="EmployeeFiring.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeFiring.Designer.cs">
+      <DependentUpon>EmployeeFiring.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeInfoUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +129,12 @@
       <DependentUpon>EmployeeInfoUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="EmployeeManager.cs" />
+    <Compile Include="HR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HR.Designer.cs">
+      <DependentUpon>HR.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmptyTextBoxException.cs" />
     <Compile Include="FailedDatabaseInjectionException.cs" />
     <Compile Include="FailedReadFromDBException.cs" />
@@ -167,6 +176,15 @@
     <Compile Include="ReshelfRequest.cs" />
     <Compile Include="ReshelfRequestData.cs" />
     <Compile Include="ReshelfRequestManager.cs" />
+    <Compile Include="Shift.cs" />
+    <Compile Include="ShiftScheduling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShiftScheduling.Designer.cs">
+      <DependentUpon>ShiftScheduling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShiftSchedulingData.cs" />
+    <Compile Include="ShiftSchedulingManager.cs" />
     <Compile Include="ShopStockData.cs" />
     <Compile Include="ShopStockManager.cs" />
     <Compile Include="Stock.cs" />
@@ -184,23 +202,23 @@
     <Compile Include="WarehouseManagement.Designer.cs">
       <DependentUpon>WarehouseManagement.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="editAccount.resx">
-      <DependentUpon>editAccount.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="EmployeeCreation.resx">
       <DependentUpon>EmployeeCreation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeFiring.resx">
+      <DependentUpon>EmployeeFiring.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmployeeInfoUpdate.resx">
       <DependentUpon>EmployeeInfoUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HR.resx">
+      <DependentUpon>HR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogInForm.resx">
       <DependentUpon>LogInForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Management.resx">
       <DependentUpon>Management.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CreateAccount.resx">
-      <DependentUpon>CreateAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagementNewInventory.resx">
       <DependentUpon>ManagementNewInventory.cs</DependentUpon>
@@ -220,12 +238,37 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ShiftScheduling.resx">
+      <DependentUpon>ShiftScheduling.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewEmployeeData.resx">
       <DependentUpon>ViewEmployeeData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WarehouseManagement.resx">
       <DependentUpon>WarehouseManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="dbi457108DataSet.xsc">
+      <DependentUpon>dbi457108DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbi457108DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbi457108DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbi457108DataSet.xss">
+      <DependentUpon>dbi457108DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbi457108DataSet1.xsc">
+      <DependentUpon>dbi457108DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="dbi457108DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbi457108DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbi457108DataSet1.xss">
+      <DependentUpon>dbi457108DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -239,6 +282,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -26,7 +26,7 @@ namespace MediaBazzar
         {
             UpdateUI();
         }
-
+    
         private void btnWarehouseAddItem_Click(object sender, EventArgs e)
         {
             NewStock f = new NewStock(WarehouseStock);
@@ -84,6 +84,24 @@ namespace MediaBazzar
         }
 
         private void btnRemove_Click_1(object sender, EventArgs e)
+        {
+            Object s = lbWarehouseStock.SelectedItem;
+            WarehouseStock.Remove(s);
+            UpdateUI();
+        }
+
+        private void lbWarehouseStock_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNewItem_Click(object sender, EventArgs e)
+        {
+            NewStock f = new NewStock(WarehouseStock);
+            f.Show();
+        }
+
+        private void btnDiscontinue_Click(object sender, EventArgs e)
         {
             Object s = lbWarehouseStock.SelectedItem;
             WarehouseStock.Remove(s);

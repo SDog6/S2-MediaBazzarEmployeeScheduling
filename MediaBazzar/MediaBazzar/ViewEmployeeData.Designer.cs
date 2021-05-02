@@ -30,14 +30,14 @@ namespace MediaBazzar
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.l_contEmail = new System.Windows.Forms.Label();
-            this.l_contNr = new System.Windows.Forms.Label();
-            this.l_contStreet = new System.Windows.Forms.Label();
-            this.l_contCity = new System.Windows.Forms.Label();
-            this.l_contState = new System.Windows.Forms.Label();
-            this.l_contPhoneNumber = new System.Windows.Forms.Label();
-            this.l_contLastName = new System.Windows.Forms.Label();
-            this.l_contFirstName = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.tbCEmail = new System.Windows.Forms.TextBox();
             this.tbCstreetname = new System.Windows.Forms.TextBox();
             this.tbCstreetnr = new System.Windows.Forms.TextBox();
@@ -47,38 +47,48 @@ namespace MediaBazzar
             this.tbCName = new System.Windows.Forms.TextBox();
             this.tbCLastname = new System.Windows.Forms.TextBox();
             this.EmployeeInfo = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbEPassword = new System.Windows.Forms.TextBox();
+            this.tbUsername = new System.Windows.Forms.TextBox();
+            this.l_username = new System.Windows.Forms.Label();
             this.tbErole = new System.Windows.Forms.TextBox();
-            this.l_empRole = new System.Windows.Forms.Label();
-            this.l_empEmail = new System.Windows.Forms.Label();
-            this.l_empNr = new System.Windows.Forms.Label();
-            this.l_empStreetName = new System.Windows.Forms.Label();
-            this.l_empCity = new System.Windows.Forms.Label();
-            this.l_empState = new System.Windows.Forms.Label();
-            this.l_empPhoneNumber = new System.Windows.Forms.Label();
-            this.l_empLastName = new System.Windows.Forms.Label();
-            this.l_empFirstName = new System.Windows.Forms.Label();
+            this.l_role = new System.Windows.Forms.Label();
+            this.date_dateOfBirth = new System.Windows.Forms.DateTimePicker();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.tbEEmail = new System.Windows.Forms.TextBox();
             this.tbEname = new System.Windows.Forms.TextBox();
+            this.tbEBSN = new System.Windows.Forms.TextBox();
             this.tbELastname = new System.Windows.Forms.TextBox();
             this.tbEStreetName = new System.Windows.Forms.TextBox();
             this.tbEPhoneNumber = new System.Windows.Forms.TextBox();
             this.tbEStreetNr = new System.Windows.Forms.TextBox();
             this.tbEState = new System.Windows.Forms.TextBox();
             this.tbECity = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.EmployeeInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.l_contEmail);
-            this.groupBox1.Controls.Add(this.l_contNr);
-            this.groupBox1.Controls.Add(this.l_contStreet);
-            this.groupBox1.Controls.Add(this.l_contCity);
-            this.groupBox1.Controls.Add(this.l_contState);
-            this.groupBox1.Controls.Add(this.l_contPhoneNumber);
-            this.groupBox1.Controls.Add(this.l_contLastName);
-            this.groupBox1.Controls.Add(this.l_contFirstName);
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.tbCEmail);
             this.groupBox1.Controls.Add(this.tbCstreetname);
             this.groupBox1.Controls.Add(this.tbCstreetnr);
@@ -87,394 +97,410 @@ namespace MediaBazzar
             this.groupBox1.Controls.Add(this.tbCPhoneNumber);
             this.groupBox1.Controls.Add(this.tbCName);
             this.groupBox1.Controls.Add(this.tbCLastname);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(691, 23);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox1.Location = new System.Drawing.Point(531, 29);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(671, 454);
+            this.groupBox1.Size = new System.Drawing.Size(503, 298);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contact Person";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // l_contEmail
+            // label9
             // 
-            this.l_contEmail.AutoSize = true;
-            this.l_contEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l_contEmail.Location = new System.Drawing.Point(90, 197);
-            this.l_contEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.l_contEmail.Name = "l_contEmail";
-            this.l_contEmail.Size = new System.Drawing.Size(67, 20);
-            this.l_contEmail.TabIndex = 25;
-            this.l_contEmail.Text = "E-mail :";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(38, 266);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(43, 16);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "E-mail ";
             // 
-            // l_contNr
+            // label8
             // 
-            this.l_contNr.AutoSize = true;
-            this.l_contNr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l_contNr.Location = new System.Drawing.Point(353, 395);
-            this.l_contNr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.l_contNr.Name = "l_contNr";
-            this.l_contNr.Size = new System.Drawing.Size(182, 20);
-            this.l_contNr.TabIndex = 24;
-            this.l_contNr.Text = "House/Apartment Nr. : ";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(228, 223);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(22, 16);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "Nr.";
             // 
-            // l_contStreet
+            // label7
             // 
-            this.l_contStreet.AutoSize = true;
-            this.l_contStreet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l_contStreet.Location = new System.Drawing.Point(353, 347);
-            this.l_contStreet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.l_contStreet.Name = "l_contStreet";
-            this.l_contStreet.Size = new System.Drawing.Size(105, 20);
-            this.l_contStreet.TabIndex = 23;
-            this.l_contStreet.Text = "Street name:";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 227);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(74, 16);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Street name";
             // 
-            // l_contCity
+            // label6
             // 
-            this.l_contCity.AutoSize = true;
-            this.l_contCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l_contCity.Location = new System.Drawing.Point(110, 398);
-            this.l_contCity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.l_contCity.Name = "l_contCity";
-            this.l_contCity.Size = new System.Drawing.Size(43, 20);
-            this.l_contCity.TabIndex = 22;
-            this.l_contCity.Text = "City:";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(38, 191);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(29, 16);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "City";
             // 
-            // l_contState
+            // label5
             // 
-            this.l_contState.AutoSize = true;
-            this.l_contState.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l_contState.Location = new System.Drawing.Point(29, 343);
-            this.l_contState.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.l_contState.Name = "l_contState";
-            this.l_contState.Size = new System.Drawing.Size(128, 20);
-            this.l_contState.TabIndex = 21;
-            this.l_contState.Text = "State/Province: ";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 151);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(90, 16);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "State/Province";
             // 
-            // l_contPhoneNumber
+            // label4
             // 
-            this.l_contPhoneNumber.AutoSize = true;
-            this.l_contPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l_contPhoneNumber.Location = new System.Drawing.Point(35, 147);
-            this.l_contPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.l_contPhoneNumber.Name = "l_contPhoneNumber";
-            this.l_contPhoneNumber.Size = new System.Drawing.Size(122, 20);
-            this.l_contPhoneNumber.TabIndex = 20;
-            this.l_contPhoneNumber.Text = "Phone number:";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 112);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(86, 16);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "PhoneNumber";
             // 
-            // l_contLastName
+            // label3
             // 
-            this.l_contLastName.AutoSize = true;
-            this.l_contLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l_contLastName.Location = new System.Drawing.Point(64, 100);
-            this.l_contLastName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.l_contLastName.Name = "l_contLastName";
-            this.l_contLastName.Size = new System.Drawing.Size(93, 20);
-            this.l_contLastName.TabIndex = 19;
-            this.l_contLastName.Text = "Last name:";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(203, 58);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 16);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "LastName";
             // 
-            // l_contFirstName
+            // label2
             // 
-            this.l_contFirstName.AutoSize = true;
-            this.l_contFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l_contFirstName.Location = new System.Drawing.Point(63, 50);
-            this.l_contFirstName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.l_contFirstName.Name = "l_contFirstName";
-            this.l_contFirstName.Size = new System.Drawing.Size(94, 20);
-            this.l_contFirstName.TabIndex = 14;
-            this.l_contFirstName.Text = "First name:";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(19, 58);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 16);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "FirstName";
             // 
             // tbCEmail
             // 
-            this.tbCEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCEmail.Location = new System.Drawing.Point(180, 194);
-            this.tbCEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.tbCEmail.Location = new System.Drawing.Point(100, 258);
             this.tbCEmail.Name = "tbCEmail";
-            this.tbCEmail.Size = new System.Drawing.Size(240, 27);
+            this.tbCEmail.Size = new System.Drawing.Size(218, 21);
             this.tbCEmail.TabIndex = 13;
             // 
             // tbCstreetname
             // 
-            this.tbCstreetname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCstreetname.Location = new System.Drawing.Point(499, 341);
-            this.tbCstreetname.Margin = new System.Windows.Forms.Padding(4);
+            this.tbCstreetname.Location = new System.Drawing.Point(102, 220);
             this.tbCstreetname.Name = "tbCstreetname";
-            this.tbCstreetname.Size = new System.Drawing.Size(132, 27);
+            this.tbCstreetname.Size = new System.Drawing.Size(114, 21);
             this.tbCstreetname.TabIndex = 18;
             // 
             // tbCstreetnr
             // 
-            this.tbCstreetnr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCstreetnr.Location = new System.Drawing.Point(559, 392);
-            this.tbCstreetnr.Margin = new System.Windows.Forms.Padding(4);
+            this.tbCstreetnr.Location = new System.Drawing.Point(255, 220);
             this.tbCstreetnr.Name = "tbCstreetnr";
-            this.tbCstreetnr.Size = new System.Drawing.Size(72, 27);
+            this.tbCstreetnr.Size = new System.Drawing.Size(64, 21);
             this.tbCstreetnr.TabIndex = 17;
             // 
             // tbCstate
             // 
-            this.tbCstate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCstate.Location = new System.Drawing.Point(165, 340);
-            this.tbCstate.Margin = new System.Windows.Forms.Padding(4);
+            this.tbCstate.Location = new System.Drawing.Point(102, 146);
             this.tbCstate.Name = "tbCstate";
-            this.tbCstate.Size = new System.Drawing.Size(151, 27);
+            this.tbCstate.Size = new System.Drawing.Size(112, 21);
             this.tbCstate.TabIndex = 15;
             // 
             // tbCCity
             // 
-            this.tbCCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCCity.Location = new System.Drawing.Point(165, 391);
-            this.tbCCity.Margin = new System.Windows.Forms.Padding(4);
+            this.tbCCity.Location = new System.Drawing.Point(100, 183);
             this.tbCCity.Name = "tbCCity";
-            this.tbCCity.Size = new System.Drawing.Size(151, 27);
+            this.tbCCity.Size = new System.Drawing.Size(114, 21);
             this.tbCCity.TabIndex = 16;
             // 
             // tbCPhoneNumber
             // 
-            this.tbCPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCPhoneNumber.Location = new System.Drawing.Point(180, 147);
-            this.tbCPhoneNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.tbCPhoneNumber.Location = new System.Drawing.Point(102, 109);
             this.tbCPhoneNumber.Name = "tbCPhoneNumber";
-            this.tbCPhoneNumber.Size = new System.Drawing.Size(240, 27);
+            this.tbCPhoneNumber.Size = new System.Drawing.Size(218, 21);
             this.tbCPhoneNumber.TabIndex = 13;
             // 
             // tbCName
             // 
-            this.tbCName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCName.Location = new System.Drawing.Point(180, 47);
-            this.tbCName.Margin = new System.Windows.Forms.Padding(4);
+            this.tbCName.Location = new System.Drawing.Point(100, 55);
             this.tbCName.Name = "tbCName";
-            this.tbCName.Size = new System.Drawing.Size(151, 27);
+            this.tbCName.Size = new System.Drawing.Size(97, 21);
             this.tbCName.TabIndex = 13;
             // 
             // tbCLastname
             // 
-            this.tbCLastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCLastname.Location = new System.Drawing.Point(180, 97);
-            this.tbCLastname.Margin = new System.Windows.Forms.Padding(4);
+            this.tbCLastname.Location = new System.Drawing.Point(283, 55);
             this.tbCLastname.Name = "tbCLastname";
-            this.tbCLastname.Size = new System.Drawing.Size(151, 27);
+            this.tbCLastname.Size = new System.Drawing.Size(100, 21);
             this.tbCLastname.TabIndex = 14;
             // 
             // EmployeeInfo
             // 
+            this.EmployeeInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.EmployeeInfo.Controls.Add(this.label19);
+            this.EmployeeInfo.Controls.Add(this.label1);
+            this.EmployeeInfo.Controls.Add(this.tbEPassword);
+            this.EmployeeInfo.Controls.Add(this.tbUsername);
+            this.EmployeeInfo.Controls.Add(this.l_username);
             this.EmployeeInfo.Controls.Add(this.tbErole);
-            this.EmployeeInfo.Controls.Add(this.l_empRole);
-            this.EmployeeInfo.Controls.Add(this.l_empEmail);
-            this.EmployeeInfo.Controls.Add(this.l_empNr);
-            this.EmployeeInfo.Controls.Add(this.l_empStreetName);
-            this.EmployeeInfo.Controls.Add(this.l_empCity);
-            this.EmployeeInfo.Controls.Add(this.l_empState);
-            this.EmployeeInfo.Controls.Add(this.l_empPhoneNumber);
-            this.EmployeeInfo.Controls.Add(this.l_empLastName);
-            this.EmployeeInfo.Controls.Add(this.l_empFirstName);
+            this.EmployeeInfo.Controls.Add(this.l_role);
+            this.EmployeeInfo.Controls.Add(this.date_dateOfBirth);
+            this.EmployeeInfo.Controls.Add(this.label18);
+            this.EmployeeInfo.Controls.Add(this.label17);
+            this.EmployeeInfo.Controls.Add(this.label16);
+            this.EmployeeInfo.Controls.Add(this.label15);
+            this.EmployeeInfo.Controls.Add(this.label14);
+            this.EmployeeInfo.Controls.Add(this.label13);
+            this.EmployeeInfo.Controls.Add(this.label12);
+            this.EmployeeInfo.Controls.Add(this.label11);
+            this.EmployeeInfo.Controls.Add(this.label10);
             this.EmployeeInfo.Controls.Add(this.tbEEmail);
             this.EmployeeInfo.Controls.Add(this.tbEname);
+            this.EmployeeInfo.Controls.Add(this.tbEBSN);
             this.EmployeeInfo.Controls.Add(this.tbELastname);
             this.EmployeeInfo.Controls.Add(this.tbEStreetName);
             this.EmployeeInfo.Controls.Add(this.tbEPhoneNumber);
             this.EmployeeInfo.Controls.Add(this.tbEStreetNr);
             this.EmployeeInfo.Controls.Add(this.tbEState);
             this.EmployeeInfo.Controls.Add(this.tbECity);
-            this.EmployeeInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmployeeInfo.Location = new System.Drawing.Point(15, 22);
-            this.EmployeeInfo.Margin = new System.Windows.Forms.Padding(4);
+            this.EmployeeInfo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmployeeInfo.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.EmployeeInfo.Location = new System.Drawing.Point(11, 18);
             this.EmployeeInfo.Name = "EmployeeInfo";
-            this.EmployeeInfo.Padding = new System.Windows.Forms.Padding(4);
-            this.EmployeeInfo.Size = new System.Drawing.Size(648, 455);
+            this.EmployeeInfo.Size = new System.Drawing.Size(503, 370);
             this.EmployeeInfo.TabIndex = 19;
             this.EmployeeInfo.TabStop = false;
             this.EmployeeInfo.Text = "Employee details";
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(46, 340);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(52, 16);
+            this.label19.TabIndex = 35;
+            this.label19.Text = "Birthday";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(232, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 16);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Password";
+            // 
+            // tbEPassword
+            // 
+            this.tbEPassword.Location = new System.Drawing.Point(310, 19);
+            this.tbEPassword.Name = "tbEPassword";
+            this.tbEPassword.Size = new System.Drawing.Size(97, 21);
+            this.tbEPassword.TabIndex = 33;
+            // 
+            // tbUsername
+            // 
+            this.tbUsername.Location = new System.Drawing.Point(112, 21);
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.Size = new System.Drawing.Size(97, 21);
+            this.tbUsername.TabIndex = 32;
+            // 
+            // l_username
+            // 
+            this.l_username.AutoSize = true;
+            this.l_username.Location = new System.Drawing.Point(25, 21);
+            this.l_username.Name = "l_username";
+            this.l_username.Size = new System.Drawing.Size(62, 16);
+            this.l_username.TabIndex = 31;
+            this.l_username.Text = "Username";
+            // 
             // tbErole
             // 
-            this.tbErole.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbErole.Location = new System.Drawing.Point(160, 246);
-            this.tbErole.Margin = new System.Windows.Forms.Padding(4);
+            this.tbErole.Location = new System.Drawing.Point(112, 301);
             this.tbErole.Name = "tbErole";
-            this.tbErole.Size = new System.Drawing.Size(240, 27);
+            this.tbErole.Size = new System.Drawing.Size(218, 21);
             this.tbErole.TabIndex = 30;
             // 
-            // l_empRole
+            // l_role
             // 
-            this.l_empRole.AutoSize = true;
-            this.l_empRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l_empRole.Location = new System.Drawing.Point(94, 249);
-            this.l_empRole.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.l_empRole.Name = "l_empRole";
-            this.l_empRole.Size = new System.Drawing.Size(48, 20);
-            this.l_empRole.TabIndex = 29;
-            this.l_empRole.Text = "Role:";
+            this.l_role.AutoSize = true;
+            this.l_role.Location = new System.Drawing.Point(54, 306);
+            this.l_role.Name = "l_role";
+            this.l_role.Size = new System.Drawing.Size(31, 16);
+            this.l_role.TabIndex = 29;
+            this.l_role.Text = "Role";
             // 
-            // l_empEmail
+            // date_dateOfBirth
             // 
-            this.l_empEmail.AutoSize = true;
-            this.l_empEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l_empEmail.Location = new System.Drawing.Point(80, 199);
-            this.l_empEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.l_empEmail.Name = "l_empEmail";
-            this.l_empEmail.Size = new System.Drawing.Size(62, 20);
-            this.l_empEmail.TabIndex = 26;
-            this.l_empEmail.Text = "E-mail:";
+            this.date_dateOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.date_dateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.date_dateOfBirth.Location = new System.Drawing.Point(112, 332);
+            this.date_dateOfBirth.Margin = new System.Windows.Forms.Padding(2);
+            this.date_dateOfBirth.Name = "date_dateOfBirth";
+            this.date_dateOfBirth.Size = new System.Drawing.Size(218, 23);
+            this.date_dateOfBirth.TabIndex = 28;
             // 
-            // l_empNr
+            // label18
             // 
-            this.l_empNr.AutoSize = true;
-            this.l_empNr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l_empNr.Location = new System.Drawing.Point(333, 396);
-            this.l_empNr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.l_empNr.Name = "l_empNr";
-            this.l_empNr.Size = new System.Drawing.Size(177, 20);
-            this.l_empNr.TabIndex = 26;
-            this.l_empNr.Text = "House/Apartment Nr. :";
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(55, 272);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(43, 16);
+            this.label18.TabIndex = 26;
+            this.label18.Text = "E-mail ";
             // 
-            // l_empStreetName
+            // label17
             // 
-            this.l_empStreetName.AutoSize = true;
-            this.l_empStreetName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l_empStreetName.Location = new System.Drawing.Point(333, 348);
-            this.l_empStreetName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.l_empStreetName.Name = "l_empStreetName";
-            this.l_empStreetName.Size = new System.Drawing.Size(105, 20);
-            this.l_empStreetName.TabIndex = 26;
-            this.l_empStreetName.Text = "Street name:";
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(66, 232);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(31, 16);
+            this.label17.TabIndex = 27;
+            this.label17.Text = "BSN:";
             // 
-            // l_empCity
+            // label16
             // 
-            this.l_empCity.AutoSize = true;
-            this.l_empCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l_empCity.Location = new System.Drawing.Point(99, 392);
-            this.l_empCity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.l_empCity.Name = "l_empCity";
-            this.l_empCity.Size = new System.Drawing.Size(43, 20);
-            this.l_empCity.TabIndex = 26;
-            this.l_empCity.Text = "City:";
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(270, 194);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(22, 16);
+            this.label16.TabIndex = 26;
+            this.label16.Text = "Nr.";
             // 
-            // l_empState
+            // label15
             // 
-            this.l_empState.AutoSize = true;
-            this.l_empState.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l_empState.Location = new System.Drawing.Point(19, 344);
-            this.l_empState.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.l_empState.Name = "l_empState";
-            this.l_empState.Size = new System.Drawing.Size(123, 20);
-            this.l_empState.TabIndex = 26;
-            this.l_empState.Text = "State/Province:";
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(32, 194);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(74, 16);
+            this.label15.TabIndex = 26;
+            this.label15.Text = "Street name";
             // 
-            // l_empPhoneNumber
+            // label14
             // 
-            this.l_empPhoneNumber.AutoSize = true;
-            this.l_empPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l_empPhoneNumber.Location = new System.Drawing.Point(20, 148);
-            this.l_empPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.l_empPhoneNumber.Name = "l_empPhoneNumber";
-            this.l_empPhoneNumber.Size = new System.Drawing.Size(122, 20);
-            this.l_empPhoneNumber.TabIndex = 26;
-            this.l_empPhoneNumber.Text = "Phone number:";
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(69, 157);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(29, 16);
+            this.label14.TabIndex = 26;
+            this.label14.Text = "City";
             // 
-            // l_empLastName
+            // label13
             // 
-            this.l_empLastName.AutoSize = true;
-            this.l_empLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l_empLastName.Location = new System.Drawing.Point(46, 98);
-            this.l_empLastName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.l_empLastName.Name = "l_empLastName";
-            this.l_empLastName.Size = new System.Drawing.Size(93, 20);
-            this.l_empLastName.TabIndex = 26;
-            this.l_empLastName.Text = "Last name:";
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(18, 128);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(90, 16);
+            this.label13.TabIndex = 26;
+            this.label13.Text = "State/Province";
             // 
-            // l_empFirstName
+            // label12
             // 
-            this.l_empFirstName.AutoSize = true;
-            this.l_empFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l_empFirstName.Location = new System.Drawing.Point(48, 48);
-            this.l_empFirstName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.l_empFirstName.Name = "l_empFirstName";
-            this.l_empFirstName.Size = new System.Drawing.Size(94, 20);
-            this.l_empFirstName.TabIndex = 26;
-            this.l_empFirstName.Text = "First name:";
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(18, 95);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(86, 16);
+            this.label12.TabIndex = 26;
+            this.label12.Text = "PhoneNumber";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(230, 55);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(62, 16);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "LastName";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(26, 58);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(59, 16);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "FirstName";
             // 
             // tbEEmail
             // 
-            this.tbEEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbEEmail.Location = new System.Drawing.Point(160, 192);
-            this.tbEEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.tbEEmail.Location = new System.Drawing.Point(112, 266);
             this.tbEEmail.Name = "tbEEmail";
-            this.tbEEmail.Size = new System.Drawing.Size(240, 27);
+            this.tbEEmail.Size = new System.Drawing.Size(218, 21);
             this.tbEEmail.TabIndex = 12;
             // 
             // tbEname
             // 
-            this.tbEname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbEname.Location = new System.Drawing.Point(160, 45);
-            this.tbEname.Margin = new System.Windows.Forms.Padding(4);
+            this.tbEname.Location = new System.Drawing.Point(112, 55);
             this.tbEname.Name = "tbEname";
-            this.tbEname.Size = new System.Drawing.Size(151, 27);
+            this.tbEname.Size = new System.Drawing.Size(97, 21);
             this.tbEname.TabIndex = 4;
+            // 
+            // tbEBSN
+            // 
+            this.tbEBSN.Location = new System.Drawing.Point(112, 229);
+            this.tbEBSN.Name = "tbEBSN";
+            this.tbEBSN.Size = new System.Drawing.Size(218, 21);
+            this.tbEBSN.TabIndex = 11;
             // 
             // tbELastname
             // 
-            this.tbELastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbELastname.Location = new System.Drawing.Point(160, 95);
-            this.tbELastname.Margin = new System.Windows.Forms.Padding(4);
+            this.tbELastname.Location = new System.Drawing.Point(310, 55);
             this.tbELastname.Name = "tbELastname";
-            this.tbELastname.Size = new System.Drawing.Size(151, 27);
+            this.tbELastname.Size = new System.Drawing.Size(100, 21);
             this.tbELastname.TabIndex = 5;
             // 
             // tbEStreetName
             // 
-            this.tbEStreetName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbEStreetName.Location = new System.Drawing.Point(472, 341);
-            this.tbEStreetName.Margin = new System.Windows.Forms.Padding(4);
+            this.tbEStreetName.Location = new System.Drawing.Point(112, 191);
             this.tbEStreetName.Name = "tbEStreetName";
-            this.tbEStreetName.Size = new System.Drawing.Size(132, 27);
+            this.tbEStreetName.Size = new System.Drawing.Size(64, 21);
             this.tbEStreetName.TabIndex = 10;
             // 
             // tbEPhoneNumber
             // 
-            this.tbEPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbEPhoneNumber.Location = new System.Drawing.Point(160, 145);
-            this.tbEPhoneNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.tbEPhoneNumber.Location = new System.Drawing.Point(112, 92);
             this.tbEPhoneNumber.Name = "tbEPhoneNumber";
-            this.tbEPhoneNumber.Size = new System.Drawing.Size(240, 27);
+            this.tbEPhoneNumber.Size = new System.Drawing.Size(218, 21);
             this.tbEPhoneNumber.TabIndex = 6;
             // 
             // tbEStreetNr
             // 
-            this.tbEStreetNr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbEStreetNr.Location = new System.Drawing.Point(534, 389);
-            this.tbEStreetNr.Margin = new System.Windows.Forms.Padding(4);
+            this.tbEStreetNr.Location = new System.Drawing.Point(310, 189);
             this.tbEStreetNr.Name = "tbEStreetNr";
-            this.tbEStreetNr.Size = new System.Drawing.Size(70, 27);
+            this.tbEStreetNr.Size = new System.Drawing.Size(64, 21);
             this.tbEStreetNr.TabIndex = 9;
             // 
             // tbEState
             // 
-            this.tbEState.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbEState.Location = new System.Drawing.Point(160, 341);
-            this.tbEState.Margin = new System.Windows.Forms.Padding(4);
+            this.tbEState.Location = new System.Drawing.Point(112, 124);
             this.tbEState.Name = "tbEState";
-            this.tbEState.Size = new System.Drawing.Size(151, 27);
+            this.tbEState.Size = new System.Drawing.Size(114, 21);
             this.tbEState.TabIndex = 7;
             // 
             // tbECity
             // 
-            this.tbECity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbECity.Location = new System.Drawing.Point(160, 389);
-            this.tbECity.Margin = new System.Windows.Forms.Padding(4);
+            this.tbECity.Location = new System.Drawing.Point(112, 154);
             this.tbECity.Name = "tbECity";
-            this.tbECity.Size = new System.Drawing.Size(151, 27);
+            this.tbECity.Size = new System.Drawing.Size(114, 21);
             this.tbECity.TabIndex = 8;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1061, 450);
+            this.panel1.TabIndex = 21;
             // 
             // ViewEmployeeData
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1381, 497);
+            this.ClientSize = new System.Drawing.Size(1061, 450);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.EmployeeInfo);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Controls.Add(this.panel1);
             this.Name = "ViewEmployeeData";
             this.Text = "ViewEmployeeData";
             this.Load += new System.EventHandler(this.ViewEmployeeData_Load);
@@ -489,14 +515,14 @@ namespace MediaBazzar
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label l_contEmail;
-        private System.Windows.Forms.Label l_contNr;
-        private System.Windows.Forms.Label l_contStreet;
-        private System.Windows.Forms.Label l_contCity;
-        private System.Windows.Forms.Label l_contState;
-        private System.Windows.Forms.Label l_contPhoneNumber;
-        private System.Windows.Forms.Label l_contLastName;
-        private System.Windows.Forms.Label l_contFirstName;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbCEmail;
         private System.Windows.Forms.TextBox tbCstreetname;
         private System.Windows.Forms.TextBox tbCstreetnr;
@@ -506,23 +532,32 @@ namespace MediaBazzar
         private System.Windows.Forms.TextBox tbCName;
         private System.Windows.Forms.TextBox tbCLastname;
         private System.Windows.Forms.GroupBox EmployeeInfo;
+        private System.Windows.Forms.TextBox tbUsername;
+        private System.Windows.Forms.Label l_username;
         private System.Windows.Forms.TextBox tbErole;
-        private System.Windows.Forms.Label l_empRole;
-        private System.Windows.Forms.Label l_empEmail;
-        private System.Windows.Forms.Label l_empNr;
-        private System.Windows.Forms.Label l_empStreetName;
-        private System.Windows.Forms.Label l_empCity;
-        private System.Windows.Forms.Label l_empState;
-        private System.Windows.Forms.Label l_empPhoneNumber;
-        private System.Windows.Forms.Label l_empLastName;
-        private System.Windows.Forms.Label l_empFirstName;
+        private System.Windows.Forms.Label l_role;
+        private System.Windows.Forms.DateTimePicker date_dateOfBirth;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox tbEEmail;
         private System.Windows.Forms.TextBox tbEname;
+        private System.Windows.Forms.TextBox tbEBSN;
         private System.Windows.Forms.TextBox tbELastname;
         private System.Windows.Forms.TextBox tbEStreetName;
         private System.Windows.Forms.TextBox tbEPhoneNumber;
         private System.Windows.Forms.TextBox tbEStreetNr;
         private System.Windows.Forms.TextBox tbEState;
         private System.Windows.Forms.TextBox tbECity;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbEPassword;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Panel panel1;
     }
 }

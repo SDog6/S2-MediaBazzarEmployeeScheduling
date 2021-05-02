@@ -59,27 +59,37 @@ namespace MediaBazzar
         }
 
 
-        /*public List<object> GetAllPerID(int id)
+        public Employee GetEmp(int id)
         {
-            List<object> temp = new List<object>();
-
-            foreach (Employee item in (List<Employee>)EmpsData.ReadAllID(id))
-            {
-                temp.Add(item);
-            }
+            Employee temp = (Employee)EmpsData.ReadAllByID(id);
             return temp;
+
+        }
+
+        public bool Fire(Object emp)
+        {
+            Employee em = (Employee)emp;
+            if(em.Active == true)
+            {
+                EmpsData.FireEmployee(emp);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public List<object> GetAllPerRole(string role)
         {
             List<object> temp = new List<object>();
 
-            foreach (Employee item in (List<Employee>)EmpsData.ReadAllRoles(role))
+            foreach (Employee item in (List<Employee>)EmpsData.ReadAllByRole(role))
             {
                 temp.Add(item);
             }
             return temp;
-        }*/
+        }
 
         public bool Remove(object obj)
         {

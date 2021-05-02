@@ -27,7 +27,7 @@ namespace MediaBazzar
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AccountCreateForm f = new AccountCreateForm();
+            HR f = new HR();
             f.Show();
         }
 

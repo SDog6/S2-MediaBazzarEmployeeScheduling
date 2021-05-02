@@ -18,16 +18,11 @@ namespace MediaBazzar
             InitializeComponent();
             this.em = em;
         }
-        private void btnOpenCreateForm_Click(object sender, EventArgs e)
-        {
-            AccountCreateForm createForm = new AccountCreateForm();
-            createForm.Show();
-        }
         public void checkEmpty(List<string> strings)
         {
-            foreach(string s in strings)
+            foreach (string s in strings)
             {
-                if(String.IsNullOrEmpty(s))
+                if (String.IsNullOrEmpty(s))
                 {
                     throw new EmptyTextBoxException();
                 }
@@ -62,13 +57,13 @@ namespace MediaBazzar
             try
             {
                 checkEmpty(textboxes);
-                
-                
+
+
                 string personalState = textboxes[4];
                 string personalCity = textboxes[5];
                 string personalStreetName = textboxes[6];
                 string personalStreetNr = tbEStreetNr.Text;
-                Address personalAddress =  new Address(personalState, personalCity, personalStreetName, personalStreetNr);
+                Address personalAddress = new Address(personalState, personalCity, personalStreetName, personalStreetNr);
 
                 string contactState = textboxes[11];
                 string contactCity = textboxes[12];
@@ -85,7 +80,7 @@ namespace MediaBazzar
                 Contract contract = new Contract(DateTime.Now);
 
                 string username = tbUsername.Text;
-                Account account = new Account(username) ;
+                Account account = new Account(username);
                 DateTime dateOfBirth = date_dateOfBirth.Value;
 
                 string firstName = textboxes[0];
@@ -99,22 +94,22 @@ namespace MediaBazzar
                 Employee employee = new Employee(personalInfo, contactPerson, dateOfBirth, BSN, role, contract, account, true);
                 return employee;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            return null;            
+            return null;
         }
         private void btnSubmit_Click_1(object sender, EventArgs e)
         {
-           Employee employee = createEmployee();
-            if(employee != null)
+            Employee employee = createEmployee();
+            if (employee != null)
             {
                 try
                 {
                     em.Add(employee);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -126,7 +121,7 @@ namespace MediaBazzar
 
         }
 
-        private void tbELastname_TextChanged(object sender, EventArgs e)
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

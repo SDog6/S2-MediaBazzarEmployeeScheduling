@@ -94,7 +94,7 @@ namespace MediaBazzar
 
             try
             {
-                string sql = "SELECT id, name,amount,price,brand FROM stock;";
+                string sql = "SELECT id, name,amount,price,brand,available FROM stock;";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 conn.Open();
@@ -103,7 +103,7 @@ namespace MediaBazzar
 
                 while (dr.Read())
                 {
-                    stocks.Add(new Stock(dr[1].ToString(), Convert.ToInt32(dr[2]), Convert.ToInt32(dr[0]), Convert.ToInt32(dr[3]), dr[4].ToString()));
+                    stocks.Add(new Stock(dr[1].ToString(), Convert.ToInt32(dr[2]), Convert.ToInt32(dr[0]), Convert.ToInt32(dr[3]), dr[4].ToString(), Convert.ToInt32(dr[5])));
                 }
 
             }
@@ -131,7 +131,7 @@ namespace MediaBazzar
 
             try
             {
-                string sql = "SELECT id, name,amount,price,brand FROM stock WHERE id = @id;";
+                string sql = "SELECT id, name,amount,price,brand, available FROM stock WHERE id = @id;";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@id", id);
 
@@ -141,7 +141,7 @@ namespace MediaBazzar
 
                 while (dr.Read())
                 {
-                    stocks.Add(new Stock(dr[1].ToString(), Convert.ToInt32(dr[2]), Convert.ToInt32(dr[0]), Convert.ToInt32(dr[3]), dr[4].ToString()));
+                    stocks.Add(new Stock(dr[1].ToString(), Convert.ToInt32(dr[2]), Convert.ToInt32(dr[0]), Convert.ToInt32(dr[3]), dr[4].ToString(), Convert.ToInt32(dr[5])));
                 }
 
             }
@@ -169,7 +169,7 @@ namespace MediaBazzar
 
             try
             {
-                string sql = "SELECT id, name,amount,price,brand FROM stock WHERE brand = @brand;";
+                string sql = "SELECT id, name,amount,price,brand, available FROM stock WHERE brand = @brand;";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@brand", brand);
 
@@ -179,7 +179,7 @@ namespace MediaBazzar
 
                 while (dr.Read())
                 {
-                    stocks.Add(new Stock(dr[1].ToString(), Convert.ToInt32(dr[2]), Convert.ToInt32(dr[0]), Convert.ToInt32(dr[3]), dr[4].ToString()));
+                    stocks.Add(new Stock(dr[1].ToString(), Convert.ToInt32(dr[2]), Convert.ToInt32(dr[0]), Convert.ToInt32(dr[3]), dr[4].ToString(), Convert.ToInt32(dr[5])));
                 }
 
             }
@@ -199,6 +199,39 @@ namespace MediaBazzar
                 }
             }
             return stocks;
+        }
+
+
+        public void Discontinue(object obj)
+        {
+            Stock stock = (Stock)obj;
+            try
+            {
+                // make sure in your table the id in auto-incremented
+                string sql = "UPDATE stock SET available = false WHERE id = @id";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@id", stock.ID);
+
+
+                conn.Open();
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured! Try again.");
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
         }
     }
 }
