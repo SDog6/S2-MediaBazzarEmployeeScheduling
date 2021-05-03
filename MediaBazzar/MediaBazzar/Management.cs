@@ -9,92 +9,79 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
-using System.Data;
 
 namespace MediaBazzar
 {
     public partial class Management : Form
     {
         ShopStockManager stock;
-        EmployeeManager Employees;
-        ShiftSchedulingManager Shifts;
-        DateTime Monday;
-        DateTime Sunday;
-        int shiftcounter;
-        MySqlConnection conn = new MySqlConnection("Server=studmysql01.fhict.local; Uid=dbi457108; Database=dbi457108; Pwd=NewPassword123");
-        MySqlDataAdapter Da;
-        DataTable EmployeeTable = new DataTable("all employees table");
+        EmployeeManager EmployeeManager;
+        DataTable stockTable;
+        DataTable employeeTable;
         public Management()
         {
             InitializeComponent();
             stock = new ShopStockManager();
-            Employees = new EmployeeManager();
-            Shifts = new ShiftSchedulingManager();
+            EmployeeManager = new EmployeeManager();
+            stockTable = new DataTable();
+            employeeTable = new DataTable();
+            prepareTables();
             ShowAllEmployees(true);
             radio_ID.Checked = true;
             rbManagementStockIDFilter.Checked = true;
-            checkBox_active.CheckState = CheckState.Checked;
+            checkBox_active.CheckState = CheckState.Checked;      
             UpdateStockUI();
-            UpdateEmployeeUI();
-          
         }
-
+        private void prepareTables()
+        {
+            //employee table
+            DataColumn column = new DataColumn();
+            column.DataType = System.Type.GetType("System.Int32");
+            column.ColumnName = "id";
+            column.ReadOnly = true;
+            employeeTable.Columns.Add(column);
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.String");
+            column.ColumnName = "name";
+            column.ReadOnly = true;
+            employeeTable.Columns.Add(column);
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.String");
+            column.ColumnName = "role";
+            column.ReadOnly = true;
+            employeeTable.Columns.Add(column);
+            //stock table
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.String");
+            column.ColumnName = "Name";
+            column.ReadOnly = true;
+            stockTable.Columns.Add(column);
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.Int32");
+            column.ColumnName = "Amount";
+            column.ReadOnly = true;
+            stockTable.Columns.Add(column);
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.Int32");
+            column.ColumnName = "Price";
+            column.ReadOnly = true;
+            stockTable.Columns.Add(column);
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.String");
+            column.ColumnName = "Available";
+            column.ReadOnly = true;
+            stockTable.Columns.Add(column);
+        }
         private void btnManagementRestockRequest_Click(object sender, EventArgs e)
         {
-           /* if(lbManagementStock.SelectedIndex > -1)
-            {
-                Stock a = (Stock)lbManagementStock.SelectedItem;
-                ManagementReshelf m = new ManagementReshelf(a);
-                m.Show();
-            }
-            */
+            /* if(lbManagementStock.SelectedIndex > -1)
+             {
+                 Stock a = (Stock)lbManagementStock.SelectedItem;
+                 ManagementReshelf m = new ManagementReshelf(a);
+                 m.Show();
+             }
+             */
         }
-
-
-        private void btnManagemntPersonCreation_Click(object sender, EventArgs e)
-        {
-            EmployeeCreation creation = new EmployeeCreation(Employees);
-            creation.Show();
-        }
-
-        private void btnManagemntPersonUpdate_Click(object sender, EventArgs e)
-        {
-            if(lbManagemendEmployees.SelectedIndex > -1)
-            {
-
-            }
-        }
-
-
-        private void btnManagemendUpdate_Click(object sender, EventArgs e)
-        {
-            UpdateEmployeeUI();
-        }
-
-        public void UpdateEmployeeUI()
-        {
-            lbManagemendEmployees.Items.Clear();
-            foreach (Employee item in Employees.GetAllPerType())
-            {
-                lbManagemendEmployees.Items.Add(item);
-            }
-
-        }
-
-        private void btnManagementStockUpdate_Click(object sender, EventArgs e)
-        {
-            /*lbManagementStock.Items.Clear();
-            foreach (Stock item in stock.GetAllPerType())
-            {
-                lbManagementStock.Items.Add(item);
-            }*/
-        }
-
-        private void btnManagemntPersonUpdate_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnManagementNewStock_Click(object sender, EventArgs e)
         {
             ManagementNewInventory a = new ManagementNewInventory(stock);
@@ -103,119 +90,20 @@ namespace MediaBazzar
 
         private void btnManagementStockUpdate_Click_1(object sender, EventArgs e)
         {
-            UpdateStockUI();
+            showAllStock();
         }
         public void UpdateStockUI()
         {
             List<object> dstock = stock.GetAllPerType();
             BindingSource bs = new BindingSource();
             bs.DataSource = dstock;
-            dataGridView1.DataSource = bs;
-
-
-            /*lbManagementStock.Items.Clear();
-            foreach (Stock item in stock.GetAllPerType())
-            {
-                lbManagementStock.Items.Add(item);
-            }*/
-            //dataGridView1.Rows.Clear();
-            //dataGridView1.DataSource = stock;
-            //dataGridView1.ColumnCount = 5;
-            //dataGridView1.Columns[0].Name = "ID";
-            //dataGridView1.Columns[1].Name = "Name";
-            //dataGridView1.Columns[2].Name = "Amount";
-            //dataGridView1.Columns[3].Name = "Price";
-            //dataGridView1.Columns[4].Name = "Availability";
-            //string[] row = new string[4];
-
-
-
-
-            //    foreach (Stock item in stock.GetAllPerType())
-            //    {
-            //        dataGridView1.Rows.Add(item.ID, item.Name, item.Amount, item.Price, item.AvailableStr);   
-            //    }
-            //foreach (DataGridViewRow row in dataGridView1.Rows)
-            //{
-            //    if (row.Cells[3].Value != "Available")
-            //    {
-            //        row.DefaultCellStyle.BackColor = Color.PaleVioletRed;
-            //    }
-            //    else
-            //    {
-            //        row.DefaultCellStyle.BackColor = Color.LightGray;
-            //    }
-            //}
-
+            dataGrid_stocks.DataSource = bs;
         }
-
-        private void btnViewEmployeeInfo_Click(object sender, EventArgs e)
-        {
-            if(lbManagemendEmployees.SelectedIndex > -1) 
-            {
-                Object s = lbManagemendEmployees.SelectedItem;
-                Employee Selected = (Employee)s;
-                ViewEmployeeData v = new ViewEmployeeData(Selected);
-                v.Show();
-            
-            }
-        }
-
         private void btnStockRemove_Click(object sender, EventArgs e)
         {
-
-            /*if (lbManagementStock.SelectedIndex > -1)
-            {
-                Object s = lbManagementStock.SelectedItem;
-                stock.Remove(s);
-            }*/
-            //dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
-
-            Object s = (Object)dataGridView1.CurrentRow.DataBoundItem; 
+            Object s = (Object)dataGrid_stocks.CurrentRow.DataBoundItem;
             stock.Remove(s);
         }
-
-        private void btnManagementStockFilter_Click(object sender, EventArgs e)
-        {
-           /* dataGridView1.Rows.Clear();
-            if (rbManagementStockIDFilter.Checked)
-            {
-                int id = Convert.ToInt32(tbManagementStockFilter.Text);
-                foreach (Stock item in stock.GetAllPerID(id))
-                {
-                    dataGridView1.Rows.Add(item.Name, item.Amount, item.Price, item.AvailableStr);
-                }
-            }
-            else if (rbManagementStockBrandFilter.Checked)
-            {
-                string brand = tbManagementStockFilter.Text;
-                foreach (Stock item in stock.GetAllPerBrand(brand))
-                {
-                    dataGridView1.Rows.Add(item.Name, item.Amount, item.Price, item.AvailableStr);
-                }
-            }
-            else if (rbManagementStockAmountFilter.Checked)
-            {
-
-                int amount = Convert.ToInt32(tbManagementStockFilter.Text);
-                foreach (Stock item in stock.GetAllPerAmount(amount))
-                {
-                    dataGridView1.Rows.Add(item.Name, item.Amount, item.Price, item.AvailableStr);
-                }
-            }*/
-        }
-
-
-        
-
-        private void Management_Load(object sender, EventArgs e)
-        {
-            Da = new MySqlDataAdapter("SELECT employee.role, person.firstName, person.lastName FROM employee LEFT JOIN person on employee.personId = person.id", conn);
-            Da.Fill(EmployeeTable);
-            DgvManagemendEmployees.DataSource = EmployeeTable;
-            DgvManagemendEmployees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-        }
-
         private void btnSchedule_Click(object sender, EventArgs e)
         {
             ShiftScheduling s = new ShiftScheduling();
@@ -274,7 +162,7 @@ namespace MediaBazzar
 
         private void filter()
         {
-            lbManagemendEmployees.Items.Clear();
+            employeeTable.Rows.Clear();
             bool employeeStatus = GetEmployeeStatus();
             if (radio_role.Checked)
             {
@@ -306,11 +194,12 @@ namespace MediaBazzar
             }
             if (int.TryParse(searchId, out int ID))
             {
-                foreach (Employee emp in Employees.GetAllPerType())
+                foreach (Employee emp in EmployeeManager.Employees)
                 {
                     if (emp.EmployeeID == ID && emp.Active == employeeStatus)
                     {
-                        lbManagemendEmployees.Items.Add(emp);
+                        employeeTable.Rows.Add(emp.EmployeeID, $"{emp.PersonalInfo.FirstName} {emp.PersonalInfo.LastName}", emp.Role);
+                        dataGrid_employees.DataSource = employeeTable;
                     }
 
                 }
@@ -325,13 +214,14 @@ namespace MediaBazzar
                 ShowAllEmployees(employeeStatus);
                 return;
             }
-            foreach (Employee emp in Employees.GetAllPerType())
+            foreach (Employee emp in EmployeeManager.Employees)
             {
                 string firstName = emp.PersonalInfo.FirstName.ToLower();
                 string lastName = emp.PersonalInfo.LastName.ToLower();
                 if ((firstName.Contains(searchWord) || lastName.Contains(searchWord)) && emp.Active == employeeStatus)
                 {
-                    lbManagemendEmployees.Items.Add(emp);
+                    employeeTable.Rows.Add(emp.EmployeeID, $"{emp.PersonalInfo.FirstName} {emp.PersonalInfo.LastName}", emp.Role);
+                    dataGrid_employees.DataSource = employeeTable;
                 }
             }
         }
@@ -339,7 +229,7 @@ namespace MediaBazzar
         private void fillRoles()
         {
             cb_allRoles.Items.Clear();
-            foreach (Employee emp in Employees.GetAllPerType())
+            foreach (Employee emp in EmployeeManager.Employees)
             {
                 if (!cb_allRoles.Items.Contains(emp.Role))
                 {
@@ -349,12 +239,13 @@ namespace MediaBazzar
         }
         private void RoleSearch(int index, bool employeeStatus)
         {
-            lbManagemendEmployees.Items.Clear();
-            foreach (Employee emp in Employees.GetAllPerType())
+            employeeTable.Rows.Clear();
+            foreach (Employee emp in EmployeeManager.Employees)
             {
                 if (emp.Role == cb_allRoles.Items[index].ToString() && emp.Active == employeeStatus)
                 {
-                    lbManagemendEmployees.Items.Add(emp);
+                    employeeTable.Rows.Add(emp.EmployeeID, $"{emp.PersonalInfo.FirstName} {emp.PersonalInfo.LastName}", emp.Role);
+                    dataGrid_employees.DataSource = employeeTable;
                 }
             }
         }
@@ -362,12 +253,13 @@ namespace MediaBazzar
 
         public void ShowAllEmployees(bool employeeStatus)
         {
-            lbManagemendEmployees.Items.Clear();
-            foreach (Employee item in Employees.GetAllPerType())
+            employeeTable.Rows.Clear();
+            foreach (Employee emp in EmployeeManager.Employees)
             {
-                if (item.Active == employeeStatus)
+                if (emp.Active == employeeStatus)
                 {
-                    lbManagemendEmployees.Items.Add(item);
+                    employeeTable.Rows.Add(emp.EmployeeID, $"{emp.PersonalInfo.FirstName} {emp.PersonalInfo.LastName}", emp.Role);
+                    dataGrid_employees.DataSource = employeeTable;
                 }
             }
 
@@ -382,7 +274,6 @@ namespace MediaBazzar
         {
             filter();
         }
-
         private void checkbox_fired_CheckedChanged(object sender, EventArgs e)
         {
             if (checkbox_fired.Checked)
@@ -405,22 +296,97 @@ namespace MediaBazzar
         }
         private void filterStock()
         {
+            List<Stock> stocks = stock.allStocks;
+            stockTable.Rows.Clear();
             if (rbManagementStockAmountFilter.Checked)
             {
-
+                if (int.TryParse(tbManagementStockFilter.Text, out int amount))
+                {
+                    foreach (Stock s in stocks)
+                    {
+                        if (s.Amount == amount)
+                        {
+                            stockTable.Rows.Add(s.Name, s.Amount, s.Price, s.AvailableStr);
+                            dataGrid_stocks.DataSource = stockTable;
+                        }
+                    }
+                }
             }
             if (rbManagementStockBrandFilter.Checked)
             {
-
+                foreach (Stock s in stocks)
+                {
+                    string searchedBrand = tbManagementStockFilter.Text.ToLower();
+                    if (s.Brand.ToLower().Contains(searchedBrand))
+                    {
+                        stockTable.Rows.Add(s.Name, s.Amount, s.Price, s.AvailableStr);
+                        dataGrid_stocks.DataSource = stockTable;
+                    }
+                }
             }
             if (rbManagementStockIDFilter.Checked)
             {
-
+                if (int.TryParse(tbManagementStockFilter.Text, out int id))
+                {
+                    foreach (Stock s in stocks)
+                    {
+                        if (s.ID == id)
+                        {
+                            stockTable.Rows.Add(s.Name, s.Amount, s.Price, s.AvailableStr);
+                            dataGrid_stocks.DataSource = stockTable;
+                        }
+                    }
+                }
+            }
+        }
+        public void showAllStock()
+        {
+            List<Stock> stocks = stock.allStocks;
+            stockTable.Rows.Clear();
+            foreach(Stock s in stocks)
+            {
+                stockTable.Rows.Add(s.Name, s.Amount, s.Price, s.AvailableStr);
+                dataGrid_stocks.DataSource = stockTable;
             }
         }
         private void tbManagementStockFilter_TextChanged(object sender, EventArgs e)
         {
-            filterStock();
+            if (!String.IsNullOrEmpty(tbManagementStockFilter.Text))
+            {
+                filterStock();
+            }
+        }
+
+        private void rbManagementStockIDFilter_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbManagementStockIDFilter.Checked)
+            {
+                tbManagementStockFilter.Text = String.Empty;
+                showAllStock();
+            }
+        }
+
+        private void rbManagementStockBrandFilter_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbManagementStockBrandFilter.Checked)
+            {
+                tbManagementStockFilter.Text = String.Empty;
+                showAllStock();
+            }
+        }
+
+        private void rbManagementStockAmountFilter_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbManagementStockAmountFilter.Checked)
+            {
+                tbManagementStockFilter.Text = String.Empty;
+                showAllStock();
+            }
+        }
+
+        private void Management_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

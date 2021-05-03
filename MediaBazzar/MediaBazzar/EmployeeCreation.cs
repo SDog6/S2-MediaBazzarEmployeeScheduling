@@ -77,7 +77,7 @@ namespace MediaBazzar
                 string contactEmail = textboxes[10];
                 Person contactPerson = new Person(contactFirstName, contactLastname, contactPhoneNumber, contactAddress, contactEmail);
 
-                Contract contract = new Contract(DateTime.Now);
+                Contract contract = new Contract(0, DateTime.Now);
 
                 string username = tbUsername.Text;
                 Account account = new Account(username);

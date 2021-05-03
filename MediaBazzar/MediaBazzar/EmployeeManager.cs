@@ -13,11 +13,11 @@ namespace MediaBazzar
 
         private EmployeeData data;
 
-        public EmployeeData EmpsData { get { return this.data; } set { data = value; } }
+        public List<Employee> Employees { get { return this.Emps; } }
 
         public EmployeeManager()
         {
-            EmpsData = new EmployeeData();
+            data = new EmployeeData();
             loadDataFromDatabase();
         }
 
@@ -26,16 +26,16 @@ namespace MediaBazzar
         {
             Emps = new List<Employee>();
 
-            foreach (Employee o in (List<Employee>)EmpsData.ReadAll())
+            foreach (Employee emp in (List<Employee>)data.ReadAll())
             {
-                Emps.Add((Employee)o);
+                Emps.Add(emp);
             }
         }
         public bool Add(object obj)
         {
             if (obj != null)
             {
-                EmpsData.Insert((Employee)obj);
+                data.Insert((Employee)obj);
                 loadDataFromDatabase();
                 return true;
             }
@@ -61,8 +61,8 @@ namespace MediaBazzar
 
         public Employee GetEmp(int id)
         {
-            Employee temp = (Employee)EmpsData.ReadAllByID(id);
-            return temp;
+            Employee emp = data.GetEmployee(id);
+            return emp;
 
         }
 
@@ -71,24 +71,13 @@ namespace MediaBazzar
             Employee em = (Employee)emp;
             if(em.Active == true)
             {
-                EmpsData.FireEmployee(emp);
+                data.FireEmployee(emp);
                 return true;
             }
             else
             {
                 return false;
             }
-        }
-
-        public List<object> GetAllPerRole(string role)
-        {
-            List<object> temp = new List<object>();
-
-            foreach (Employee item in (List<Employee>)EmpsData.ReadAllByRole(role))
-            {
-                temp.Add(item);
-            }
-            return temp;
         }
 
         public bool Remove(object obj)

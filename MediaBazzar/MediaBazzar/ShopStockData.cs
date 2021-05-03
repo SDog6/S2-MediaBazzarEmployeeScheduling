@@ -87,7 +87,6 @@ namespace MediaBazzar
         public object ReadAll()
         {
             List<Stock> stocks = new List<Stock>();
-
             try
             {
                 string sql = "SELECT shopstock.StockID, stock.Name,shopstock.Amount,stock.Price,stock.Brand, stock.available FROM shopstock INNER JOIN stock ON shopstock.stockid =stock.id;";
