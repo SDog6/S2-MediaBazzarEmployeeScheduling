@@ -12,6 +12,8 @@ namespace MediaBazzar
         private ShopStockData data;
         private List<Stock> ShopStocks;
 
+        public List<Stock> allStocks { get { return this.ShopStocks; } }
+
         public ShopStockManager()
         {
             data = new ShopStockData();

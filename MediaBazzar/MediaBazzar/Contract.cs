@@ -17,8 +17,9 @@ namespace MediaBazzar
         public DateTime EmploymentStart { get { return this.employmentStart; } }
         public DateTime EmploymentEnd { get { return this.employmentEnd; } }
         public string TerminationReason { get { return this.terminationReason; } }
-        public Contract(DateTime employmentStart)
+        public Contract(int workingHours, DateTime employmentStart)
         {
+            this.workingHours = workingHours;
             this.employmentStart = employmentStart;
             this.employmentEnd = new DateTime();
             terminationReason = string.Empty;

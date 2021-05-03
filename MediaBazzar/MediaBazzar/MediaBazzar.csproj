@@ -93,8 +93,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
-    <Compile Include="AccountData.cs" />
-    <Compile Include="AccountManager.cs" />
     <Compile Include="Address.cs" />
     <Compile Include="Contract.cs" />
     <Compile Include="dbi457108DataSet.Designer.cs">
@@ -204,6 +202,7 @@
     </Compile>
     <EmbeddedResource Include="EmployeeCreation.resx">
       <DependentUpon>EmployeeCreation.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeFiring.resx">
       <DependentUpon>EmployeeFiring.cs</DependentUpon>
