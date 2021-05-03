@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
-using System.Data;
 
 namespace MediaBazzar
 {
@@ -91,7 +90,7 @@ namespace MediaBazzar
 
         private void btnManagementStockUpdate_Click_1(object sender, EventArgs e)
         {
-            UpdateStockUI();
+            showAllStock();
         }
         public void UpdateStockUI()
         {
@@ -99,53 +98,9 @@ namespace MediaBazzar
             BindingSource bs = new BindingSource();
             bs.DataSource = dstock;
             dataGrid_stocks.DataSource = bs;
-
-
-            /*lbManagementStock.Items.Clear();
-            foreach (Stock item in stock.GetAllPerType())
-            {
-                lbManagementStock.Items.Add(item);
-            }*/
-            //dataGridView1.Rows.Clear();
-            //dataGridView1.DataSource = stock;
-            //dataGridView1.ColumnCount = 5;
-            //dataGridView1.Columns[0].Name = "ID";
-            //dataGridView1.Columns[1].Name = "Name";
-            //dataGridView1.Columns[2].Name = "Amount";
-            //dataGridView1.Columns[3].Name = "Price";
-            //dataGridView1.Columns[4].Name = "Availability";
-            //string[] row = new string[4];
-
-
-
-
-            //    foreach (Stock item in stock.GetAllPerType())
-            //    {
-            //        dataGridView1.Rows.Add(item.ID, item.Name, item.Amount, item.Price, item.AvailableStr);   
-            //    }
-            //foreach (DataGridViewRow row in dataGridView1.Rows)
-            //{
-            //    if (row.Cells[3].Value != "Available")
-            //    {
-            //        row.DefaultCellStyle.BackColor = Color.PaleVioletRed;
-            //    }
-            //    else
-            //    {
-            //        row.DefaultCellStyle.BackColor = Color.LightGray;
-            //    }
-            //}
-
         }
         private void btnStockRemove_Click(object sender, EventArgs e)
         {
-
-            /*if (lbManagementStock.SelectedIndex > -1)
-            {
-                Object s = lbManagementStock.SelectedItem;
-                stock.Remove(s);
-            }*/
-            //dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
-
             Object s = (Object)dataGrid_stocks.CurrentRow.DataBoundItem;
             stock.Remove(s);
         }
@@ -319,7 +274,6 @@ namespace MediaBazzar
         {
             filter();
         }
-
         private void checkbox_fired_CheckedChanged(object sender, EventArgs e)
         {
             if (checkbox_fired.Checked)
@@ -428,6 +382,11 @@ namespace MediaBazzar
                 tbManagementStockFilter.Text = String.Empty;
                 showAllStock();
             }
+        }
+
+        private void Management_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

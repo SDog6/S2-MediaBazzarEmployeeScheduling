@@ -418,6 +418,7 @@ namespace MediaBazzar
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Management";
             this.Text = "Management";
+            this.Load += new System.EventHandler(this.Management_Load);
             this.tabControl1.ResumeLayout(false);
             this.People.ResumeLayout(false);
             this.People.PerformLayout();

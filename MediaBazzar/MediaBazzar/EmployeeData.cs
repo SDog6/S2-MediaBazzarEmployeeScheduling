@@ -79,7 +79,6 @@ namespace MediaBazzar
             }
             catch(Exception ex)
             {
-                MessageBox.Show("tuka grumna");
                 MessageBox.Show(ex.Message);
             }
             return employees;
@@ -114,7 +113,7 @@ namespace MediaBazzar
             string role = row[3].ToString();
             bool status = Convert.ToBoolean(row[4]);
 
-            object[] personInfo = {row[5], row[6], row[7], row[8], row[9], row[10], row[11], row[12] };
+            object[] personInfo = {row[5], row[6], row[7], row[8], row[9], row[10], row[11], row[12]};
             Person personalInfo = PersonObject(personInfo);
 
             object[] contractInfo = {row[13], row[14], row[15], row[16]};
