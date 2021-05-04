@@ -33,9 +33,9 @@ namespace MediaBazzar
             this.terminationReason = terminationReason;
         }
 
-        public void Terminate(DateTime date, string reason)
+        public void Terminate(string reason)
         {
-            this.employmentEnd = date;
+            this.employmentEnd = DateTime.Now;
             this.terminationReason = reason;
         }
 

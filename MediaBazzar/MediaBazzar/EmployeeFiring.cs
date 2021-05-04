@@ -19,14 +19,20 @@ namespace MediaBazzar
             InitializeComponent();
             Manager = new EmployeeManager();
             this.emp = emp;
-
-
             lblFire.Text = $"Please state the reason for firing {emp.PersonalInfo.FirstName}";
         }
 
         private void EmployeeFiring_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnFire_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(tbFire.Text))
+            {
+                Manager.FireEmployee(emp, tbFire.Text);
+            }
         }
     }
 }

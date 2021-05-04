@@ -194,7 +194,7 @@ namespace MediaBazzar
             }
             if (int.TryParse(searchId, out int ID))
             {
-                foreach (Employee emp in EmployeeManager.Employees)
+                foreach (Employee emp in EmployeeManager.GetAllPerType())
                 {
                     if (emp.EmployeeID == ID && emp.Active == employeeStatus)
                     {
@@ -214,7 +214,7 @@ namespace MediaBazzar
                 ShowAllEmployees(employeeStatus);
                 return;
             }
-            foreach (Employee emp in EmployeeManager.Employees)
+            foreach (Employee emp in EmployeeManager.GetAllPerType())
             {
                 string firstName = emp.PersonalInfo.FirstName.ToLower();
                 string lastName = emp.PersonalInfo.LastName.ToLower();
@@ -229,7 +229,7 @@ namespace MediaBazzar
         private void fillRoles()
         {
             cb_allRoles.Items.Clear();
-            foreach (Employee emp in EmployeeManager.Employees)
+            foreach (Employee emp in EmployeeManager.GetAllPerType())
             {
                 if (!cb_allRoles.Items.Contains(emp.Role))
                 {
@@ -240,7 +240,7 @@ namespace MediaBazzar
         private void RoleSearch(int index, bool employeeStatus)
         {
             employeeTable.Rows.Clear();
-            foreach (Employee emp in EmployeeManager.Employees)
+            foreach (Employee emp in EmployeeManager.GetAllPerType())
             {
                 if (emp.Role == cb_allRoles.Items[index].ToString() && emp.Active == employeeStatus)
                 {
@@ -254,7 +254,7 @@ namespace MediaBazzar
         public void ShowAllEmployees(bool employeeStatus)
         {
             employeeTable.Rows.Clear();
-            foreach (Employee emp in EmployeeManager.Employees)
+            foreach (Employee emp in EmployeeManager.GetAllPerType())
             {
                 if (emp.Active == employeeStatus)
                 {
@@ -307,9 +307,9 @@ namespace MediaBazzar
                         if (s.Amount == amount)
                         {
                             stockTable.Rows.Add(s.Name, s.Amount, s.Price, s.AvailableStr);
-                            dataGrid_stocks.DataSource = stockTable;
                         }
                     }
+                    dataGrid_stocks.DataSource = stockTable;
                 }
             }
             if (rbManagementStockBrandFilter.Checked)
@@ -320,9 +320,9 @@ namespace MediaBazzar
                     if (s.Brand.ToLower().Contains(searchedBrand))
                     {
                         stockTable.Rows.Add(s.Name, s.Amount, s.Price, s.AvailableStr);
-                        dataGrid_stocks.DataSource = stockTable;
                     }
                 }
+                dataGrid_stocks.DataSource = stockTable;
             }
             if (rbManagementStockIDFilter.Checked)
             {
@@ -333,9 +333,9 @@ namespace MediaBazzar
                         if (s.ID == id)
                         {
                             stockTable.Rows.Add(s.Name, s.Amount, s.Price, s.AvailableStr);
-                            dataGrid_stocks.DataSource = stockTable;
                         }
                     }
+                    dataGrid_stocks.DataSource = stockTable;
                 }
             }
         }
@@ -346,8 +346,8 @@ namespace MediaBazzar
             foreach(Stock s in stocks)
             {
                 stockTable.Rows.Add(s.Name, s.Amount, s.Price, s.AvailableStr);
-                dataGrid_stocks.DataSource = stockTable;
             }
+            dataGrid_stocks.DataSource = stockTable;
         }
         private void tbManagementStockFilter_TextChanged(object sender, EventArgs e)
         {

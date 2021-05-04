@@ -77,9 +77,9 @@ namespace MediaBazzar
                     employees.Add(emp);
                 }
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                MessageBox.Show(ex.Message);
+                throw new FailedReadFromDBException("all employees");
             }
             return employees;
         }
@@ -99,9 +99,9 @@ namespace MediaBazzar
                     return emp;
                 }        
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                MessageBox.Show(ex.Message);
+                throw new FailedReadFromDBException("employee");
             }
             return null;
         }
@@ -157,7 +157,7 @@ namespace MediaBazzar
                 conn.Open();
                 addressId = Convert.ToInt32(cmd.ExecuteScalar());
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new FailedDatabaseInjectionException("address");
             }
@@ -184,7 +184,7 @@ namespace MediaBazzar
                 conn.Open();
                 personid = Convert.ToInt32(cmd.ExecuteScalar());
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new FailedDatabaseInjectionException("person");
             }
@@ -215,7 +215,7 @@ namespace MediaBazzar
                 conn.Open();
                 contractId = Convert.ToInt32(cmd.ExecuteScalar());
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new FailedDatabaseInjectionException("contract");
             }
@@ -237,7 +237,7 @@ namespace MediaBazzar
                 conn.Open();
                 accountId = Convert.ToInt32(cmd.ExecuteScalar());
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new FailedDatabaseInjectionException("account");
             }
@@ -285,46 +285,59 @@ namespace MediaBazzar
                 Person contactPerson = PersonObject(personInfo);
                 return contactPerson;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+                throw new FailedReadFromDBException("contact person");
             }
             finally
             {
                 conn.Close();
             }
-            return null;
         }
-        public void FireEmployee(object obj)
+        private void changeEmpStatus(int id)
         {
-            Employee emp = (Employee)obj;
+            string query = "UPDATE employee SET status = false WHERE id = @id";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@id", id);
             try
             {
-                // make sure in your table the id in auto-incremented
-                string sql = "UPDATE employee SET status = false WHERE id = @id";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@id", emp.EmployeeID);
-
-
                 conn.Open();
-
                 cmd.ExecuteNonQuery();
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.Message);
             }
             catch (Exception)
             {
-                MessageBox.Show("An error occured! Try again.");
+                throw new FailedDatabaseUpdateException();
             }
             finally
             {
-                if (conn != null)
-                {
-                    conn.Close();
-                }
+                conn.Close();
             }
+        }
+        private void changeContractDetails(int id, Contract contract)
+        {
+            string query = "UPDATE contract INNER JOIN employee ON contract.id = employee.contractId SET contract.end = @endDate, contract.endReason = @endReason WHERE employee.id = @id";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@endDate", contract.EmploymentEnd);
+            cmd.Parameters.AddWithValue("@endReason", contract.TerminationReason);
+            cmd.Parameters.AddWithValue("@id", id);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw new FailedDatabaseUpdateException();
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        public void FireEmployee(Employee emp)
+        {
+            changeEmpStatus(emp.EmployeeID);
+            changeContractDetails(emp.EmployeeID, emp.Contract);
         }
 
         public void Delete(int id)

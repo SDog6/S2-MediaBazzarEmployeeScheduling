@@ -67,7 +67,7 @@ namespace MediaBazzar
                 while (dr.Read())
                 {
                     int id = Convert.ToInt32(dr[0]);
-                    Employee gottenEmp = getemp.GetEmp(id);
+                    Employee gottenEmp = getemp.GetEmployee(id);
                     shifts.Add(new Shift(gottenEmp, Convert.ToDateTime(dr[1]), dr[2].ToString()));
                 }
 
@@ -107,7 +107,7 @@ namespace MediaBazzar
                 while (dr.Read())
                 {
                     int id = Convert.ToInt32(dr[0]);
-                    Employee gottenEmp = getemp.GetEmp(id);
+                    Employee gottenEmp = getemp.GetEmployee(id);
                     shifts.Add(new Shift(gottenEmp, Convert.ToDateTime(dr[1]), dr[2].ToString()));
                 }
 
@@ -148,7 +148,7 @@ namespace MediaBazzar
                 while (dr.Read())
                 {
                     int id = Convert.ToInt32(dr[0]);
-                    Employee gottenEmp = getemp.GetEmp(id);
+                    Employee gottenEmp = getemp.GetEmployee(id);
                     shifts.Add(new Shift(gottenEmp, Convert.ToDateTime(dr[1]), dr[2].ToString()));
                 }
 
@@ -189,7 +189,7 @@ namespace MediaBazzar
                 while (dr.Read())
                 {
                     int id = Convert.ToInt32(dr[0]);
-                    Employee gottenEmp = getemp.GetEmp(id);
+                    Employee gottenEmp = getemp.GetEmployee(id);
                     shifts.Add(new Shift(gottenEmp, Convert.ToDateTime(dr[1]), dr[2].ToString()));
                 }
 
