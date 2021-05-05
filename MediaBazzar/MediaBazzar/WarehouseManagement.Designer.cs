@@ -38,17 +38,16 @@ namespace MediaBazzar
             this.btnWarehouseResupply = new System.Windows.Forms.Button();
             this.tbWarehouseResupply = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnDiscontinue = new System.Windows.Forms.Button();
             this.btnRestock = new System.Windows.Forms.Button();
             this.btnNewItem = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lbWarehouseStock = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -60,9 +59,9 @@ namespace MediaBazzar
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox1.Location = new System.Drawing.Point(297, 76);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(273, 132);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
@@ -72,7 +71,7 @@ namespace MediaBazzar
             // 
             this.rbWarehouseItemID.AutoSize = true;
             this.rbWarehouseItemID.Location = new System.Drawing.Point(8, 37);
-            this.rbWarehouseItemID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbWarehouseItemID.Margin = new System.Windows.Forms.Padding(4);
             this.rbWarehouseItemID.Name = "rbWarehouseItemID";
             this.rbWarehouseItemID.Size = new System.Drawing.Size(101, 27);
             this.rbWarehouseItemID.TabIndex = 2;
@@ -83,7 +82,7 @@ namespace MediaBazzar
             // tbWarehouseSearch
             // 
             this.tbWarehouseSearch.Location = new System.Drawing.Point(131, 63);
-            this.tbWarehouseSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbWarehouseSearch.Margin = new System.Windows.Forms.Padding(4);
             this.tbWarehouseSearch.Name = "tbWarehouseSearch";
             this.tbWarehouseSearch.Size = new System.Drawing.Size(132, 32);
             this.tbWarehouseSearch.TabIndex = 1;
@@ -92,7 +91,7 @@ namespace MediaBazzar
             // 
             this.rbWarehouseBrand.AutoSize = true;
             this.rbWarehouseBrand.Location = new System.Drawing.Point(8, 75);
-            this.rbWarehouseBrand.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbWarehouseBrand.Margin = new System.Windows.Forms.Padding(4);
             this.rbWarehouseBrand.Name = "rbWarehouseBrand";
             this.rbWarehouseBrand.Size = new System.Drawing.Size(88, 27);
             this.rbWarehouseBrand.TabIndex = 3;
@@ -109,9 +108,9 @@ namespace MediaBazzar
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox2.Location = new System.Drawing.Point(297, 242);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(327, 166);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
@@ -132,7 +131,7 @@ namespace MediaBazzar
             this.btnWarehouseResupply.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.btnWarehouseResupply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWarehouseResupply.Location = new System.Drawing.Point(12, 97);
-            this.btnWarehouseResupply.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnWarehouseResupply.Margin = new System.Windows.Forms.Padding(4);
             this.btnWarehouseResupply.Name = "btnWarehouseResupply";
             this.btnWarehouseResupply.Size = new System.Drawing.Size(185, 47);
             this.btnWarehouseResupply.TabIndex = 7;
@@ -143,7 +142,7 @@ namespace MediaBazzar
             // tbWarehouseResupply
             // 
             this.tbWarehouseResupply.Location = new System.Drawing.Point(12, 50);
-            this.tbWarehouseResupply.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbWarehouseResupply.Margin = new System.Windows.Forms.Padding(4);
             this.tbWarehouseResupply.Name = "tbWarehouseResupply";
             this.tbWarehouseResupply.Size = new System.Drawing.Size(132, 32);
             this.tbWarehouseResupply.TabIndex = 6;
@@ -153,13 +152,22 @@ namespace MediaBazzar
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.lbWarehouseStock);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1184, 650);
             this.panel1.TabIndex = 12;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(632, 103);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(535, 311);
+            this.dataGridView1.TabIndex = 7;
             // 
             // panel2
             // 
@@ -169,7 +177,7 @@ namespace MediaBazzar
             this.panel2.Controls.Add(this.btnNewItem);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(267, 650);
             this.panel2.TabIndex = 0;
@@ -181,7 +189,7 @@ namespace MediaBazzar
             this.btnDiscontinue.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDiscontinue.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnDiscontinue.Location = new System.Drawing.Point(0, 220);
-            this.btnDiscontinue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDiscontinue.Margin = new System.Windows.Forms.Padding(4);
             this.btnDiscontinue.Name = "btnDiscontinue";
             this.btnDiscontinue.Size = new System.Drawing.Size(267, 69);
             this.btnDiscontinue.TabIndex = 23;
@@ -196,7 +204,7 @@ namespace MediaBazzar
             this.btnRestock.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRestock.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnRestock.Location = new System.Drawing.Point(0, 340);
-            this.btnRestock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRestock.Margin = new System.Windows.Forms.Padding(4);
             this.btnRestock.Name = "btnRestock";
             this.btnRestock.Size = new System.Drawing.Size(267, 69);
             this.btnRestock.TabIndex = 22;
@@ -210,34 +218,13 @@ namespace MediaBazzar
             this.btnNewItem.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewItem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnNewItem.Location = new System.Drawing.Point(0, 103);
-            this.btnNewItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNewItem.Margin = new System.Windows.Forms.Padding(4);
             this.btnNewItem.Name = "btnNewItem";
             this.btnNewItem.Size = new System.Drawing.Size(267, 69);
             this.btnNewItem.TabIndex = 21;
             this.btnNewItem.Text = "Add new item";
             this.btnNewItem.UseVisualStyleBackColor = false;
             this.btnNewItem.Click += new System.EventHandler(this.btnNewItem_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(632, 103);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(535, 311);
-            this.dataGridView1.TabIndex = 7;
-            // 
-            // lbWarehouseStock
-            // 
-            this.lbWarehouseStock.FormattingEnabled = true;
-            this.lbWarehouseStock.ItemHeight = 16;
-            this.lbWarehouseStock.Location = new System.Drawing.Point(632, 60);
-            this.lbWarehouseStock.Margin = new System.Windows.Forms.Padding(4);
-            this.lbWarehouseStock.Name = "lbWarehouseStock";
-            this.lbWarehouseStock.Size = new System.Drawing.Size(535, 500);
-            this.lbWarehouseStock.TabIndex = 6;
-            this.lbWarehouseStock.SelectedIndexChanged += new System.EventHandler(this.lbWarehouseStock_SelectedIndexChanged);
             // 
             // WarehouseManagement
             // 
@@ -247,7 +234,7 @@ namespace MediaBazzar
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "WarehouseManagement";
             this.Text = "WarehouseManagement";
             this.groupBox1.ResumeLayout(false);
@@ -255,8 +242,8 @@ namespace MediaBazzar
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -276,6 +263,5 @@ namespace MediaBazzar
         private System.Windows.Forms.Button btnDiscontinue;
         private System.Windows.Forms.Button btnRestock;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ListBox lbWarehouseStock;
     }
 }
