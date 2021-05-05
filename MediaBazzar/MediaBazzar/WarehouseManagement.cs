@@ -58,20 +58,26 @@ namespace MediaBazzar
 
         private void btnWarehouseResupply_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedRows.Count > -1)
+            {
+                Stock selected = (Stock)dataGridView1.CurrentRow.DataBoundItem;
+                selected.Resupply(Convert.ToInt32(tbWarehouseResupply.Text));
+            }
             if (lbWarehouseStock.SelectedIndex > -1)
             {
                 Stock selected = (Stock)lbWarehouseStock.SelectedItem;
                 selected.Resupply(Convert.ToInt32(tbWarehouseResupply.Text));
             }
+
+            UpdateUI();
         }
 
         public void UpdateUI()
         {
-            lbWarehouseStock.Items.Clear();
-            foreach (Stock s in WarehouseStock.GetAllPerType())
-            {
-                lbWarehouseStock.Items.Add(s);
-            }
+            List<object> dstock = WarehouseStock.GetAllPerType();
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dstock;
+            dataGridView1.DataSource = bs;
         }
         private void btnRemove_Click(object sender, EventArgs e)
         {
@@ -85,9 +91,9 @@ namespace MediaBazzar
 
         private void btnRemove_Click_1(object sender, EventArgs e)
         {
-            Object s = lbWarehouseStock.SelectedItem;
-            WarehouseStock.Remove(s);
-            UpdateUI();
+            //Object s = lbWarehouseStock.SelectedItem;
+            //WarehouseStock.Remove(s);
+            //UpdateUI();
         }
 
         private void lbWarehouseStock_SelectedIndexChanged(object sender, EventArgs e)
@@ -103,8 +109,14 @@ namespace MediaBazzar
 
         private void btnDiscontinue_Click(object sender, EventArgs e)
         {
-            Object s = lbWarehouseStock.SelectedItem;
-            WarehouseStock.Remove(s);
+            //Object s = lbWarehouseStock.SelectedItem;
+            //WarehouseStock.Remove(s);
+            if (dataGridView1.SelectedRows.Count > -1)
+            {
+                Stock selected = (Stock)dataGridView1.CurrentRow.DataBoundItem;
+                WarehouseStock.Unavailable(selected);
+            }
+
             UpdateUI();
         }
     }

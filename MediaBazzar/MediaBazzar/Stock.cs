@@ -17,7 +17,6 @@ namespace MediaBazzar
         private int available;
         public int Available
         {
-            get { return this.available; }
             set { available = value; }
         }
 
