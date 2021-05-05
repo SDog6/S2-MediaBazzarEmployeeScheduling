@@ -25,6 +25,7 @@ namespace MediaBazzar
             EmployeeManager = new EmployeeManager();
             stockTable = new DataTable();
             employeeTable = new DataTable();
+            fillRoles();
             prepareTables();
             ShowAllEmployees(true);
             radio_ID.Checked = true;
@@ -166,7 +167,6 @@ namespace MediaBazzar
             bool employeeStatus = GetEmployeeStatus();
             if (radio_role.Checked)
             {
-                fillRoles();
                 ShowAllEmployees(employeeStatus);
                 if (cb_allRoles.SelectedIndex > -1)
                 {

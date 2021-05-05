@@ -19,7 +19,7 @@ namespace MediaBazzar
             Stock stock = (Stock)obj;
             try
             {
-                // make sure in your table the id in auto-incremented
+
                 string sql = "INSERT INTO shopstock (StockID,Amount) VALUES (@stockID,@amount)";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@stockID", stock.ID);

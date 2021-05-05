@@ -247,24 +247,23 @@ namespace MediaBazzar
             }
             return accountId;
         }
-        public string getAccountLogInRole(string username, string password)
+        public Employee loginAccount(string username)
         {
-            string sql = $"SELECT employee.role FROM account INNER JOIN employee ON account.id = employee.accountId WHERE account.username = @username AND account.password = @password";
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@username", username);
-            cmd.Parameters.AddWithValue("@password", password);
+            string sql = $"SELECT * FROM account INNER JOIN employee ON account.id = employee.accountId WHERE account.username = '{username}'";
+            MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conn);
+            DataTable table = new DataTable();
             try
             {
-                conn.Open();
-                MySqlDataReader reader = cmd.ExecuteReader();
-                reader.Read();
-                string role = reader[0].ToString();
-                return role;
-
+                if (table.Rows.Count > 0)
+                {
+                    DataRow row = table.Rows[0];
+                    Employee emp = EmployeeObject(row);
+                    return emp;
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                throw new FailedReadFromDBException("account");
             }
             finally
             {

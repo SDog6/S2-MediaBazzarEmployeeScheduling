@@ -12,11 +12,11 @@ namespace MediaBazzar
 {
     public partial class LogInForm : Form
     {
-        EmployeeData data;
+        EmployeeManager Manager;
         public LogInForm()
         {
             InitializeComponent();
-            data = new EmployeeData();
+            Manager = new EmployeeManager();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -37,32 +37,42 @@ namespace MediaBazzar
             f.Show();
         }
 
-        private void LogInForm_Load(object sender, EventArgs e)
+        private void loginByRole(Employee emp)
         {
-
-        }
-
-        private void btnLogIn_Click(object sender, EventArgs e)
-        {
-            string username = tbLogInUsername.Text;
-            string password = tbLogInPassword.Text;
-           
-                if(data.getAccountLogInRole(username,password) == "Manager")
-                {
-                    Management v = new Management();
-                    v.Show();
-                }
-                else if(data.getAccountLogInRole(username, password) == "Warehouse Manager")
+            if (emp.Role == "Manager")
+            {
+                Management v = new Management();
+                v.Show();
+            }
+            if (emp.Role == "Warehouse Manager")
             {
                 WarehouseManagement f = new WarehouseManagement();
                 f.Show();
             }
-                else
+        }
+        private bool empty(string s)
+        {
+            if (String.IsNullOrEmpty(s))
             {
-                MessageBox.Show("Access Denied");
+                return true;
             }
-            
-            
+            return false;
+        }
+        private void btnLogIn_Click(object sender, EventArgs e)
+        {
+            string username = tbLogInUsername.Text;
+            string password = tbLogInPassword.Text;
+            if(!empty(username) && !empty(password))
+            {
+                Employee emp = Manager.tryLogin(username, password);
+                if (emp != null)
+                {
+                    loginByRole(emp);
+                    return;
+                }
+                MessageBox.Show("Access Denied");
+                return;
+            }
         }
     }
 }

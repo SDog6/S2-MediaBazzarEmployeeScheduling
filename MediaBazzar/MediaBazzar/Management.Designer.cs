@@ -128,7 +128,7 @@ namespace MediaBazzar
             // 
             this.checkbox_fired.AutoSize = true;
             this.checkbox_fired.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkbox_fired.Location = new System.Drawing.Point(840, 165);
+            this.checkbox_fired.Location = new System.Drawing.Point(832, 165);
             this.checkbox_fired.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkbox_fired.Name = "checkbox_fired";
             this.checkbox_fired.Size = new System.Drawing.Size(75, 26);
@@ -141,7 +141,7 @@ namespace MediaBazzar
             // 
             this.checkBox_active.AutoSize = true;
             this.checkBox_active.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox_active.Location = new System.Drawing.Point(840, 124);
+            this.checkBox_active.Location = new System.Drawing.Point(832, 124);
             this.checkBox_active.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox_active.Name = "checkBox_active";
             this.checkBox_active.Size = new System.Drawing.Size(94, 26);
