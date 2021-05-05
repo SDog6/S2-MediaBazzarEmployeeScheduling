@@ -80,6 +80,20 @@ namespace MediaBazzar
             return temp;
         }
 
+        public bool Unavailable(object obj)
+        {
+            if (obj != null)
+            {
+                StockData.Discontinue((Stock)obj);
+                loadDataFromDatabase();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public bool Remove(object obj)
         {
             if (obj != null)

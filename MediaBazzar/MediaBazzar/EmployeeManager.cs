@@ -81,6 +81,23 @@ namespace MediaBazzar
             }
             return false;
         }
+
+        public Employee tryLogin(string username, string password)
+        {
+            try
+            {
+                Employee emp = data.loginAccount(username);
+                if(emp != null && emp.Account.Password == password)
+                {
+                    return emp;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return null;
+        }
         public bool Remove(object obj)
         {
             throw new NotImplementedException();

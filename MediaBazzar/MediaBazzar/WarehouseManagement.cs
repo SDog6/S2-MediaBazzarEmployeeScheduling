@@ -33,67 +33,73 @@ namespace MediaBazzar
             f.Show();
         }
 
-        private void btnWarehouseSearch_Click(object sender, EventArgs e)
-        {
-            lbWarehouseStock.Items.Clear();
-            if (rbWarehouseBrand.Checked)
-            {
-                string brand = tbWarehouseSearch.Text;
-                foreach (Stock s in WarehouseStock.SearchByBrand(brand))
-                {
-                    lbWarehouseStock.Items.Add(s);
-                }
-            }
-            else if (rbWarehouseItemID.Checked)
-            {
-                int ID = Convert.ToInt32(tbWarehouseSearch.Text);
-                foreach (Stock s in WarehouseStock.SearchByID(ID))
-                {
+        //private void btnWarehouseSearch_Click(object sender, EventArgs e)
+        //{
+        //    dataGridView1.Rows.Clear();
+        //    if (rbWarehouseBrand.Checked)
+        //    {
+        //        string brand = tbWarehouseSearch.Text;
+        //        foreach (Stock s in WarehouseStock.SearchByBrand(brand))
+        //        {
+        //            dataGridView1.Rows.Add(s);
+        //        }
+        //    }
+        //    else if (rbWarehouseItemID.Checked)
+        //    {
+        //        int ID = Convert.ToInt32(tbWarehouseSearch.Text);
+        //        foreach (Stock s in WarehouseStock.SearchByID(ID))
+        //        {
 
-                    lbWarehouseStock.Items.Add(s);
+        //            dataGridView1.Rows.Add(s);
 
-                }
-            }
-        }
+        //        }
+        //    }
+        //}
 
         private void btnWarehouseResupply_Click(object sender, EventArgs e)
         {
-            if (lbWarehouseStock.SelectedIndex > -1)
+            if (dataGridView1.SelectedRows.Count > -1)
             {
-                Stock selected = (Stock)lbWarehouseStock.SelectedItem;
+                Stock selected = (Stock)dataGridView1.CurrentRow.DataBoundItem;
                 selected.Resupply(Convert.ToInt32(tbWarehouseResupply.Text));
             }
+            //if (lbWarehouseStock.SelectedIndex > -1)
+            //{
+            //    Stock selected = (Stock)lbWarehouseStock.SelectedItem;
+            //    selected.Resupply(Convert.ToInt32(tbWarehouseResupply.Text));
+            //}
+
+            UpdateUI();
         }
 
         public void UpdateUI()
         {
-            lbWarehouseStock.Items.Clear();
-            foreach (Stock s in WarehouseStock.GetAllPerType())
-            {
-                lbWarehouseStock.Items.Add(s);
-            }
+            List<object> dstock = WarehouseStock.GetAllPerType();
+            BindingSource bs = new BindingSource();
+            bs.DataSource = dstock;
+            dataGridView1.DataSource = bs;
         }
-        private void btnRemove_Click(object sender, EventArgs e)
-        {
+        //private void btnRemove_Click(object sender, EventArgs e)
+        //{
             
-        }
+        //}
 
-        private void WarehouseManagement_Load(object sender, EventArgs e)
-        {
+        //private void WarehouseManagement_Load(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
-        private void btnRemove_Click_1(object sender, EventArgs e)
-        {
-            Object s = lbWarehouseStock.SelectedItem;
-            WarehouseStock.Remove(s);
-            UpdateUI();
-        }
+        //private void btnRemove_Click_1(object sender, EventArgs e)
+        //{
+        //    //Object s = lbWarehouseStock.SelectedItem;
+        //    //WarehouseStock.Remove(s);
+        //    //UpdateUI();
+        //}
 
-        private void lbWarehouseStock_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        //private void lbWarehouseStock_SelectedIndexChanged(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
         private void btnNewItem_Click(object sender, EventArgs e)
         {
@@ -103,8 +109,14 @@ namespace MediaBazzar
 
         private void btnDiscontinue_Click(object sender, EventArgs e)
         {
-            Object s = lbWarehouseStock.SelectedItem;
-            WarehouseStock.Remove(s);
+            //Object s = lbWarehouseStock.SelectedItem;
+            //WarehouseStock.Remove(s);
+            if (dataGridView1.SelectedRows.Count > -1)
+            {
+                Stock selected = (Stock)dataGridView1.CurrentRow.DataBoundItem;
+                WarehouseStock.Unavailable(selected);
+            }
+
             UpdateUI();
         }
     }

@@ -174,7 +174,6 @@ namespace MediaBazzar
             this.Controls.Add(this.panel2);
             this.Name = "LogInForm";
             this.Text = "X";
-            this.Load += new System.EventHandler(this.LogInForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
