@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace MediaBazzar
 {
-    class FailedReadFromDBException : Exception
+    class FailedDatabaseUpdateException : Exception
     {
-        public FailedReadFromDBException(string type) : base($"Reading of {type} from database failed!")
+        public FailedDatabaseUpdateException() : base("Database update failed!")
         {
 
         }
-            
-
     }
 }

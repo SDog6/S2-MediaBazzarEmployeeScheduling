@@ -159,7 +159,7 @@ namespace MediaBazzar
             this.groupBox1.Controls.Add(this.txt_search);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Location = new System.Drawing.Point(399, 89);
+            this.groupBox1.Location = new System.Drawing.Point(375, 46);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -232,7 +232,7 @@ namespace MediaBazzar
             this.dataGrid_employees.AllowUserToAddRows = false;
             this.dataGrid_employees.AllowUserToDeleteRows = false;
             this.dataGrid_employees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid_employees.Location = new System.Drawing.Point(196, 384);
+            this.dataGrid_employees.Location = new System.Drawing.Point(355, 260);
             this.dataGrid_employees.Margin = new System.Windows.Forms.Padding(4);
             this.dataGrid_employees.Name = "dataGrid_employees";
             this.dataGrid_employees.ReadOnly = true;
@@ -413,7 +413,7 @@ namespace MediaBazzar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1120, 700);
+            this.ClientSize = new System.Drawing.Size(1120, 647);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Management";
