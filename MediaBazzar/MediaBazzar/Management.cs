@@ -77,7 +77,7 @@ namespace MediaBazzar
         }
         private void btnManagementRestockRequest_Click(object sender, EventArgs e)
         {
-            if (dataGrid_stocks.SelectedRows.Count > -1)
+            if (dataGrid_stocks.SelectedRows.Count > -1 && tbAmountNeeded.Text != "")
             {
                 DateTime filled = DateTime.Now;
 
@@ -86,6 +86,7 @@ namespace MediaBazzar
 
                 ReshelfRequest request = new ReshelfRequest(selected, filled, Convert.ToInt32(tbAmountNeeded.Text), false);
                 ReshelfRequests.Add(request);
+                MessageBox.Show("Request sucessfully submited")
             }
 
         }

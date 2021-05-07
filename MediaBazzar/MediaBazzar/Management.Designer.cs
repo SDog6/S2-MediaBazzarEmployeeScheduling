@@ -55,6 +55,7 @@ namespace MediaBazzar
             this.rbManagementStockIDFilter = new System.Windows.Forms.RadioButton();
             this.rbManagementStockAmountFilter = new System.Windows.Forms.RadioButton();
             this.tbManagementStockFilter = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.People.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -250,6 +251,7 @@ namespace MediaBazzar
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.tbAmountNeeded);
             this.panel1.Controls.Add(this.btnStockRemove);
             this.panel1.Controls.Add(this.btnManagementStockUpdate);
@@ -263,7 +265,7 @@ namespace MediaBazzar
             // 
             // tbAmountNeeded
             // 
-            this.tbAmountNeeded.Location = new System.Drawing.Point(25, 446);
+            this.tbAmountNeeded.Location = new System.Drawing.Point(7, 402);
             this.tbAmountNeeded.Name = "tbAmountNeeded";
             this.tbAmountNeeded.Size = new System.Drawing.Size(100, 22);
             this.tbAmountNeeded.TabIndex = 8;
@@ -273,7 +275,7 @@ namespace MediaBazzar
             this.btnStockRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(62)))));
             this.btnStockRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStockRemove.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStockRemove.Location = new System.Drawing.Point(-3, 204);
+            this.btnStockRemove.Location = new System.Drawing.Point(-6, 128);
             this.btnStockRemove.Name = "btnStockRemove";
             this.btnStockRemove.Size = new System.Drawing.Size(159, 53);
             this.btnStockRemove.TabIndex = 11;
@@ -286,7 +288,7 @@ namespace MediaBazzar
             this.btnManagementStockUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(62)))));
             this.btnManagementStockUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManagementStockUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManagementStockUpdate.Location = new System.Drawing.Point(-7, 113);
+            this.btnManagementStockUpdate.Location = new System.Drawing.Point(-10, 43);
             this.btnManagementStockUpdate.Name = "btnManagementStockUpdate";
             this.btnManagementStockUpdate.Size = new System.Drawing.Size(163, 56);
             this.btnManagementStockUpdate.TabIndex = 9;
@@ -299,7 +301,7 @@ namespace MediaBazzar
             this.btnManagementRestockRequest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(62)))));
             this.btnManagementRestockRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManagementRestockRequest.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManagementRestockRequest.Location = new System.Drawing.Point(-3, 373);
+            this.btnManagementRestockRequest.Location = new System.Drawing.Point(-6, 271);
             this.btnManagementRestockRequest.Name = "btnManagementRestockRequest";
             this.btnManagementRestockRequest.Size = new System.Drawing.Size(159, 56);
             this.btnManagementRestockRequest.TabIndex = 4;
@@ -312,7 +314,7 @@ namespace MediaBazzar
             this.btnManagementNewStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(62)))));
             this.btnManagementNewStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManagementNewStock.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManagementNewStock.Location = new System.Drawing.Point(-3, 286);
+            this.btnManagementNewStock.Location = new System.Drawing.Point(-6, 198);
             this.btnManagementNewStock.Name = "btnManagementNewStock";
             this.btnManagementNewStock.Size = new System.Drawing.Size(159, 56);
             this.btnManagementNewStock.TabIndex = 8;
@@ -397,6 +399,15 @@ namespace MediaBazzar
             this.tbManagementStockFilter.TabIndex = 1;
             this.tbManagementStockFilter.TextChanged += new System.EventHandler(this.tbManagementStockFilter_TextChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(4, 358);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(137, 32);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Amount of stock \r\nneeded for a resupply";
+            // 
             // Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,5 +462,6 @@ namespace MediaBazzar
         private System.Windows.Forms.Button btnShifts;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox tbAmountNeeded;
+        private System.Windows.Forms.Label label1;
     }
 }
