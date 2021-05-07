@@ -18,6 +18,7 @@ namespace MediaBazzar
         EmployeeManager EmployeeManager;
         DataTable stockTable;
         DataTable employeeTable;
+        ReshelfRequestManager ReshelfRequests;
         public Management()
         {
             InitializeComponent();
@@ -25,6 +26,7 @@ namespace MediaBazzar
             EmployeeManager = new EmployeeManager();
             stockTable = new DataTable();
             employeeTable = new DataTable();
+            ReshelfRequests = new ReshelfRequestManager();
             fillRoles();
             prepareTables();
             ShowAllEmployees(true);
@@ -75,13 +77,17 @@ namespace MediaBazzar
         }
         private void btnManagementRestockRequest_Click(object sender, EventArgs e)
         {
-            /* if(lbManagementStock.SelectedIndex > -1)
-             {
-                 Stock a = (Stock)lbManagementStock.SelectedItem;
-                 ManagementReshelf m = new ManagementReshelf(a);
-                 m.Show();
-             }
-             */
+            if (dataGrid_stocks.SelectedRows.Count > -1)
+            {
+                DateTime filled = DateTime.Now;
+
+                Stock selected = (Stock)dataGrid_stocks.CurrentRow.DataBoundItem;
+
+
+                ReshelfRequest request = new ReshelfRequest(selected, filled, Convert.ToInt32(tbAmountNeeded.Text), false);
+                ReshelfRequests.Add(request);
+            }
+
         }
         private void btnManagementNewStock_Click(object sender, EventArgs e)
         {
@@ -91,14 +97,14 @@ namespace MediaBazzar
 
         private void btnManagementStockUpdate_Click_1(object sender, EventArgs e)
         {
-            showAllStock();
+            UpdateStockUI();
         }
         public void UpdateStockUI()
         {
             List<object> dstock = stock.GetAllPerType();
-            BindingSource bs = new BindingSource();
-            bs.DataSource = dstock;
-            dataGrid_stocks.DataSource = bs;
+             BindingSource bs = new BindingSource();
+             bs.DataSource = dstock;
+             dataGrid_stocks.DataSource = bs;
         }
         private void btnStockRemove_Click(object sender, EventArgs e)
         {

@@ -58,11 +58,9 @@ namespace MediaBazzar
             this.groupBox1.Controls.Add(this.rbWarehouseBrand);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.groupBox1.Location = new System.Drawing.Point(297, 76);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(223, 62);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(273, 132);
+            this.groupBox1.Size = new System.Drawing.Size(205, 107);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filter by";
@@ -70,10 +68,9 @@ namespace MediaBazzar
             // rbWarehouseItemID
             // 
             this.rbWarehouseItemID.AutoSize = true;
-            this.rbWarehouseItemID.Location = new System.Drawing.Point(8, 37);
-            this.rbWarehouseItemID.Margin = new System.Windows.Forms.Padding(4);
+            this.rbWarehouseItemID.Location = new System.Drawing.Point(6, 30);
             this.rbWarehouseItemID.Name = "rbWarehouseItemID";
-            this.rbWarehouseItemID.Size = new System.Drawing.Size(101, 27);
+            this.rbWarehouseItemID.Size = new System.Drawing.Size(86, 25);
             this.rbWarehouseItemID.TabIndex = 2;
             this.rbWarehouseItemID.TabStop = true;
             this.rbWarehouseItemID.Text = "Item ID";
@@ -81,19 +78,17 @@ namespace MediaBazzar
             // 
             // tbWarehouseSearch
             // 
-            this.tbWarehouseSearch.Location = new System.Drawing.Point(131, 63);
-            this.tbWarehouseSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.tbWarehouseSearch.Location = new System.Drawing.Point(98, 51);
             this.tbWarehouseSearch.Name = "tbWarehouseSearch";
-            this.tbWarehouseSearch.Size = new System.Drawing.Size(132, 32);
+            this.tbWarehouseSearch.Size = new System.Drawing.Size(100, 27);
             this.tbWarehouseSearch.TabIndex = 1;
             // 
             // rbWarehouseBrand
             // 
             this.rbWarehouseBrand.AutoSize = true;
-            this.rbWarehouseBrand.Location = new System.Drawing.Point(8, 75);
-            this.rbWarehouseBrand.Margin = new System.Windows.Forms.Padding(4);
+            this.rbWarehouseBrand.Location = new System.Drawing.Point(6, 61);
             this.rbWarehouseBrand.Name = "rbWarehouseBrand";
-            this.rbWarehouseBrand.Size = new System.Drawing.Size(88, 27);
+            this.rbWarehouseBrand.Size = new System.Drawing.Size(74, 25);
             this.rbWarehouseBrand.TabIndex = 3;
             this.rbWarehouseBrand.TabStop = true;
             this.rbWarehouseBrand.Text = "Brand";
@@ -107,22 +102,20 @@ namespace MediaBazzar
             this.groupBox2.Controls.Add(this.tbWarehouseResupply);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.groupBox2.Location = new System.Drawing.Point(297, 242);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Location = new System.Drawing.Point(581, 44);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(327, 166);
+            this.groupBox2.Size = new System.Drawing.Size(245, 135);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Resupply";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 31);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(6, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(286, 23);
+            this.label1.Size = new System.Drawing.Size(229, 21);
             this.label1.TabIndex = 11;
             this.label1.Text = "Increase amount in stock by";
             // 
@@ -130,10 +123,9 @@ namespace MediaBazzar
             // 
             this.btnWarehouseResupply.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.btnWarehouseResupply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWarehouseResupply.Location = new System.Drawing.Point(12, 97);
-            this.btnWarehouseResupply.Margin = new System.Windows.Forms.Padding(4);
+            this.btnWarehouseResupply.Location = new System.Drawing.Point(9, 79);
             this.btnWarehouseResupply.Name = "btnWarehouseResupply";
-            this.btnWarehouseResupply.Size = new System.Drawing.Size(185, 47);
+            this.btnWarehouseResupply.Size = new System.Drawing.Size(139, 38);
             this.btnWarehouseResupply.TabIndex = 7;
             this.btnWarehouseResupply.Text = "Increase";
             this.btnWarehouseResupply.UseVisualStyleBackColor = false;
@@ -141,33 +133,34 @@ namespace MediaBazzar
             // 
             // tbWarehouseResupply
             // 
-            this.tbWarehouseResupply.Location = new System.Drawing.Point(12, 50);
-            this.tbWarehouseResupply.Margin = new System.Windows.Forms.Padding(4);
+            this.tbWarehouseResupply.Location = new System.Drawing.Point(9, 41);
             this.tbWarehouseResupply.Name = "tbWarehouseResupply";
-            this.tbWarehouseResupply.Size = new System.Drawing.Size(132, 32);
+            this.tbWarehouseResupply.Size = new System.Drawing.Size(100, 27);
             this.tbWarehouseResupply.TabIndex = 6;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1184, 650);
+            this.panel1.Size = new System.Drawing.Size(888, 528);
             this.panel1.TabIndex = 12;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(632, 103);
+            this.dataGridView1.Location = new System.Drawing.Point(229, 217);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(535, 311);
+            this.dataGridView1.Size = new System.Drawing.Size(634, 253);
             this.dataGridView1.TabIndex = 7;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // panel2
             // 
@@ -177,9 +170,8 @@ namespace MediaBazzar
             this.panel2.Controls.Add(this.btnNewItem);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(267, 650);
+            this.panel2.Size = new System.Drawing.Size(200, 528);
             this.panel2.TabIndex = 0;
             // 
             // btnDiscontinue
@@ -188,10 +180,9 @@ namespace MediaBazzar
             this.btnDiscontinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDiscontinue.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDiscontinue.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnDiscontinue.Location = new System.Drawing.Point(0, 220);
-            this.btnDiscontinue.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDiscontinue.Location = new System.Drawing.Point(0, 179);
             this.btnDiscontinue.Name = "btnDiscontinue";
-            this.btnDiscontinue.Size = new System.Drawing.Size(267, 69);
+            this.btnDiscontinue.Size = new System.Drawing.Size(200, 56);
             this.btnDiscontinue.TabIndex = 23;
             this.btnDiscontinue.Text = "Remove item from active inventory";
             this.btnDiscontinue.UseVisualStyleBackColor = false;
@@ -203,13 +194,13 @@ namespace MediaBazzar
             this.btnRestock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRestock.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRestock.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnRestock.Location = new System.Drawing.Point(0, 340);
-            this.btnRestock.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRestock.Location = new System.Drawing.Point(0, 276);
             this.btnRestock.Name = "btnRestock";
-            this.btnRestock.Size = new System.Drawing.Size(267, 69);
+            this.btnRestock.Size = new System.Drawing.Size(200, 56);
             this.btnRestock.TabIndex = 22;
             this.btnRestock.Text = "View restock requests";
             this.btnRestock.UseVisualStyleBackColor = false;
+            this.btnRestock.Click += new System.EventHandler(this.btnRestock_Click);
             // 
             // btnNewItem
             // 
@@ -217,10 +208,9 @@ namespace MediaBazzar
             this.btnNewItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewItem.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewItem.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnNewItem.Location = new System.Drawing.Point(0, 103);
-            this.btnNewItem.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNewItem.Location = new System.Drawing.Point(0, 84);
             this.btnNewItem.Name = "btnNewItem";
-            this.btnNewItem.Size = new System.Drawing.Size(267, 69);
+            this.btnNewItem.Size = new System.Drawing.Size(200, 56);
             this.btnNewItem.TabIndex = 21;
             this.btnNewItem.Text = "Add new item";
             this.btnNewItem.UseVisualStyleBackColor = false;
@@ -228,13 +218,11 @@ namespace MediaBazzar
             // 
             // WarehouseManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 650);
-            this.Controls.Add(this.groupBox2);
+            this.ClientSize = new System.Drawing.Size(888, 528);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "WarehouseManagement";
             this.Text = "WarehouseManagement";
             this.groupBox1.ResumeLayout(false);

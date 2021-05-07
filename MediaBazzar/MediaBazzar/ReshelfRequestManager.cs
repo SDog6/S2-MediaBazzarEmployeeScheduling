@@ -57,6 +57,31 @@ namespace MediaBazzar
             return temp;
         }
 
+        public object GetRequestByID(int id)
+        {
+            foreach (ReshelfRequest item in Requests)
+            {
+                if(item.ID == id)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+
+
+        public bool CompleteRequest(ReshelfRequest a)
+        {
+            if(a.Complete == false)
+            {
+                RequestData.ReduceStockInWarehouse(a);
+                RequestData.CompleteRequest(a);
+                RequestData.IncreaseStockInShop(a);
+                return true;
+            }
+            return false;
+        }
+
         public bool Remove(object obj)
         {
             throw new NotImplementedException();

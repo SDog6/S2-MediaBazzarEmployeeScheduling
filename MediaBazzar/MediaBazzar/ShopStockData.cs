@@ -121,6 +121,46 @@ namespace MediaBazzar
             }
             return stocks;
         }
+
+        public object SearchForStockByID(int id)
+        {
+            Stock acc = null;
+            try
+            {
+                string sql = "SELECT shopstock.StockID, stock.Name,shopstock.Amount,stock.Price,stock.Brand, stock.available FROM shopstock INNER JOIN stock ON shopstock.stockid =stock.id WHERE shopstock.StockID = @shopstock.StockID ;";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@@shopstock.StockID", id);
+
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+
+                    acc = new Stock(dr[1].ToString(), Convert.ToInt32(dr[2]), Convert.ToInt32(dr[0]), Convert.ToInt32(dr[3]), dr[4].ToString(), Convert.ToInt32(dr[5]));
+
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured! Try again.");
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+            return acc;
+        }
+
         public void Delete(Object obj)
         {
             Stock stock = (Stock)obj;

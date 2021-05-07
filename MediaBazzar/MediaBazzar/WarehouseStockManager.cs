@@ -47,6 +47,14 @@ namespace MediaBazzar
 
         }
 
+        public bool IncreaseStock(Stock a, int amoutn)
+        {
+            data.IncreaseStockInWarehouse(a, amoutn);
+            return true;
+
+
+        }
+
         public List<object> GetAllPerType()
         {
             List<object> temp = new List<object>();
@@ -68,6 +76,12 @@ namespace MediaBazzar
             }
             return temp;
         }
+
+        public object GetStockByID(int id)
+        {
+            return data.GetStockByID(id);
+        }
+
 
         public List<object> SearchByBrand(string brand)
         {
