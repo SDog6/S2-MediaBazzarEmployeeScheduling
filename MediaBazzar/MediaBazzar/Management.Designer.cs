@@ -44,6 +44,7 @@ namespace MediaBazzar
             this.dataGrid_employees = new System.Windows.Forms.DataGridView();
             this.Stock = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tbAmountNeeded = new System.Windows.Forms.TextBox();
             this.btnStockRemove = new System.Windows.Forms.Button();
             this.btnManagementStockUpdate = new System.Windows.Forms.Button();
             this.btnManagementRestockRequest = new System.Windows.Forms.Button();
@@ -54,7 +55,6 @@ namespace MediaBazzar
             this.rbManagementStockIDFilter = new System.Windows.Forms.RadioButton();
             this.rbManagementStockAmountFilter = new System.Windows.Forms.RadioButton();
             this.tbManagementStockFilter = new System.Windows.Forms.TextBox();
-            this.tbAmountNeeded = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.People.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -93,7 +93,7 @@ namespace MediaBazzar
             this.People.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.People.Location = new System.Drawing.Point(4, 28);
             this.People.Name = "People";
-            this.People.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.People.Padding = new System.Windows.Forms.Padding(3);
             this.People.Size = new System.Drawing.Size(837, 696);
             this.People.TabIndex = 0;
             this.People.Text = "Employees";
@@ -126,7 +126,7 @@ namespace MediaBazzar
             this.checkbox_fired.AutoSize = true;
             this.checkbox_fired.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkbox_fired.Location = new System.Drawing.Point(624, 134);
-            this.checkbox_fired.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkbox_fired.Margin = new System.Windows.Forms.Padding(2);
             this.checkbox_fired.Name = "checkbox_fired";
             this.checkbox_fired.Size = new System.Drawing.Size(63, 24);
             this.checkbox_fired.TabIndex = 19;
@@ -139,7 +139,7 @@ namespace MediaBazzar
             this.checkBox_active.AutoSize = true;
             this.checkBox_active.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox_active.Location = new System.Drawing.Point(624, 101);
-            this.checkBox_active.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox_active.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox_active.Name = "checkBox_active";
             this.checkBox_active.Size = new System.Drawing.Size(77, 24);
             this.checkBox_active.TabIndex = 18;
@@ -168,7 +168,7 @@ namespace MediaBazzar
             this.cb_allRoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_allRoles.FormattingEnabled = true;
             this.cb_allRoles.Location = new System.Drawing.Point(64, 82);
-            this.cb_allRoles.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_allRoles.Margin = new System.Windows.Forms.Padding(2);
             this.cb_allRoles.Name = "cb_allRoles";
             this.cb_allRoles.Size = new System.Drawing.Size(170, 28);
             this.cb_allRoles.TabIndex = 8;
@@ -223,6 +223,7 @@ namespace MediaBazzar
             this.dataGrid_employees.AllowUserToAddRows = false;
             this.dataGrid_employees.AllowUserToDeleteRows = false;
             this.dataGrid_employees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid_employees.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGrid_employees.Location = new System.Drawing.Point(266, 211);
             this.dataGrid_employees.Name = "dataGrid_employees";
             this.dataGrid_employees.ReadOnly = true;
@@ -241,7 +242,7 @@ namespace MediaBazzar
             this.Stock.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.Stock.Location = new System.Drawing.Point(4, 28);
             this.Stock.Name = "Stock";
-            this.Stock.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.Stock.Padding = new System.Windows.Forms.Padding(3);
             this.Stock.Size = new System.Drawing.Size(837, 696);
             this.Stock.TabIndex = 1;
             this.Stock.Text = "Stock";
@@ -259,6 +260,13 @@ namespace MediaBazzar
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(156, 688);
             this.panel1.TabIndex = 14;
+            // 
+            // tbAmountNeeded
+            // 
+            this.tbAmountNeeded.Location = new System.Drawing.Point(25, 446);
+            this.tbAmountNeeded.Name = "tbAmountNeeded";
+            this.tbAmountNeeded.Size = new System.Drawing.Size(100, 22);
+            this.tbAmountNeeded.TabIndex = 8;
             // 
             // btnStockRemove
             // 
@@ -316,8 +324,9 @@ namespace MediaBazzar
             // 
             this.dataGrid_stocks.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGrid_stocks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid_stocks.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGrid_stocks.Location = new System.Drawing.Point(212, 233);
-            this.dataGrid_stocks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGrid_stocks.Margin = new System.Windows.Forms.Padding(2);
             this.dataGrid_stocks.Name = "dataGrid_stocks";
             this.dataGrid_stocks.RowHeadersWidth = 51;
             this.dataGrid_stocks.RowTemplate.Height = 24;
@@ -387,13 +396,6 @@ namespace MediaBazzar
             this.tbManagementStockFilter.Size = new System.Drawing.Size(100, 22);
             this.tbManagementStockFilter.TabIndex = 1;
             this.tbManagementStockFilter.TextChanged += new System.EventHandler(this.tbManagementStockFilter_TextChanged);
-            // 
-            // tbAmountNeeded
-            // 
-            this.tbAmountNeeded.Location = new System.Drawing.Point(25, 446);
-            this.tbAmountNeeded.Name = "tbAmountNeeded";
-            this.tbAmountNeeded.Size = new System.Drawing.Size(100, 22);
-            this.tbAmountNeeded.TabIndex = 8;
             // 
             // Management
             // 
