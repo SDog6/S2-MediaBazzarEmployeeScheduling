@@ -156,7 +156,7 @@ namespace MediaBazzar
 
             try
             {
-                string sql = "SELECT stockid, amount,date,complete,id FROM restockrequests;";
+                string sql = "SELECT * FROM restockrequests;";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 conn.Open();
@@ -165,9 +165,9 @@ namespace MediaBazzar
 
                 while (dr.Read())
                 {
-                    int id = Convert.ToInt32(dr[0]);
+                    int id = Convert.ToInt32(dr[1]);
                     Stock b = (Stock)a.SearchForStockByID(id);
-                    Requests.Add(new ReshelfRequest(b,Convert.ToDateTime(dr[2]) ,Convert.ToInt32(dr[1]),Convert.ToBoolean(dr[3]),Convert.ToInt32(dr[4])));
+                    Requests.Add(new ReshelfRequest(b,Convert.ToDateTime(dr[3]) ,Convert.ToInt32(dr[2]),Convert.ToBoolean(dr[4]),Convert.ToInt32(dr[0])));
                 }
 
             }

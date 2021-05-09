@@ -21,7 +21,7 @@ namespace MediaBazzar
             this.lowstock = lowstock;
             this.filedDate = filedDate;
             this.amount = amount;
-            complete = false;
+            this.complete = complete;
         }
 
         public ReshelfRequest(Stock lowstock,DateTime filedDate,int amount,bool complete,int id)
@@ -29,8 +29,8 @@ namespace MediaBazzar
             this.lowstock = lowstock;
             this.filedDate = filedDate;
             this.amount = amount;
-            complete = false;
             this.id = id;
+            this.complete = complete;
         }
 
         public Stock RequiredStock { get { return this.lowstock; }  }

@@ -84,7 +84,6 @@ namespace MediaBazzar
                 ReshelfRequest r = (ReshelfRequest)requests.GetRequestByID(id);
                 Stock currentlyInWarehouse = (Stock)WarehouseStock.GetStockByID(r.RequiredStock.ID);
 
-
                 if (r.AmountNeeded <= currentlyInWarehouse.Amount)
                 {
                     requests.CompleteRequest(r);
@@ -111,7 +110,7 @@ namespace MediaBazzar
                     if(item.Complete == true)
                     {
                         Stock currentlyInWarehouse = (Stock)WarehouseStock.GetStockByID(item.RequiredStock.ID);
-                        Requests.Rows.Add(item.ID, item.AmountNeeded, currentlyInWarehouse.Amount, item.RequiredStock.Name, item.FilledDate.ToString("dd,MM,yy"), item.Complete.ToString());
+                        Requests.Rows.Add(item.ID, item.AmountNeeded, currentlyInWarehouse.Amount, item.RequiredStock.Name, item.FilledDate.ToString("dd,MM,yy"), "Complete");
                         dataGridView1.DataSource = Requests;
                     }
                 }
@@ -125,7 +124,7 @@ namespace MediaBazzar
                     if (item.Complete == false)
                     {
                         Stock currentlyInWarehouse = (Stock)WarehouseStock.GetStockByID(item.RequiredStock.ID);
-                        Requests.Rows.Add(item.ID, item.AmountNeeded, currentlyInWarehouse.Amount, item.RequiredStock.Name, item.FilledDate.ToString("dd,MM,yy"), item.Complete.ToString());
+                        Requests.Rows.Add(item.ID, item.AmountNeeded, currentlyInWarehouse.Amount, item.RequiredStock.Name, item.FilledDate.ToString("dd,MM,yy"), "Pending");
                         dataGridView1.DataSource = Requests;
                     }
                 }
@@ -148,6 +147,11 @@ namespace MediaBazzar
                 checkBox_complete.CheckState = CheckState.Unchecked;
             }
             UpdateUI();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
