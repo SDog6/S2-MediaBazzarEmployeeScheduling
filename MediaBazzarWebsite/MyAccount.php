@@ -21,6 +21,11 @@ echo "<a href='changeemail.php' >Change email</a>";
 echo "<br>";
 echo "<a href='changepassword.php' >Change password</a>";
 
+$currenAccountId = $_SESSION['accountId'];
+$sql = "Select name From account inner join employee where accountId=:accountId" ;
+$stmt->bindParam(:accountId, $currenAccountId);
+$stmt = $this->Connect()->prepare($sql);
+$stmt->execute();
 
 ?>
 </html>
