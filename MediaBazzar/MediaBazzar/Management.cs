@@ -86,7 +86,7 @@ namespace MediaBazzar
 
                 ReshelfRequest request = new ReshelfRequest(selected, filled, Convert.ToInt32(tbAmountNeeded.Text), false);
                 ReshelfRequests.Add(request);
-                MessageBox.Show("Request sucessfully submited")
+                MessageBox.Show("Request sucessfully submited");
             }
 
         }
