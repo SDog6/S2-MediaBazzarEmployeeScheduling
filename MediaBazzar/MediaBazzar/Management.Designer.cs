@@ -44,9 +44,9 @@ namespace MediaBazzar
             this.dataGrid_employees = new System.Windows.Forms.DataGridView();
             this.Stock = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.tbAmountNeeded = new System.Windows.Forms.TextBox();
             this.btnStockRemove = new System.Windows.Forms.Button();
-            this.btnManagementStockUpdate = new System.Windows.Forms.Button();
             this.btnManagementRestockRequest = new System.Windows.Forms.Button();
             this.btnManagementNewStock = new System.Windows.Forms.Button();
             this.dataGrid_stocks = new System.Windows.Forms.DataGridView();
@@ -55,7 +55,6 @@ namespace MediaBazzar
             this.rbManagementStockIDFilter = new System.Windows.Forms.RadioButton();
             this.rbManagementStockAmountFilter = new System.Windows.Forms.RadioButton();
             this.tbManagementStockFilter = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.People.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -91,7 +90,7 @@ namespace MediaBazzar
             this.People.Controls.Add(this.checkBox_active);
             this.People.Controls.Add(this.groupBox1);
             this.People.Controls.Add(this.dataGrid_employees);
-            this.People.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.People.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.People.Location = new System.Drawing.Point(4, 28);
             this.People.Name = "People";
             this.People.Padding = new System.Windows.Forms.Padding(3);
@@ -101,7 +100,7 @@ namespace MediaBazzar
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(12)))), ((int)(((byte)(45)))));
             this.panel2.Controls.Add(this.btnShifts);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(3, 3);
@@ -114,6 +113,7 @@ namespace MediaBazzar
             this.btnShifts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(62)))));
             this.btnShifts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShifts.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShifts.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnShifts.Location = new System.Drawing.Point(-8, 123);
             this.btnShifts.Name = "btnShifts";
             this.btnShifts.Size = new System.Drawing.Size(163, 56);
@@ -126,6 +126,7 @@ namespace MediaBazzar
             // 
             this.checkbox_fired.AutoSize = true;
             this.checkbox_fired.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkbox_fired.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.checkbox_fired.Location = new System.Drawing.Point(624, 134);
             this.checkbox_fired.Margin = new System.Windows.Forms.Padding(2);
             this.checkbox_fired.Name = "checkbox_fired";
@@ -139,6 +140,7 @@ namespace MediaBazzar
             // 
             this.checkBox_active.AutoSize = true;
             this.checkBox_active.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox_active.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.checkBox_active.Location = new System.Drawing.Point(624, 101);
             this.checkBox_active.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox_active.Name = "checkBox_active";
@@ -240,7 +242,7 @@ namespace MediaBazzar
             this.Stock.Controls.Add(this.panel1);
             this.Stock.Controls.Add(this.dataGrid_stocks);
             this.Stock.Controls.Add(this.groupBox2);
-            this.Stock.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.Stock.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Stock.Location = new System.Drawing.Point(4, 28);
             this.Stock.Name = "Stock";
             this.Stock.Padding = new System.Windows.Forms.Padding(3);
@@ -250,11 +252,10 @@ namespace MediaBazzar
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(12)))), ((int)(((byte)(45)))));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.tbAmountNeeded);
             this.panel1.Controls.Add(this.btnStockRemove);
-            this.panel1.Controls.Add(this.btnManagementStockUpdate);
             this.panel1.Controls.Add(this.btnManagementRestockRequest);
             this.panel1.Controls.Add(this.btnManagementNewStock);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -263,9 +264,19 @@ namespace MediaBazzar
             this.panel1.Size = new System.Drawing.Size(156, 688);
             this.panel1.TabIndex = 14;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label1.Location = new System.Drawing.Point(2, 317);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(137, 32);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Amount of stock \r\nneeded for a resupply";
+            // 
             // tbAmountNeeded
             // 
-            this.tbAmountNeeded.Location = new System.Drawing.Point(7, 402);
+            this.tbAmountNeeded.Location = new System.Drawing.Point(5, 361);
             this.tbAmountNeeded.Name = "tbAmountNeeded";
             this.tbAmountNeeded.Size = new System.Drawing.Size(100, 22);
             this.tbAmountNeeded.TabIndex = 8;
@@ -275,7 +286,8 @@ namespace MediaBazzar
             this.btnStockRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(62)))));
             this.btnStockRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStockRemove.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStockRemove.Location = new System.Drawing.Point(-6, 128);
+            this.btnStockRemove.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnStockRemove.Location = new System.Drawing.Point(-8, 45);
             this.btnStockRemove.Name = "btnStockRemove";
             this.btnStockRemove.Size = new System.Drawing.Size(159, 53);
             this.btnStockRemove.TabIndex = 11;
@@ -283,25 +295,13 @@ namespace MediaBazzar
             this.btnStockRemove.UseVisualStyleBackColor = false;
             this.btnStockRemove.Click += new System.EventHandler(this.btnStockRemove_Click);
             // 
-            // btnManagementStockUpdate
-            // 
-            this.btnManagementStockUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(62)))));
-            this.btnManagementStockUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManagementStockUpdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManagementStockUpdate.Location = new System.Drawing.Point(-10, 43);
-            this.btnManagementStockUpdate.Name = "btnManagementStockUpdate";
-            this.btnManagementStockUpdate.Size = new System.Drawing.Size(163, 56);
-            this.btnManagementStockUpdate.TabIndex = 9;
-            this.btnManagementStockUpdate.Text = "Check for updates";
-            this.btnManagementStockUpdate.UseVisualStyleBackColor = false;
-            this.btnManagementStockUpdate.Click += new System.EventHandler(this.btnManagementStockUpdate_Click_1);
-            // 
             // btnManagementRestockRequest
             // 
             this.btnManagementRestockRequest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(62)))));
             this.btnManagementRestockRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManagementRestockRequest.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManagementRestockRequest.Location = new System.Drawing.Point(-6, 271);
+            this.btnManagementRestockRequest.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnManagementRestockRequest.Location = new System.Drawing.Point(-8, 230);
             this.btnManagementRestockRequest.Name = "btnManagementRestockRequest";
             this.btnManagementRestockRequest.Size = new System.Drawing.Size(159, 56);
             this.btnManagementRestockRequest.TabIndex = 4;
@@ -314,7 +314,8 @@ namespace MediaBazzar
             this.btnManagementNewStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(62)))));
             this.btnManagementNewStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManagementNewStock.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManagementNewStock.Location = new System.Drawing.Point(-6, 198);
+            this.btnManagementNewStock.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnManagementNewStock.Location = new System.Drawing.Point(-8, 115);
             this.btnManagementNewStock.Name = "btnManagementNewStock";
             this.btnManagementNewStock.Size = new System.Drawing.Size(159, 56);
             this.btnManagementNewStock.TabIndex = 8;
@@ -399,15 +400,6 @@ namespace MediaBazzar
             this.tbManagementStockFilter.TabIndex = 1;
             this.tbManagementStockFilter.TextChanged += new System.EventHandler(this.tbManagementStockFilter_TextChanged);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 358);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 32);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Amount of stock \r\nneeded for a resupply";
-            // 
             // Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -445,7 +437,6 @@ namespace MediaBazzar
         private System.Windows.Forms.RadioButton rbManagementStockBrandFilter;
         private System.Windows.Forms.RadioButton rbManagementStockIDFilter;
         private System.Windows.Forms.Button btnManagementNewStock;
-        private System.Windows.Forms.Button btnManagementStockUpdate;
         private System.Windows.Forms.Button btnStockRemove;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGrid_stocks;

@@ -108,6 +108,7 @@ namespace MediaBazzar
             this.monthCalendar1.TitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(62)))));
             this.monthCalendar1.TitleForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.monthCalendar1.TrailingForeColor = System.Drawing.SystemColors.ControlText;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // lbAfternoonshifts
             // 

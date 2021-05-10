@@ -19,11 +19,13 @@ namespace MediaBazzar
         DataTable stockTable;
         DataTable employeeTable;
         ReshelfRequestManager ReshelfRequests;
+        WarehouseStockManager WarehouseM;
         public Management()
         {
             InitializeComponent();
             stock = new ShopStockManager();
             EmployeeManager = new EmployeeManager();
+            WarehouseM = new WarehouseStockManager();
             stockTable = new DataTable();
             employeeTable = new DataTable();
             ReshelfRequests = new ReshelfRequestManager();
@@ -32,8 +34,8 @@ namespace MediaBazzar
             ShowAllEmployees(true);
             radio_ID.Checked = true;
             rbManagementStockIDFilter.Checked = true;
-            checkBox_active.CheckState = CheckState.Checked;      
-            UpdateStockUI();
+            checkBox_active.CheckState = CheckState.Checked;
+            showAllStock();
         }
         private void prepareTables()
         {
@@ -55,8 +57,18 @@ namespace MediaBazzar
             employeeTable.Columns.Add(column);
             //stock table
             column = new DataColumn();
+            column.DataType = System.Type.GetType("System.Int32");
+            column.ColumnName = "Barcode";
+            column.ReadOnly = true;
+            stockTable.Columns.Add(column);
+            column = new DataColumn();
             column.DataType = System.Type.GetType("System.String");
             column.ColumnName = "Name";
+            column.ReadOnly = true;
+            stockTable.Columns.Add(column);
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.String");
+            column.ColumnName = "Brand";
             column.ReadOnly = true;
             stockTable.Columns.Add(column);
             column = new DataColumn();
@@ -94,23 +106,25 @@ namespace MediaBazzar
         {
             ManagementNewInventory a = new ManagementNewInventory(stock);
             a.Show();
+            this.Close();
         }
 
         private void btnManagementStockUpdate_Click_1(object sender, EventArgs e)
         {
-            UpdateStockUI();
+            showAllStock();
         }
-        public void UpdateStockUI()
-        {
-            List<object> dstock = stock.GetAllPerType();
-             BindingSource bs = new BindingSource();
-             bs.DataSource = dstock;
-             dataGrid_stocks.DataSource = bs;
-        }
+       
         private void btnStockRemove_Click(object sender, EventArgs e)
         {
-            Object s = (Object)dataGrid_stocks.CurrentRow.DataBoundItem;
-            stock.Remove(s);
+            if(dataGrid_stocks.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGrid_stocks.SelectedRows[0];
+                int id = Convert.ToInt32(selectedRow.Cells[0].Value);
+                Stock removable = (Stock)WarehouseM.GetStockByID(id);
+                stock.Remove(removable);
+                MessageBox.Show("Item removed from inventory");
+                showAllStock();
+            }
         }
         private void btnSchedule_Click(object sender, EventArgs e)
         {
@@ -313,7 +327,7 @@ namespace MediaBazzar
                     {
                         if (s.Amount == amount)
                         {
-                            stockTable.Rows.Add(s.Name, s.Amount, s.Price, s.AvailableStr);
+                            stockTable.Rows.Add(s.ID,s.Name,s.Brand, s.Amount, s.Price, s.AvailableStr);
                         }
                     }
                     dataGrid_stocks.DataSource = stockTable;
@@ -326,7 +340,7 @@ namespace MediaBazzar
                     string searchedBrand = tbManagementStockFilter.Text.ToLower();
                     if (s.Brand.ToLower().Contains(searchedBrand))
                     {
-                        stockTable.Rows.Add(s.Name, s.Amount, s.Price, s.AvailableStr);
+                        stockTable.Rows.Add(s.ID, s.Name, s.Brand, s.Amount, s.Price, s.AvailableStr);
                     }
                 }
                 dataGrid_stocks.DataSource = stockTable;
@@ -339,7 +353,7 @@ namespace MediaBazzar
                     {
                         if (s.ID == id)
                         {
-                            stockTable.Rows.Add(s.Name, s.Amount, s.Price, s.AvailableStr);
+                            stockTable.Rows.Add(s.ID, s.Name, s.Brand, s.Amount, s.Price, s.AvailableStr);
                         }
                     }
                     dataGrid_stocks.DataSource = stockTable;
@@ -352,7 +366,7 @@ namespace MediaBazzar
             stockTable.Rows.Clear();
             foreach(Stock s in stocks)
             {
-                stockTable.Rows.Add(s.Name, s.Amount, s.Price, s.AvailableStr);
+                stockTable.Rows.Add(s.ID, s.Name, s.Brand, s.Amount, s.Price, s.AvailableStr);
             }
             dataGrid_stocks.DataSource = stockTable;
         }

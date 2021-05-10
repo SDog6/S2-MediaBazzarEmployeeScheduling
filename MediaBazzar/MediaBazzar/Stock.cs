@@ -18,6 +18,7 @@ namespace MediaBazzar
         public int Available
         {
             set { available = value; }
+            get { return this.available; }
         }
 
         public string AvailableStr
@@ -77,9 +78,9 @@ namespace MediaBazzar
         public override string ToString()
         {
             if(this.available == 1)
-            return $"{this.name} of brand:'{this.brand}'. In stock currently:{amount}. Price: {price}$ - [{this.id}] ID (Available)";
+            return $"{this.name} of brand:'{this.brand}'. In stock currently:{amount}. Price: {price}$ - ID-[{this.id}] (Available)";
             else
-            return $"{this.name} of brand:'{this.brand}'. In stock currently:{amount}. Price: {price}$ - [{this.id}] ID (Unavailable)";
+            return $"{this.name} of brand:'{this.brand}'. In stock currently:{amount}. Price: {price}$ - ID-[{this.id}] (Unavailable)";
 
         }
     }

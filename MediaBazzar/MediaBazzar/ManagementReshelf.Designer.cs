@@ -34,8 +34,11 @@ namespace MediaBazzar
             this.checkbox_unfnished = new System.Windows.Forms.CheckBox();
             this.checkBox_complete = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnBack = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnReshelfApprove
@@ -44,7 +47,7 @@ namespace MediaBazzar
             this.btnReshelfApprove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReshelfApprove.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.btnReshelfApprove.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnReshelfApprove.Location = new System.Drawing.Point(294, 343);
+            this.btnReshelfApprove.Location = new System.Drawing.Point(334, 343);
             this.btnReshelfApprove.Name = "btnReshelfApprove";
             this.btnReshelfApprove.Size = new System.Drawing.Size(139, 71);
             this.btnReshelfApprove.TabIndex = 1;
@@ -55,6 +58,7 @@ namespace MediaBazzar
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.checkbox_unfnished);
             this.panel1.Controls.Add(this.checkBox_complete);
             this.panel1.Controls.Add(this.dataGridView1);
@@ -98,14 +102,38 @@ namespace MediaBazzar
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView1.Location = new System.Drawing.Point(37, 26);
+            this.dataGridView1.Location = new System.Drawing.Point(98, 31);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(634, 253);
+            this.dataGridView1.Size = new System.Drawing.Size(577, 253);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(12)))), ((int)(((byte)(45)))));
+            this.panel2.Controls.Add(this.btnBack);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(82, 426);
+            this.panel2.TabIndex = 22;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(62)))));
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnBack.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnBack.Location = new System.Drawing.Point(0, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(83, 31);
+            this.btnBack.TabIndex = 12;
+            this.btnBack.Text = "<- BACK";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // ManagementReshelf
             // 
@@ -119,6 +147,7 @@ namespace MediaBazzar
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -129,5 +158,7 @@ namespace MediaBazzar
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.CheckBox checkbox_unfnished;
         private System.Windows.Forms.CheckBox checkBox_complete;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnBack;
     }
 }

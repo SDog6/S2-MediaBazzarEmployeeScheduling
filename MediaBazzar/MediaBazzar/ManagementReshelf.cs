@@ -102,30 +102,30 @@ namespace MediaBazzar
         public void UpdateUI()
         {
             Requests.Rows.Clear();
+            dataGridView1.Visible = true;
             if (checkBox_complete.Checked)
             {
                 foreach (ReshelfRequest item in requests.GetAllPerType())
-                {
-
-                    if(item.Complete == true)
                     {
-                        Stock currentlyInWarehouse = (Stock)WarehouseStock.GetStockByID(item.RequiredStock.ID);
-                        Requests.Rows.Add(item.ID, item.AmountNeeded, currentlyInWarehouse.Amount, item.RequiredStock.Name, item.FilledDate.ToString("dd,MM,yy"), "Complete");
-                        dataGridView1.DataSource = Requests;
-                    }
+                        if (item.Complete == true)
+                        {              
+                                Stock currentlyInWarehouse = (Stock)WarehouseStock.GetStockByID(item.RequiredStock.ID);
+                                Requests.Rows.Add(item.ID, item.AmountNeeded, currentlyInWarehouse.Amount, item.RequiredStock.Name, item.FilledDate.ToString("dd,MM,yy"), "Complete");
+                                dataGridView1.DataSource = Requests;
+                        }
                 }
+             
                         
             }    
             else if (checkbox_unfnished.Checked)
             {
                 foreach (ReshelfRequest item in requests.GetAllPerType())
                 {
-
                     if (item.Complete == false)
                     {
-                        Stock currentlyInWarehouse = (Stock)WarehouseStock.GetStockByID(item.RequiredStock.ID);
-                        Requests.Rows.Add(item.ID, item.AmountNeeded, currentlyInWarehouse.Amount, item.RequiredStock.Name, item.FilledDate.ToString("dd,MM,yy"), "Pending");
-                        dataGridView1.DataSource = Requests;
+                            Stock currentlyInWarehouse = (Stock)WarehouseStock.GetStockByID(item.RequiredStock.ID);
+                            Requests.Rows.Add(item.ID, item.AmountNeeded, currentlyInWarehouse.Amount, item.RequiredStock.Name, item.FilledDate.ToString("dd,MM,yy"), "Pending");
+                            dataGridView1.DataSource = Requests;
                     }
                 }
             }
@@ -152,6 +152,13 @@ namespace MediaBazzar
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            WarehouseManagement f = new WarehouseManagement();
+            f.Show();
+            this.Close();
         }
     }
 }

@@ -482,12 +482,12 @@ namespace MediaBazzar
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(12)))), ((int)(((byte)(45)))));
             this.panel2.Controls.Add(this.btnSubmit);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(196, 447);
+            this.panel2.Size = new System.Drawing.Size(193, 447);
             this.panel2.TabIndex = 22;
             // 
             // EmployeeCreation

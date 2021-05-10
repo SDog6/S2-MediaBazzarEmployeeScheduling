@@ -47,10 +47,9 @@ namespace MediaBazzar
             this.btnEmpDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmpDetails.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.btnEmpDetails.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnEmpDetails.Location = new System.Drawing.Point(0, 140);
-            this.btnEmpDetails.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEmpDetails.Location = new System.Drawing.Point(0, 36);
             this.btnEmpDetails.Name = "btnEmpDetails";
-            this.btnEmpDetails.Size = new System.Drawing.Size(255, 74);
+            this.btnEmpDetails.Size = new System.Drawing.Size(191, 60);
             this.btnEmpDetails.TabIndex = 10;
             this.btnEmpDetails.Text = "View details about employee";
             this.btnEmpDetails.UseVisualStyleBackColor = false;
@@ -62,10 +61,9 @@ namespace MediaBazzar
             this.btnFireEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFireEmp.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.btnFireEmp.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnFireEmp.Location = new System.Drawing.Point(0, 236);
-            this.btnFireEmp.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFireEmp.Location = new System.Drawing.Point(0, 114);
             this.btnFireEmp.Name = "btnFireEmp";
-            this.btnFireEmp.Size = new System.Drawing.Size(255, 69);
+            this.btnFireEmp.Size = new System.Drawing.Size(191, 56);
             this.btnFireEmp.TabIndex = 11;
             this.btnFireEmp.Text = "Fire an employee";
             this.btnFireEmp.UseVisualStyleBackColor = false;
@@ -77,10 +75,9 @@ namespace MediaBazzar
             this.btnEmpUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmpUpdate.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.btnEmpUpdate.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnEmpUpdate.Location = new System.Drawing.Point(0, 428);
-            this.btnEmpUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEmpUpdate.Location = new System.Drawing.Point(0, 270);
             this.btnEmpUpdate.Name = "btnEmpUpdate";
-            this.btnEmpUpdate.Size = new System.Drawing.Size(255, 66);
+            this.btnEmpUpdate.Size = new System.Drawing.Size(191, 54);
             this.btnEmpUpdate.TabIndex = 12;
             this.btnEmpUpdate.Text = "Update employee info";
             this.btnEmpUpdate.UseVisualStyleBackColor = false;
@@ -94,14 +91,13 @@ namespace MediaBazzar
             this.dataGrid_employees.AllowUserToResizeRows = false;
             this.dataGrid_employees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGrid_employees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid_employees.Location = new System.Drawing.Point(317, 140);
-            this.dataGrid_employees.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGrid_employees.Location = new System.Drawing.Point(238, 114);
             this.dataGrid_employees.MultiSelect = false;
             this.dataGrid_employees.Name = "dataGrid_employees";
             this.dataGrid_employees.ReadOnly = true;
             this.dataGrid_employees.RowHeadersWidth = 51;
             this.dataGrid_employees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGrid_employees.Size = new System.Drawing.Size(733, 354);
+            this.dataGrid_employees.Size = new System.Drawing.Size(550, 288);
             this.dataGrid_employees.TabIndex = 13;
             // 
             // btnAdd
@@ -110,10 +106,9 @@ namespace MediaBazzar
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnAdd.Location = new System.Drawing.Point(0, 332);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdd.Location = new System.Drawing.Point(0, 192);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(255, 70);
+            this.btnAdd.Size = new System.Drawing.Size(191, 57);
             this.btnAdd.TabIndex = 14;
             this.btnAdd.Text = "Add employee to the system";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -121,16 +116,15 @@ namespace MediaBazzar
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(12)))), ((int)(((byte)(45)))));
             this.panel1.Controls.Add(this.btnEmpDetails);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.btnEmpUpdate);
             this.panel1.Controls.Add(this.btnFireEmp);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(255, 560);
+            this.panel1.Size = new System.Drawing.Size(191, 455);
             this.panel1.TabIndex = 15;
             // 
             // panel2
@@ -139,19 +133,17 @@ namespace MediaBazzar
             this.panel2.Controls.Add(this.dataGrid_employees);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1142, 560);
+            this.panel2.Size = new System.Drawing.Size(856, 455);
             this.panel2.TabIndex = 16;
             // 
             // HR
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1142, 560);
+            this.ClientSize = new System.Drawing.Size(856, 455);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "HR";
             this.Text = "Employees";
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_employees)).EndInit();
