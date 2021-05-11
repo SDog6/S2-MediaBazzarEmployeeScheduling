@@ -14,10 +14,12 @@ namespace MediaBazzar
     {
         WarehouseStockManager Warehouse;
         ShopStockManager Shop;
-        public ManagementNewInventory(ShopStockManager Shop)
+        Management trick;
+        public ManagementNewInventory(ShopStockManager Shop,Management trick)
         {
             InitializeComponent();
             Warehouse = new WarehouseStockManager();
+            this.trick = trick;
             this.Shop = Shop;
             UpdateUI();
         }
@@ -32,6 +34,8 @@ namespace MediaBazzar
                 {
                     Object Stock = lbWarehouseStock.SelectedItem;
                     Shop.Add(Stock, Convert.ToInt32(textBox1.Text));
+                    MessageBox.Show("Successfully added item to shop inventory");
+                    UpdateUI();
                 }
             }
             catch (Exception ex)
@@ -43,9 +47,29 @@ namespace MediaBazzar
         public void UpdateUI()
         {
             lbWarehouseStock.Items.Clear();
+            List<int> tempWareId = new List<int>();
+            List<int> tempShopId = new List<int>();
+
             foreach (Stock item in Warehouse.GetAllPerType())
             {
-                lbWarehouseStock.Items.Add(item);
+                if(item.Available == 1)
+                {
+                    tempWareId.Add(item.ID);
+                }
+            }
+            foreach (Stock item in Shop.GetAllPerType())
+            {
+                if (item.Available == 1)
+                {
+                    tempShopId.Add(item.ID);
+                }
+            }
+            foreach (int item in tempWareId)
+            {
+                if (!tempShopId.Contains(item))
+                {
+                    lbWarehouseStock.Items.Add(Warehouse.GetStockByID(item));
+                }
             }
         }
 
@@ -72,6 +96,12 @@ namespace MediaBazzar
         private void lbWarehouseStock_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            trick.Show();
+            this.Close();
         }
     }
 }

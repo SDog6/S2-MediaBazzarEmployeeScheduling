@@ -163,6 +163,45 @@ namespace MediaBazzar
             return stocks;
         }
 
+
+        public object GetStockByID(int id)
+        {
+            Stock stock = null;
+
+            try
+            {
+                string sql = "SELECT id, name,amount,price,brand, available FROM stock WHERE id = @id;";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@id", id);
+
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    stock = new Stock(dr[1].ToString(), Convert.ToInt32(dr[2]), Convert.ToInt32(dr[0]), Convert.ToInt32(dr[3]), dr[4].ToString(), Convert.ToInt32(dr[5]));
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured! Try again.");
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+            return stock;
+        }
+
         public object SearchByStockBrand(string brand)
         {
             List<Stock> stocks = new List<Stock>();
@@ -201,6 +240,38 @@ namespace MediaBazzar
             return stocks;
         }
 
+
+        public void IncreaseStockInWarehouse(Stock a,int Amount)
+        {
+            try
+            {
+                // make sure in your table the id in auto-incremented
+                string sql = "UPDATE stock SET amount = amount + @amount WHERE id = @id";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@id", a.ID);
+                cmd.Parameters.AddWithValue("@amount", Amount);
+
+
+                conn.Open();
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured! Try again.");
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+        }
 
         public void Discontinue(object obj)
         {

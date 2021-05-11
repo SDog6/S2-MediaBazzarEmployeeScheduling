@@ -77,7 +77,7 @@ namespace MediaBazzar
                 string contactEmail = textboxes[10];
                 Person contactPerson = new Person(contactFirstName, contactLastname, contactPhoneNumber, contactAddress, contactEmail);
 
-                Contract contract = new Contract(0, DateTime.Now);
+                Contract contract = new Contract(Convert.ToInt32(tbHours.Text), DateTime.Now);
 
                 string username = tbUsername.Text;
                 Account account = new Account(username);
@@ -100,8 +100,10 @@ namespace MediaBazzar
             }
             return null;
         }
-        private void btnSubmit_Click_1(object sender, EventArgs e)
+
+        private void btnSubmit_Click(object sender, EventArgs e)
         {
+
             Employee employee = createEmployee();
             if (employee != null)
             {
@@ -114,16 +116,6 @@ namespace MediaBazzar
                     MessageBox.Show(ex.Message);
                 }
             }
-        }
-
-        private void EmployeeCreation_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

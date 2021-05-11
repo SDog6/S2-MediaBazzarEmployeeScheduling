@@ -22,17 +22,47 @@ namespace MediaBazzar
 
         public void Insert(object obj)
         {
-           /* ReshelfRequest acc = (ReshelfRequest)obj;
+           ReshelfRequest acc = (ReshelfRequest)obj;
             try
             {
                 // make sure in your table the id in auto-incremented
-                string sql = "INSERT INTO shopstock (StockID, StockName,StockAmount,Price,Brand) VALUES (@stockID, @stockname,@amount,@price,@brand)";
+                string sql = "INSERT INTO restockrequests (stockid,amount,date) VALUES (@stockid,@amount,@date)";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@stockID", stock.ID);
-                cmd.Parameters.AddWithValue("@stockname", stock.Name);
-                cmd.Parameters.AddWithValue("@amount", stock.Amount);
-                cmd.Parameters.AddWithValue("@price", stock.Price);
-                cmd.Parameters.AddWithValue("@brand", stock.Brand);
+                cmd.Parameters.AddWithValue("@stockid", acc.RequiredStock.ID);
+                cmd.Parameters.AddWithValue("@amount", acc.AmountNeeded);
+                cmd.Parameters.AddWithValue("@date", acc.FilledDate);
+
+                conn.Open();
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured! Try again.");
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+
+        public void ReduceStockInWarehouse(ReshelfRequest a)
+        {
+            try
+            {
+                // make sure in your table the id in auto-incremented
+                string sql = "UPDATE stock SET amount = amount - @amount WHERE id = @id";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@id", a.RequiredStock.ID);
+                cmd.Parameters.AddWithValue("@amount", a.AmountNeeded);
 
 
                 conn.Open();
@@ -53,16 +83,80 @@ namespace MediaBazzar
                 {
                     conn.Close();
                 }
-            }*/
+            }
+        }
+
+
+        public void IncreaseStockInShop(ReshelfRequest a)
+        {
+            try
+            {
+                string sql = "UPDATE shopstock SET amount = amount + @amount WHERE stockid = @id";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@id", a.RequiredStock.ID);
+                cmd.Parameters.AddWithValue("@amount", a.AmountNeeded);
+
+
+                conn.Open();
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured! Try again.");
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+        public void CompleteRequest(ReshelfRequest a)
+        {
+            try
+            {
+                // make sure in your table the id in auto-incremented
+                string sql = "UPDATE restockrequests SET complete = true WHERE id = @id";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@id", a.ID);
+
+
+                conn.Open();
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured! Try again.");
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
         }
 
         public object ReadAll()
         {
             List<ReshelfRequest> Requests = new List<ReshelfRequest>();
+            ShopStockData a = new ShopStockData();
 
             try
             {
-                string sql = "SELECT StockID, StockName,StockAmount,Price,Brand FROM shopstock;";
+                string sql = "SELECT * FROM restockrequests;";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 conn.Open();
@@ -71,7 +165,9 @@ namespace MediaBazzar
 
                 while (dr.Read())
                 {
-                    //Requests.Add(new Stock(dr[1].ToString(), Convert.ToInt32(dr[2]), Convert.ToInt32(dr[0]), Convert.ToInt32(dr[3]), dr[4].ToString()));
+                    int id = Convert.ToInt32(dr[1]);
+                    Stock b = (Stock)a.SearchForStockByID(id);
+                    Requests.Add(new ReshelfRequest(b,Convert.ToDateTime(dr[3]) ,Convert.ToInt32(dr[2]),Convert.ToBoolean(dr[4]),Convert.ToInt32(dr[0])));
                 }
 
             }

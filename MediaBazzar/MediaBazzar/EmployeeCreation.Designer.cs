@@ -73,6 +73,8 @@ namespace MediaBazzar
             this.btnSubmit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbHours = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.EmployeeInfo.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -105,7 +107,6 @@ namespace MediaBazzar
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contact Person";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label9
             // 
@@ -238,6 +239,8 @@ namespace MediaBazzar
             // EmployeeInfo
             // 
             this.EmployeeInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.EmployeeInfo.Controls.Add(this.label1);
+            this.EmployeeInfo.Controls.Add(this.tbHours);
             this.EmployeeInfo.Controls.Add(this.tbUsername);
             this.EmployeeInfo.Controls.Add(this.l_username);
             this.EmployeeInfo.Controls.Add(this.tbErole);
@@ -332,7 +335,7 @@ namespace MediaBazzar
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(230, 221);
+            this.label16.Location = new System.Drawing.Point(239, 221);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(21, 13);
             this.label16.TabIndex = 26;
@@ -436,7 +439,7 @@ namespace MediaBazzar
             // 
             // tbEStreetNr
             // 
-            this.tbEStreetNr.Location = new System.Drawing.Point(257, 214);
+            this.tbEStreetNr.Location = new System.Drawing.Point(266, 214);
             this.tbEStreetNr.Name = "tbEStreetNr";
             this.tbEStreetNr.Size = new System.Drawing.Size(64, 20);
             this.tbEStreetNr.TabIndex = 9;
@@ -467,6 +470,7 @@ namespace MediaBazzar
             this.btnSubmit.TabIndex = 19;
             this.btnSubmit.Text = "Create Employee";
             this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // panel1
             // 
@@ -482,13 +486,29 @@ namespace MediaBazzar
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(12)))), ((int)(((byte)(45)))));
             this.panel2.Controls.Add(this.btnSubmit);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(196, 447);
+            this.panel2.Size = new System.Drawing.Size(193, 447);
             this.panel2.TabIndex = 22;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(336, 330);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Work hours:";
+            // 
+            // tbHours
+            // 
+            this.tbHours.Location = new System.Drawing.Point(404, 326);
+            this.tbHours.Name = "tbHours";
+            this.tbHours.Size = new System.Drawing.Size(64, 20);
+            this.tbHours.TabIndex = 33;
             // 
             // EmployeeCreation
             // 
@@ -498,7 +518,6 @@ namespace MediaBazzar
             this.Controls.Add(this.panel1);
             this.Name = "EmployeeCreation";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.EmployeeCreation_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.EmployeeInfo.ResumeLayout(false);
@@ -555,6 +574,8 @@ namespace MediaBazzar
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbHours;
     }
 }
 

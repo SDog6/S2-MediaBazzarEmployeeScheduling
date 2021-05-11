@@ -26,12 +26,6 @@ namespace MediaBazzar
         {
             UpdateUI();
         }
-    
-        private void btnWarehouseAddItem_Click(object sender, EventArgs e)
-        {
-            NewStock f = new NewStock(WarehouseStock);
-            f.Show();
-        }
 
         //private void btnWarehouseSearch_Click(object sender, EventArgs e)
         //{
@@ -61,14 +55,9 @@ namespace MediaBazzar
             if (dataGridView1.SelectedRows.Count > -1)
             {
                 Stock selected = (Stock)dataGridView1.CurrentRow.DataBoundItem;
-                selected.Resupply(Convert.ToInt32(tbWarehouseResupply.Text));
+                WarehouseStock.IncreaseStock(selected, Convert.ToInt32(tbWarehouseResupply.Text));
             }
-            //if (lbWarehouseStock.SelectedIndex > -1)
-            //{
-            //    Stock selected = (Stock)lbWarehouseStock.SelectedItem;
-            //    selected.Resupply(Convert.ToInt32(tbWarehouseResupply.Text));
-            //}
-
+            WarehouseStock = new WarehouseStockManager();
             UpdateUI();
         }
 
@@ -103,8 +92,9 @@ namespace MediaBazzar
 
         private void btnNewItem_Click(object sender, EventArgs e)
         {
-            NewStock f = new NewStock(WarehouseStock);
+            NewStock f = new NewStock(WarehouseStock,this);
             f.Show();
+            this.Hide();
         }
 
         private void btnDiscontinue_Click(object sender, EventArgs e)
@@ -118,6 +108,23 @@ namespace MediaBazzar
             }
 
             UpdateUI();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRestock_Click(object sender, EventArgs e)
+        {
+            ManagementReshelf a = new ManagementReshelf();
+            a.Show();
+            this.Close();
         }
     }
 }

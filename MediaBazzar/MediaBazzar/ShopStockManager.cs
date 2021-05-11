@@ -56,6 +56,11 @@ namespace MediaBazzar
             }
             return temp;
         }
+
+        public object SearchByID(int id)
+        {
+            return data.SearchForStockByID(id);
+        }
         public bool Remove(object obj)
         {
             if (obj != null)

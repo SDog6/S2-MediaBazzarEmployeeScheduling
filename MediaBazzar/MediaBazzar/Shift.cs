@@ -8,10 +8,12 @@ namespace MediaBazzar
 {
     public class Shift
     {
+        int id;
         private Employee emp;
         private DateTime date;
         private string shifttype;
 
+        public int ID { get { return this.id; } }
         public Employee Emp { get { return this.emp; } set { this.emp = value; } }
         public DateTime Time { get { return this.date; } set { this.date = value; } }
         public String ShiftType { get { return this.shifttype; } set { this.shifttype = value; } }
@@ -20,6 +22,14 @@ namespace MediaBazzar
 
         public Shift(Employee emp,DateTime time,string shifttype)
         {
+            this.emp = emp;
+            this.Time = time;
+            this.shifttype = shifttype;
+        }
+
+        public Shift(int id,Employee emp, DateTime time, string shifttype)
+        {
+            this.id = id;
             this.emp = emp;
             this.Time = time;
             this.shifttype = shifttype;

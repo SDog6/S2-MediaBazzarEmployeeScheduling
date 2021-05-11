@@ -51,7 +51,9 @@ namespace MediaBazzar
 
         private void btnEmpDetails_Click(object sender, EventArgs e)
         {
-
+            Employee emp = this.GetSelectedEmployee();
+            ViewEmployeeData data = new ViewEmployeeData(emp);
+            data.Show();
         }
         private Employee GetSelectedEmployee()
         {

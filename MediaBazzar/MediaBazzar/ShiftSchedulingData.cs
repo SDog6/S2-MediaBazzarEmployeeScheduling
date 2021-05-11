@@ -57,7 +57,7 @@ namespace MediaBazzar
 
             try
             {
-                string sql = "SELECT employee_id, Date,Type FROM shifts;";
+                string sql = "SELECT id,employee_id, Date,Type FROM shifts;";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 conn.Open();
@@ -66,9 +66,9 @@ namespace MediaBazzar
 
                 while (dr.Read())
                 {
-                    int id = Convert.ToInt32(dr[0]);
+                    int id = Convert.ToInt32(dr[1]);
                     Employee gottenEmp = getemp.GetEmployee(id);
-                    shifts.Add(new Shift(gottenEmp, Convert.ToDateTime(dr[1]), dr[2].ToString()));
+                    shifts.Add(new Shift(Convert.ToInt32(dr[0]),gottenEmp, Convert.ToDateTime(dr[2]), dr[3].ToString()));
                 }
 
             }
