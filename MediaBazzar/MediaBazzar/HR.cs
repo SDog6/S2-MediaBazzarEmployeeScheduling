@@ -91,5 +91,10 @@ namespace MediaBazzar
             EmployeeCreation f = new EmployeeCreation(Employees);
             f.Show();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

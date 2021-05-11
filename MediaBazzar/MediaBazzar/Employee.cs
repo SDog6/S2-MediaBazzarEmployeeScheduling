@@ -28,6 +28,8 @@ namespace MediaBazzar
         public Account Account { get { return this.account; } }
         public bool Active { get { return this.active; } }
 
+        public int Workinghours { get; set; }
+
         public Employee(int ID, Person personalInfo, Person contactPerson, DateTime dateOfBirth, string BSN, string role, Contract contract, Account account, bool active)
         {
             this.ID = ID;
@@ -82,7 +84,7 @@ namespace MediaBazzar
 
         public override string ToString()
         {
-            return $"[{this.ID}] - {this.personalInfo.getName()} with BSN {this.BSNp} ";
+            return $"{this.personalInfo.FirstName} {this.personalInfo.LastName} with workload {this.Workinghours} / {this.contract.Workinghours}";
         }
 
         public string GetAccountRelationInfo()

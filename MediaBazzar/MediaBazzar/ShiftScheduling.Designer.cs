@@ -95,7 +95,6 @@ namespace MediaBazzar
             this.lbManagementShiftEmployeesToAssign.Name = "lbManagementShiftEmployeesToAssign";
             this.lbManagementShiftEmployeesToAssign.Size = new System.Drawing.Size(486, 157);
             this.lbManagementShiftEmployeesToAssign.TabIndex = 6;
-            this.lbManagementShiftEmployeesToAssign.SelectedIndexChanged += new System.EventHandler(this.lbManagementShiftEmployeesToAssign_SelectedIndexChanged);
             // 
             // monthCalendar1
             // 

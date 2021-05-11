@@ -50,20 +50,6 @@ namespace MediaBazzar
             UpdateEmployeesUI();
         }
 
-        private void lbManagementShiftEmployeesToAssign_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Employee emp = (Employee)lbManagementShiftEmployeesToAssign.SelectedItem;
-            shiftcounter = 0;
-            foreach (Shift item in Shifts.GetAllPerType())
-            {
-                if (item.Emp.EmployeeID == emp.EmployeeID && item.Time >= Monday)
-                {
-                    shiftcounter += 5;
-                }
-            }
-            MessageBox.Show($"Hours already assigned: {shiftcounter.ToString()} / {emp.Contract.Workinghours}");
-        }
-
         private void btnManagementShiftAssignEmployee_Click(object sender, EventArgs e)
         {
             if(lbManagementShiftEmployeesToAssign.SelectedIndex > -1)
@@ -90,6 +76,19 @@ namespace MediaBazzar
 
         public void UpdateEmployeesUI()
         {
+            foreach (Employee emp in Employees.GetAllPerType())
+            {
+                foreach (Shift item in Shifts.GetAllPerType())
+                {
+                    if (item.Emp.EmployeeID == emp.EmployeeID && item.Time >= Monday)
+                    {
+                        emp.Workinghours += 5;
+                    }
+                }
+            }
+           
+
+
             lbManagementShiftEmployeesToAssign.Items.Clear();
             foreach (Employee item in Employees.GetAllPerType())
             {
