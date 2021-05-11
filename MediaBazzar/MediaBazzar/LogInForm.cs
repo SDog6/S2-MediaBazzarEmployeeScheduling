@@ -49,6 +49,15 @@ namespace MediaBazzar
                 WarehouseManagement f = new WarehouseManagement();
                 f.Show();
             }
+            if (emp.Role == "Human resources")
+            {
+                HR f = new HR();
+                f.Show();
+            }
+            else
+            {
+                MessageBox.Show("You do not have access!");
+            }
         }
         private bool empty(string s)
         {

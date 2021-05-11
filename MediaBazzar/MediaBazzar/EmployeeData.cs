@@ -86,22 +86,24 @@ namespace MediaBazzar
         public Employee GetEmployee(int id)
         {
             Employee emp;
-            string query = $"SELECT * FROM employee WHERE id = {id}";
+            string query = "SELECT employee.id, employee.dateOfBirth, employee.BSN, employee.role, employee.status, person.firstName, person.lastName, person.phoneNumber, person.email, address.state, address.city, address.street, address.apartmentNr, contract.workingHours, contract.start, contract.end, contract.endReason, account.username, account.password FROM employee INNER JOIN person ON personId = person.id INNER JOIN address ON person.addressId = address.id INNER JOIN contract on contractId = contract.id INNER JOIN account ON accountId = account.id";
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
             DataTable table = new DataTable();
             try
             {
+                conn.Open();
                 adapter.Fill(table);
-                if(table.Rows.Count > 0)
+                conn.Close();
+                for (int i = 0; i < table.Rows.Count; i++)
                 {
-                    DataRow row = table.Rows[0];
+                    DataRow row = table.Rows[i];
                     emp = EmployeeObject(row);
                     return emp;
-                }        
+                }
             }
-            catch(Exception)
+            catch (Exception)
             {
-                throw new FailedReadFromDBException("employee");
+                throw new FailedReadFromDBException("all employees");
             }
             return null;
         }
@@ -197,16 +199,18 @@ namespace MediaBazzar
         private int insertContract(Contract contract)
         {
             int contractId = -1;
-            string sql = "INSERT INTO contract (start, end, endReason) VALUES(@start, @end, @endReason);" + "SELECT LAST_INSERT_ID();";
+            string sql = "INSERT INTO contract (workingHours,start, end, endReason) VALUES(@workingHours,@start, @end, @endReason);" + "SELECT LAST_INSERT_ID();";
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@start", contract.EmploymentStart.Date);
             if (contract.isTerminated())
             {
+                cmd.Parameters.AddWithValue("@@workingHours", contract.Workinghours);
                 cmd.Parameters.AddWithValue("@end", contract.EmploymentEnd);
                 cmd.Parameters.AddWithValue("@endReason", contract.TerminationReason);
             }
             else
             {
+                cmd.Parameters.AddWithValue("@@workingHours", contract.Workinghours);
                 cmd.Parameters.AddWithValue("@end", null);
                 cmd.Parameters.AddWithValue("@endReason", null);
             }
@@ -249,25 +253,25 @@ namespace MediaBazzar
         }
         public Employee loginAccount(string username)
         {
-            string sql = $"SELECT * FROM account INNER JOIN employee ON account.id = employee.accountId WHERE account.username = {username}";
-            MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conn);
+            Employee emp;
+            string query = $"SELECT employee.id, employee.dateOfBirth, employee.BSN, employee.role, employee.status, person.firstName, person.lastName, person.phoneNumber, person.email, address.state, address.city, address.street, address.apartmentNr, contract.workingHours, contract.start, contract.end, contract.endReason, account.username, account.password FROM employee INNER JOIN person ON personId = person.id INNER JOIN address ON person.addressId = address.id INNER JOIN contract on contractId = contract.id INNER JOIN account ON accountId = account.id WHERE account.username = '{username}'";
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
             DataTable table = new DataTable();
             try
             {
-                if (table.Rows.Count > 0)
+                conn.Open();
+                adapter.Fill(table);
+                conn.Close();
+                for (int i = 0; i < table.Rows.Count; i++)
                 {
-                    DataRow row = table.Rows[0];
-                    Employee emp = EmployeeObject(row);
+                    DataRow row = table.Rows[i];
+                    emp = EmployeeObject(row);
                     return emp;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw new FailedReadFromDBException("account");
-            }
-            finally
-            {
-                conn.Close();
+                throw new FailedReadFromDBException("all employees");
             }
             return null;
         }
