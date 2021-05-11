@@ -199,16 +199,18 @@ namespace MediaBazzar
         private int insertContract(Contract contract)
         {
             int contractId = -1;
-            string sql = "INSERT INTO contract (start, end, endReason) VALUES(@start, @end, @endReason);" + "SELECT LAST_INSERT_ID();";
+            string sql = "INSERT INTO contract (workingHours,start, end, endReason) VALUES(@workingHours,@start, @end, @endReason);" + "SELECT LAST_INSERT_ID();";
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@start", contract.EmploymentStart.Date);
             if (contract.isTerminated())
             {
+                cmd.Parameters.AddWithValue("@@workingHours", contract.Workinghours);
                 cmd.Parameters.AddWithValue("@end", contract.EmploymentEnd);
                 cmd.Parameters.AddWithValue("@endReason", contract.TerminationReason);
             }
             else
             {
+                cmd.Parameters.AddWithValue("@@workingHours", contract.Workinghours);
                 cmd.Parameters.AddWithValue("@end", null);
                 cmd.Parameters.AddWithValue("@endReason", null);
             }
