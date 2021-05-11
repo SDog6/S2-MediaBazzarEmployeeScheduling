@@ -19,6 +19,11 @@ namespace MediaBazzar
             InitializeComponent();
             Manager = new EmployeeManager();
             this.emp = emp;
+            lblName.Text = $"Name: {emp.PersonalInfo.FirstName} {emp.PersonalInfo.LastName}";
+            lblAddress.Text = $"Address: {emp.PersonalInfo.Address}";
+            lblRole.Text = $"Role: {emp.Role}";
+            lblConInf.Text = $"Contract information: {emp.Contract.EmploymentStart}";
+            lblWorkHrs.Text = $"Working hours: {emp.Contract.Workinghours}";
             lblFire.Text = $"Please state the reason for firing {emp.PersonalInfo.FirstName}";
         }
 
@@ -33,6 +38,11 @@ namespace MediaBazzar
             {
                 Manager.FireEmployee(emp, tbFire.Text);
             }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
