@@ -31,7 +31,6 @@ namespace MediaBazzar
         {
             this.btnEmpDetails = new System.Windows.Forms.Button();
             this.btnFireEmp = new System.Windows.Forms.Button();
-            this.btnEmpUpdate = new System.Windows.Forms.Button();
             this.dataGrid_employees = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -69,20 +68,6 @@ namespace MediaBazzar
             this.btnFireEmp.UseVisualStyleBackColor = false;
             this.btnFireEmp.Click += new System.EventHandler(this.btnFireEmp_Click);
             // 
-            // btnEmpUpdate
-            // 
-            this.btnEmpUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(62)))));
-            this.btnEmpUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmpUpdate.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.btnEmpUpdate.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnEmpUpdate.Location = new System.Drawing.Point(0, 270);
-            this.btnEmpUpdate.Name = "btnEmpUpdate";
-            this.btnEmpUpdate.Size = new System.Drawing.Size(191, 54);
-            this.btnEmpUpdate.TabIndex = 12;
-            this.btnEmpUpdate.Text = "Update employee info";
-            this.btnEmpUpdate.UseVisualStyleBackColor = false;
-            this.btnEmpUpdate.Click += new System.EventHandler(this.btnEmpUpdate_Click);
-            // 
             // dataGrid_employees
             // 
             this.dataGrid_employees.AllowUserToAddRows = false;
@@ -119,7 +104,6 @@ namespace MediaBazzar
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(12)))), ((int)(((byte)(45)))));
             this.panel1.Controls.Add(this.btnEmpDetails);
             this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Controls.Add(this.btnEmpUpdate);
             this.panel1.Controls.Add(this.btnFireEmp);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -156,7 +140,6 @@ namespace MediaBazzar
         #endregion
         private System.Windows.Forms.Button btnEmpDetails;
         private System.Windows.Forms.Button btnFireEmp;
-        private System.Windows.Forms.Button btnEmpUpdate;
         private System.Windows.Forms.DataGridView dataGrid_employees;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Panel panel1;

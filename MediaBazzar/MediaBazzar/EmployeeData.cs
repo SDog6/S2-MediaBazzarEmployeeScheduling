@@ -249,7 +249,7 @@ namespace MediaBazzar
         }
         public Employee loginAccount(string username)
         {
-            string sql = $"SELECT * FROM account INNER JOIN employee ON account.id = employee.accountId WHERE account.username = '{username}'";
+            string sql = $"SELECT * FROM account INNER JOIN employee ON account.id = employee.accountId WHERE account.username = {username}";
             MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conn);
             DataTable table = new DataTable();
             try

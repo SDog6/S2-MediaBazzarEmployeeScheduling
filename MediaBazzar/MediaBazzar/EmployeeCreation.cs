@@ -100,8 +100,10 @@ namespace MediaBazzar
             }
             return null;
         }
-        private void btnSubmit_Click_1(object sender, EventArgs e)
+
+        private void btnSubmit_Click(object sender, EventArgs e)
         {
+
             Employee employee = createEmployee();
             if (employee != null)
             {
@@ -114,16 +116,6 @@ namespace MediaBazzar
                     MessageBox.Show(ex.Message);
                 }
             }
-        }
-
-        private void EmployeeCreation_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

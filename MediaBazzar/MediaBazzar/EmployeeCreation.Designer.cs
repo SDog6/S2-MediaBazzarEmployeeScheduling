@@ -105,7 +105,6 @@ namespace MediaBazzar
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contact Person";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label9
             // 
@@ -467,6 +466,7 @@ namespace MediaBazzar
             this.btnSubmit.TabIndex = 19;
             this.btnSubmit.Text = "Create Employee";
             this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // panel1
             // 
@@ -498,7 +498,6 @@ namespace MediaBazzar
             this.Controls.Add(this.panel1);
             this.Name = "EmployeeCreation";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.EmployeeCreation_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.EmployeeInfo.ResumeLayout(false);
