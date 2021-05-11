@@ -102,11 +102,11 @@ namespace MediaBazzar
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label2.Location = new System.Drawing.Point(68, 173);
+            this.label2.Location = new System.Drawing.Point(19, 171);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 21);
+            this.label2.Size = new System.Drawing.Size(80, 21);
             this.label2.TabIndex = 6;
-            this.label2.Text = "ID:";
+            this.label2.Text = "Barcode:";
             // 
             // label3
             // 

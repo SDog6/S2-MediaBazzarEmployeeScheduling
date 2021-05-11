@@ -104,9 +104,10 @@ namespace MediaBazzar
         }
         private void btnManagementNewStock_Click(object sender, EventArgs e)
         {
-            ManagementNewInventory a = new ManagementNewInventory(stock);
+            Management f = this;
+            ManagementNewInventory a = new ManagementNewInventory(stock,f);
             a.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnManagementStockUpdate_Click_1(object sender, EventArgs e)

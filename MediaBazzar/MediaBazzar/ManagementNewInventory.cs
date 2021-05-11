@@ -14,10 +14,12 @@ namespace MediaBazzar
     {
         WarehouseStockManager Warehouse;
         ShopStockManager Shop;
-        public ManagementNewInventory(ShopStockManager Shop)
+        Management trick;
+        public ManagementNewInventory(ShopStockManager Shop,Management trick)
         {
             InitializeComponent();
             Warehouse = new WarehouseStockManager();
+            this.trick = trick;
             this.Shop = Shop;
             UpdateUI();
         }
@@ -98,8 +100,7 @@ namespace MediaBazzar
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Management f = new Management();
-            f.Show();
+            trick.Show();
             this.Close();
         }
     }
