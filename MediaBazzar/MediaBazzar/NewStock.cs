@@ -13,10 +13,12 @@ namespace MediaBazzar
     public partial class NewStock : Form
     {
         WarehouseStockManager stock;
-        public NewStock(WarehouseStockManager stock)
+        WarehouseManagement trick;
+        public NewStock(WarehouseStockManager stock,WarehouseManagement trick)
         {
             InitializeComponent();
             this.stock = stock;
+            this.trick = trick;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -40,6 +42,13 @@ namespace MediaBazzar
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            trick.UpdateUI();
+            trick.Show();
+            this.Close();
         }
     }
 }

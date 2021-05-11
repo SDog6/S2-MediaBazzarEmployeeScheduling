@@ -26,12 +26,6 @@ namespace MediaBazzar
         {
             UpdateUI();
         }
-    
-        private void btnWarehouseAddItem_Click(object sender, EventArgs e)
-        {
-            NewStock f = new NewStock(WarehouseStock);
-            f.Show();
-        }
 
         //private void btnWarehouseSearch_Click(object sender, EventArgs e)
         //{
@@ -98,8 +92,9 @@ namespace MediaBazzar
 
         private void btnNewItem_Click(object sender, EventArgs e)
         {
-            NewStock f = new NewStock(WarehouseStock);
+            NewStock f = new NewStock(WarehouseStock,this);
             f.Show();
+            this.Hide();
         }
 
         private void btnDiscontinue_Click(object sender, EventArgs e)
