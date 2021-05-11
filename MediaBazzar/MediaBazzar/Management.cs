@@ -93,10 +93,12 @@ namespace MediaBazzar
             {
                 DateTime filled = DateTime.Now;
 
-                Stock selected = (Stock)dataGrid_stocks.CurrentRow.DataBoundItem;
+                DataGridViewRow selectedRow = dataGrid_stocks.SelectedRows[0];
+                int id = Convert.ToInt32(selectedRow.Cells[0].Value);
+                Stock s = (Stock)WarehouseM.GetStockByID(id);
 
 
-                ReshelfRequest request = new ReshelfRequest(selected, filled, Convert.ToInt32(tbAmountNeeded.Text), false);
+                ReshelfRequest request = new ReshelfRequest(s, filled, Convert.ToInt32(tbAmountNeeded.Text), false);
                 ReshelfRequests.Add(request);
                 MessageBox.Show("Request sucessfully submited");
             }
