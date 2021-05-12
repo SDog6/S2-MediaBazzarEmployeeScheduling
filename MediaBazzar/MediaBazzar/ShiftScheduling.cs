@@ -57,7 +57,7 @@ namespace MediaBazzar
                 Employee emp = (Employee)lbManagementShiftEmployeesToAssign.SelectedItem;
                 DateTime time = monthCalendar1.SelectionRange.Start.Date;
                 string shifttype = cbShiftType.SelectedItem.ToString();
-                if (shiftcounter + 5 > emp.Contract.Workinghours)
+                if (emp.Workinghours + 5 > emp.Contract.Workinghours)
                 {
                     MessageBox.Show("Employee is beeing overscheduled !");
                 }
@@ -66,6 +66,7 @@ namespace MediaBazzar
                     shiftcounter += 5;
                     Shift temp = new Shift(emp, time, shifttype);
                     Shifts.Add(temp);
+                    UpdateEmployeesUI();
                     UpdateShiftEmployeeUI();
                 }
             }
@@ -78,6 +79,7 @@ namespace MediaBazzar
         {
             foreach (Employee emp in Employees.GetAllPerType())
             {
+                emp.Workinghours = 0;
                 foreach (Shift item in Shifts.GetAllPerType())
                 {
                     if (item.Emp.EmployeeID == emp.EmployeeID && item.Time >= Monday)
