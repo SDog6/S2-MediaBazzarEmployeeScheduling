@@ -55,7 +55,37 @@ namespace MediaBazzar
             }
         }
 
+        public void ReduceStockInWarehouse(int id,int amount)
+        {
+            try
+            {
+                // make sure in your table the id in auto-incremented
+                string sql = "UPDATE stock SET amount = amount - @amount WHERE id = @id";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@amount", amount);
 
+
+                conn.Open();
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured! Try again.");
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+        }
         public void Delete(object obj)
         {
             Stock stock = (Stock)obj;

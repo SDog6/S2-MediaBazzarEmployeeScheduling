@@ -291,7 +291,7 @@ namespace MediaBazzar
             this.btnStockRemove.Name = "btnStockRemove";
             this.btnStockRemove.Size = new System.Drawing.Size(159, 53);
             this.btnStockRemove.TabIndex = 11;
-            this.btnStockRemove.Text = "Remove stock from inventory";
+            this.btnStockRemove.Text = "Remove item from inventory";
             this.btnStockRemove.UseVisualStyleBackColor = false;
             this.btnStockRemove.Click += new System.EventHandler(this.btnStockRemove_Click);
             // 
@@ -319,7 +319,7 @@ namespace MediaBazzar
             this.btnManagementNewStock.Name = "btnManagementNewStock";
             this.btnManagementNewStock.Size = new System.Drawing.Size(159, 56);
             this.btnManagementNewStock.TabIndex = 8;
-            this.btnManagementNewStock.Text = "Add new stock to inventory";
+            this.btnManagementNewStock.Text = "Add a new item to inventory";
             this.btnManagementNewStock.UseVisualStyleBackColor = false;
             this.btnManagementNewStock.Click += new System.EventHandler(this.btnManagementNewStock_Click);
             // 
@@ -355,7 +355,7 @@ namespace MediaBazzar
             this.rbManagementStockBrandFilter.AutoSize = true;
             this.rbManagementStockBrandFilter.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbManagementStockBrandFilter.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.rbManagementStockBrandFilter.Location = new System.Drawing.Point(98, 29);
+            this.rbManagementStockBrandFilter.Location = new System.Drawing.Point(106, 29);
             this.rbManagementStockBrandFilter.Name = "rbManagementStockBrandFilter";
             this.rbManagementStockBrandFilter.Size = new System.Drawing.Size(74, 25);
             this.rbManagementStockBrandFilter.TabIndex = 6;
@@ -371,10 +371,10 @@ namespace MediaBazzar
             this.rbManagementStockIDFilter.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.rbManagementStockIDFilter.Location = new System.Drawing.Point(6, 29);
             this.rbManagementStockIDFilter.Name = "rbManagementStockIDFilter";
-            this.rbManagementStockIDFilter.Size = new System.Drawing.Size(45, 25);
+            this.rbManagementStockIDFilter.Size = new System.Drawing.Size(94, 25);
             this.rbManagementStockIDFilter.TabIndex = 5;
             this.rbManagementStockIDFilter.TabStop = true;
-            this.rbManagementStockIDFilter.Text = "ID";
+            this.rbManagementStockIDFilter.Text = "Barcode";
             this.rbManagementStockIDFilter.UseVisualStyleBackColor = true;
             this.rbManagementStockIDFilter.CheckedChanged += new System.EventHandler(this.rbManagementStockIDFilter_CheckedChanged);
             // 
@@ -383,7 +383,7 @@ namespace MediaBazzar
             this.rbManagementStockAmountFilter.AutoSize = true;
             this.rbManagementStockAmountFilter.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbManagementStockAmountFilter.ForeColor = System.Drawing.SystemColors.Control;
-            this.rbManagementStockAmountFilter.Location = new System.Drawing.Point(187, 29);
+            this.rbManagementStockAmountFilter.Location = new System.Drawing.Point(196, 29);
             this.rbManagementStockAmountFilter.Name = "rbManagementStockAmountFilter";
             this.rbManagementStockAmountFilter.Size = new System.Drawing.Size(93, 25);
             this.rbManagementStockAmountFilter.TabIndex = 7;
@@ -394,7 +394,7 @@ namespace MediaBazzar
             // 
             // tbManagementStockFilter
             // 
-            this.tbManagementStockFilter.Location = new System.Drawing.Point(88, 69);
+            this.tbManagementStockFilter.Location = new System.Drawing.Point(96, 69);
             this.tbManagementStockFilter.Name = "tbManagementStockFilter";
             this.tbManagementStockFilter.Size = new System.Drawing.Size(100, 22);
             this.tbManagementStockFilter.TabIndex = 1;

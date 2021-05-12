@@ -47,6 +47,8 @@ namespace MediaBazzar
             this.tbCName = new System.Windows.Forms.TextBox();
             this.tbCLastname = new System.Windows.Forms.TextBox();
             this.EmployeeInfo = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbHours = new System.Windows.Forms.TextBox();
             this.tbUsername = new System.Windows.Forms.TextBox();
             this.l_username = new System.Windows.Forms.Label();
             this.tbErole = new System.Windows.Forms.TextBox();
@@ -73,8 +75,6 @@ namespace MediaBazzar
             this.btnSubmit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbHours = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.EmployeeInfo.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -272,6 +272,22 @@ namespace MediaBazzar
             this.EmployeeInfo.TabStop = false;
             this.EmployeeInfo.Text = "Employee details";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(336, 330);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Work hours:";
+            // 
+            // tbHours
+            // 
+            this.tbHours.Location = new System.Drawing.Point(404, 326);
+            this.tbHours.Name = "tbHours";
+            this.tbHours.Size = new System.Drawing.Size(64, 20);
+            this.tbHours.TabIndex = 33;
+            // 
             // tbUsername
             // 
             this.tbUsername.Location = new System.Drawing.Point(112, 25);
@@ -464,7 +480,7 @@ namespace MediaBazzar
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmit.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.btnSubmit.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnSubmit.Location = new System.Drawing.Point(0, 102);
+            this.btnSubmit.Location = new System.Drawing.Point(-1, 102);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(191, 62);
             this.btnSubmit.TabIndex = 19;
@@ -493,22 +509,6 @@ namespace MediaBazzar
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(193, 447);
             this.panel2.TabIndex = 22;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(336, 330);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "Work hours:";
-            // 
-            // tbHours
-            // 
-            this.tbHours.Location = new System.Drawing.Point(404, 326);
-            this.tbHours.Name = "tbHours";
-            this.tbHours.Size = new System.Drawing.Size(64, 20);
-            this.tbHours.TabIndex = 33;
             // 
             // EmployeeCreation
             // 

@@ -33,9 +33,19 @@ namespace MediaBazzar
                 if (lbWarehouseStock.SelectedIndex > -1)
                 {
                     Object Stock = lbWarehouseStock.SelectedItem;
-                    Shop.Add(Stock, Convert.ToInt32(textBox1.Text));
-                    MessageBox.Show("Successfully added item to shop inventory");
-                    UpdateUI();
+                    Stock a = (Stock)Stock;
+                    if(a.Amount < Convert.ToInt32(textBox1.Text))
+                    {
+                        MessageBox.Show("The warehouse doesn't have enough of that item!");
+                    }
+                    else
+                    {
+                        Shop.Add(Stock, Convert.ToInt32(textBox1.Text));
+                        Warehouse.ReduceStock(a.ID, Convert.ToInt32(textBox1.Text));
+                        MessageBox.Show("Successfully added item to shop inventory");
+                        UpdateUI();
+                    }
+                   
                 }
             }
             catch (Exception ex)
@@ -100,6 +110,7 @@ namespace MediaBazzar
 
         private void button1_Click(object sender, EventArgs e)
         {
+            trick.showAllStock();
             trick.Show();
             this.Close();
         }

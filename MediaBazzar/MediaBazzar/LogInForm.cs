@@ -54,10 +54,7 @@ namespace MediaBazzar
                 HR f = new HR();
                 f.Show();
             }
-            else
-            {
-                MessageBox.Show("You do not have access!");
-            }
+     
         }
         private bool empty(string s)
         {

@@ -46,7 +46,7 @@ namespace MediaBazzar
             this.btnEmpDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmpDetails.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.btnEmpDetails.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnEmpDetails.Location = new System.Drawing.Point(0, 36);
+            this.btnEmpDetails.Location = new System.Drawing.Point(-3, 34);
             this.btnEmpDetails.Name = "btnEmpDetails";
             this.btnEmpDetails.Size = new System.Drawing.Size(191, 60);
             this.btnEmpDetails.TabIndex = 10;
@@ -60,7 +60,7 @@ namespace MediaBazzar
             this.btnFireEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFireEmp.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.btnFireEmp.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnFireEmp.Location = new System.Drawing.Point(0, 114);
+            this.btnFireEmp.Location = new System.Drawing.Point(-3, 114);
             this.btnFireEmp.Name = "btnFireEmp";
             this.btnFireEmp.Size = new System.Drawing.Size(191, 56);
             this.btnFireEmp.TabIndex = 11;
@@ -91,7 +91,7 @@ namespace MediaBazzar
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnAdd.Location = new System.Drawing.Point(0, 192);
+            this.btnAdd.Location = new System.Drawing.Point(-3, 194);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(191, 57);
             this.btnAdd.TabIndex = 14;

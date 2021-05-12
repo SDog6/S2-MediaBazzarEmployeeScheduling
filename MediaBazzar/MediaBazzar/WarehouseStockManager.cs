@@ -121,5 +121,10 @@ namespace MediaBazzar
                 return false;
             }
         }
+
+        public void ReduceStock(int id,int amount)
+        {
+            data.ReduceStockInWarehouse(id, amount);
+        }
     }
 }

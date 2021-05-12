@@ -37,6 +37,7 @@ namespace MediaBazzar
             if (!String.IsNullOrEmpty(tbFire.Text))
             {
                 Manager.FireEmployee(emp, tbFire.Text);
+                MessageBox.Show("Employee moved to non-active status");
             }
         }
 

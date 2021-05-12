@@ -32,6 +32,7 @@ namespace MediaBazzar
             try
             {
                 stock.Add(new Stock(name, Amount, ID, price, brand, available));
+                MessageBox.Show("Added item to warehouse inventory");
             }
             catch (Exception ex)
             {
