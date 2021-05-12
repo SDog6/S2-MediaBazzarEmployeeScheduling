@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?session_start();?>
 <?php include("./templates/header.php");?>
+<?php include("./scripts/protectedpage.php");?>
 
 <h1 style="text-align: center;"> Avaliabillity </h1>
 
