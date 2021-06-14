@@ -30,110 +30,122 @@ src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
     
     <div id="picker"></div>
     <div>
-        <p>Selected dates / times:</p>
+        <p>Selected dates /times:</p>
         <div id="selected-dates"></div>
+        <p>Selected date: <span id="selected-date"></span></p>
+
+        <p>Selected time: <span id="selected-time"></span></p>
     </div>
   </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script type="text/javascript" src="js/mark-your-calendar.js"></script>
     <script type="text/javascript">
+    
         (function($) {
           $('#picker').markyourcalendar({
             availability: [
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',]
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',]
           
              
             ],
             isMultiple: true,
-            startDate: new Date("2021-05-10"),
+            startDate: new Date("2021-06-07"),
             onClick: function(ev, data) {
               // data is a list of datetimes
               console.log(data);
               var html = ``;
+              var date = ``;
+              var shift = ``;
               $.each(data, function() {
                 var d = this.split(' ')[0];
                 var t = this.split(' ')[1];
                 html += `<p>` + d + ` ` + t + `</p>`;
+                date += `<p>` + d + `</p>`;
+                shift += `<p>` + t + `</p>`;
               });
+              document.forms[0].selectedTime = shift;
               $('#selected-dates').html(html);
+              $('#selected-date').html(date);
+              $('#selected-time').html(shift);
+              
             },
             onClickNavigator: function(ev, instance) {
               var arr = [
                 [
-                ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',]
+                ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',]
           
                 ],
                 [
-                ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',]
+                ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',]
           
                 ],
                 [
-                ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',]
+                ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',]
           
                 ],
                 [
-                ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',]
+                ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',]
           
                 ],
                 [
-                ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',]
+                ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',]
           
                 ],
                 [
-                ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',]
+                ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',]
           
                 ],
                 [
-                ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',],
-              ['Night Shift', 'Evening Shift', 'Night Shift',]
+                ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',],
+              ['Morning Shift', 'Evening Shift', 'Night Shift',]
           
                 ]
               ]
@@ -142,6 +154,7 @@ src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
             }
           });
         })(jQuery);
+
     </script>
     <script type="text/javascript">
 
@@ -157,7 +170,8 @@ src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
   })();
 
 </script>
-<form method="POST" action="index.php" name="Available_Days">
+<form method="POST" action="./test.php" name="Available_Days">
+  <input type="text" id="selectedTime" name="selectedTime"  value="<=$('#selected-time').html(shift);">
   <button type="submit" class="btn">Submit Availability</button></button>
 </form>
 <script>
@@ -174,5 +188,6 @@ try {
   console.log(error);
 }
 </script>
+
 </body>
 </html>

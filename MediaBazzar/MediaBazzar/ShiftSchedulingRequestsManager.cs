@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace MediaBazzar
 {
-    class ShiftSchedulingManager
+    class ShiftSchedulingRequestsManager
     {
 
         private List<Shift> Shifts;
 
-        private ShiftSchedulingData data;
+        private ShiftSchedulingRequestsData data;
 
-        public ShiftSchedulingData ShiftData { get { return this.data; } set { data = value; } }
+        public ShiftSchedulingRequestsData ShiftData { get { return this.data; } set { data = value; } }
 
-        public ShiftSchedulingManager()
+        public ShiftSchedulingRequestsManager()
         {
-            ShiftData = new ShiftSchedulingData();
+            ShiftData = new ShiftSchedulingRequestsData();
             loadDataFromDatabase();
         }
 
@@ -47,7 +47,7 @@ namespace MediaBazzar
 
         }
 
-        public List<object> GetAllPerType()
+        public List<object> GetAll()
         {
             List<object> temp = new List<object>();
 
@@ -58,6 +58,7 @@ namespace MediaBazzar
             return temp;
         }
 
+       
         public List<object> GetAllMorningShifts()
         {
             List<object> temp = new List<object>();
@@ -67,6 +68,7 @@ namespace MediaBazzar
                 temp.Add(item);
             }
             return temp;
+           
         }
 
 

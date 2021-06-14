@@ -11,7 +11,7 @@ using MySql.Data.MySqlClient;
 
 namespace MediaBazzar
 {
-    class ShiftSchedulingData
+    class ShiftSchedulingRequestsData
     {
 
         public static MySqlConnection conn = new MySqlConnection("Server=studmysql01.fhict.local; Uid=dbi457108; Database=dbi457108; Pwd=NewPassword123");
@@ -22,7 +22,7 @@ namespace MediaBazzar
             try
             {
                 // make sure in your table the id in auto-incremented
-                string sql = "INSERT INTO shifts (employee_id,Date,Type) VALUES (@employee_id,@Date,@Type)";
+                string sql = "INSERT INTO shiftsrequests (employee_id,Date,Type) VALUES (@employee_id,@Date,@Type)";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@employee_id", shift.Emp.EmployeeID);
                 cmd.Parameters.AddWithValue("@Date", shift.Time);
@@ -57,7 +57,7 @@ namespace MediaBazzar
 
             try
             {
-                string sql = "SELECT id,employee_id, Date,Type FROM shifts;";
+                string sql = "SELECT id,employee_id, Date,Type FROM shiftsrequests;";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 conn.Open();
@@ -97,7 +97,7 @@ namespace MediaBazzar
 
             try
             {
-                string sql = "SELECT employee_id, Date,Type FROM shifts WHERE Type LIKE 'Morning%';";
+                string sql = "SELECT employee_id, Date,Type FROM shiftsrequests WHERE Type LIKE 'Morning%';";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 conn.Open();
@@ -138,7 +138,7 @@ namespace MediaBazzar
 
             try
             {
-                string sql = "SELECT employee_id, Date,Type FROM shifts WHERE Type LIKE 'Afternoon%';";
+                string sql = "SELECT employee_id, Date,Type FROM shiftsrequests WHERE Type LIKE 'Afternoon%';";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 conn.Open();
@@ -179,7 +179,7 @@ namespace MediaBazzar
 
             try
             {
-                string sql = "SELECT employee_id, Date,Type FROM shifts WHERE Type LIKE 'Night%';";
+                string sql = "SELECT employee_id, Date,Type FROM shiftsrequests WHERE Type LIKE 'Night%';";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 conn.Open();
@@ -214,12 +214,12 @@ namespace MediaBazzar
 
         public void Delete(Object obj)
         {
-            Stock stock = (Stock)obj;
+            Shift s = (Shift)obj;
             try
             {
-                string sql = "DELETE FROM shopstock WHERE stockid = @id";
+                string sql = "DELETE FROM shiftsrequests WHERE id = @id";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@ID", stock.ID);
+                cmd.Parameters.AddWithValue("@id", s.ID);
 
 
                 conn.Open();

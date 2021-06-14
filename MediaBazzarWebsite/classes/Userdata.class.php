@@ -29,17 +29,11 @@ public function GetAUser($username){
     $stmt = $this->Connect()->prepare($sql);
     $stmt->execute([$username]);
     $user = $stmt->fetch();
-    if($user == null){
-        return null;
-    }
-    else {
-        $fid = $user->id;
-        $fusername = $user->username;
-        $fpassword = $user->password;
-        $founduser = new User($fid,$fpassword,$fusername);
-        return $founduser;
-    }
-    
+    $fid = $user->id;
+    $fusername= $user->username;
+    $fpassword = $user->password;
+    $founduser = new User($fid,$fpassword,$fusername);
+    return $founduser;
 }
 
 public function GetAUserByID($id){

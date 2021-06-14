@@ -11,10 +11,7 @@ if(isset($_POST['login_user']))
 	$username = $_POST["username"];
 	$loginattempt = new Userdata();
 	$founduser = $loginattempt->GetAUser($username);
-	if($founduser === null ){
-		header("login.php?error=wronglogin");
-	}
-	else if($founduser->GetUsername() == null){
+	if($founduser->GetUsername() == null){
 		header("login.php?error=wronglogin");
 	}
 	else if ($password == $founduser->GetPassword()) {
@@ -53,13 +50,7 @@ if(isset($_POST['login_user']))
   	</p>
   </form>
 
-  <?php 
- if(isset($_GET["error"])){
-    if($_GET["error"] == "wronglogin"){
-        echo "<p>Wrong login details!</p>";
-    }
-}
-?>
+ 
  
 </body>
 </html>
