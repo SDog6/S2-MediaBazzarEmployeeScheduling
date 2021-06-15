@@ -172,6 +172,8 @@
     <Compile Include="ShiftScheduling.Designer.cs">
       <DependentUpon>ShiftScheduling.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShiftSchedulingRequestsManager.cs" />
+    <Compile Include="ShiftSchedulingRequestsData.cs" />
     <Compile Include="ShiftSchedulingData.cs" />
     <Compile Include="ShiftSchedulingManager.cs" />
     <Compile Include="ShopStockData.cs" />

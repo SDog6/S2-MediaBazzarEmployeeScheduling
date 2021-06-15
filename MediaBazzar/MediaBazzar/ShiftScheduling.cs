@@ -16,6 +16,7 @@ namespace MediaBazzar
         DateTime Sunday;
         int shiftcounter;
         ShiftSchedulingManager Shifts;
+        ShiftSchedulingRequestsManager Requests;
         EmployeeManager Employees;
 
 
@@ -25,7 +26,9 @@ namespace MediaBazzar
             InitializeComponent();
             Employees = new EmployeeManager();
             Shifts = new ShiftSchedulingManager();
+            Requests = new ShiftSchedulingRequestsManager();
             cbShiftType.SelectedIndex = 1;
+
 
             DateTime today = DateTime.Now;
 
@@ -157,6 +160,59 @@ namespace MediaBazzar
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
             UpdateShiftEmployeeUI();
+        }
+
+        private void btnAuto_Click(object sender, EventArgs e)
+        {
+            int Monday = 0;
+            int Tuesday = 0;
+            int Wednesday = 0;
+            int Thursday = 0;
+            int Friday = 0;
+            int Saturday = 0;
+            int Sunday = 0;
+
+            int MondayLimit = 2;
+            int TuesdayLimit = 2;
+            int WednesdayLimit = 2;
+            int ThursdayLimit = 2;
+            int FridayLimit = 5;
+            int SaturdayLimit = 5;
+            int SundayLimit = 5;
+
+            foreach (Shift item in Requests.GetAll())
+            {
+                if(item.Emp.Workinghours + 5 < item.Emp.Contract.Workinghours && Monday++ <= MondayLimit && Tuesday++ <= TuesdayLimit && Wednesday++ <= WednesdayLimit && Thursday++ <= ThursdayLimit && Friday++ <= FridayLimit && Saturday++ <= SaturdayLimit && Sunday++ <= SundayLimit)
+                {
+                    switch(item.Time.DayOfWeek)
+                    {
+                        case DayOfWeek.Monday:
+                           Monday++;
+                            break;
+                        case DayOfWeek.Tuesday:
+                            Tuesday++;
+                            break;
+                        case DayOfWeek.Wednesday:
+                            Wednesday++;
+                            break;
+                        case DayOfWeek.Thursday:
+                            Thursday++;
+                            break;
+                        case DayOfWeek.Friday:
+                            Friday++;
+                            break;
+                        case DayOfWeek.Saturday:
+                            Saturday++;
+                            break;
+                        case DayOfWeek.Sunday:
+                            Sunday++;
+                            break;
+
+                    }
+                    Shifts.Add(item);
+                    Requests.Remove(item);
+                }
+            }
         }
     }
 }
