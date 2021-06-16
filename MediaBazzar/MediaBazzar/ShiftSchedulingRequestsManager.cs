@@ -9,7 +9,7 @@ namespace MediaBazzar
     class ShiftSchedulingRequestsManager
     {
 
-        private List<Shift> Shifts;
+        private List<ShiftRequest> Shifts;
 
         private ShiftSchedulingRequestsData data;
 
@@ -24,34 +24,19 @@ namespace MediaBazzar
 
         private void loadDataFromDatabase()
         {
-            Shifts = new List<Shift>();
+            Shifts = new List<ShiftRequest>();
 
-            foreach (Shift o in (List<Shift>)ShiftData.ReadAll())
+            foreach (ShiftRequest o in (List<ShiftRequest>)ShiftData.ReadAll())
             {
-                Shifts.Add((Shift)o);
+                Shifts.Add((ShiftRequest)o);
             }
-        }
-        public bool Add(object obj)
-        {
-            if (obj != null)
-            {
-                ShiftData.Add((Shift)obj);
-                loadDataFromDatabase();
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
-
         }
 
         public List<object> GetAll()
         {
             List<object> temp = new List<object>();
 
-            foreach (Shift item in Shifts)
+            foreach (ShiftRequest item in Shifts)
             {
                 temp.Add(item);
             }
@@ -63,7 +48,7 @@ namespace MediaBazzar
         {
             List<object> temp = new List<object>();
 
-            foreach (Shift item in (List<Shift>)ShiftData.GetAllMorningShifts())
+            foreach (ShiftRequest item in (List<ShiftRequest>)ShiftData.GetAllMorningShifts())
             {
                 temp.Add(item);
             }
@@ -76,7 +61,7 @@ namespace MediaBazzar
         {
             List<object> temp = new List<object>();
 
-            foreach (Shift item in (List<Shift>)ShiftData.GetAllAfternoonShifts())
+            foreach (ShiftRequest item in (List<ShiftRequest>)ShiftData.GetAllAfternoonShifts())
             {
                 temp.Add(item);
             }
@@ -88,7 +73,97 @@ namespace MediaBazzar
         {
             List<object> temp = new List<object>();
 
-            foreach (Shift item in (List<Shift>)ShiftData.GetAllEveningShifts())
+            foreach (ShiftRequest item in (List<ShiftRequest>)ShiftData.GetAllEveningShifts())
+            {
+                temp.Add(item);
+            }
+            return temp;
+        }
+        public List<object> GetAllMondayShifts()
+        {
+            List<object> temp = new List<object>();
+
+            foreach (ShiftRequest item in (List<ShiftRequest>)ShiftData.GetAllMondayShifts())
+            {
+                temp.Add(item);
+            }
+            return temp;
+        }
+
+        public List<object> GetAllTuesdayShifts()
+        {
+            List<object> temp = new List<object>();
+
+            foreach (ShiftRequest item in (List<ShiftRequest>)ShiftData.GetAllTuesdayShifts())
+            {
+                temp.Add(item);
+            }
+            return temp;
+        }
+
+
+        public List<object> GetAllWednesdayShifts()
+        {
+            List<object> temp = new List<object>();
+
+            foreach (ShiftRequest item in (List<ShiftRequest>)ShiftData.GetAllWednesdayShifts())
+            {
+                temp.Add(item);
+            }
+            return temp;
+        }
+
+
+        public List<object> GetAllThursdayShifts()
+        {
+            List<object> temp = new List<object>();
+
+            foreach (ShiftRequest item in (List<ShiftRequest>)ShiftData.GetAllThursdayShifts())
+            {
+                temp.Add(item);
+            }
+            return temp;
+        }
+
+        public List<object> GetAllFridayShifts()
+        {
+            List<object> temp = new List<object>();
+
+            foreach (ShiftRequest item in (List<ShiftRequest>)ShiftData.GetAllFridayShifts())
+            {
+                temp.Add(item);
+            }
+            return temp;
+        }
+
+        public List<object> GetAllSaturdayShifts()
+        {
+            List<object> temp = new List<object>();
+
+            foreach (ShiftRequest item in (List<ShiftRequest>)ShiftData.GetAllSaturdayShifts())
+            {
+                temp.Add(item);
+            }
+            return temp;
+        }
+
+        public List<object> GetAllSundayShifts()
+        {
+            List<object> temp = new List<object>();
+
+            foreach (ShiftRequest item in (List<ShiftRequest>)ShiftData.GetAllSundayShifts())
+            {
+                temp.Add(item);
+            }
+            return temp;
+        }
+
+
+        public List<object> GetAllRequestsByDay(string day)
+        {
+            List<object> temp = new List<object>();
+
+            foreach (ShiftRequest item in (List<ShiftRequest>)ShiftData.GetAllRequestsByDay(day))
             {
                 temp.Add(item);
             }
@@ -100,7 +175,7 @@ namespace MediaBazzar
         {
             if (obj != null)
             {
-                ShiftData.Delete((Stock)obj);
+                ShiftData.Delete((ShiftRequest)obj);
                 loadDataFromDatabase();
                 return true;
             }

@@ -17,6 +17,7 @@ namespace MediaBazzar
         private Contract contract;
         private Account account;
         private bool active;
+        private int workinghours;
 
         public string BSNp { get { return this.BSN; } set { this.BSN = value; } }
         public DateTime DateOfBirth { get { return this.dateOfBirth; } }
@@ -28,7 +29,7 @@ namespace MediaBazzar
         public Account Account { get { return this.account; } }
         public bool Active { get { return this.active; } }
 
-        public int Workinghours { get; set; }
+        public int Workinghours { get { return this.workinghours; } set {this.workinghours = value; } }
 
         public Employee(int ID, Person personalInfo, Person contactPerson, DateTime dateOfBirth, string BSN, string role, Contract contract, Account account, bool active)
         {

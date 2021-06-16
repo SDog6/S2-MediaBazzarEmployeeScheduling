@@ -50,14 +50,16 @@ namespace MediaBazzar
             monthCalendar1.SelectionStart = Monday;
 
             UpdateShiftEmployeeUI();
-            UpdateEmployeesUI();
+            UpdateShiftRequests();
         }
 
         private void btnManagementShiftAssignEmployee_Click(object sender, EventArgs e)
         {
             if(lbManagementShiftEmployeesToAssign.SelectedIndex > -1)
             {
-                Employee emp = (Employee)lbManagementShiftEmployeesToAssign.SelectedItem;
+                ShiftRequest r = (ShiftRequest)lbManagementShiftEmployeesToAssign.SelectedItem;
+                //Employee emp = (Employee)lbManagementShiftEmployeesToAssign.SelectedItem;
+                Employee emp = r.Emp;
                 DateTime time = monthCalendar1.SelectionRange.Start.Date;
                 string shifttype = cbShiftType.SelectedItem.ToString();
                 if (emp.Workinghours + 5 > emp.Contract.Workinghours)
@@ -69,7 +71,7 @@ namespace MediaBazzar
                     shiftcounter += 5;
                     Shift temp = new Shift(emp, time, shifttype);
                     Shifts.Add(temp);
-                    UpdateEmployeesUI();
+                    UpdateShiftRequests();
                     UpdateShiftEmployeeUI();
                 }
             }
@@ -101,6 +103,18 @@ namespace MediaBazzar
             }
         }
 
+
+        public void UpdateShiftRequests()
+        {
+            DateTime time = monthCalendar1.SelectionRange.Start.Date;
+            lbManagementShiftEmployeesToAssign.Items.Clear();
+            foreach (ShiftRequest items in Requests.GetAllRequestsByDay(time.DayOfWeek.ToString()))
+            {
+                lbManagementShiftEmployeesToAssign.Items.Add(items);
+            }
+        }
+
+
         public void UpdateShiftEmployeeUI()
         {
 
@@ -122,34 +136,9 @@ namespace MediaBazzar
                 {
                     lbEveningShifts.Items.Add(item);
                 }
-            }/*
-            foreach (Shift item in Shifts.GetAllMorningShifts())
-            {
-                if(item.Time == monthCalendar1.SelectionRange.Start.Date)
-                {
-                    lbMorningShifts.Items.Add(item);
-                }
             }
 
-
-            lbAfternoonshifts.Items.Clear();
-            foreach (Shift item in Shifts.GetAllAfternoonShifts())
-            {
-                if (item.Time == monthCalendar1.SelectionRange.Start.Date)
-                {
-                    lbAfternoonshifts.Items.Add(item);
-                }
-            }
-
-
-            lbEveningShifts.Items.Clear();
-            foreach (Shift item in Shifts.GetAllEveningShifts())
-            {
-                if (item.Time == monthCalendar1.SelectionRange.Start.Date)
-                {
-                    lbEveningShifts.Items.Add(item);
-                }
-            }*/
+            
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -159,7 +148,10 @@ namespace MediaBazzar
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
+            UpdateShiftRequests();
             UpdateShiftEmployeeUI();
+
+
         }
 
         private void btnAuto_Click(object sender, EventArgs e)
@@ -212,6 +204,23 @@ namespace MediaBazzar
                     Shifts.Add(item);
                     Requests.Remove(item);
                 }
+            }
+        }
+
+        private void lbManagementShiftEmployeesToAssign_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ShiftRequest r = (ShiftRequest)lbManagementShiftEmployeesToAssign.SelectedItem;
+            if(r.ShiftType == "EveningShift")
+            {
+                cbShiftType.SelectedIndex = 2;
+            }
+            else if(r.ShiftType == "MorningShift")
+            {
+                cbShiftType.SelectedIndex = 0;
+            }
+            else
+            {
+                cbShiftType.SelectedIndex = 1;
             }
         }
     }

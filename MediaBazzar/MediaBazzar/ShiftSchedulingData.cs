@@ -131,6 +131,8 @@ namespace MediaBazzar
         }
 
 
+
+
         public object GetAllAfternoonShifts()
         {
             List<Shift> shifts = new List<Shift>();
@@ -211,6 +213,7 @@ namespace MediaBazzar
             }
             return shifts;
         }
+
 
         public void Delete(Object obj)
         {

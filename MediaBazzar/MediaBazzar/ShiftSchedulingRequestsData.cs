@@ -16,43 +16,9 @@ namespace MediaBazzar
 
         public static MySqlConnection conn = new MySqlConnection("Server=studmysql01.fhict.local; Uid=dbi457108; Database=dbi457108; Pwd=NewPassword123");
 
-        public void Add(object obj)
-        {
-            Shift shift = (Shift)obj;
-            try
-            {
-                // make sure in your table the id in auto-incremented
-                string sql = "INSERT INTO shiftsrequests (employee_id,Date,Type) VALUES (@employee_id,@Date,@Type)";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@employee_id", shift.Emp.EmployeeID);
-                cmd.Parameters.AddWithValue("@Date", shift.Time);
-                cmd.Parameters.AddWithValue("@Type", shift.ShiftType);
-
-
-
-                conn.Open();
-
-                cmd.ExecuteNonQuery();
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occured! Try again.");
-            }
-            finally
-            {
-                if (conn != null)
-                {
-                    conn.Close();
-                }
-            }
-        }
         public object ReadAll()
         {
-            List<Shift> shifts = new List<Shift>();
+            List<ShiftRequest> shifts = new List<ShiftRequest>();
             EmployeeManager getemp = new EmployeeManager();
 
             try
@@ -68,7 +34,7 @@ namespace MediaBazzar
                 {
                     int id = Convert.ToInt32(dr[1]);
                     Employee gottenEmp = getemp.GetEmployee(id);
-                    shifts.Add(new Shift(Convert.ToInt32(dr[0]),gottenEmp, Convert.ToDateTime(dr[2]), dr[3].ToString()));
+                    shifts.Add(new ShiftRequest(Convert.ToInt32(dr[0]), gottenEmp, dr[2].ToString(), dr[3].ToString()));
                 }
 
             }
@@ -92,7 +58,7 @@ namespace MediaBazzar
 
         public object GetAllMorningShifts()
         {
-            List<Shift> shifts = new List<Shift>();
+            List<ShiftRequest> shifts = new List<ShiftRequest>();
             EmployeeManager getemp = new EmployeeManager();
 
             try
@@ -108,7 +74,7 @@ namespace MediaBazzar
                 {
                     int id = Convert.ToInt32(dr[0]);
                     Employee gottenEmp = getemp.GetEmployee(id);
-                    shifts.Add(new Shift(gottenEmp, Convert.ToDateTime(dr[1]), dr[2].ToString()));
+                    shifts.Add(new ShiftRequest(id,gottenEmp,dr[1].ToString(), dr[2].ToString()));
                 }
 
             }
@@ -133,7 +99,7 @@ namespace MediaBazzar
 
         public object GetAllAfternoonShifts()
         {
-            List<Shift> shifts = new List<Shift>();
+            List<ShiftRequest> shifts = new List<ShiftRequest>();
             EmployeeManager getemp = new EmployeeManager();
 
             try
@@ -149,7 +115,7 @@ namespace MediaBazzar
                 {
                     int id = Convert.ToInt32(dr[0]);
                     Employee gottenEmp = getemp.GetEmployee(id);
-                    shifts.Add(new Shift(gottenEmp, Convert.ToDateTime(dr[1]), dr[2].ToString()));
+                    shifts.Add(new ShiftRequest(id,gottenEmp, dr[1].ToString(), dr[2].ToString()));
                 }
 
             }
@@ -174,7 +140,7 @@ namespace MediaBazzar
 
         public object GetAllEveningShifts()
         {
-            List<Shift> shifts = new List<Shift>();
+            List<ShiftRequest> shifts = new List<ShiftRequest>();
             EmployeeManager getemp = new EmployeeManager();
 
             try
@@ -190,7 +156,7 @@ namespace MediaBazzar
                 {
                     int id = Convert.ToInt32(dr[0]);
                     Employee gottenEmp = getemp.GetEmployee(id);
-                    shifts.Add(new Shift(gottenEmp, Convert.ToDateTime(dr[1]), dr[2].ToString()));
+                    shifts.Add(new ShiftRequest(id,gottenEmp, dr[1].ToString(), dr[2].ToString()));
                 }
 
             }
@@ -212,9 +178,349 @@ namespace MediaBazzar
             return shifts;
         }
 
+
+        public object GetAllMondayShifts()
+        {
+            List<ShiftRequest> shifts = new List<ShiftRequest>();
+            EmployeeManager getemp = new EmployeeManager();
+
+            try
+            {
+                string sql = "SELECT employee_id, Date,Type FROM shiftsrequests WHERE Date LIKE 'Monday%';";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    int id = Convert.ToInt32(dr[0]);
+                    Employee gottenEmp = getemp.GetEmployee(id);
+                    shifts.Add(new ShiftRequest(id, gottenEmp, dr[1].ToString(), dr[2].ToString()));
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured! Try again.");
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+            return shifts;
+        }
+
+
+        public object GetAllTuesdayShifts()
+        {
+            List<ShiftRequest> shifts = new List<ShiftRequest>();
+            EmployeeManager getemp = new EmployeeManager();
+
+            try
+            {
+                string sql = "SELECT employee_id, Date,Type FROM shiftsrequests WHERE Date LIKE 'Tuesday%';";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    int id = Convert.ToInt32(dr[0]);
+                    Employee gottenEmp = getemp.GetEmployee(id);
+                    shifts.Add(new ShiftRequest(id, gottenEmp, dr[1].ToString(), dr[2].ToString()));
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured! Try again.");
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+            return shifts;
+        }
+
+
+
+
+        public object GetAllWednesdayShifts()
+        {
+            List<ShiftRequest> shifts = new List<ShiftRequest>();
+            EmployeeManager getemp = new EmployeeManager();
+
+            try
+            {
+                string sql = "SELECT employee_id, Date,Type FROM shiftsrequests WHERE Date LIKE 'Wednesday%';";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    int id = Convert.ToInt32(dr[0]);
+                    Employee gottenEmp = getemp.GetEmployee(id);
+                    shifts.Add(new ShiftRequest(id, gottenEmp, dr[1].ToString(), dr[2].ToString()));
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured! Try again.");
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+            return shifts;
+        }
+
+
+
+
+        public object GetAllThursdayShifts()
+        {
+            List<ShiftRequest> shifts = new List<ShiftRequest>();
+            EmployeeManager getemp = new EmployeeManager();
+
+            try
+            {
+                string sql = "SELECT employee_id, Date,Type FROM shiftsrequests WHERE Date LIKE 'Thursday%';";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    int id = Convert.ToInt32(dr[0]);
+                    Employee gottenEmp = getemp.GetEmployee(id);
+                    shifts.Add(new ShiftRequest(id, gottenEmp, dr[1].ToString(), dr[2].ToString()));
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured! Try again.");
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+            return shifts;
+        }
+
+
+
+
+        public object GetAllFridayShifts()
+        {
+            List<ShiftRequest> shifts = new List<ShiftRequest>();
+            EmployeeManager getemp = new EmployeeManager();
+
+            try
+            {
+                string sql = "SELECT employee_id, Date,Type FROM shiftsrequests WHERE Date LIKE 'Friday%';";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    int id = Convert.ToInt32(dr[0]);
+                    Employee gottenEmp = getemp.GetEmployee(id);
+                    shifts.Add(new ShiftRequest(id, gottenEmp, dr[1].ToString(), dr[2].ToString()));
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured! Try again.");
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+            return shifts;
+        }
+
+
+
+
+        public object GetAllSaturdayShifts()
+        {
+            List<ShiftRequest> shifts = new List<ShiftRequest>();
+            EmployeeManager getemp = new EmployeeManager();
+
+            try
+            {
+                string sql = "SELECT employee_id, Date,Type FROM shiftsrequests WHERE Date LIKE 'Saturday%';";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    int id = Convert.ToInt32(dr[0]);
+                    Employee gottenEmp = getemp.GetEmployee(id);
+                    shifts.Add(new ShiftRequest(id, gottenEmp, dr[1].ToString(), dr[2].ToString()));
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured! Try again.");
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+            return shifts;
+        }
+
+
+
+
+        public object GetAllSundayShifts()
+        {
+            List<ShiftRequest> shifts = new List<ShiftRequest>();
+            EmployeeManager getemp = new EmployeeManager();
+
+            try
+            {
+                string sql = "SELECT employee_id, Date,Type FROM shiftsrequests WHERE Date LIKE 'Sunday%';";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    int id = Convert.ToInt32(dr[0]);
+                    Employee gottenEmp = getemp.GetEmployee(id);
+                    shifts.Add(new ShiftRequest(id, gottenEmp, dr[1].ToString(), dr[2].ToString()));
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured! Try again.");
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+            return shifts;
+        }
+
+
+        public object GetAllRequestsByDay(string day)
+        {
+            List<ShiftRequest> shifts = new List<ShiftRequest>();
+            EmployeeManager getemp = new EmployeeManager();
+
+            try
+            {
+                string sql = "SELECT employee_id, Date,Type FROM shiftsrequests WHERE Date LIKE @day;";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@day", day);
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    int id = Convert.ToInt32(dr[0]);
+                    Employee gottenEmp = getemp.GetEmployee(id);
+                    shifts.Add(new ShiftRequest(id, gottenEmp, dr[1].ToString(), dr[2].ToString()));
+                }
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured! Try again.");
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+            return shifts;
+        }
+
+
+
         public void Delete(Object obj)
         {
-            Shift s = (Shift)obj;
+            ShiftRequest s = (ShiftRequest)obj;
             try
             {
                 string sql = "DELETE FROM shiftsrequests WHERE id = @id";

@@ -165,6 +165,7 @@
     <Compile Include="ReshelfRequest.cs" />
     <Compile Include="ReshelfRequestData.cs" />
     <Compile Include="ReshelfRequestManager.cs" />
+    <Compile Include="ShiftRequest.cs" />
     <Compile Include="Shift.cs" />
     <Compile Include="ShiftScheduling.cs">
       <SubType>Form</SubType>
