@@ -82,6 +82,22 @@ namespace MediaBazzar
             return false;
         }
 
+
+        public void IncreaseWorkHours(Employee emp)
+        {
+            data.IncraseWork(emp.EmployeeID);
+        }
+
+        public void LowereWorkHours(Employee emp)
+        {
+            data.DecreaseWorkHours(emp.EmployeeID);
+        }
+
+        public void ClearWorkHours(Employee emp)
+        {
+            data.ClearWorkHours();
+        }
+
         public Employee tryLogin(string username, string password)
         {
             try

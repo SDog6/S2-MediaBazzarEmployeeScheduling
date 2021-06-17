@@ -71,6 +71,7 @@ namespace MediaBazzar
                     shiftcounter += 5;
                     Shift temp = new Shift(emp, time, shifttype);
                     Shifts.Add(temp);
+                    Employees.IncreaseWorkHours(emp);
                     UpdateShiftRequests();
                     UpdateShiftEmployeeUI();
                 }
@@ -202,7 +203,6 @@ namespace MediaBazzar
 
                     }
                     Shifts.Add(item);
-                    Requests.Remove(item);
                 }
             }
         }
@@ -222,6 +222,38 @@ namespace MediaBazzar
             {
                 cbShiftType.SelectedIndex = 1;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(lbMorningShifts.SelectedIndex > -1)
+            {
+                Shift s = (Shift)lbMorningShifts.SelectedItem;
+                Shifts.Remove(s);
+                Employees.LowereWorkHours(s.Emp);
+                lbMorningShifts.Items.Clear();
+                UpdateShiftEmployeeUI();
+                UpdateShiftRequests();
+            }
+            else if (lbAfternoonshifts.SelectedIndex > -1)
+            {
+                Shift s = (Shift)lbAfternoonshifts.SelectedItem;
+                Shifts.Remove(s);
+                Employees.LowereWorkHours(s.Emp);
+                lbAfternoonshifts.Items.Clear();
+                UpdateShiftEmployeeUI();
+                UpdateShiftRequests();
+            }
+            else if (lbEveningShifts.SelectedIndex > -1)
+            {
+                Shift s = (Shift)lbEveningShifts.SelectedItem;
+                Shifts.Remove(s);
+                Employees.LowereWorkHours(s.Emp);
+                lbEveningShifts.Items.Clear();
+                UpdateShiftEmployeeUI();
+                UpdateShiftRequests();
+            }
+
         }
     }
 }

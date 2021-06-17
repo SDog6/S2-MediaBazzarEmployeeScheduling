@@ -62,7 +62,7 @@ namespace MediaBazzar
         public object ReadAll()
         {
             List<Employee> employees = new List<Employee>();
-            string query = "SELECT employee.id, employee.dateOfBirth, employee.BSN, employee.role, employee.status, person.firstName, person.lastName, person.phoneNumber, person.email, address.state, address.city, address.street, address.apartmentNr, contract.workingHours, contract.start, contract.end, contract.endReason, account.username, account.password FROM employee INNER JOIN person ON personId = person.id INNER JOIN address ON person.addressId = address.id INNER JOIN contract on contractId = contract.id INNER JOIN account ON accountId = account.id";
+            string query = "SELECT employee.id, employee.dateOfBirth, employee.BSN, employee.role, employee.status, person.firstName, person.lastName, person.phoneNumber, person.email, address.state, address.city, address.street, address.apartmentNr, contract.workingHours, contract.start, contract.end, contract.endReason, account.username, account.password, employee.workHours FROM employee INNER JOIN person ON personId = person.id INNER JOIN address ON person.addressId = address.id INNER JOIN contract on contractId = contract.id INNER JOIN account ON accountId = account.id";
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
             DataTable table = new DataTable();
             try
@@ -125,7 +125,9 @@ namespace MediaBazzar
 
             Person contactPerson = getContactPerson(id);
 
-            Employee emp = new Employee(id, personalInfo, contactPerson, dateOfBirth, BSN, role, contract, account, status);
+            int WorkHours = Convert.ToInt32(row[19]);
+
+            Employee emp = new Employee(id, personalInfo, contactPerson, dateOfBirth, BSN, role, contract, account, status,WorkHours);
             return emp;
         }
         private Person PersonObject(object[] personalInfo)
@@ -316,6 +318,67 @@ namespace MediaBazzar
                 conn.Close();
             }
         }
+
+        public void IncraseWork(int id)
+        {
+            string query = "UPDATE employee SET workHours = workHours + 4 WHERE id = @id";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@id", id);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw new FailedDatabaseUpdateException();
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+
+        public void DecreaseWorkHours(int id)
+        {
+            string query = "UPDATE employee SET workHours = workHours - 4 WHERE id = @id";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@id", id);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw new FailedDatabaseUpdateException();
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public void ClearWorkHours()
+        {
+            string query = "UPDATE employee SET workHours = 0";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw new FailedDatabaseUpdateException();
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         private void changeContractDetails(int id, Contract contract)
         {
             string query = "UPDATE contract INNER JOIN employee ON contract.id = employee.contractId SET contract.end = @endDate, contract.endReason = @endReason WHERE employee.id = @id";

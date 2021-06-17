@@ -49,6 +49,7 @@ namespace MediaBazzar
 
         public List<object> GetAllPerType()
         {
+            loadDataFromDatabase();
             List<object> temp = new List<object>();
 
             foreach (Shift item in Shifts)
@@ -94,18 +95,9 @@ namespace MediaBazzar
         }
 
 
-        public bool Remove(object obj)
+        public void Remove(Shift s)
         {
-            if (obj != null)
-            {
-                ShiftData.Delete((Stock)obj);
-                loadDataFromDatabase();
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            ShiftData.Delete(s.ID);
         }
     }
 }

@@ -215,14 +215,13 @@ namespace MediaBazzar
         }
 
 
-        public void Delete(Object obj)
+        public void Delete(int id)
         {
-            Stock stock = (Stock)obj;
             try
             {
-                string sql = "DELETE FROM shopstock WHERE stockid = @id";
+                string sql = "DELETE FROM shifts WHERE id = @id";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@ID", stock.ID);
+                cmd.Parameters.AddWithValue("@ID", id);
 
 
                 conn.Open();
