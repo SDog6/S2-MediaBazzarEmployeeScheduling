@@ -11,10 +11,8 @@ using MySql.Data.MySqlClient;
 
 namespace MediaBazzar
 {
-    public class EmployeeData : IDatabaseManager
+    public class EmployeeData : DatabaseConnection, IDatabaseManager
     {
-
-        public static MySqlConnection conn = new MySqlConnection("Server=studmysql01.fhict.local; Uid=dbi457108; Database=dbi457108; Pwd=NewPassword123");
 
         public void Insert(object obj)
         {

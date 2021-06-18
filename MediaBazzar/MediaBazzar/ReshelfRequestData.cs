@@ -10,10 +10,9 @@ using MySql.Data.MySqlClient;
 
 namespace MediaBazzar
 {
-    class ReshelfRequestData : IDatabaseManager
+    class ReshelfRequestData : DatabaseConnection, IDatabaseManager
     {
 
-        public static MySqlConnection conn = new MySqlConnection("Server=studmysql01.fhict.local; Uid=dbi457108; Database=dbi457108; Pwd=NewPassword123");
 
         public void Delete(int id)
         {

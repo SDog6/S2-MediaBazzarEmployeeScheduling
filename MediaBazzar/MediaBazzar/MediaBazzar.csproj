@@ -95,6 +95,7 @@
     <Compile Include="Account.cs" />
     <Compile Include="Address.cs" />
     <Compile Include="Contract.cs" />
+    <Compile Include="DatabaseConnection.cs" />
     <Compile Include="Department.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="EmployeeCreation.cs">

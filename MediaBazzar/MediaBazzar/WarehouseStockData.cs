@@ -10,9 +10,8 @@ using MySql.Data.MySqlClient;
 
 namespace MediaBazzar
 {
-    public class WarehouseStockData : IDatabaseManager
+    public class WarehouseStockData : DatabaseConnection, IDatabaseManager
     {
-        public static MySqlConnection conn = new MySqlConnection("Server=studmysql01.fhict.local; Uid=dbi457108; Database=dbi457108; Pwd=NewPassword123");
 
         public void Delete(int id)
         {

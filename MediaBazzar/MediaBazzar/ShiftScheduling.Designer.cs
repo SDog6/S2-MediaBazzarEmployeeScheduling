@@ -97,7 +97,7 @@ namespace MediaBazzar
             this.lbManagementShiftEmployeesToAssign.Name = "lbManagementShiftEmployeesToAssign";
             this.lbManagementShiftEmployeesToAssign.Size = new System.Drawing.Size(486, 157);
             this.lbManagementShiftEmployeesToAssign.TabIndex = 6;
-            this.lbManagementShiftEmployeesToAssign.SelectedIndexChanged += new System.EventHandler(this.lbManagementShiftEmployeesToAssign_SelectedIndexChanged);
+
             // 
             // monthCalendar1
             // 
@@ -214,7 +214,6 @@ namespace MediaBazzar
             this.button1.TabIndex = 15;
             this.button1.Text = "Remove shift";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ShiftScheduling
             // 
