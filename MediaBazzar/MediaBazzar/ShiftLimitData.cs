@@ -12,7 +12,11 @@ namespace MediaBazzar
     {
         public static MySqlConnection conn = new MySqlConnection("Server=studmysql01.fhict.local; Uid=dbi457108; Database=dbi457108; Pwd=NewPassword123");
 
-        public void SetLimits(int[] limits)
+        public ShiftLimitData()
+        {
+
+        }
+        public void SetLimits(List<int> limits)
         {
             string[] days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
             try
@@ -44,7 +48,7 @@ namespace MediaBazzar
             }
         }
 
-        public int[] GetLimits()
+        public List<int> GetLimits()
         {
             string sql = "SELECT morning, evening, night FROM shiftlimits";
             List<int> limits = new List<int>();
@@ -59,7 +63,7 @@ namespace MediaBazzar
                     limits.Add(Convert.ToInt32(dr[1]));
                     limits.Add(Convert.ToInt32(dr[2]));
                 }
-                return limits.ToArray();
+                return limits;
 
             }
             catch (Exception ex)
