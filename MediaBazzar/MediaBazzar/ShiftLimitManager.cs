@@ -23,6 +23,10 @@ namespace MediaBazzar
             return limits;
         }
 
-
+        public void UpdateLimits(List<int> newLimits)
+        {
+            this.limits = newLimits;
+            data.SetLimits(newLimits);
+        }
     }
 }
