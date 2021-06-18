@@ -176,6 +176,12 @@
     <Compile Include="ShiftScheduling.Designer.cs">
       <DependentUpon>ShiftScheduling.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShiftSchedulingLimits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShiftSchedulingLimits.Designer.cs">
+      <DependentUpon>ShiftSchedulingLimits.cs</DependentUpon>
+    </Compile>
     <Compile Include="ShiftSchedulingRequestsManager.cs" />
     <Compile Include="ShiftSchedulingRequestsData.cs" />
     <Compile Include="ShiftSchedulingData.cs" />
@@ -236,6 +242,9 @@
     </Compile>
     <EmbeddedResource Include="ShiftScheduling.resx">
       <DependentUpon>ShiftScheduling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShiftSchedulingLimits.resx">
+      <DependentUpon>ShiftSchedulingLimits.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewEmployeeData.resx">
       <DependentUpon>ViewEmployeeData.cs</DependentUpon>

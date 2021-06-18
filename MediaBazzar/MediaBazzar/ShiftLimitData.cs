@@ -15,7 +15,7 @@ namespace MediaBazzar
         {
 
         }
-        public void SetLimits(List<int> limits)
+        public void SetLimits(List<decimal> limits)
         {
             string[] days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
             try
@@ -33,6 +33,7 @@ namespace MediaBazzar
                     cnt++;
                     cmd.Parameters.AddWithValue("@day", day);
 
+                    conn.Close();
                     conn.Open();
                     cmd.ExecuteNonQuery();
                 }
@@ -43,14 +44,17 @@ namespace MediaBazzar
             }
             finally
             {
-                conn.Close();
+                if (conn != null)
+                {
+                    conn.Close();
+                }
             }
         }
 
-        public List<int> GetLimits()
+        public List<decimal> GetLimits()
         {
             string sql = "SELECT morning, evening, night FROM shiftlimits";
-            List<int> limits = new List<int>();
+            List<decimal> limits = new List<decimal>();
             try
             {
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -68,6 +72,13 @@ namespace MediaBazzar
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
             }
             return null;
         }

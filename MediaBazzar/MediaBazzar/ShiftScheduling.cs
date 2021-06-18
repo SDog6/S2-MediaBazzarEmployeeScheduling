@@ -255,5 +255,16 @@ namespace MediaBazzar
                 Shifts.Remove((Shift)lbEveningShifts.SelectedItem);
             }
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnLimit_Click(object sender, EventArgs e)
+        {
+            ShiftSchedulingLimits s = new ShiftSchedulingLimits();
+            s.Show();
+        }
     }
 }
