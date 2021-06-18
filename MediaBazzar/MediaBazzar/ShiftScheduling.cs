@@ -19,7 +19,9 @@ namespace MediaBazzar
         ShiftSchedulingRequestsManager Requests;
         EmployeeManager Employees;
 
-
+        List<Shift> RemainingShifts;
+        int[] counters = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        int[] limits =   { 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5};
 
         public ShiftScheduling()
         {
@@ -29,6 +31,8 @@ namespace MediaBazzar
             Requests = new ShiftSchedulingRequestsManager();
             cbShiftType.SelectedIndex = 1;
 
+
+            RemainingShifts = new List<Shift>();
 
             DateTime today = DateTime.Now;
 
@@ -50,16 +54,14 @@ namespace MediaBazzar
             monthCalendar1.SelectionStart = Monday;
 
             UpdateShiftEmployeeUI();
-            UpdateShiftRequests();
+            UpdateEmployeesUI();
         }
 
         private void btnManagementShiftAssignEmployee_Click(object sender, EventArgs e)
         {
-            if(lbManagementShiftEmployeesToAssign.SelectedIndex > -1)
+            if (lbManagementShiftEmployeesToAssign.SelectedIndex > -1)
             {
-                ShiftRequest r = (ShiftRequest)lbManagementShiftEmployeesToAssign.SelectedItem;
-                //Employee emp = (Employee)lbManagementShiftEmployeesToAssign.SelectedItem;
-                Employee emp = r.Emp;
+                Employee emp = (Employee)lbManagementShiftEmployeesToAssign.SelectedItem;
                 DateTime time = monthCalendar1.SelectionRange.Start.Date;
                 string shifttype = cbShiftType.SelectedItem.ToString();
                 if (emp.Workinghours + 5 > emp.Contract.Workinghours)
@@ -71,13 +73,12 @@ namespace MediaBazzar
                     shiftcounter += 5;
                     Shift temp = new Shift(emp, time, shifttype);
                     Shifts.Add(temp);
-                    Employees.IncreaseWorkHours(emp);
-                    UpdateShiftRequests();
+                    UpdateEmployeesUI();
                     UpdateShiftEmployeeUI();
                 }
             }
 
-          
+
 
         }
 
@@ -94,7 +95,7 @@ namespace MediaBazzar
                     }
                 }
             }
-           
+
 
 
             lbManagementShiftEmployeesToAssign.Items.Clear();
@@ -103,18 +104,6 @@ namespace MediaBazzar
                 lbManagementShiftEmployeesToAssign.Items.Add(item);
             }
         }
-
-
-        public void UpdateShiftRequests()
-        {
-            DateTime time = monthCalendar1.SelectionRange.Start.Date;
-            lbManagementShiftEmployeesToAssign.Items.Clear();
-            foreach (ShiftRequest items in Requests.GetAllRequestsByDay(time.DayOfWeek.ToString()))
-            {
-                lbManagementShiftEmployeesToAssign.Items.Add(items);
-            }
-        }
-
 
         public void UpdateShiftEmployeeUI()
         {
@@ -137,9 +126,34 @@ namespace MediaBazzar
                 {
                     lbEveningShifts.Items.Add(item);
                 }
+            }/*
+            foreach (Shift item in Shifts.GetAllMorningShifts())
+            {
+                if(item.Time == monthCalendar1.SelectionRange.Start.Date)
+                {
+                    lbMorningShifts.Items.Add(item);
+                }
             }
 
-            
+
+            lbAfternoonshifts.Items.Clear();
+            foreach (Shift item in Shifts.GetAllAfternoonShifts())
+            {
+                if (item.Time == monthCalendar1.SelectionRange.Start.Date)
+                {
+                    lbAfternoonshifts.Items.Add(item);
+                }
+            }
+
+
+            lbEveningShifts.Items.Clear();
+            foreach (Shift item in Shifts.GetAllEveningShifts())
+            {
+                if (item.Time == monthCalendar1.SelectionRange.Start.Date)
+                {
+                    lbEveningShifts.Items.Add(item);
+                }
+            }*/
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -149,111 +163,82 @@ namespace MediaBazzar
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-            UpdateShiftRequests();
             UpdateShiftEmployeeUI();
-
-
         }
 
-        private void btnAuto_Click(object sender, EventArgs e)
+        private bool AssignShift(Shift s)
         {
-            int Monday = 0;
-            int Tuesday = 0;
-            int Wednesday = 0;
-            int Thursday = 0;
-            int Friday = 0;
-            int Saturday = 0;
-            int Sunday = 0;
-
-            int MondayLimit = 2;
-            int TuesdayLimit = 2;
-            int WednesdayLimit = 2;
-            int ThursdayLimit = 2;
-            int FridayLimit = 5;
-            int SaturdayLimit = 5;
-            int SundayLimit = 5;
-
+            int shift = (((int)s.Time.DayOfWeek + 6) % 7)*3;
+            switch (s.ShiftType)
+            {
+                case "MorningShift":
+                    {
+                        shift += 1;
+                        break;
+                    }
+                case "EveningShift":
+                    {
+                        shift += 2;
+                        break;
+                    }
+                case "NightShift":
+                    {
+                        shift += 3;
+                        break;
+                    }
+            }        
+            if (counters[shift] + 1 <= limits[shift])
+            {
+                counters[shift]++;
+                return true;
+            }
+            return false;
+        }
+        private void AutoSchedule()
+        {
             foreach (Shift item in Requests.GetAll())
             {
-                if(item.Emp.Workinghours + 5 < item.Emp.Contract.Workinghours && Monday++ <= MondayLimit && Tuesday++ <= TuesdayLimit && Wednesday++ <= WednesdayLimit && Thursday++ <= ThursdayLimit && Friday++ <= FridayLimit && Saturday++ <= SaturdayLimit && Sunday++ <= SundayLimit)
+                if (item.Emp.Workinghours + 5 < item.Emp.Contract.Workinghours)
                 {
-                    switch(item.Time.DayOfWeek)
+                    if (AssignShift(item))
                     {
-                        case DayOfWeek.Monday:
-                           Monday++;
-                            break;
-                        case DayOfWeek.Tuesday:
-                            Tuesday++;
-                            break;
-                        case DayOfWeek.Wednesday:
-                            Wednesday++;
-                            break;
-                        case DayOfWeek.Thursday:
-                            Thursday++;
-                            break;
-                        case DayOfWeek.Friday:
-                            Friday++;
-                            break;
-                        case DayOfWeek.Saturday:
-                            Saturday++;
-                            break;
-                        case DayOfWeek.Sunday:
-                            Sunday++;
-                            break;
-
+                        Shifts.Add(item);
                     }
-                    Shifts.Add(item);
+                    else
+                    {
+                        RemainingShifts.Add(item);
+                    }
                 }
             }
         }
-
-        private void lbManagementShiftEmployeesToAssign_SelectedIndexChanged(object sender, EventArgs e)
+        private void AssignRemaining()
         {
-            ShiftRequest r = (ShiftRequest)lbManagementShiftEmployeesToAssign.SelectedItem;
-            if(r.ShiftType == "EveningShift")
+            if(RemainingShifts.Count < 1)
             {
-                cbShiftType.SelectedIndex = 2;
+                return;
             }
-            else if(r.ShiftType == "MorningShift")
+            for(int i = 0; i < 21; i++)
             {
-                cbShiftType.SelectedIndex = 0;
-            }
-            else
-            {
-                cbShiftType.SelectedIndex = 1;
+                if (counters[i] < limits[i])
+                {
+                    try
+                    {
+                        Shifts.Add(RemainingShifts[0]);
+                        RemainingShifts.RemoveAt(0);
+                        counters[i]++;
+                    }
+                    catch(IndexOutOfRangeException)
+                    {
+                        return;
+                    }                    
+                }
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAuto_Click(object sender, EventArgs e)
         {
-            if(lbMorningShifts.SelectedIndex > -1)
-            {
-                Shift s = (Shift)lbMorningShifts.SelectedItem;
-                Shifts.Remove(s);
-                Employees.LowereWorkHours(s.Emp);
-                lbMorningShifts.Items.Clear();
-                UpdateShiftEmployeeUI();
-                UpdateShiftRequests();
-            }
-            else if (lbAfternoonshifts.SelectedIndex > -1)
-            {
-                Shift s = (Shift)lbAfternoonshifts.SelectedItem;
-                Shifts.Remove(s);
-                Employees.LowereWorkHours(s.Emp);
-                lbAfternoonshifts.Items.Clear();
-                UpdateShiftEmployeeUI();
-                UpdateShiftRequests();
-            }
-            else if (lbEveningShifts.SelectedIndex > -1)
-            {
-                Shift s = (Shift)lbEveningShifts.SelectedItem;
-                Shifts.Remove(s);
-                Employees.LowereWorkHours(s.Emp);
-                lbEveningShifts.Items.Clear();
-                UpdateShiftEmployeeUI();
-                UpdateShiftRequests();
-            }
-
+            AutoSchedule();
+            AssignRemaining();
         }
+
     }
 }
