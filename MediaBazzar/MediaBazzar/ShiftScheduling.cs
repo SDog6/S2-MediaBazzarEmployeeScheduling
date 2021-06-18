@@ -240,5 +240,20 @@ namespace MediaBazzar
             AssignRemaining();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(lbMorningShifts.SelectedIndex > -1)
+            {
+                Shifts.Remove((Shift)lbMorningShifts.SelectedItem);
+            }
+            if (lbAfternoonshifts.SelectedIndex > -1)
+            {
+                Shifts.Remove((Shift)lbAfternoonshifts.SelectedItem);
+            }
+            if (lbEveningShifts.SelectedIndex > -1)
+            {
+                Shifts.Remove((Shift)lbEveningShifts.SelectedItem);
+            }
+        }
     }
 }
