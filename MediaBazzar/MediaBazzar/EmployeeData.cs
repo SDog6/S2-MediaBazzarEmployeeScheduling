@@ -319,7 +319,7 @@ namespace MediaBazzar
 
         public void IncraseWork(int id)
         {
-            string query = "UPDATE employee SET workHours = workHours + 4 WHERE id = @id";
+            string query = "UPDATE employee SET workHours = workHours + 5 WHERE id = @id";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@id", id);
             try
@@ -340,7 +340,7 @@ namespace MediaBazzar
 
         public void DecreaseWorkHours(int id)
         {
-            string query = "UPDATE employee SET workHours = workHours - 4 WHERE id = @id";
+            string query = "UPDATE employee SET workHours = workHours - 5 WHERE id = @id";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@id", id);
             try

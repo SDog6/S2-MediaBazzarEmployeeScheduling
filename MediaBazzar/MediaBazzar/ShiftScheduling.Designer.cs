@@ -38,11 +38,11 @@ namespace MediaBazzar
             this.lbEveningShifts = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLimit = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnAuto = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnLimit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,6 +98,7 @@ namespace MediaBazzar
             this.lbManagementShiftEmployeesToAssign.Name = "lbManagementShiftEmployeesToAssign";
             this.lbManagementShiftEmployeesToAssign.Size = new System.Drawing.Size(486, 157);
             this.lbManagementShiftEmployeesToAssign.TabIndex = 6;
+            this.lbManagementShiftEmployeesToAssign.SelectedIndexChanged += new System.EventHandler(this.lbManagementShiftEmployeesToAssign_SelectedIndexChanged);
             // 
             // monthCalendar1
             // 
@@ -163,7 +164,20 @@ namespace MediaBazzar
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1034, 524);
             this.panel1.TabIndex = 14;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnLimit
+            // 
+            this.btnLimit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(62)))));
+            this.btnLimit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimit.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnLimit.Location = new System.Drawing.Point(903, 27);
+            this.btnLimit.Name = "btnLimit";
+            this.btnLimit.Size = new System.Drawing.Size(107, 34);
+            this.btnLimit.TabIndex = 17;
+            this.btnLimit.Text = "Limits";
+            this.btnLimit.UseVisualStyleBackColor = false;
+            this.btnLimit.Click += new System.EventHandler(this.btnLimit_Click);
             // 
             // button1
             // 
@@ -217,20 +231,6 @@ namespace MediaBazzar
             this.label4.TabIndex = 16;
             this.label4.Text = "Evening";
             this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // btnLimit
-            // 
-            this.btnLimit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(62)))));
-            this.btnLimit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimit.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnLimit.Location = new System.Drawing.Point(903, 27);
-            this.btnLimit.Name = "btnLimit";
-            this.btnLimit.Size = new System.Drawing.Size(107, 34);
-            this.btnLimit.TabIndex = 17;
-            this.btnLimit.Text = "Limits";
-            this.btnLimit.UseVisualStyleBackColor = false;
-            this.btnLimit.Click += new System.EventHandler(this.btnLimit_Click);
             // 
             // ShiftScheduling
             // 

@@ -54,14 +54,16 @@ namespace MediaBazzar
             monthCalendar1.SelectionStart = Monday;
 
             UpdateShiftEmployeeUI();
-            UpdateEmployeesUI();
+            UpdateShiftRequests();
         }
 
         private void btnManagementShiftAssignEmployee_Click(object sender, EventArgs e)
         {
             if (lbManagementShiftEmployeesToAssign.SelectedIndex > -1)
             {
-                Employee emp = (Employee)lbManagementShiftEmployeesToAssign.SelectedItem;
+                ShiftRequest r = (ShiftRequest)lbManagementShiftEmployeesToAssign.SelectedItem;
+                //Employee emp = (Employee)lbManagementShiftEmployeesToAssign.SelectedItem;
+                Employee emp = r.Emp;
                 DateTime time = monthCalendar1.SelectionRange.Start.Date;
                 string shifttype = cbShiftType.SelectedItem.ToString();
                 if (emp.Workinghours + 5 > emp.Contract.Workinghours)
@@ -73,8 +75,9 @@ namespace MediaBazzar
                     shiftcounter += 5;
                     Shift temp = new Shift(emp, time, shifttype);
                     Shifts.Add(temp);
-                    UpdateEmployeesUI();
+                    Employees.IncreaseWorkHours(emp);
                     UpdateShiftEmployeeUI();
+                    UpdateShiftRequests();
                 }
             }
 
@@ -163,6 +166,7 @@ namespace MediaBazzar
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
+            UpdateShiftRequests();
             UpdateShiftEmployeeUI();
         }
 
@@ -238,33 +242,71 @@ namespace MediaBazzar
         {
             AutoSchedule();
             AssignRemaining();
+            UpdateShiftRequests();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if(lbMorningShifts.SelectedIndex > -1)
             {
-                Shifts.Remove((Shift)lbMorningShifts.SelectedItem);
+                Shift s = (Shift)lbMorningShifts.SelectedItem;
+                Shifts.Remove(s);
+                Employees.LowereWorkHours(s.Emp);
+                UpdateShiftEmployeeUI();
+                UpdateShiftRequests();
             }
             if (lbAfternoonshifts.SelectedIndex > -1)
             {
-                Shifts.Remove((Shift)lbAfternoonshifts.SelectedItem);
+                Shift s = (Shift)lbAfternoonshifts.SelectedItem;
+                Shifts.Remove(s);
+                Employees.LowereWorkHours(s.Emp);
+                UpdateShiftEmployeeUI();
+                UpdateShiftRequests();
             }
             if (lbEveningShifts.SelectedIndex > -1)
             {
-                Shifts.Remove((Shift)lbEveningShifts.SelectedItem);
+                Shift s = (Shift)lbEveningShifts.SelectedItem;
+                Shifts.Remove(s);
+                Employees.LowereWorkHours(s.Emp);
+                UpdateShiftEmployeeUI();
+                UpdateShiftRequests();
             }
+          
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
 
+        public void UpdateShiftRequests()
+        {
+            DateTime time = monthCalendar1.SelectionRange.Start.Date;
+            lbManagementShiftEmployeesToAssign.Items.Clear();
+            foreach (ShiftRequest items in Requests.GetAllRequestsByDay(time.DayOfWeek.ToString()))
+            {
+                lbManagementShiftEmployeesToAssign.Items.Add(items);
+            }
         }
 
         private void btnLimit_Click(object sender, EventArgs e)
         {
             ShiftSchedulingLimits s = new ShiftSchedulingLimits();
             s.Show();
+        }
+
+        private void lbManagementShiftEmployeesToAssign_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            ShiftRequest r = (ShiftRequest)lbManagementShiftEmployeesToAssign.SelectedItem;
+            if (r.ShiftType == "EveningShift")
+            {
+                cbShiftType.SelectedIndex = 2;
+            }
+            else if (r.ShiftType == "MorningShift")
+            {
+                cbShiftType.SelectedIndex = 0;
+            }
+            else
+            {
+                cbShiftType.SelectedIndex = 1;
+            }
         }
     }
 }
