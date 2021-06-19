@@ -13,13 +13,12 @@ namespace MediaBazzar
 
         public ShiftLimitManager()
         {
-            this.limits = new List<decimal>();
+            this.limits = data.GetLimits();
             this.data = new ShiftLimitData();
         }
 
         public List<decimal> GetLimits()
         {
-            limits = data.GetLimits();
             return limits;
         }
 

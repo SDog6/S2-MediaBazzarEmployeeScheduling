@@ -94,6 +94,7 @@
   <ItemGroup>
     <Compile Include="Account.cs" />
     <Compile Include="Address.cs" />
+    <Compile Include="AutoScheduling.cs" />
     <Compile Include="Contract.cs" />
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="Department.cs" />
@@ -166,6 +167,7 @@
     <Compile Include="ReshelfRequest.cs" />
     <Compile Include="ReshelfRequestData.cs" />
     <Compile Include="ReshelfRequestManager.cs" />
+    <Compile Include="ShiftConverter.cs" />
     <Compile Include="ShiftLimitData.cs" />
     <Compile Include="ShiftLimitManager.cs" />
     <Compile Include="ShiftRequest.cs" />

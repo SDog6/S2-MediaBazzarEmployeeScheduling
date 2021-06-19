@@ -123,9 +123,7 @@ namespace MediaBazzar
 
             Person contactPerson = getContactPerson(id);
 
-            int WorkHours = Convert.ToInt32(row[19]);
-
-            Employee emp = new Employee(id, personalInfo, contactPerson, dateOfBirth, BSN, role, contract, account, status,WorkHours);
+            Employee emp = new Employee(id, personalInfo, contactPerson, dateOfBirth, BSN, role, contract, account, status);
             return emp;
         }
         private Person PersonObject(object[] personalInfo)

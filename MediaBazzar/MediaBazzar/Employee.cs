@@ -31,7 +31,7 @@ namespace MediaBazzar
 
         public int Workinghours { get { return this.workinghours; } set {this.workinghours = value; } }
 
-        public Employee(int ID, Person personalInfo, Person contactPerson, DateTime dateOfBirth, string BSN, string role, Contract contract, Account account, bool active,int workinghours)
+        public Employee(int ID, Person personalInfo, Person contactPerson, DateTime dateOfBirth, string BSN, string role, Contract contract, Account account, bool active)
         {
             this.ID = ID;
             this.personalInfo = personalInfo;
@@ -42,7 +42,6 @@ namespace MediaBazzar
             this.contract = contract;
             this.account = account;
             this.active = active;
-            this.workinghours = workinghours;
         }
         public Employee(Person personalInfo, Person contactPerson, DateTime dateOfBirth, string BSN, string role, Contract contract, Account account, bool active)
         {

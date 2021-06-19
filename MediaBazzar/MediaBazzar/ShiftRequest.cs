@@ -35,6 +35,67 @@ namespace MediaBazzar
             this.shifttype = shifttype;
         }
 
+        public DayOfWeek GetDayOfWeek()
+        {
+            switch (Time)
+            {
+                case "Monday":
+                    {
+                        return DayOfWeek.Monday;
+                    }
+                case "Tuesday":
+                    {
+                        return DayOfWeek.Tuesday;
+                    }
+                case "Wednesday":
+                    {
+                        return DayOfWeek.Wednesday;
+                    }
+                case "Thursday":
+                    {
+                        return DayOfWeek.Thursday;
+                    }
+                case "Friday":
+                    {
+                        return DayOfWeek.Friday;
+                    }
+                case "Saturday":
+                    {
+                        return DayOfWeek.Saturday;
+                    }
+                case "Sunday":
+                    {
+                        return DayOfWeek.Sunday;
+                    }
+                default:
+                    {
+                        return DayOfWeek.Monday;
+                    }
+            }
+        }
+
+        public int GetShiftType()
+        {
+            switch (ShiftType)
+            {
+                case "MorningShift":
+                    {
+                        return 1;
+                    }
+                case "EveningShift":
+                    {
+                        return 2;
+                    }
+                case "NightShift":
+                    {
+                        return 3;
+                    }
+                default:
+                    {
+                        return 0;
+                    }
+            }
+        }
         public override string ToString()
         {
             return $"[{emp.EmployeeID}]{this.emp.PersonalInfo.FirstName} with workload {this.emp.Workinghours}/{this.emp.Contract.Workinghours} is requesting a {this.shifttype}";
