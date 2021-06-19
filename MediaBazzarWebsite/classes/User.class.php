@@ -25,6 +25,9 @@ public function GetUsername(){
     return $this->username;
 }
 
+public function SetPassword($newPassword){
+    $this->password = $newPassword;
+}
 /* public function GetInfo(){
     return "ID:$this->id Username:$this->username Password:$this->password Email:$this->email";
 } */

@@ -1,25 +1,18 @@
 <?php
 include_once ('PDO.class.php');
+include_once "User.Class.php";
+
 
 class Userdata extends Connection{
 
 public function UpdateUsername($newusername,$id){
-    $sql = 'UPDATE user SET username = ? WHERE id = ?';
+    $sql = 'UPDATE account SET username = ? WHERE id = ?';
     $stmt = $this->Connect()->prepare($sql);
-    $stmt->execute([$newusername],[$id]);
-    echo "nice";
+    $stmt->execute([$newusername, $id]);
 }
-
-
-public function UpdateEmail($newemail,$id){
-    $sql = 'UPDATE user SET email = ? WHERE id = ?';
-    $stmt = $this->Connect()->prepare($sql);
-    $stmt->execute([$newemail],[$id]);
-}
-
 
 public function UpdatePassword($newpassowrd,$providedid){
-    $sql = 'UPDATE user SET password = :password WHERE id = :id';
+    $sql = 'UPDATE account SET password = :password WHERE id = :id';
     $stmt = $this->Connect()->prepare($sql);
     $stmt->execute(['password' => $newpassowrd, 'id' => $providedid]);
 }
@@ -48,5 +41,21 @@ public function GetAUserByID($id){
     return $founduser;
 }
 
+/*public function GetPersonInfo($id){
+    $sql = 'SELECT person.firstName, person.lastName, person.phoneNumber,person.email, person.addressId, account.username, employee.dateOfBirth, employee.role
+    FROM account LEFT JOIN employee ON account.id = employee.accountId LEFT JOIN person ON employee.personId = person.id 
+    WHERE account.id =?';
+    $stmt = $this->Connect()->prepare($sql);
+    $stmt->execute([$id]);
+    $user = $stmt->fetch();
+    $dfirstname = $user->firstName;
+    $dlastname= $user->lastName;
+    $dphonenum = $user->phoneNumber;
+    $demail = $user->email;
+    $daddress = $user->addressId;
+    $person = new Person($dfirstname,$dlastname,$dphonenum, $demail, $daddress);
+    return $person;
+}
+*/
 }
 ?>
