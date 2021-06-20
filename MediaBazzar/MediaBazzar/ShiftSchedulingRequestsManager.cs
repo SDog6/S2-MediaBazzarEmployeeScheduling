@@ -32,10 +32,10 @@ namespace MediaBazzar
             }
         }
 
-        public List<object> GetAll()
+        public List<ShiftRequest> GetAll()
         {
             loadDataFromDatabase();
-            List<object> temp = new List<object>();
+            List<ShiftRequest> temp = new List<ShiftRequest>();
 
             foreach (ShiftRequest item in Shifts)
             {

@@ -16,13 +16,12 @@ namespace MediaBazzar
         DateTime Sunday;
         int shiftcounter;
         ShiftSchedulingManager Shifts;
+        ShiftLimitManager Limits;
+        AutoScheduling Auto;
         ShiftSchedulingRequestsManager Requests;
         ShiftConverter a = new ShiftConverter();
         EmployeeManager Employees;
-
         List<Shift> RemainingShifts;
-        int[] counters = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        int[] limits =   { 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5};
 
         public ShiftScheduling()
         {
@@ -30,8 +29,9 @@ namespace MediaBazzar
             Employees = new EmployeeManager();
             Shifts = new ShiftSchedulingManager();
             Requests = new ShiftSchedulingRequestsManager();
+            Limits = new ShiftLimitManager();
+            Auto = new AutoScheduling();
             cbShiftType.SelectedIndex = 1;
-
 
             RemainingShifts = new List<Shift>();
 
@@ -171,93 +171,15 @@ namespace MediaBazzar
             UpdateShiftEmployeeUI();
         }
 
-        private bool AssignShift(Shift s)
-        {
-            int shift = (((int)s.Time.DayOfWeek + 6) % 7)*3;
-            switch (s.ShiftType)
-            {
-                case "MorningShift":
-                    {
-                        shift += 1;
-                        break;
-                    }
-                case "EveningShift":
-                    {
-                        shift += 2;
-                        break;
-                    }
-                case "NightShift":
-                    {
-                        shift += 3;
-                        break;
-                    }
-            }        
-            if (counters[shift] + 1 <= limits[shift])
-            {
-                counters[shift]++;
-                return true;
-            }
-            return false;
-        }
-        private void AutoSchedule()
-        {
-            List<Shift> temp = new List<Shift>();
-            foreach (ShiftRequest item in Requests.GetAll())
-            {
-                Shift temp1 = a.RequestToShift(item);
-                temp.Add(temp1);
-            }
 
-            foreach (Shift item in temp)
-            {
-    
-                if (item.Emp.Workinghours + 5 < item.Emp.Contract.Workinghours)
-                {
-                    if (AssignShift(item))
-                    {
-                        Shifts.Add(item);
-                        Employees.IncreaseWorkHours(item.Emp);
-                    }
-                    else
-                    {
-                        RemainingShifts.Add(item);
-                    }
-                }
-            }
-
-         
-           
-        }
-        private void AssignRemaining()
-        {
-            if(RemainingShifts.Count < 1)
-            {
-                return;
-            }
-            for(int i = 0; i < 21; i++)
-            {
-                if (counters[i] < limits[i])
-                {
-                    try
-                    {
-                        Shifts.Add(RemainingShifts[0]);
-                        RemainingShifts.RemoveAt(0);
-                        counters[i]++;
-                    }
-                    catch(IndexOutOfRangeException)
-                    {
-                        return;
-                    }                    
-                }
-            }
-        }
         private void btnAuto_Click(object sender, EventArgs e)
         {
-            AutoSchedule();
-            AssignRemaining();
+            Auto.InsertRequests(Requests.GetAll());
+            Auto.Schedule();
             UpdateShiftEmployeeUI();
             UpdateShiftRequests();
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {

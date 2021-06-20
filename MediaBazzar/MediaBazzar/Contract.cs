@@ -8,7 +8,7 @@ namespace MediaBazzar
 {
     public class Contract
     {
-        private int currentWorkingHours;
+        public int currentWorkingHours;
         private int workingHours;
         private DateTime employmentStart;
         private DateTime employmentEnd;
@@ -20,7 +20,6 @@ namespace MediaBazzar
         public string TerminationReason { get { return this.terminationReason; } }
         public Contract(int workingHours, DateTime employmentStart)
         {
-            currentWorkingHours = 0;
             this.workingHours = workingHours;
             this.employmentStart = employmentStart;
             this.employmentEnd = new DateTime();
@@ -29,7 +28,6 @@ namespace MediaBazzar
 
         public Contract(int workingHours, DateTime employmentStart, DateTime employmentEnd, string terminationReason)
         {
-            currentWorkingHours = 0;
             this.workingHours = workingHours;
             this.employmentStart = employmentStart;
             this.employmentEnd = employmentEnd;

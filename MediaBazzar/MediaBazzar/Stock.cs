@@ -70,11 +70,6 @@ namespace MediaBazzar
             this.available = available;
         }
 
-        public void Resupply(int number)
-        {
-            this.Amount += number;
-        }
-
         public override string ToString()
         {
             if(this.available == 1)

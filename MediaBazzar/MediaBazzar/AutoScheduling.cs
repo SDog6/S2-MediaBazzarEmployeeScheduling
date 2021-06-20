@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MediaBazzar
 {
     public class AutoScheduling
     {
         Dictionary<Employee, List<ShiftRequest>> requests;
-        List<Shift> shifts;
+        ShiftSchedulingManager shifts;
         ShiftLimitData limitsData;
         ShiftConverter converter;
       
@@ -18,12 +19,11 @@ namespace MediaBazzar
         public AutoScheduling()
         {
             this.requests = new Dictionary<Employee, List<ShiftRequest>>();
-            this.shifts = new List<Shift>();
+            this.shifts = new ShiftSchedulingManager();
             this.limitsData = new ShiftLimitData();
             this.converter = new ShiftConverter();
             this.limits = limitsData.GetLimits();
-            this.counters = new List<int>();
-            resetCounters();
+            this.counters = new List<int>() { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         }
 
         public bool InsertRequests(List<ShiftRequest> shiftrequests)
@@ -78,13 +78,15 @@ namespace MediaBazzar
             for (int i = 0; i < pair.Value.Count; i++)
             {
                 int shift = ((((int)pair.Value[i].GetDayOfWeek() + 6) % 7) * 3) + pair.Value[i].GetShiftType();
-                if ((int)limits[shift] < counters[shift] + 1)
+            
+                if ((int)limits[shift] >= counters[shift] + 1)
                 {
                     if (pair.Key.Contract.ShiftPossible())
                     {
                         Shift s = converter.RequestToShift(pair.Value[i]);
                         pair.Key.Contract.AddShift();
                         shifts.Add(s);
+                       
                     }
                     else
                     {
@@ -120,13 +122,6 @@ namespace MediaBazzar
             return remaining;
         }
 
-        private void resetCounters()
-        {
-            for(int i = 0; i < 21; i++)
-            {
-                counters[i] = 0;
-            }
-        }
 
         private Shift RequestToShift(ShiftRequest request)
         {

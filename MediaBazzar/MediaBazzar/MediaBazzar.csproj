@@ -112,12 +112,6 @@
     <Compile Include="EmployeeFiring.Designer.cs">
       <DependentUpon>EmployeeFiring.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeInfoUpdate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EmployeeInfoUpdate.Designer.cs">
-      <DependentUpon>EmployeeInfoUpdate.cs</DependentUpon>
-    </Compile>
     <Compile Include="EmployeeManager.cs" />
     <Compile Include="FailedDatabaseUpdateException.cs" />
     <Compile Include="HR.cs">
@@ -211,9 +205,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeFiring.resx">
       <DependentUpon>EmployeeFiring.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EmployeeInfoUpdate.resx">
-      <DependentUpon>EmployeeInfoUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HR.resx">
       <DependentUpon>HR.cs</DependentUpon>
