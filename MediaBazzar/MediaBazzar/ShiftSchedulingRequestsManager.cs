@@ -34,6 +34,7 @@ namespace MediaBazzar
 
         public List<object> GetAll()
         {
+            loadDataFromDatabase();
             List<object> temp = new List<object>();
 
             foreach (ShiftRequest item in Shifts)

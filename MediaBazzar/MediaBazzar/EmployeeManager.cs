@@ -90,7 +90,12 @@ namespace MediaBazzar
 
         public void LowereWorkHours(Employee emp)
         {
-            data.DecreaseWorkHours(emp.EmployeeID);
+            if(emp.Workinghours - 5 >= 0)
+            {
+                data.DecreaseWorkHours(emp.EmployeeID);
+            }
+            
+          
         }
 
         public void ClearWorkHours(Employee emp)

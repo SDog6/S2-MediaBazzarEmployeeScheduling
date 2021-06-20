@@ -17,6 +17,7 @@ namespace MediaBazzar
         int shiftcounter;
         ShiftSchedulingManager Shifts;
         ShiftSchedulingRequestsManager Requests;
+        ShiftConverter a = new ShiftConverter();
         EmployeeManager Employees;
 
         List<Shift> RemainingShifts;
@@ -49,7 +50,7 @@ namespace MediaBazzar
                 Monday = today;
                 Sunday = today.AddDays(6);
             }
-            monthCalendar1.MinDate = Monday;
+            monthCalendar1.MinDate = Monday.AddDays(-7);
             monthCalendar1.MaxDate = Sunday;
             monthCalendar1.SelectionStart = Monday;
 
@@ -200,13 +201,22 @@ namespace MediaBazzar
         }
         private void AutoSchedule()
         {
-            foreach (Shift item in Requests.GetAll())
+            List<Shift> temp = new List<Shift>();
+            foreach (ShiftRequest item in Requests.GetAll())
             {
+                Shift temp1 = a.RequestToShift(item);
+                temp.Add(temp1);
+            }
+
+            foreach (Shift item in temp)
+            {
+    
                 if (item.Emp.Workinghours + 5 < item.Emp.Contract.Workinghours)
                 {
                     if (AssignShift(item))
                     {
                         Shifts.Add(item);
+                        Employees.IncreaseWorkHours(item.Emp);
                     }
                     else
                     {
@@ -214,6 +224,9 @@ namespace MediaBazzar
                     }
                 }
             }
+
+         
+           
         }
         private void AssignRemaining()
         {
@@ -242,6 +255,7 @@ namespace MediaBazzar
         {
             AutoSchedule();
             AssignRemaining();
+            UpdateShiftEmployeeUI();
             UpdateShiftRequests();
         }
 

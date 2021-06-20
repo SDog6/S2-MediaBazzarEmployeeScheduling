@@ -17,7 +17,20 @@ namespace MediaBazzar
         {
             Employee emp = request.Emp;
             DateTime date = GetDay(request.GetDayOfWeek());
-            string shiftType = request.ShiftType;         
+            string shiftType = "";
+            if (request.ShiftType == "EveningShift")
+            {
+                shiftType = "Night (5PM-10PM)";
+            }
+            else if(request.ShiftType == "MorningShift")
+            {
+                shiftType = "Morning (7AM-2PM)";
+            }
+            else
+            {
+                shiftType = "Afternoon (1PM-6PM)";
+            }
+                    
             return new Shift(emp, date, shiftType);
         }
 
