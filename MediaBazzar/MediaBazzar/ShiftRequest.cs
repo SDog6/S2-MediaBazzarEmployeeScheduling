@@ -98,7 +98,7 @@ namespace MediaBazzar
         }
         public override string ToString()
         {
-            return $"[{emp.EmployeeID}]{this.emp.PersonalInfo.FirstName} with workload {this.emp.Contract.currentWorkingHours}/{this.emp.Contract.Workinghours} is requesting a {this.shifttype}";
+            return $"[{emp.EmployeeID}]{this.emp.PersonalInfo.FirstName} with workload {this.emp.Contract.CurWorkinghours}/{this.emp.Contract.Workinghours} is requesting a {this.shifttype}";
         }
     }
 }

@@ -81,17 +81,20 @@ namespace MediaBazzar
             
                 if ((int)limits[shift] >= counters[shift] + 1)
                 {
-                    if (pair.Key.Contract.ShiftPossible())
-                    {
-                        Shift s = converter.RequestToShift(pair.Value[i]);
-                        pair.Key.Contract.AddShift();
-                        shifts.Add(s);
-                       
-                    }
-                    else
-                    {
-                        RemainingShifts.Add(pair.Value[i]);
-                    }
+                   
+                        if (pair.Key.Contract.ShiftPossible())
+                        {
+                            Shift s = converter.RequestToShift(pair.Value[i]);
+                            pair.Key.Contract.AddShift();
+                            shifts.Add(s);
+
+                        }
+                        else
+                        {
+                            RemainingShifts.Add(pair.Value[i]);
+                        }
+               
+                  
                 }
             }
             if (!pair.Key.Contract.ShiftPossible())

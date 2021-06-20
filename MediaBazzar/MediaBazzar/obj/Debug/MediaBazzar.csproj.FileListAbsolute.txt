@@ -350,7 +350,6 @@ C:\Users\GamePC\Desktop\PROJECT2\semester_2-project\MediaBazzar\MediaBazzar\bin\
 C:\Users\GamePC\Desktop\PROJECT2\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csprojAssemblyReference.cache
 C:\Users\GamePC\Desktop\PROJECT2\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.EmployeeCreation.resources
 C:\Users\GamePC\Desktop\PROJECT2\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.EmployeeFiring.resources
-C:\Users\GamePC\Desktop\PROJECT2\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.EmployeeInfoUpdate.resources
 C:\Users\GamePC\Desktop\PROJECT2\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.HR.resources
 C:\Users\GamePC\Desktop\PROJECT2\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.LogInForm.resources
 C:\Users\GamePC\Desktop\PROJECT2\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.Management.resources

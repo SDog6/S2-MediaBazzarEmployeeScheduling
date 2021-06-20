@@ -76,7 +76,7 @@ namespace MediaBazzar
                     shiftcounter += 5;
                     Shift temp = new Shift(emp, time, shifttype);
                     Shifts.Add(temp);
-                    Employees.IncreaseWorkHours(emp);
+                    emp.Contract.AddShift();
                     UpdateShiftEmployeeUI();
                     UpdateShiftRequests();
                 }
@@ -187,7 +187,7 @@ namespace MediaBazzar
             {
                 Shift s = (Shift)lbMorningShifts.SelectedItem;
                 Shifts.Remove(s);
-                Employees.LowereWorkHours(s.Emp);
+                s.Emp.Contract.RemoveShift();
                 UpdateShiftEmployeeUI();
                 UpdateShiftRequests();
             }
@@ -195,7 +195,7 @@ namespace MediaBazzar
             {
                 Shift s = (Shift)lbAfternoonshifts.SelectedItem;
                 Shifts.Remove(s);
-                Employees.LowereWorkHours(s.Emp);
+                s.Emp.Contract.RemoveShift();
                 UpdateShiftEmployeeUI();
                 UpdateShiftRequests();
             }
@@ -203,7 +203,7 @@ namespace MediaBazzar
             {
                 Shift s = (Shift)lbEveningShifts.SelectedItem;
                 Shifts.Remove(s);
-                Employees.LowereWorkHours(s.Emp);
+                s.Emp.Contract.RemoveShift();
                 UpdateShiftEmployeeUI();
                 UpdateShiftRequests();
             }
@@ -229,20 +229,23 @@ namespace MediaBazzar
 
         private void lbManagementShiftEmployeesToAssign_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            ShiftRequest r = (ShiftRequest)lbManagementShiftEmployeesToAssign.SelectedItem;
-            if (r.ShiftType == "EveningShift")
+            if(lbManagementShiftEmployeesToAssign.SelectedIndex > -1)
             {
-                cbShiftType.SelectedIndex = 2;
+                ShiftRequest r = (ShiftRequest)lbManagementShiftEmployeesToAssign.SelectedItem;
+                if (r.ShiftType == "EveningShift")
+                {
+                    cbShiftType.SelectedIndex = 2;
+                }
+                else if (r.ShiftType == "MorningShift")
+                {
+                    cbShiftType.SelectedIndex = 0;
+                }
+                else
+                {
+                    cbShiftType.SelectedIndex = 1;
+                }
             }
-            else if (r.ShiftType == "MorningShift")
-            {
-                cbShiftType.SelectedIndex = 0;
-            }
-            else
-            {
-                cbShiftType.SelectedIndex = 1;
-            }
+          
         }
     }
 }

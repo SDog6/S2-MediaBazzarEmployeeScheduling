@@ -60,7 +60,7 @@ namespace MediaBazzar
         public object ReadAll()
         {
             List<Employee> employees = new List<Employee>();
-            string query = "SELECT employee.id, employee.dateOfBirth, employee.BSN, employee.role, employee.status, person.firstName, person.lastName, person.phoneNumber, person.email, address.state, address.city, address.street, address.apartmentNr, contract.workingHours, contract.start, contract.end, contract.endReason, account.username, account.password, employee.workHours FROM employee INNER JOIN person ON personId = person.id INNER JOIN address ON person.addressId = address.id INNER JOIN contract on contractId = contract.id INNER JOIN account ON accountId = account.id";
+            string query = "SELECT employee.id, employee.dateOfBirth, employee.BSN, employee.role, employee.status, person.firstName, person.lastName, person.phoneNumber, person.email, address.state, address.city, address.street, address.apartmentNr, contract.workingHours, contract.start, contract.end, contract.endReason, account.username, account.password,contract.currentWorkhours,contract.id FROM employee INNER JOIN person ON personId = person.id INNER JOIN address ON person.addressId = address.id INNER JOIN contract on contractId = contract.id INNER JOIN account ON accountId = account.id";
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
             DataTable table = new DataTable();
             try
@@ -84,7 +84,7 @@ namespace MediaBazzar
         public Employee GetEmployee(int id)
         {
             Employee emp;
-            string query = "SELECT employee.id, employee.dateOfBirth, employee.BSN, employee.role, employee.status, person.firstName, person.lastName, person.phoneNumber, person.email, address.state, address.city, address.street, address.apartmentNr, contract.workingHours, contract.start, contract.end, contract.endReason, account.username, account.password,employee.workHours FROM employee INNER JOIN person ON personId = person.id INNER JOIN address ON person.addressId = address.id INNER JOIN contract on contractId = contract.id INNER JOIN account ON accountId = account.id";
+            string query = "SELECT employee.id, employee.dateOfBirth, employee.BSN, employee.role, employee.status, person.firstName, person.lastName, person.phoneNumber, person.email, address.state, address.city, address.street, address.apartmentNr, contract.workingHours, contract.start, contract.end, contract.endReason, account.username, account.password FROM employee INNER JOIN person ON personId = person.id INNER JOIN address ON person.addressId = address.id INNER JOIN contract on contractId = contract.id INNER JOIN account ON accountId = account.id";
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
             DataTable table = new DataTable();
             try
@@ -116,16 +116,16 @@ namespace MediaBazzar
             object[] personInfo = {row[5], row[6], row[7], row[8], row[9], row[10], row[11], row[12]};
             Person personalInfo = PersonObject(personInfo);
 
-            object[] contractInfo = {row[13], row[14], row[15], row[16]};
+            object[] contractInfo = {row[13], row[14], row[15], row[16],row[19],row[20]};
             Contract contract = contractObject(contractInfo);
 
             Account account = new Account(row[17].ToString(), row[18].ToString());
 
             Person contactPerson = getContactPerson(id);
 
-            int workHours = (int)row[19];
 
-            Employee emp = new Employee(id, personalInfo, contactPerson, dateOfBirth, BSN, role, contract, account, status,workHours);
+
+            Employee emp = new Employee(id, personalInfo, contactPerson, dateOfBirth, BSN, role, contract, account, status);
             return emp;
         }
         private Person PersonObject(object[] personalInfo)
@@ -139,7 +139,7 @@ namespace MediaBazzar
             Contract contract;
             if(contractInfo[2] is DBNull)
             {
-                contract = new Contract(Convert.ToInt32(contractInfo[0]), Convert.ToDateTime(contractInfo[1]));
+                contract = new Contract(Convert.ToInt32(contractInfo[5]),Convert.ToInt32(contractInfo[0]), Convert.ToDateTime(contractInfo[1]),Convert.ToInt32(contractInfo[4]));
                 return contract;
             }
             contract = new Contract(Convert.ToInt32(contractInfo[0]), Convert.ToDateTime(contractInfo[1]), Convert.ToDateTime(contractInfo[2]), contractInfo[3].ToString());
@@ -319,7 +319,7 @@ namespace MediaBazzar
 
         public void IncraseWork(int id)
         {
-            string query = "UPDATE employee SET workHours = workHours + 5 WHERE id = @id";
+            string query = "UPDATE contract SET currentWorkhours = currentWorkhours + 5 WHERE id = @id";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@id", id);
             try
@@ -340,7 +340,7 @@ namespace MediaBazzar
 
         public void DecreaseWorkHours(int id)
         {
-            string query = "UPDATE employee SET workHours = workHours - 5 WHERE id = @id";
+            string query = "UPDATE contract SET currentWorkhours = currentWorkhours - 5 WHERE id = @id";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@id", id);
             try
@@ -360,7 +360,7 @@ namespace MediaBazzar
 
         public void ClearWorkHours()
         {
-            string query = "UPDATE employee SET workHours = 0";
+            string query = "UPDATE contract SET currentWorkhours = 0";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             try
             {
