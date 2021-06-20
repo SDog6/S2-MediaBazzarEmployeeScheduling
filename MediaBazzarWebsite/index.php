@@ -18,7 +18,7 @@
       .container { margin: 150px auto; }
     </style>
 </head>
-<h1 style="text-align: center;"> Avaliabillity </h1>
+<h1 style="text-align: center;"> Avaliability </h1>
 
 
 
@@ -52,6 +52,10 @@
       background-color: black;
       color: white;
     }
+    #shif th {
+      background-color: black;
+      color: white;
+    }
     </style>
     </head>
     <body>
@@ -62,6 +66,7 @@
     
     <table id="t01">
       <tr>
+      
         <th>Monday</th>
         <th>Tuesday</th> 
         <th>Wednesday</th>
@@ -103,7 +108,55 @@
       
       </tr>
     </table>
+    <h5 style="margin-left: 9cm ">Choosen hours:</h5>
+<?php 
+include"./getAvailabillity.php";
+$av = new GetData;
+?>
+<html>
+  <p style=" margin-left: 10cm">
+</html>
+<?php
+$av->GetAvailabillity();
 
+?>
+<html>
+  <p>
+</html>
+<br>
+<?php 
+$monday = date( 'Y-m-d', strtotime( 'monday this week' ) );
+$tuesday = date( 'Y-m-d', strtotime( 'tuesday this week' ) );
+$wednesday = date( 'Y-m-d', strtotime( 'wednesday this week' ) );
+$thursday = date( 'Y-m-d', strtotime( 'thursday this week' ) );
+$friday = date( 'Y-m-d', strtotime( 'friday this week' ) );
+$saturday = date( 'Y-m-d', strtotime( 'saturday this week' ) );
+$sunday = date( 'Y-m-d', strtotime( 'sunday this week' ) );
+include "./getShift.php";
+?>
+<h1>Shift Schedule<h1>
+<table id="shift" style="width: 95%;">
+
+<tr>
+        <th>Monday <?php echo $monday?></th>
+        <th>Tuesday <?php echo $tuesday?></th> 
+        <th>Wednesday <?php echo $wednesday?></th>
+        <th>Thursday <?php echo $thursday?></th>
+        <th>Friday <?php  echo $friday?></th>
+        <th>Saturday <?php echo $saturday?></th>
+        <th>Sunday <?php echo $sunday?></th>
+      </tr>
+      <tr>
+      
+      <td><?php $shift = new shift; $shift->GetMondayShift($monday, $_SESSION['id'])?></td>
+      <td><?php $shift = new shift; $shift->GetMondayShift($tuesday, $_SESSION['id'])?></td>
+      <td><?php $shift = new shift; $shift->GetMondayShift($wednesday, $_SESSION['id'])?></td>
+      <td><?php $shift = new shift; $shift->GetMondayShift($thursday, $_SESSION['id'])?></td>
+      <td><?php $shift = new shift; $shift->GetMondayShift($friday, $_SESSION['id'])?></td>
+      <td><?php $shift = new shift; $shift->GetMondayShift($saturday, $_SESSION['id'])?></td>
+      <td><?php $shift = new shift; $shift->GetMondayShift($sunday, $_SESSION['id'])?></td>
+      <tr>
+</table>
     
   </body>
 
@@ -144,18 +197,3 @@ $("button").click(function() {
  
 });
 </script>
-<h5 style="margin-left: 9cm ">Choosen hours:</h5>
-<?php 
-include"./getAvailabillity.php";
-$av = new GetData;
-?>
-<html>
-  <p style=" margin-left: 10cm">
-</html>
-<?php
-$av->GetAvailabillity();
-
-?>
-<html>
-  <p>
-</html>

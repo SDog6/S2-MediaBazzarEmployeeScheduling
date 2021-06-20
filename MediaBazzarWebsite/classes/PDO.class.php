@@ -14,7 +14,6 @@ $pdo = new PDO($dsn,$user,$dbpass);
 $pdo ->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,
 PDO::FETCH_OBJ);
 
-
 return $pdo;
 
     
