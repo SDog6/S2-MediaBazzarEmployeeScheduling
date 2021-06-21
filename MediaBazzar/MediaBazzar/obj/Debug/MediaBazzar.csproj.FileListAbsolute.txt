@@ -28,7 +28,6 @@ C:\Users\Svetoslav\source\repos\MediaBazzar\MediaBazzar\bin\Debug\System.Runtime
 C:\Users\Svetoslav\source\repos\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csprojAssemblyReference.cache
 C:\Users\Svetoslav\source\repos\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.EmployeeCreation.resources
 C:\Users\Svetoslav\source\repos\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.EmployeeFiring.resources
-C:\Users\Svetoslav\source\repos\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.EmployeeInfoUpdate.resources
 C:\Users\Svetoslav\source\repos\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.HR.resources
 C:\Users\Svetoslav\source\repos\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.LogInForm.resources
 C:\Users\Svetoslav\source\repos\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.Management.resources
@@ -366,3 +365,4 @@ C:\Users\GamePC\Desktop\PROJECT2\semester_2-project\MediaBazzar\MediaBazzar\obj\
 C:\Users\GamePC\Desktop\PROJECT2\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.csproj.CopyComplete
 C:\Users\GamePC\Desktop\PROJECT2\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.exe
 C:\Users\GamePC\Desktop\PROJECT2\semester_2-project\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.pdb
+C:\Users\Svetoslav\source\repos\MediaBazzar\MediaBazzar\obj\Debug\MediaBazzar.ShiftSchedulingLimits.resources

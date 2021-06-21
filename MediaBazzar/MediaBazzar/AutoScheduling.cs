@@ -32,6 +32,7 @@ namespace MediaBazzar
             {
                 return false;
             }
+            Clear();
             SortRequests(shiftrequests);
             return true;
         }
@@ -125,7 +126,15 @@ namespace MediaBazzar
             return remaining;
         }
 
-
+        private void Clear()
+        {
+            shifts.ClearNextWeek();
+            requests.Clear();
+            for(int i = 0; i < 21; i++)
+            {
+                counters[i] = 0;
+            }
+        }
         private Shift RequestToShift(ShiftRequest request)
         {
 

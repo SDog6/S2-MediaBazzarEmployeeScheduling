@@ -243,5 +243,33 @@ namespace MediaBazzar
                 }
             }
         }
+
+        public void ClearNextWeek(DateTime start, DateTime end)
+        {
+            try
+            {
+                string sql = "DELETE FROM shifts WHERE Date >= @start AND Date <=@end";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@start", start.Date);
+                cmd.Parameters.AddWithValue("@end", end.Date);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occured! Try again.");
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+        }
     }
 }

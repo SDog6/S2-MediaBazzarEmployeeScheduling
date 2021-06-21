@@ -101,5 +101,19 @@ namespace MediaBazzar
         {
             ShiftData.Delete(s.ID);
         }
+
+        public void ClearNextWeek()
+        {
+            DateTime Monday = GetNextMonday();
+            DateTime Sunday = Monday.AddDays(6);
+            ShiftData.ClearNextWeek(Monday, Sunday);
+        }
+
+        private DateTime GetNextMonday()
+        {
+            DateTime start = DateTime.Now;
+            int daystoAdd = (1 - (int)start.DayOfWeek + 7) % 7;
+            return start.AddDays(daystoAdd);
+        }
     }
 }
