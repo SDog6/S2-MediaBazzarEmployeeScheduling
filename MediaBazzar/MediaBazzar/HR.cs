@@ -19,8 +19,9 @@ namespace MediaBazzar
             InitializeComponent();
             Employees = new EmployeeManager();
             employeeTable = new DataTable();
+          
             prepareTable();
-            fillTable();
+            rbActive.Checked = true;
         }
         private void prepareTable()
         {
@@ -42,11 +43,33 @@ namespace MediaBazzar
         }
         private void fillTable()
         {
-            foreach (Employee emp in Employees.GetAllPerType())
+            employeeTable.Rows.Clear();
+            if (rbActive.Checked)
             {
-                employeeTable.Rows.Add(emp.EmployeeID, $"{emp.PersonalInfo.FirstName} {emp.PersonalInfo.LastName}", emp.Role);
+                foreach (Employee emp in Employees.GetAllPerType())
+                {
+                    if (emp.Active == true)
+                    {
+                        employeeTable.Rows.Add(emp.EmployeeID, $"{emp.PersonalInfo.FirstName} {emp.PersonalInfo.LastName}", emp.Role);
+                        dataGrid_employees.DataSource = employeeTable;
+                    }
+                
+                }
+            
             }
-            dataGrid_employees.DataSource = employeeTable;
+            else
+            {
+                foreach (Employee emp in Employees.GetAllPerType())
+                {
+                    if (emp.Active == false)
+                    {
+                        employeeTable.Rows.Add(emp.EmployeeID, $"{emp.PersonalInfo.FirstName} {emp.PersonalInfo.LastName}", emp.Role);
+                        dataGrid_employees.DataSource = employeeTable;
+                    }
+
+                }
+            }
+         
         }
 
         private void btnEmpDetails_Click(object sender, EventArgs e)
@@ -95,6 +118,18 @@ namespace MediaBazzar
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void rbActive_CheckedChanged(object sender, EventArgs e)
+        {
+            btnFireEmp.Visible = true;
+            fillTable();
+        }
+
+        private void rbNon_CheckedChanged(object sender, EventArgs e)
+        {
+            btnFireEmp.Visible = false;
+            fillTable();
         }
     }
 }

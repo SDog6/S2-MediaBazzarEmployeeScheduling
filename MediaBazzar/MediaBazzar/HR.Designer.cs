@@ -35,6 +35,8 @@ namespace MediaBazzar
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.rbNon = new System.Windows.Forms.RadioButton();
+            this.rbActive = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_employees)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -115,12 +117,42 @@ namespace MediaBazzar
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panel2.Controls.Add(this.rbNon);
+            this.panel2.Controls.Add(this.rbActive);
             this.panel2.Controls.Add(this.dataGrid_employees);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(856, 455);
             this.panel2.TabIndex = 16;
+            // 
+            // rbNon
+            // 
+            this.rbNon.AutoSize = true;
+            this.rbNon.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbNon.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.rbNon.Location = new System.Drawing.Point(543, 58);
+            this.rbNon.Name = "rbNon";
+            this.rbNon.Size = new System.Drawing.Size(116, 25);
+            this.rbNon.TabIndex = 15;
+            this.rbNon.TabStop = true;
+            this.rbNon.Text = "Non-active";
+            this.rbNon.UseVisualStyleBackColor = true;
+            this.rbNon.CheckedChanged += new System.EventHandler(this.rbNon_CheckedChanged);
+            // 
+            // rbActive
+            // 
+            this.rbActive.AutoSize = true;
+            this.rbActive.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbActive.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.rbActive.Location = new System.Drawing.Point(412, 58);
+            this.rbActive.Name = "rbActive";
+            this.rbActive.Size = new System.Drawing.Size(81, 25);
+            this.rbActive.TabIndex = 14;
+            this.rbActive.TabStop = true;
+            this.rbActive.Text = "Active";
+            this.rbActive.UseVisualStyleBackColor = true;
+            this.rbActive.CheckedChanged += new System.EventHandler(this.rbActive_CheckedChanged);
             // 
             // HR
             // 
@@ -134,6 +166,7 @@ namespace MediaBazzar
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_employees)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -145,5 +178,7 @@ namespace MediaBazzar
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.RadioButton rbNon;
+        private System.Windows.Forms.RadioButton rbActive;
     }
 }
