@@ -113,14 +113,16 @@ namespace MediaBazzar
 
         private void rbActive_CheckedChanged(object sender, EventArgs e)
         {
-            btnFireEmp.Visible = true;
+            
             fillTable();
+            btnFireEmp.Visible = true;
         }
 
         private void rbNon_CheckedChanged(object sender, EventArgs e)
         {
-            btnFireEmp.Visible = false;
+            
             fillTable();
+            btnFireEmp.Visible = false;
         }
     }
 }

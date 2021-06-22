@@ -57,6 +57,7 @@ namespace MediaBazzar
         }
         public List<object> GetAllPerType()
         {
+            loadDataFromDatabase();
             List<object> temp = new List<object>();
             foreach (Employee item in Emps)
             {
