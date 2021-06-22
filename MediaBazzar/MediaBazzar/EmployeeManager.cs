@@ -98,7 +98,7 @@ namespace MediaBazzar
           
         }
 
-        public void ClearWorkHours(Employee emp)
+        public void ClearWorkHours()
         {
             data.ClearWorkHours();
         }

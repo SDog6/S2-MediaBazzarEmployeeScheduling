@@ -71,7 +71,7 @@ namespace MediaBazzar
             if(!empty(username) && !empty(password))
             {
                 Employee emp = Manager.tryLogin(username, password);
-                if (emp != null)
+                if (emp != null && emp.Active == true)
                 {
                     loginByRole(emp);
                     return;

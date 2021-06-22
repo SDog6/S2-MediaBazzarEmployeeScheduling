@@ -254,7 +254,7 @@ namespace MediaBazzar
         public Employee loginAccount(string username)
         {
             Employee emp;
-            string query = $"SELECT employee.id, employee.dateOfBirth, employee.BSN, employee.role, employee.status, person.firstName, person.lastName, person.phoneNumber, person.email, address.state, address.city, address.street, address.apartmentNr, contract.workingHours, contract.start, contract.end, contract.endReason, account.username, account.password FROM employee INNER JOIN person ON personId = person.id INNER JOIN address ON person.addressId = address.id INNER JOIN contract on contractId = contract.id INNER JOIN account ON accountId = account.id WHERE account.username = '{username}'";
+            string query = $"SELECT employee.id, employee.dateOfBirth, employee.BSN, employee.role, employee.status, person.firstName, person.lastName, person.phoneNumber, person.email, address.state, address.city, address.street, address.apartmentNr, contract.workingHours, contract.start, contract.end, contract.endReason, account.username, account.password,contract.currentWorkhours,contract.id FROM employee INNER JOIN person ON personId = person.id INNER JOIN address ON person.addressId = address.id INNER JOIN contract on contractId = contract.id INNER JOIN account ON accountId = account.id WHERE account.username = '{username}'";
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
             DataTable table = new DataTable();
             try
