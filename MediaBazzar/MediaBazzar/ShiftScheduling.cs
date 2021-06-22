@@ -234,7 +234,7 @@ namespace MediaBazzar
                 ShiftRequest r = (ShiftRequest)lbManagementShiftEmployeesToAssign.SelectedItem;
                 if (r.ShiftType == "EveningShift")
                 {
-                    cbShiftType.SelectedIndex = 2;
+                    cbShiftType.SelectedIndex = 1;
                 }
                 else if (r.ShiftType == "MorningShift")
                 {
@@ -242,7 +242,7 @@ namespace MediaBazzar
                 }
                 else
                 {
-                    cbShiftType.SelectedIndex = 1;
+                    cbShiftType.SelectedIndex = 2;
                 }
             }
           

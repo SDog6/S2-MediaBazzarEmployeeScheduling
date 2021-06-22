@@ -38,12 +38,12 @@ namespace MediaBazzar
             this.lbEveningShifts = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnClear = new System.Windows.Forms.Button();
             this.btnLimit = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnAuto = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnClear = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,7 +85,7 @@ namespace MediaBazzar
             this.lbMorningShifts.ItemHeight = 17;
             this.lbMorningShifts.Location = new System.Drawing.Point(26, 327);
             this.lbMorningShifts.Name = "lbMorningShifts";
-            this.lbMorningShifts.Size = new System.Drawing.Size(311, 123);
+            this.lbMorningShifts.Size = new System.Drawing.Size(338, 123);
             this.lbMorningShifts.TabIndex = 7;
             // 
             // lbManagementShiftEmployeesToAssign
@@ -121,9 +121,9 @@ namespace MediaBazzar
             this.lbAfternoonshifts.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.lbAfternoonshifts.FormattingEnabled = true;
             this.lbAfternoonshifts.ItemHeight = 17;
-            this.lbAfternoonshifts.Location = new System.Drawing.Point(370, 327);
+            this.lbAfternoonshifts.Location = new System.Drawing.Point(382, 327);
             this.lbAfternoonshifts.Name = "lbAfternoonshifts";
-            this.lbAfternoonshifts.Size = new System.Drawing.Size(311, 123);
+            this.lbAfternoonshifts.Size = new System.Drawing.Size(335, 123);
             this.lbAfternoonshifts.TabIndex = 9;
             // 
             // lbEveningShifts
@@ -133,9 +133,9 @@ namespace MediaBazzar
             this.lbEveningShifts.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.lbEveningShifts.FormattingEnabled = true;
             this.lbEveningShifts.ItemHeight = 17;
-            this.lbEveningShifts.Location = new System.Drawing.Point(711, 327);
+            this.lbEveningShifts.Location = new System.Drawing.Point(733, 327);
             this.lbEveningShifts.Name = "lbEveningShifts";
-            this.lbEveningShifts.Size = new System.Drawing.Size(311, 123);
+            this.lbEveningShifts.Size = new System.Drawing.Size(335, 123);
             this.lbEveningShifts.TabIndex = 10;
             // 
             // label1
@@ -144,7 +144,7 @@ namespace MediaBazzar
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label1.Location = new System.Drawing.Point(364, 279);
+            this.label1.Location = new System.Drawing.Point(376, 279);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(146, 33);
             this.label1.TabIndex = 12;
@@ -153,7 +153,11 @@ namespace MediaBazzar
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnClear);
+            this.panel1.Controls.Add(this.lbAfternoonshifts);
+            this.panel1.Controls.Add(this.lbMorningShifts);
+            this.panel1.Controls.Add(this.lbEveningShifts);
             this.panel1.Controls.Add(this.btnLimit);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnAuto);
@@ -164,8 +168,22 @@ namespace MediaBazzar
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1034, 524);
+            this.panel1.Size = new System.Drawing.Size(1112, 524);
             this.panel1.TabIndex = 14;
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(62)))));
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnClear.Location = new System.Drawing.Point(903, 78);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(85, 58);
+            this.btnClear.TabIndex = 18;
+            this.btnClear.Text = "Clear hours";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnLimit
             // 
@@ -227,37 +245,19 @@ namespace MediaBazzar
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
             this.label4.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label4.Location = new System.Drawing.Point(705, 279);
+            this.label4.Location = new System.Drawing.Point(727, 279);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 33);
             this.label4.TabIndex = 16;
             this.label4.Text = "Evening";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // btnClear
-            // 
-            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(62)))));
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnClear.Location = new System.Drawing.Point(903, 78);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(85, 58);
-            this.btnClear.TabIndex = 18;
-            this.btnClear.Text = "Clear hours";
-            this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
             // ShiftScheduling
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1034, 524);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbEveningShifts);
-            this.Controls.Add(this.lbAfternoonshifts);
+            this.ClientSize = new System.Drawing.Size(1112, 524);
             this.Controls.Add(this.cbShiftType);
-            this.Controls.Add(this.lbMorningShifts);
             this.Controls.Add(this.lbManagementShiftEmployeesToAssign);
             this.Controls.Add(this.panel1);
             this.Name = "ShiftScheduling";
@@ -265,7 +265,6 @@ namespace MediaBazzar
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
