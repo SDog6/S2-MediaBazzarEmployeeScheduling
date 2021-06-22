@@ -41,7 +41,7 @@ namespace MediaBazzar
             {
                 MessageBox.Show(ex.Message);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("An error occured! Try again.");
             }
@@ -73,7 +73,7 @@ namespace MediaBazzar
             {
                 MessageBox.Show(ex.Message);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("An error occured! Try again.");
             }
@@ -104,7 +104,7 @@ namespace MediaBazzar
             {
                 MessageBox.Show(ex.Message);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("An error occured! Try again.");
             }
@@ -140,7 +140,7 @@ namespace MediaBazzar
             {
                 MessageBox.Show(ex.Message);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("An error occured! Try again.");
             }
@@ -178,7 +178,7 @@ namespace MediaBazzar
             {
                 MessageBox.Show(ex.Message);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("An error occured! Try again.");
             }
@@ -217,7 +217,7 @@ namespace MediaBazzar
             {
                 MessageBox.Show(ex.Message);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("An error occured! Try again.");
             }
@@ -255,7 +255,7 @@ namespace MediaBazzar
             {
                 MessageBox.Show(ex.Message);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("An error occured! Try again.");
             }
@@ -289,7 +289,7 @@ namespace MediaBazzar
             {
                 MessageBox.Show(ex.Message);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("An error occured! Try again.");
             }
@@ -321,7 +321,7 @@ namespace MediaBazzar
             {
                 MessageBox.Show(ex.Message);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("An error occured! Try again.");
             }

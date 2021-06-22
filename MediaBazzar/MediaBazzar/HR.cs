@@ -105,19 +105,10 @@ namespace MediaBazzar
                 this.Hide();
             }
         }
-        private void btnEmpUpdate_Click(object sender, EventArgs e)
-        {
-
-        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             EmployeeCreation f = new EmployeeCreation(Employees);
             f.Show();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void rbActive_CheckedChanged(object sender, EventArgs e)

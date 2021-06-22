@@ -109,7 +109,7 @@ namespace MediaBazzar
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(577, 253);
             this.dataGridView1.TabIndex = 8;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+       
             // 
             // panel2
             // 
@@ -143,7 +143,6 @@ namespace MediaBazzar
             this.Controls.Add(this.panel1);
             this.Name = "ManagementReshelf";
             this.Text = "ManagementReshelf";
-            this.Load += new System.EventHandler(this.ManagementReshelf_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

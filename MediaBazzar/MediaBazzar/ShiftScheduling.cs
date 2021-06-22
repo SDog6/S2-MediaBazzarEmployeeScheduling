@@ -130,39 +130,7 @@ namespace MediaBazzar
                 {
                     lbEveningShifts.Items.Add(item);
                 }
-            }/*
-            foreach (Shift item in Shifts.GetAllMorningShifts())
-            {
-                if(item.Time == monthCalendar1.SelectionRange.Start.Date)
-                {
-                    lbMorningShifts.Items.Add(item);
-                }
             }
-
-
-            lbAfternoonshifts.Items.Clear();
-            foreach (Shift item in Shifts.GetAllAfternoonShifts())
-            {
-                if (item.Time == monthCalendar1.SelectionRange.Start.Date)
-                {
-                    lbAfternoonshifts.Items.Add(item);
-                }
-            }
-
-
-            lbEveningShifts.Items.Clear();
-            foreach (Shift item in Shifts.GetAllEveningShifts())
-            {
-                if (item.Time == monthCalendar1.SelectionRange.Start.Date)
-                {
-                    lbEveningShifts.Items.Add(item);
-                }
-            }*/
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)

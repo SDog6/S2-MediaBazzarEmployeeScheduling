@@ -134,10 +134,5 @@ namespace MediaBazzar
                 counters[i] = 0;
             }
         }
-        private Shift RequestToShift(ShiftRequest request)
-        {
-
-            return null;
-        }
     }
 }

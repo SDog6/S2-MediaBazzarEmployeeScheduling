@@ -77,6 +77,7 @@ namespace MediaBazzar
             if (CurWorkinghours - 5 >= 0)
             {
                 data.DecreaseWorkHours(this.id);
+                currentWorkingHours -= 5;
             }
            
         }

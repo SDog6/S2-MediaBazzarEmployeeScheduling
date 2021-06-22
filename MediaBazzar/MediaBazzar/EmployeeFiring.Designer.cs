@@ -166,7 +166,6 @@ namespace MediaBazzar
             this.lblWorkHrs.Size = new System.Drawing.Size(145, 25);
             this.lblWorkHrs.TabIndex = 8;
             this.lblWorkHrs.Text = "Working hours:";
-            this.lblWorkHrs.Click += new System.EventHandler(this.label6_Click);
             // 
             // panel2
             // 
@@ -201,7 +200,6 @@ namespace MediaBazzar
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EmployeeFiring";
             this.Text = "EmployeeFiring";
-            this.Load += new System.EventHandler(this.EmployeeFiring_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

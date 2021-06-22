@@ -64,17 +64,6 @@ namespace MediaBazzar
             checkbox_unfnished.Checked = true;
             UpdateUI();
         }
-
-        private void ManagementReshelf_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnReshelfApprove_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
@@ -147,11 +136,6 @@ namespace MediaBazzar
                 checkBox_complete.CheckState = CheckState.Unchecked;
             }
             UpdateUI();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void btnBack_Click(object sender, EventArgs e)

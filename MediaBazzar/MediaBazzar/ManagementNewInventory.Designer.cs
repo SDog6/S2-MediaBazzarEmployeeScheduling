@@ -50,7 +50,6 @@ namespace MediaBazzar
             this.lbWarehouseStock.Name = "lbWarehouseStock";
             this.lbWarehouseStock.Size = new System.Drawing.Size(538, 327);
             this.lbWarehouseStock.TabIndex = 0;
-            this.lbWarehouseStock.SelectedIndexChanged += new System.EventHandler(this.lbWarehouseStock_SelectedIndexChanged);
             // 
             // btnAdd
             // 
@@ -77,7 +76,6 @@ namespace MediaBazzar
             this.label1.Size = new System.Drawing.Size(246, 21);
             this.label1.TabIndex = 2;
             this.label1.Text = "Please select desired inventory";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox1
             // 
@@ -87,7 +85,6 @@ namespace MediaBazzar
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 3;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
@@ -100,7 +97,6 @@ namespace MediaBazzar
             this.label2.Size = new System.Drawing.Size(141, 21);
             this.label2.TabIndex = 4;
             this.label2.Text = "Amount needed";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel1
             // 
@@ -116,7 +112,6 @@ namespace MediaBazzar
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(571, 450);
             this.panel1.TabIndex = 5;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button1
             // 

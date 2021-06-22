@@ -26,12 +26,6 @@ namespace MediaBazzar
             lblWorkHrs.Text = $"Working hours: {emp.Contract.Workinghours}";
             lblFire.Text = $"Please state the reason for firing {emp.PersonalInfo.FirstName}";
         }
-
-        private void EmployeeFiring_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnFire_Click(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(tbFire.Text))
@@ -39,11 +33,6 @@ namespace MediaBazzar
                 Manager.FireEmployee(emp, tbFire.Text);
                 MessageBox.Show("Employee moved to non-active status");
             }
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

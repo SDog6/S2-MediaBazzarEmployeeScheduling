@@ -407,10 +407,5 @@ namespace MediaBazzar
                 showAllStock();
             }
         }
-
-        private void Management_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
