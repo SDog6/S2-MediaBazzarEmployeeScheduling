@@ -13,7 +13,7 @@ session_start();
 
 <ul class="topnav">
   <li><a class="active" href="index.php">Home</a></li>
-  <li><a href="#contact">Contact</a></li>
+  <li><a href="contact.php">Contact</a></li>
   <?php
   if(isset($_SESSION["username"])){
     echo "<li><a href='MyAccount.php' class='topnav'>" . $_SESSION["username"] ."</a></li>";
