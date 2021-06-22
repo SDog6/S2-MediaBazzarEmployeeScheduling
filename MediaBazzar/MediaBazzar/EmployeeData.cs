@@ -204,13 +204,13 @@ namespace MediaBazzar
             cmd.Parameters.AddWithValue("@start", contract.EmploymentStart.Date);
             if (contract.isTerminated())
             {
-                cmd.Parameters.AddWithValue("@@workingHours", contract.Workinghours);
+                cmd.Parameters.AddWithValue("@workingHours", contract.Workinghours);
                 cmd.Parameters.AddWithValue("@end", contract.EmploymentEnd);
                 cmd.Parameters.AddWithValue("@endReason", contract.TerminationReason);
             }
             else
             {
-                cmd.Parameters.AddWithValue("@@workingHours", contract.Workinghours);
+                cmd.Parameters.AddWithValue("@workingHours", contract.Workinghours);
                 cmd.Parameters.AddWithValue("@end", null);
                 cmd.Parameters.AddWithValue("@endReason", null);
             }

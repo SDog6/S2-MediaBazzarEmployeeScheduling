@@ -39,7 +39,8 @@ namespace MediaBazzar
             this.employmentStart = employmentStart;
             this.employmentEnd = new DateTime();
             terminationReason = string.Empty;
-      
+            this.currentWorkingHours = 0;
+
         }
 
         public Contract(int workingHours, DateTime employmentStart, DateTime employmentEnd, string terminationReason)

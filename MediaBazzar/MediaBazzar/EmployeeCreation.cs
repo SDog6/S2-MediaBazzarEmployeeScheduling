@@ -110,6 +110,7 @@ namespace MediaBazzar
                 try
                 {
                     em.Add(employee);
+                    MessageBox.Show("Employee added to the system");
                 }
                 catch (Exception ex)
                 {
