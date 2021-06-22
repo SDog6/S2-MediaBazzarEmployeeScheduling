@@ -48,5 +48,15 @@ public function GetAUserByID($id){
     return $founduser;
 }
 
+
+public function GetEmpByID($id){
+    $sql = 'SELECT id FROM employee  WHERE accountId =?';
+    $stmt = $this->Connect()->prepare($sql);
+    $stmt->execute([$id]);
+    $user = $stmt->fetch();
+    $fid = $user->id;
+    return $fid;
+}
+
 }
 ?>

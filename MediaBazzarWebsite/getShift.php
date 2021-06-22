@@ -7,7 +7,7 @@ class shift
     private   $password = "NewPassword123";  
     private   $dbname = "dbi457108"; 
 
-    function GetMondayShift($date, $id)
+    function GetShift($date, $id)
     {
        try
        {

@@ -1,4 +1,5 @@
 <?php   
+include_once("./classes/Userdata.class.php");
 
 class GetData 
 {
@@ -16,7 +17,10 @@ class GetData
          $pdo = new PDO("mysql:host=$this->host;dbname=$this->dbname",$this->username, $this->password);  
          $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
          
-         $id = $_SESSION['id'];
+         $emp = new Userdata();
+         $eid = $emp->GetEmpByID($_SESSION['id']);
+         $member = $eid;  
+         $id = $eid;
          $stmt = $pdo->prepare("SELECT Date, Type FROM `shiftsrequests` where employee_id=:id"  );
          $stmt->bindParam(":id", $id);
          $stmt->execute();

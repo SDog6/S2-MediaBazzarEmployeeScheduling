@@ -18,7 +18,7 @@
       .container { margin: 150px auto; }
     </style>
 </head>
-<h1 style="text-align: center;"> Avaliability </h1>
+<h1 style="text-align: center;"> Availability </h1>
 
 
 
@@ -77,7 +77,7 @@
       </tr>
       <tr>
         
-        <td><button value="MorningShift Monday">Morning Shift</button></td>
+        <td><button id="MorningShift Monday" value="MorningShift Monday">Morning Shift</button></td>
         <td><button value="MorningShift Tuesday">Morning Shift</button></td>
         <td><button value="MorningShift Wednesday">Morning Shift</button></td>
         <td><button value="MorningShift Thursday">Morning Shift</button></td>
@@ -148,13 +148,13 @@ include "./getShift.php";
       </tr>
       <tr>
       
-      <td><?php $shift = new shift; $shift->GetMondayShift($monday, $_SESSION['id'])?></td>
-      <td><?php $shift = new shift; $shift->GetMondayShift($tuesday, $_SESSION['id'])?></td>
-      <td><?php $shift = new shift; $shift->GetMondayShift($wednesday, $_SESSION['id'])?></td>
-      <td><?php $shift = new shift; $shift->GetMondayShift($thursday, $_SESSION['id'])?></td>
-      <td><?php $shift = new shift; $shift->GetMondayShift($friday, $_SESSION['id'])?></td>
-      <td><?php $shift = new shift; $shift->GetMondayShift($saturday, $_SESSION['id'])?></td>
-      <td><?php $shift = new shift; $shift->GetMondayShift($sunday, $_SESSION['id'])?></td>
+      <td><?php $shift = new shift; $shift->GetShift($monday, $_SESSION['id'])?></td>
+      <td><?php $shift = new shift; $shift->GetShift($tuesday, $_SESSION['id'])?></td>
+      <td><?php $shift = new shift; $shift->GetShift($wednesday, $_SESSION['id'])?></td>
+      <td><?php $shift = new shift; $shift->GetShift($thursday, $_SESSION['id'])?></td>
+      <td><?php $shift = new shift; $shift->GetShift($friday, $_SESSION['id'])?></td>
+      <td><?php $shift = new shift; $shift->GetShift($saturday, $_SESSION['id'])?></td>
+      <td><?php $shift = new shift; $shift->GetShift($sunday, $_SESSION['id'])?></td>
       <tr>
 </table>
     

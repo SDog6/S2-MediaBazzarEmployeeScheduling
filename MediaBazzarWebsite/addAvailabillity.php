@@ -1,4 +1,6 @@
-<?php   
+<?php 
+
+include_once("./classes/Userdata.class.php");
 session_start();
 
     
@@ -16,7 +18,9 @@ session_start();
             $pdo = new PDO("mysql:host=$host;dbname=$dbname",$username, $password);  
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
-            $member = $_SESSION['id'];  
+            $emp = new Userdata();
+            $id = $emp->GetEmpByID($_SESSION['id']);
+            $member = $id;  
             $available = true;
             $date = date('d/m/y');
             $shift = $_POST['Shift'];
