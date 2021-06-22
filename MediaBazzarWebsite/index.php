@@ -135,6 +135,12 @@ $sunday = date( 'Y-m-d', strtotime( 'sunday this week' ) );
 include "./getShift.php";
 ?>
 <h1>Shift Schedule<h1>
+<?php 
+echo "<br>";
+echo "<h5> This week </h5>"
+
+?>
+
 <table id="shift" style="width: 95%;">
 
 <tr>
@@ -158,6 +164,52 @@ include "./getShift.php";
       <tr>
 </table>
     
+
+    
+<?php 
+
+echo "<br>";
+echo "<h5> Next week </h5>";
+
+
+$monday = date( 'Y-m-d', strtotime( 'monday next week' ) );
+$tuesday = date( 'Y-m-d', strtotime( 'tuesday next week' ) );
+$wednesday = date( 'Y-m-d', strtotime( 'wednesday next week' ) );
+$thursday = date( 'Y-m-d', strtotime( 'thursday next week' ) );
+$friday = date( 'Y-m-d', strtotime( 'friday next week' ) );
+$saturday = date( 'Y-m-d', strtotime( 'saturday next week' ) );
+$sunday = date( 'Y-m-d', strtotime( 'sunday next week' ) );
+
+echo "<br>";
+?>
+
+
+<table id="shift" style="width: 95%;">
+
+<tr>
+        <th>Monday <?php echo $monday?></th>
+        <th>Tuesday <?php echo $tuesday?></th> 
+        <th>Wednesday <?php echo $wednesday?></th>
+        <th>Thursday <?php echo $thursday?></th>
+        <th>Friday <?php  echo $friday?></th>
+        <th>Saturday <?php echo $saturday?></th>
+        <th>Sunday <?php echo $sunday?></th>
+      </tr>
+      <tr>
+      
+      <td><?php $shift = new shift; $shift->GetShift($monday, $_SESSION['id'])?></td>
+      <td><?php $shift = new shift; $shift->GetShift($tuesday, $_SESSION['id'])?></td>
+      <td><?php $shift = new shift; $shift->GetShift($wednesday, $_SESSION['id'])?></td>
+      <td><?php $shift = new shift; $shift->GetShift($thursday, $_SESSION['id'])?></td>
+      <td><?php $shift = new shift; $shift->GetShift($friday, $_SESSION['id'])?></td>
+      <td><?php $shift = new shift; $shift->GetShift($saturday, $_SESSION['id'])?></td>
+      <td><?php $shift = new shift; $shift->GetShift($sunday, $_SESSION['id'])?></td>
+      <tr>
+</table>
+<?php echo "<br>";?>
+<?php echo "<br>";?>
+<?php echo "<br>";?>
+<?php echo "<br>";?>
   </body>
 
 </html>
