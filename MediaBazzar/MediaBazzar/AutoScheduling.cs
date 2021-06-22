@@ -78,8 +78,7 @@ namespace MediaBazzar
             List<ShiftRequest> RemainingShifts = new List<ShiftRequest>();
             for (int i = 0; i < pair.Value.Count; i++)
             {
-                int shift = ((((int)pair.Value[i].GetDayOfWeek() + 6) % 7) * 3) + pair.Value[i].GetShiftType();
-            
+                int shift = ((((int)pair.Value[i].GetDayOfWeek() + 6) % 7) * 3) + pair.Value[i].GetShiftType() - 1;
                 if ((int)limits[shift] >= counters[shift] + 1)
                 {
                    

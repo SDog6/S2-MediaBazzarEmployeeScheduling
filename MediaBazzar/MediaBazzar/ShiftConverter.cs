@@ -36,7 +36,7 @@ namespace MediaBazzar
 
         private DateTime GetDay(DayOfWeek day)
         {
-            DateTime start = DateTime.Now.AddDays(1);
+            DateTime start = DateTime.Now.AddDays(6);
             int daysToAdd = ((int)day - (int)start.DayOfWeek + 7) % 7;
             return start.AddDays(daysToAdd);
         }
