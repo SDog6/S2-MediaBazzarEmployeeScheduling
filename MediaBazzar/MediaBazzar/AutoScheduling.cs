@@ -22,7 +22,6 @@ namespace MediaBazzar
             this.shifts = new ShiftSchedulingManager();
             this.limitsData = new ShiftLimitData();
             this.converter = new ShiftConverter();
-            this.limits = limitsData.GetLimits();
             this.counters = new List<int>() { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         }
 
@@ -39,7 +38,8 @@ namespace MediaBazzar
 
         private void SortRequests(List<ShiftRequest> shiftRequests)
         {
-            foreach(ShiftRequest item in shiftRequests)
+            this.limits = limitsData.GetLimits();
+            foreach (ShiftRequest item in shiftRequests)
             {
                 Employee emp = item.Emp;
                 if (!requests.ContainsKey(emp))
@@ -81,7 +81,7 @@ namespace MediaBazzar
                 int shift = ((((int)pair.Value[i].GetDayOfWeek() + 6) % 7) * 3) + pair.Value[i].GetShiftType() - 1;
                 if ((int)limits[shift] >= counters[shift] + 1)
                 {
-                   
+                    counters[shift] += 1;
                         if (pair.Key.Contract.ShiftPossible())
                         {
                             Shift s = converter.RequestToShift(pair.Value[i]);
