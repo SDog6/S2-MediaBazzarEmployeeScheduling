@@ -131,15 +131,8 @@ $wednesday = date( 'Y-m-d', strtotime( 'wednesday this week' ) );
 $thursday = date( 'Y-m-d', strtotime( 'thursday this week' ) );
 $friday = date( 'Y-m-d', strtotime( 'friday this week' ) );
 $saturday = date( 'Y-m-d', strtotime( 'saturday this week' ) );
-// next week 
 $sunday = date( 'Y-m-d', strtotime( 'sunday this week' ) );
-$nmonday = date( 'Y-m-d', strtotime( 'monday next week' ) );
-$ntuesday = date( 'Y-m-d', strtotime( 'tuesday next week' ) );
-$nwednesday = date( 'Y-m-d', strtotime( 'wednesday next week' ) );
-$nthursday = date( 'Y-m-d', strtotime( 'thursday next week' ) );
-$nfriday = date( 'Y-m-d', strtotime( 'friday next week' ) );
-$nsaturday = date( 'Y-m-d', strtotime( 'saturday next week' ) );
-$nsunday = date( 'Y-m-d', strtotime( 'sunday next week' ) );
+
 include "./getShift.php";
 ?>
 <h1>Shift Schedule<h1>
@@ -169,24 +162,9 @@ echo "<h5> This week </h5>"
       <td><?php $shift = new shift; $shift->GetShift($friday, $_SESSION['id'])?></td>
       <td><?php $shift = new shift; $shift->GetShift($saturday, $_SESSION['id'])?></td>
       <td><?php $shift = new shift; $shift->GetShift($sunday, $_SESSION['id'])?></td>
-      <tr>
+      </tr>
       
-      <th>Monday <?php echo $nmonday?></th>
-        <th>Tuesday <?php echo $ntuesday?></th> 
-        <th>Wednesday <?php echo $nwednesday?></th>
-        <th>Thursday <?php echo $nthursday?></th>
-        <th>Friday <?php  echo $nfriday?></th>
-        <th>Saturday <?php echo $nsaturday?></th>
-        <th>Sunday <?php echo $nsunday?></th>
-        <tr>
-        <td><?php $shift = new shift; $shift->GetShift($nmonday, $_SESSION['id'])?></td>
-      <td><?php $shift = new shift; $shift->GetShift($ntuesday, $_SESSION['id'])?></td>
-      <td><?php $shift = new shift; $shift->GetShift($nwednesday, $_SESSION['id'])?></td>
-      <td><?php $shift = new shift; $shift->GetShift($nthursday, $_SESSION['id'])?></td>
-      <td><?php $shift = new shift; $shift->GetShift($nfriday, $_SESSION['id'])?></td>
-      <td><?php $shift = new shift; $shift->GetShift($nsaturday, $_SESSION['id'])?></td>
-      <td><?php $shift = new shift; $shift->GetShift($nsunday, $_SESSION['id'])?></td>
-        </tr>
+ 
 </table>
     
 
