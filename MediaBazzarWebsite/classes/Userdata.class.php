@@ -1,5 +1,6 @@
 <?php
 include_once ('PDO.class.php');
+include_once "User.Class.php";
 
 class Userdata extends Connection{
 
@@ -19,7 +20,7 @@ public function UpdateEmail($newemail,$id){
 
 
 public function UpdatePassword($newpassowrd,$providedid){
-    $sql = 'UPDATE user SET password = :password WHERE id = :id';
+    $sql = 'UPDATE account SET password = :password WHERE id = :id';
     $stmt = $this->Connect()->prepare($sql);
     $stmt->execute(['password' => $newpassowrd, 'id' => $providedid]);
 }

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <?php include("./includes/autoload.inc.php");?>
 <?php include("./templates/header.php");?>
 
@@ -6,68 +7,72 @@
 <?php
 $id = $_SESSION["id"];
 $loginattempt = new Userdata();
+$persondata = new PersonData();
+$person = $persondata->GetPerson($id);
 $founduser = $loginattempt->GetAUserByID($id);
-
-echo "ID: " . $founduser->GetID();
-echo "<br>";
-echo "Username: " . $founduser->GetUsername();
-echo "<br>";
-echo "Password: ********** ";
-echo "<br>";
-echo "<br>";
-echo "<a href='changeusername.php' >Change username</a>";
-echo "<br>";
-echo "<a href='changeemail.php' >Change email</a>";
-echo "<br>";
-echo "<a href='changepassword.php' >Change password</a>";
-
-$host ="studmysql01.fhict.local";
-$user = 'dbi457108';
-$dbpass = 'NewPassword123';
-$dbName = 'dbi457108';
-$dsn = 'mysql:host='.$host.';dbname='.$dbName;
-
-try
-{
-$pdo = new PDO($dsn,$user,$dbpass);
-$sql = "SELECT person.firstName, person.lastName, person.phoneNumber,person.email, person.addressId, account.username, employee.dateOfBirth, employee.role
- FROM account LEFT JOIN employee ON account.id = employee.accountId LEFT JOIN person ON employee.personId = person.id 
- WHERE account.id LIKE :accountId";
-$stm = $pdo->prepare($sql);
-$stm->bindParam(":accountId", $id);
-$stm->execute();
-
-  
-$result = $stm->setFetchMode(PDO::FETCH_ASSOC);
-
-foreach($stm->fetchAll() as $k=>$v) {
-    echo "<br><br><br><br>";
-    echo "firstname: " . $v['firstName']; 
-    echo "<br>";
-    echo "lastname: " . $v['lastName'];
-    echo "<br>";
-    echo "PhoneNumber:" . $v['phoneNumber'];
-    echo "<br>";
-    echo "Email adress: " . $v['email'];
-    echo "<br>";
-    echo "Adress: " . $v['addressId'];
-    echo "<br>";
-    echo "Username: " . $v['username'];
-    echo "<br>";
-    echo "Date of Birth: " . $v['dateOfBirth'];
-    echo "<br>";
-    echo "Role : " . $v['role'];
-
-}
-     $pdo = null;
-    }
-     catch(PDOException $e)
-     {
-         echo $e->getMessage();
-     }
-     $conn = null;
- 
-
-
 ?>
+
+<head>
+<link href="css/AccountEdit.css" rel="stylesheet">	
+
+</head>
+
+<body>
+
+<form class="form-style-7" action = "AccountValidation.php" method = "POST">
+<ul>
+<li>
+    <label for="id">ID</label>
+    <input id="id" name="id" required type="text" value = "<?= $founduser->GetID(); ?>" readonly maxlength="100"/>
+</li>
+<li>
+    <label for="url">Username</label>
+    <input id="username" name="username" required type="text" value = "<?= $founduser->GetUsername(); ?>" maxlength="100">
+</li>
+<li>
+    <label for="url">Password</label>
+    <input id="password" name="password" required type="text" value = "<?= $founduser->GetPassword(); ?>" maxlength="100">
+</li>
+<li>
+    <label for="name">Name</label>
+    <input id="name" name="name" required type="text" value = "<?= $person->GetName(); ?>" readonly maxlength="100">
+</li>
+<li>
+    <label for="email">Phone Number</label>
+    <input id="phonenum" name="phonenum"  required type="text" value = "<?= $person->GetPhoneNum(); ?>" maxlength="100">
+</li>
+<li>
+<label for="address">Address</label>
+<div>
+    <label for="city">City</label>
+    <input id="city" name="city" required type="text" value = "<?= $person->GetCity(); ?>" maxlength="100">
+</div>
+<div>
+    <label for="street">Street</label>
+    <input id="street" name="street" required type="text" value = "<?= $person->GetStreet(); ?>"  maxlength="100">
+</div>
+<div>
+    <label for="streetnr">Street Number</label>
+    <input id="streetnr" name="streetnr" required type="text" value = "<?= $person->Getstrnum(); ?>" maxlength="100">
+</div>
+</li>
+<li>
+    <label for="email">Email</label>
+    <input id="email" name="email" required type="text" value = "<?= $person->GetEmail(); ?>" maxlength="100">
+</li>
+
+<li>
+    <input type="submit" value="Save Changes" onclick="myFunction()">
+</li>
+</ul>
+</form>
+
+</body>
+
+<script>
+function myFunction() {
+  alert("Your information has been updated?");
+}
+</script>
+
 </html>
