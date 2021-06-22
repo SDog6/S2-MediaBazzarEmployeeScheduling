@@ -69,6 +69,7 @@ namespace MediaBazzar
                 temp.Add(textboxes[i].Value);
             }
             Limits.UpdateLimits(temp);
+            MessageBox.Show("Limits updated");
         }
     }
 }
