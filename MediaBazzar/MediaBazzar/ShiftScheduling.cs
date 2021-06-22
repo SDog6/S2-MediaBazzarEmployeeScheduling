@@ -67,7 +67,7 @@ namespace MediaBazzar
                 Employee emp = r.Emp;
                 DateTime time = monthCalendar1.SelectionRange.Start.Date;
                 string shifttype = cbShiftType.SelectedItem.ToString();
-                if (emp.Workinghours + 5 > emp.Contract.Workinghours)
+                if (emp.Contract.CurWorkinghours + 5 > emp.Contract.Workinghours)
                 {
                     MessageBox.Show("Employee is beeing overscheduled !");
                 }

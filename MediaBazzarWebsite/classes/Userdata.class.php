@@ -49,6 +49,16 @@ public function GetAUserByID($id){
 }
 
 
+public function GetEmpStatus($id){
+    $sql = 'SELECT status FROM employee WHERE accountId =?';
+    $stmt = $this->Connect()->prepare($sql);
+    $stmt->execute([$id]);
+    $user = $stmt->fetch();
+    $fid = $user->status;
+    return $fid;
+}
+
+
 public function GetEmpByID($id){
     $sql = 'SELECT id FROM employee  WHERE accountId =?';
     $stmt = $this->Connect()->prepare($sql);

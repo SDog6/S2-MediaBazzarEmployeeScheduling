@@ -61,14 +61,23 @@ namespace MediaBazzar
 
         public void AddShift()
         {
-            data.IncraseWork(this.id);
-            currentWorkingHours += 5;
+            if (CurWorkinghours + 5 <= workingHours)
+            {
+                data.IncraseWork(this.id);
+                currentWorkingHours += 5;
+            }
+         
         }
 
 
         public void RemoveShift()
         {
-            data.DecreaseWorkHours(this.id);
+
+            if (CurWorkinghours - 5 >= 0)
+            {
+                data.DecreaseWorkHours(this.id);
+            }
+           
         }
         public void Terminate(string reason)
         {
