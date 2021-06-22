@@ -4,12 +4,13 @@ include_once "User.Class.php";
 
 class Userdata extends Connection{
 
-public function UpdateUsername($newusername,$id){
-    $sql = 'UPDATE user SET username = ? WHERE id = ?';
-    $stmt = $this->Connect()->prepare($sql);
-    $stmt->execute([$newusername],[$id]);
-    echo "nice";
-}
+
+    public function UpdateUsername($newusername,$id){
+        $sql = 'UPDATE account SET username = ? WHERE id = ?';
+        $stmt = $this->Connect()->prepare($sql);
+        $stmt->execute([$newusername, $id]);
+    }
+    
 
 
 public function UpdateEmail($newemail,$id){
