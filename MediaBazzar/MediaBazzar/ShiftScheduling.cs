@@ -174,10 +174,12 @@ namespace MediaBazzar
 
         private void btnAuto_Click(object sender, EventArgs e)
         {
+            Employees.ClearWorkHours();
             Auto.InsertRequests(Requests.GetAll());
             Auto.Schedule();
             UpdateShiftEmployeeUI();
             UpdateShiftRequests();
+            MessageBox.Show("Done");
         }
 
 

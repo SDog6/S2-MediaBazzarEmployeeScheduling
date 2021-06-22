@@ -177,7 +177,7 @@ namespace MediaBazzar
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnClear.Location = new System.Drawing.Point(903, 78);
+            this.btnClear.Location = new System.Drawing.Point(903, 77);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(85, 58);
             this.btnClear.TabIndex = 18;
